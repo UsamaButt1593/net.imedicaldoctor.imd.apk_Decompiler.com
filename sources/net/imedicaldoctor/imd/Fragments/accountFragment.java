@@ -743,7 +743,7 @@ public class accountFragment extends Fragment {
                             accountTextViewHolder4.J.setOnClickListener(new View.OnClickListener() {
                                 public void onClick(View view) {
                                     if (accountFragment.this.r4 != null) {
-                                        ((mainActivity) accountFragment.this.r4).l1(true);
+                                        ((mainActivity) accountFragment.this.r4).tryUpdateApp(true);
                                     }
                                 }
                             });
@@ -1899,7 +1899,7 @@ public class accountFragment extends Fragment {
         p3();
         RecyclerView recyclerView = (RecyclerView) this.e4.findViewById(R.id.f1054recycler_view);
         this.f4 = recyclerView;
-        recyclerView.p(new CustomItemDecoration(r()));
+        recyclerView.setItemDecoration(new CustomItemDecoration(r()));
         this.f4.setLayoutManager(new LinearLayoutManager(r(), 1, false));
         this.f4.setAdapter(new AccountAdapter());
         SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) this.e4.findViewById(R.id.f1101swipeRefreshLayout);

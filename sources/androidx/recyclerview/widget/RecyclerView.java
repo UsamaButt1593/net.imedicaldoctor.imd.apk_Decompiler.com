@@ -56,12 +56,7 @@ import androidx.customview.poolingcontainer.PoolingContainer;
 import androidx.customview.view.AbsSavedState;
 import androidx.media3.extractor.ts.TsExtractor;
 import androidx.recyclerview.R;
-import androidx.recyclerview.widget.AdapterHelper;
-import androidx.recyclerview.widget.ChildHelper;
-import androidx.recyclerview.widget.GapWorker;
-import androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate;
-import androidx.recyclerview.widget.ViewBoundsCheck;
-import androidx.recyclerview.widget.ViewInfoStore;
+
 import com.dd.plist.ASCIIPropertyListParser;
 import com.itextpdf.text.pdf.codec.TIFFConstants;
 import com.itextpdf.text.pdf.codec.wmf.MetaDo;
@@ -7980,7 +7975,7 @@ public class RecyclerView extends ViewGroup implements ScrollingView, NestedScro
         throw new UnsupportedOperationException("Method not decompiled: androidx.recyclerview.widget.RecyclerView.onTouchEvent(android.view.MotionEvent):boolean");
     }
 
-    public void p(@NonNull ItemDecoration itemDecoration) {
+    public void setItemDecoration(@NonNull ItemDecoration itemDecoration) {
         q(itemDecoration, -1);
     }
 

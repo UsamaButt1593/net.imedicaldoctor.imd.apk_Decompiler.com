@@ -309,7 +309,7 @@ public class EPOMainActivityFragment extends SearchHelperFragment {
         } catch (Exception e2) {
             FirebaseCrashlytics.d().g(e2);
         }
-        this.w4.p(this.C4);
+        this.w4.setItemDecoration(this.C4);
         this.B4.i0(this.o4, this.p4);
         this.w4.setAdapter(this.B4);
     }

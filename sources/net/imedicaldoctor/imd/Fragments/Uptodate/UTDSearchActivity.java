@@ -213,10 +213,10 @@ public class UTDSearchActivity extends iMDActivity {
             this.w4.setAdapter(this.l4);
             StickyRecyclerHeadersDecoration stickyRecyclerHeadersDecoration = new StickyRecyclerHeadersDecoration((StickyRecyclerHeadersAdapter) this.l4);
             this.D4 = stickyRecyclerHeadersDecoration;
-            this.w4.p(stickyRecyclerHeadersDecoration);
+            this.w4.setItemDecoration(stickyRecyclerHeadersDecoration);
             this.w4.setLayoutManager(new LinearLayoutManager(r()));
             this.w4.setItemAnimator(new DefaultItemAnimator());
-            this.w4.p(new CustomItemDecoration(r()));
+            this.w4.setItemDecoration(new CustomItemDecoration(r()));
             this.l4.Z(new RecyclerView.AdapterDataObserver() {
                 public void a() {
                     UTDSearchFragment.this.D4.n();
@@ -234,7 +234,7 @@ public class UTDSearchActivity extends iMDActivity {
         }
 
         public void Z2() {
-            this.w4.p(this.D4);
+            this.w4.setItemDecoration(this.D4);
         }
 
         public ArrayList<Bundle> a3(String str) {

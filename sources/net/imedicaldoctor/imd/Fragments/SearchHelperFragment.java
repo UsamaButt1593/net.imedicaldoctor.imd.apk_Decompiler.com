@@ -166,7 +166,7 @@ public class SearchHelperFragment extends Fragment {
 
     public void N2() {
         this.w4.setItemAnimator(new DefaultItemAnimator());
-        this.w4.p(new CustomItemDecoration(B()));
+        this.w4.setItemDecoration(new CustomItemDecoration(B()));
         this.w4.setLayoutManager(new LinearLayoutManager(r(), 1, false));
     }
 
@@ -581,7 +581,7 @@ public class SearchHelperFragment extends Fragment {
             DrawerLayout drawerLayout = (DrawerLayout) this.q4.findViewById(R.id.f922drawer_layout);
             this.y4 = drawerLayout;
             if (drawerLayout != null) {
-                drawerLayout.a(new DrawerLayout.DrawerListener() {
+                drawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
                     public void a(View view) {
                         SearchHelperFragment searchHelperFragment = SearchHelperFragment.this;
                         searchHelperFragment.z4.setAdapter(new HistoryAdapter(searchHelperFragment.r(), SearchHelperFragment.this.y4));
@@ -600,7 +600,7 @@ public class SearchHelperFragment extends Fragment {
                 this.z4 = recyclerView;
                 if (recyclerView != null) {
                     recyclerView.setLayoutManager(new LinearLayoutManager(r(), 1, false));
-                    this.z4.p(new CustomItemDecoration(r()));
+                    this.z4.setItemDecoration(new CustomItemDecoration(r()));
                 }
             }
             this.q4.postDelayed(new Runnable() {

@@ -71,7 +71,7 @@ public class EPOInteractSingleActivityFragment extends ViewerHelperFragment {
 
     public void K4() {
         this.X4.setItemAnimator(new DefaultItemAnimator());
-        this.X4.p(new CustomItemDecoration(r()));
+        this.X4.setItemDecoration(new CustomItemDecoration(r()));
         this.X4.setLayoutManager(new LinearLayoutManager(r(), 1, false));
     }
 
@@ -124,7 +124,7 @@ public class EPOInteractSingleActivityFragment extends ViewerHelperFragment {
                     EPOInteractSingleActivityFragment ePOInteractSingleActivityFragment4 = EPOInteractSingleActivityFragment.this;
                     StickyRecyclerHeadersDecoration unused3 = ePOInteractSingleActivityFragment4.e5 = new StickyRecyclerHeadersDecoration(ePOInteractSingleActivityFragment4.g5);
                     EPOInteractSingleActivityFragment ePOInteractSingleActivityFragment5 = EPOInteractSingleActivityFragment.this;
-                    ePOInteractSingleActivityFragment5.X4.p(ePOInteractSingleActivityFragment5.e5);
+                    ePOInteractSingleActivityFragment5.X4.setItemDecoration(ePOInteractSingleActivityFragment5.e5);
                     EPOInteractSingleActivityFragment ePOInteractSingleActivityFragment6 = EPOInteractSingleActivityFragment.this;
                     recyclerView = ePOInteractSingleActivityFragment6.X4;
                     adapter = ePOInteractSingleActivityFragment6.g5;
@@ -138,7 +138,7 @@ public class EPOInteractSingleActivityFragment extends ViewerHelperFragment {
                     EPOInteractSingleActivityFragment ePOInteractSingleActivityFragment8 = EPOInteractSingleActivityFragment.this;
                     StickyRecyclerHeadersDecoration unused5 = ePOInteractSingleActivityFragment8.e5 = new StickyRecyclerHeadersDecoration(ePOInteractSingleActivityFragment8.h5);
                     EPOInteractSingleActivityFragment ePOInteractSingleActivityFragment9 = EPOInteractSingleActivityFragment.this;
-                    ePOInteractSingleActivityFragment9.X4.p(ePOInteractSingleActivityFragment9.e5);
+                    ePOInteractSingleActivityFragment9.X4.setItemDecoration(ePOInteractSingleActivityFragment9.e5);
                     EPOInteractSingleActivityFragment ePOInteractSingleActivityFragment10 = EPOInteractSingleActivityFragment.this;
                     recyclerView = ePOInteractSingleActivityFragment10.X4;
                     adapter = ePOInteractSingleActivityFragment10.h5;

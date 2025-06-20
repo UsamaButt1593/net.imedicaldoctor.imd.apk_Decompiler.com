@@ -684,7 +684,7 @@ public class favoritesFragment extends SearchHelperFragment {
 
     public void B3() {
         if (!this.P4) {
-            this.E4.p(this.M4);
+            this.E4.setItemDecoration(this.M4);
             this.P4 = true;
         }
     }
@@ -982,7 +982,7 @@ public class favoritesFragment extends SearchHelperFragment {
         });
         menu.findItem(R.id.f802action_navigation).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem menuItem) {
-                ((mainActivity) favoritesFragment.this.r()).w1();
+                ((mainActivity) favoritesFragment.this.r()).onToolbarNavigationClicked();
                 return true;
             }
         });
@@ -1143,7 +1143,7 @@ public class favoritesFragment extends SearchHelperFragment {
         B3();
         this.E4.setLayoutManager(new LinearLayoutManager(r()));
         this.E4.setItemAnimator(new DefaultItemAnimator());
-        this.E4.p(new CustomItemDecoration(r()));
+        this.E4.setItemDecoration(new CustomItemDecoration(r()));
         this.E4.setAdapter(this.A4);
         this.A4.Z(new RecyclerView.AdapterDataObserver() {
             public void a() {

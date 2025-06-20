@@ -2372,7 +2372,7 @@ public class downloadFragment extends Fragment {
         this.i4 = inflate;
         RecyclerView recyclerView = (RecyclerView) inflate.findViewById(R.id.f1054recycler_view);
         this.j4 = recyclerView;
-        recyclerView.p(new CustomItemDecoration(r()));
+        recyclerView.setItemDecoration(new CustomItemDecoration(r()));
         BetterLinearLayoutManager betterLinearLayoutManager = new BetterLinearLayoutManager(z3(), 1, false);
         this.F4 = betterLinearLayoutManager;
         this.j4.setLayoutManager(betterLinearLayoutManager);

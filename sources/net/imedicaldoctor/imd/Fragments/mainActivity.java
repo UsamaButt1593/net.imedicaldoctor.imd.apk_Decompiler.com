@@ -1,5 +1,7 @@
 package net.imedicaldoctor.imd.Fragments;
 
+import static org.apache.commons.lang3.ClassUtils.getPackageName;
+
 import android.app.DownloadManager;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
@@ -100,26 +102,26 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
     /* access modifiers changed from: private */
     public boolean G3;
     /* access modifiers changed from: private */
-    public SlidingPaneLayout H3;
-    private Timer I3;
-    public CompressHelper J3;
-    public RecyclerView K3;
-    private Toolbar L3;
+    public SlidingPaneLayout slidingPaneLayout;
+    private Timer tryUpdateAppTimer;
+    public CompressHelper compressHelper;
+    public RecyclerView recyclerView;
+    private Toolbar toolbar;
     /* access modifiers changed from: private */
-    public TabLayout M3;
+    public TabLayout tabLayout;
     /* access modifiers changed from: private */
-    public DrawerLayout N3;
+    public DrawerLayout drawerLayout;
     public String O3;
     /* access modifiers changed from: private */
-    public long P3;
+    public long extraDownloadId;
     private final String Q3 = "android.intent.action.DOWNLOAD_COMPLETE";
-    private final IntentFilter R3 = new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE");
+    private final IntentFilter downloadCompleteIntentFilter = new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE");
     private final BroadcastReceiver S3 = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             try {
-                long longExtra = intent.getLongExtra("extra_download_id", 0);
-                if (longExtra == mainActivity.this.P3) {
-                    Cursor query = ((DownloadManager) mainActivity.this.getSystemService("download")).query(new DownloadManager.Query().setFilterById(new long[]{longExtra}));
+                long extraDownloadId = intent.getLongExtra("extra_download_id", 0);
+                if (extraDownloadId == mainActivity.this.extraDownloadId) {
+                    Cursor query = ((DownloadManager) mainActivity.this.getSystemService("download")).query(new DownloadManager.Query().setFilterById(new long[]{extraDownloadId}));
                     if (query == null) {
                         return;
                     }
@@ -138,6 +140,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
             }
         }
     };
+
     public BroadcastReceiver T3 = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             mainActivity.this.n1();
@@ -146,8 +149,8 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
     public BroadcastReceiver U3 = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             try {
-                if (!mainActivity.this.H3.l()) {
-                    mainActivity.this.H3.o();
+                if (!mainActivity.this.slidingPaneLayout.l()) {
+                    mainActivity.this.slidingPaneLayout.o();
                 }
             } catch (Exception unused) {
             }
@@ -167,10 +170,10 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
         }
     }
 
-    private void Y0(File file) {
+    private void deleteFileRecursively(File file) {
         if (file.isDirectory()) {
-            for (File Y0 : file.listFiles()) {
-                Y0(Y0);
+            for (File subFile : file.listFiles()) {
+                deleteFileRecursively(subFile);
             }
         }
         file.delete();
@@ -178,7 +181,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
 
     private boolean k1() {
         VBHelper vBHelper = new VBHelper(this);
-        if (vBHelper.a(vBHelper.r()) == null) {
+        if (vBHelper.a(vBHelper.getActivationCode()) == null) {
             finish();
             startActivity(new Intent(this, activationActivity.class));
             return false;
@@ -220,7 +223,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
                 ActionBar F0;
                 CharSequence charSequence;
                 mainActivity.this.A3.t0(i2);
-                if (!mainActivity.this.J3.x1()) {
+                if (!mainActivity.this.compressHelper.x1()) {
                     F0 = mainActivity.this.F0();
                     charSequence = mainActivity.this.A3.y(i2).f();
                 } else {
@@ -282,7 +285,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
         this.z3 = tabsPagerAdapter;
         this.y3.setAdapter(tabsPagerAdapter);
         this.y3.setOffscreenPageLimit(6);
-        this.M3.setupWithViewPager(this.y3);
+        this.tabLayout.setupWithViewPager(this.y3);
         int i3 = 0;
         while (true) {
             String[] strArr = this.C3;
@@ -290,29 +293,29 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
                 break;
             }
             String str = strArr[i3];
-            TabLayout.Tab D = this.M3.D(i3);
+            TabLayout.Tab D = this.tabLayout.D(i3);
             String str2 = "Titles";
             if (!str.equals(str2)) {
                 String str3 = "Databases";
                 if (str.equals(str3)) {
-                    tabLayout = this.M3;
+                    tabLayout = this.tabLayout;
                     i2 = R.drawable.f755tab_databases;
                 } else {
                     str3 = "Favorites";
                     if (str.equals(str3)) {
-                        tabLayout = this.M3;
+                        tabLayout = this.tabLayout;
                         i2 = R.drawable.f757tab_favorite;
                     } else {
                         str2 = "Content";
                         if (!str.equals(str2)) {
                             if (str.equals("Store")) {
-                                tabLayout = this.M3;
+                                tabLayout = this.tabLayout;
                                 str3 = "Downloads";
                                 i2 = R.drawable.f756tab_download;
                             } else {
                                 str3 = "Account";
                                 if (str.equals(str3)) {
-                                    tabLayout = this.M3;
+                                    tabLayout = this.tabLayout;
                                     i2 = R.drawable.f749tab_account;
                                 } else {
                                     i3++;
@@ -325,11 +328,11 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
                 D.v(o1);
                 i3++;
             }
-            o1 = o1(this.M3, str2, R.drawable.f760tab_search);
+            o1 = o1(this.tabLayout, str2, R.drawable.f760tab_search);
             D.v(o1);
             i3++;
         }
-        this.M3.h(new TabLayout.OnTabSelectedListener() {
+        this.tabLayout.h(new TabLayout.OnTabSelectedListener() {
             public void a(TabLayout.Tab tab) {
             }
 
@@ -365,7 +368,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
     }
 
     private boolean t1() {
-        Iterator<String> it2 = this.J3.o1().iterator();
+        Iterator<String> it2 = this.compressHelper.o1().iterator();
         while (true) {
             int i2 = 0;
             if (!it2.hasNext()) {
@@ -434,7 +437,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
     }
 
     public void I(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        if (this.J3.x1()) {
+        if (this.compressHelper.x1()) {
             String str = "android:switcher:" + this.y3.getId() + ":" + tab.d();
             if (k0().s0(str) != null) {
                 k0().u1(str, 1);
@@ -446,10 +449,10 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
         Bundle Y0;
         try {
             if (getSharedPreferences("default_preferences", 0).getBoolean("openaftercrash", true)) {
-                CompressHelper compressHelper = this.J3;
+                CompressHelper compressHelper = this.compressHelper;
                 Bundle s1 = compressHelper.s1(compressHelper.Y(compressHelper.h2(), "SELECT * FROM recent order by id desc limit 1"));
-                if (s1 != null && (Y0 = this.J3.Y0("Name", s1.getString("dbName"))) != null) {
-                    this.J3.A1(Y0, s1.getString("dbAddress"), (String[]) null, (String) null);
+                if (s1 != null && (Y0 = this.compressHelper.Y0("Name", s1.getString("dbName"))) != null) {
+                    this.compressHelper.A1(Y0, s1.getString("dbAddress"), (String[]) null, (String) null);
                 }
             }
         } catch (Exception e2) {
@@ -459,7 +462,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
 
     public void a1() {
         Fragment fragment;
-        if (this.J3.x1()) {
+        if (this.compressHelper.x1()) {
             int currentItem = this.y3.getCurrentItem();
             String str = "android:switcher:" + this.y3.getId() + ":";
             for (int i2 = 0; i2 < this.C3.length; i2++) {
@@ -493,7 +496,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
     }
 
     public void b1(int i2) {
-        if (this.J3.x1()) {
+        if (this.compressHelper.x1()) {
             String str = "android:switcher:" + this.y3.getId() + ":";
             for (int i3 = 0; i3 < this.C3.length; i3++) {
                 String str2 = str + i3;
@@ -589,13 +592,13 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
         return stringBuffer.toString();
     }
 
-    public void l1(final boolean z) {
+    public void tryUpdateApp(final boolean z) {
         Log.e("checkAppUpdate", "checking app update");
         try {
-            if (new File(this.J3.U1() + "/version.txt").exists()) {
-                new File(this.J3.U1() + "/version.txt").delete();
+            if (new File(this.compressHelper.U1() + "/version.txt").exists()) {
+                new File(this.compressHelper.U1() + "/version.txt").delete();
             }
-            this.J3.T0(this.J3.J() + "/v.txt", this.J3.U1() + "/version.txt").h6(Schedulers.e()).s4(AndroidSchedulers.e()).f6(new Consumer<String>() {
+            this.compressHelper.T0(this.compressHelper.J() + "/v.txt", this.compressHelper.U1() + "/version.txt").h6(Schedulers.e()).s4(AndroidSchedulers.e()).f6(new Consumer<String>() {
                 /* renamed from: a */
                 public void accept(String str) throws Throwable {
                 }
@@ -615,7 +618,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
             }, new Action() {
                 public void run() throws Throwable {
                     try {
-                        String replace = CompressHelper.e2(new File(mainActivity.this.J3.U1() + "/version.txt")).replace(StringUtils.LF, "");
+                        String replace = CompressHelper.e2(new File(mainActivity.this.compressHelper.U1() + "/version.txt")).replace(StringUtils.LF, "");
                         int i2 = mainActivity.this.getPackageManager().getPackageInfo(mainActivity.this.getPackageName(), 0).versionCode;
                         final int intValue = Integer.valueOf(replace).intValue();
                         iMDLogger.j("checkAppUpdate", "current version : " + i2 + " , UpdateVersion : " + intValue);
@@ -649,7 +652,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
                         } else if (z) {
                             CompressHelper.x2(mainActivity.this, "You have the latest version", 1);
                         }
-                        new File(mainActivity.this.J3.U1() + "/version.txt").delete();
+                        new File(mainActivity.this.compressHelper.U1() + "/version.txt").delete();
                     } catch (Exception e2) {
                         FirebaseCrashlytics.d().g(e2);
                         if (z) {
@@ -795,11 +798,11 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
 
     public void onBackPressed() {
         SlidingPaneLayout slidingPaneLayout;
-        if (this.J3.x1()) {
-            boolean W1 = this.J3.W1(false);
+        if (this.compressHelper.x1()) {
+            boolean W1 = this.compressHelper.W1(false);
             if (!W1 && (slidingPaneLayout = (SlidingPaneLayout) findViewById(R.id.f1076sliding_layout)) != null) {
                 if (slidingPaneLayout.l()) {
-                    W1 = this.J3.W1(true);
+                    W1 = this.compressHelper.W1(true);
                 } else {
                     slidingPaneLayout.o();
                 }
@@ -832,15 +835,15 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
 
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        if (this.J3.x1() && this.H3 != null && this.A3 != null && this.y3 != null) {
+        if (this.compressHelper.x1() && this.slidingPaneLayout != null && this.A3 != null && this.y3 != null) {
             iMDLogger.f("mainActivity", "ON Configuration changed");
-            iMDLogger.f("mainActivity", "isOpen = " + this.H3.l());
-            iMDLogger.f("mainActivity", "isSlidable = " + this.H3.m());
-            this.H3.postDelayed(new Runnable() {
+            iMDLogger.f("mainActivity", "isOpen = " + this.slidingPaneLayout.l());
+            iMDLogger.f("mainActivity", "isSlidable = " + this.slidingPaneLayout.m());
+            this.slidingPaneLayout.postDelayed(new Runnable() {
                 public void run() {
                     ActionBar f1;
                     int i2;
-                    if (mainActivity.this.H3.l()) {
+                    if (mainActivity.this.slidingPaneLayout.l()) {
                         mainActivity mainactivity = mainActivity.this;
                         mainactivity.b1(mainactivity.y3.getCurrentItem());
                         f1 = mainActivity.this.A3;
@@ -871,33 +874,33 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
             getWindow().addFlags(128);
         }
         try {
-            this.J3 = new CompressHelper(this);
+            this.compressHelper = new CompressHelper(this);
             Timer timer = new Timer();
-            this.I3 = timer;
+            this.tryUpdateAppTimer = timer;
             timer.schedule(new TimerTask() {
                 public void run() {
-                    mainActivity.this.l1(false);
+                    mainActivity.this.tryUpdateApp(false);
                 }
             }, 40000);
             setContentView((int) R.layout.f1179activity_main);
             setTitle("");
             Toolbar toolbar = (Toolbar) findViewById(R.id.f1139toolbar);
-            this.L3 = toolbar;
+            this.toolbar = toolbar;
             toolbar.Y();
-            P0(this.L3);
+            P0(this.toolbar);
             F0();
-            this.L3.setNavigationOnClickListener(new View.OnClickListener() {
+            this.toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    mainActivity.this.w1();
+                    mainActivity.this.onToolbarNavigationClicked();
                 }
             });
-            this.M3 = (TabLayout) findViewById(R.id.f1111tabs);
+            this.tabLayout = (TabLayout) findViewById(R.id.f1111tabs);
             DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.f922drawer_layout);
-            this.N3 = drawerLayout;
-            drawerLayout.a(new DrawerLayout.DrawerListener() {
+            this.drawerLayout = drawerLayout;
+            drawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
                 public void a(View view) {
                     mainActivity mainactivity = mainActivity.this;
-                    mainactivity.K3.setAdapter(new HistoryAdapter(mainactivity, mainactivity.N3));
+                    mainactivity.recyclerView.setAdapter(new HistoryAdapter(mainactivity, mainactivity.drawerLayout));
                 }
 
                 public void b(View view) {
@@ -910,11 +913,11 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
                 }
             });
             RecyclerView recyclerView = (RecyclerView) findViewById(R.id.f923drawer_view);
-            this.K3 = recyclerView;
+            this.recyclerView = recyclerView;
             recyclerView.setLayoutManager(new LinearLayoutManager(this, 1, false));
-            this.K3.p(new CustomItemDecoration(this));
-            LocalBroadcastManager.b(this).c(this.S3, this.R3);
-            if (this.J3.x1()) {
+            this.recyclerView.setItemDecoration(new CustomItemDecoration(this));
+            LocalBroadcastManager.b(this).c(this.S3, this.downloadCompleteIntentFilter);
+            if (this.compressHelper.x1()) {
                 TextView textView = (TextView) findViewById(R.id.f940first_title);
                 if (textView != null) {
                     try {
@@ -926,26 +929,26 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
                 }
                 LocalBroadcastManager.b(this).c(this.U3, new IntentFilter("showLeftPane"));
                 SlidingPaneLayout slidingPaneLayout = (SlidingPaneLayout) findViewById(R.id.f1076sliding_layout);
-                this.H3 = slidingPaneLayout;
+                this.slidingPaneLayout = slidingPaneLayout;
                 slidingPaneLayout.setShadowResourceLeft(R.drawable.f739slide_shadow);
-                this.H3.setSliderFadeColor(Color.parseColor("#FFFFFF"));
+                this.slidingPaneLayout.setSliderFadeColor(Color.parseColor("#FFFFFF"));
                 FrameLayout frameLayout = (FrameLayout) findViewById(R.id.f906detail_container);
-                boolean z = getSharedPreferences("default_preferences", 0).getBoolean("Fullscreen", true);
-                if (z) {
+                boolean shouldSetupFullscreen = getSharedPreferences("default_preferences", 0).getBoolean("Fullscreen", true);
+                if (shouldSetupFullscreen) {
                     frameLayout.setLayoutParams(new SlidingPaneLayout.LayoutParams(-1, -1));
                 }
-                ImageButton imageButton = (ImageButton) findViewById(R.id.f1011menu_button_2);
-                if (z) {
-                    imageButton.setVisibility(0);
+                ImageButton menuButton2 = (ImageButton) findViewById(R.id.f1011menu_button_2);
+                if (shouldSetupFullscreen) {
+                    menuButton2.setVisibility(0);
                 } else {
-                    imageButton.setVisibility(8);
+                    menuButton2.setVisibility(8);
                 }
-                imageButton.setOnClickListener(new View.OnClickListener() {
+                menuButton2.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View view) {
-                        if (mainActivity.this.H3.l()) {
-                            mainActivity.this.H3.c();
+                        if (mainActivity.this.slidingPaneLayout.l()) {
+                            mainActivity.this.slidingPaneLayout.c();
                         } else {
-                            mainActivity.this.H3.o();
+                            mainActivity.this.slidingPaneLayout.o();
                         }
                     }
                 });
@@ -968,20 +971,20 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
                         }
                     }
                 });
-                this.H3.o();
+                this.slidingPaneLayout.o();
             }
             iMDLogger.j("OnCreate", "OnCreate");
             if (getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false)) {
-                if (this.J3.x1()) {
+                if (this.compressHelper.x1()) {
                     getWindow().setFlags(67108864, 67108864);
-                    layoutParams = (FrameLayout.LayoutParams) this.H3.getLayoutParams();
+                    layoutParams = (FrameLayout.LayoutParams) this.slidingPaneLayout.getLayoutParams();
                     layoutParams.setMargins(0, -s1(), 0, 0);
-                    view = this.H3;
+                    view = this.slidingPaneLayout;
                 } else {
                     getWindow().setFlags(67108864, 67108864);
-                    layoutParams = (FrameLayout.LayoutParams) this.N3.getLayoutParams();
+                    layoutParams = (FrameLayout.LayoutParams) this.drawerLayout.getLayoutParams();
                     layoutParams.setMargins(0, -s1(), 0, 0);
-                    view = this.N3;
+                    view = this.drawerLayout;
                 }
                 view.setLayoutParams(layoutParams);
                 float dimension = getResources().getDimension(R.dimen.f522toolbar_padding);
@@ -991,9 +994,9 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
                 }
             }
             k1();
-            this.J3.R0(new Runnable() {
+            this.compressHelper.R0(new Runnable() {
                 public void run() {
-                    mainActivity.this.J3.k0();
+                    mainActivity.this.compressHelper.k0();
                 }
             }, new Runnable() {
                 public void run() {
@@ -1012,7 +1015,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
     public void onDestroy() {
         try {
             LocalBroadcastManager.b(this).f(this.S3);
-            if (this.J3.x1()) {
+            if (this.compressHelper.x1()) {
                 LocalBroadcastManager.b(this).f(this.U3);
             }
         } catch (Exception e2) {
@@ -1064,7 +1067,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
                     if (downloadfragment.K3()) {
                         downloadfragment.M2();
                     }
-                    mainActivity.this.M3.D(0).r();
+                    mainActivity.this.tabLayout.D(0).r();
                     downloadfragment.m4.k0(str2, true);
                 }
             }, 1000);
@@ -1092,7 +1095,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
         CharSequence charSequence;
         this.y3.setCurrentItem(tab.d());
         V3 = String.valueOf(tab.d());
-        if (!this.J3.x1()) {
+        if (!this.compressHelper.x1()) {
             F0 = F0();
             charSequence = tab.f();
         } else {
@@ -1117,23 +1120,23 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
         overridePendingTransition(R.anim.f15from_fade_in, R.anim.f16from_fade_out);
     }
 
-    public void w1() {
-        this.N3.K(3);
+    public void onToolbarNavigationClicked() {
+        this.drawerLayout.K(3);
     }
 
     public void x1() {
         Observable.w1(new ObservableOnSubscribe<String>() {
             public void a(@io.reactivex.rxjava3.annotations.NonNull ObservableEmitter<String> observableEmitter) throws Throwable {
-                Iterator<String> it2 = mainActivity.this.J3.w1().iterator();
+                Iterator<String> it2 = mainActivity.this.compressHelper.w1().iterator();
                 while (it2.hasNext()) {
                     String next = it2.next();
                     iMDLogger.f("Root path : ", next);
-                    mainActivity.this.J3.f29547c = null;
-                    mainActivity.this.J3.i2(new File(next).listFiles());
+                    mainActivity.this.compressHelper.f29547c = null;
+                    mainActivity.this.compressHelper.i2(new File(next).listFiles());
                 }
                 try {
-                    String encodeToString = Base64.encodeToString(CompressHelper.d1(mainActivity.this.J3.f29547c.getBytes(Charsets.f22255c)), 0);
-                    CompressHelper compressHelper = mainActivity.this.J3;
+                    String encodeToString = Base64.encodeToString(CompressHelper.d1(mainActivity.this.compressHelper.f29547c.getBytes(Charsets.f22255c)), 0);
+                    CompressHelper compressHelper = mainActivity.this.compressHelper;
                     compressHelper.p0("checkAccount|||||" + new VBHelper(mainActivity.this).m() + "|||||" + encodeToString).h6(Schedulers.e()).s4(Schedulers.e()).f6(new Consumer<String>() {
                         /* renamed from: a */
                         public void accept(String str) throws Throwable {

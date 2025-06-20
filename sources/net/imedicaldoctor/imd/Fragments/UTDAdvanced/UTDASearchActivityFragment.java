@@ -172,10 +172,10 @@ public class UTDASearchActivityFragment extends SearchHelperFragment {
         this.w4.setAdapter(this.l4);
         StickyRecyclerHeadersDecoration stickyRecyclerHeadersDecoration = new StickyRecyclerHeadersDecoration((StickyRecyclerHeadersAdapter) this.l4);
         this.A4 = stickyRecyclerHeadersDecoration;
-        this.w4.p(stickyRecyclerHeadersDecoration);
+        this.w4.setItemDecoration(stickyRecyclerHeadersDecoration);
         this.w4.setLayoutManager(new LinearLayoutManager(r()));
         this.w4.setItemAnimator(new DefaultItemAnimator());
-        this.w4.p(new CustomItemDecoration(r()));
+        this.w4.setItemDecoration(new CustomItemDecoration(r()));
         this.l4.Z(new RecyclerView.AdapterDataObserver() {
             public void a() {
                 UTDASearchActivityFragment.this.A4.n();
@@ -194,7 +194,7 @@ public class UTDASearchActivityFragment extends SearchHelperFragment {
     }
 
     public void Z2() {
-        this.w4.p(this.A4);
+        this.w4.setItemDecoration(this.A4);
     }
 
     public ArrayList<Bundle> a3(String str) {

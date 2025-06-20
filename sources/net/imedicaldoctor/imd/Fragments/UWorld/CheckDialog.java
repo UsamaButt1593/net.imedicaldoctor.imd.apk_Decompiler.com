@@ -225,7 +225,7 @@ public class CheckDialog extends DialogFragment {
         this.H4 = treeViewAdapter;
         this.G4.setAdapter(treeViewAdapter);
         this.G4.setLayoutManager(new LinearLayoutManager(r(), 1, false));
-        this.G4.p(new CustomItemDecoration(r()));
+        this.G4.setItemDecoration(new CustomItemDecoration(r()));
         ((SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text)).setTextColor(ViewCompat.y);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             public boolean a(String str) {

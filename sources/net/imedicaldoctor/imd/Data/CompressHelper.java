@@ -3898,7 +3898,7 @@ public class CompressHelper {
         Log.e("Speed", "RefereshDatabaes Started");
         ArrayList<Bundle> arrayList = new ArrayList<>();
         VBHelper vBHelper = this.f29550f;
-        if (vBHelper.a(vBHelper.r()) == null) {
+        if (vBHelper.a(vBHelper.getActivationCode()) == null) {
             ((iMD) this.f29548d.getApplicationContext()).s = null;
             return;
         }
@@ -5120,7 +5120,7 @@ public class CompressHelper {
     }
 
     public Boolean y2() {
-        if (this.f29550f.r().equals("")) {
+        if (this.f29550f.getActivationCode().equals("")) {
             return Boolean.TRUE;
         }
         VBHelper vBHelper = this.f29550f;

@@ -380,7 +380,7 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
         if ((parent instanceof DrawerLayout) && this.r3.b()) {
             DrawerLayout drawerLayout = (DrawerLayout) parent;
             drawerLayout.O(this.s3);
-            drawerLayout.a(this.s3);
+            drawerLayout.setDrawerListener(this.s3);
             if (drawerLayout.D(this)) {
                 this.r3.e();
             }

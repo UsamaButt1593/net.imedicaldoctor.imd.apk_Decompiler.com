@@ -23,7 +23,7 @@ import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
-import com.google.android.material.carousel.KeylineState;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -989,7 +989,7 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         this.v = z2;
         recyclerView.A1(this.w);
         if (z2) {
-            recyclerView.p(this.w);
+            recyclerView.setItemDecoration(this.w);
         }
         recyclerView.Q0();
     }

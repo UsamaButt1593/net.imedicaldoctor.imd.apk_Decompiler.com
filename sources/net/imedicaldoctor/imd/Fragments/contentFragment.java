@@ -853,7 +853,7 @@ public class contentFragment extends SearchHelperFragment {
         });
         this.N4.setLayoutManager(new LinearLayoutManager(r()));
         this.N4.setItemAnimator(new DefaultItemAnimator());
-        this.N4.p(new CustomItemDecoration(r()));
+        this.N4.setItemDecoration(new CustomItemDecoration(r()));
         o2(true);
         f3("Search Contents");
         return inflate;
@@ -1050,7 +1050,7 @@ public class contentFragment extends SearchHelperFragment {
 
     public void x3() {
         if (!this.O4) {
-            this.N4.p(this.J4);
+            this.N4.setItemDecoration(this.J4);
             this.O4 = true;
         }
     }

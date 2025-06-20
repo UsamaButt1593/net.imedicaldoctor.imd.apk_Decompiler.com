@@ -243,7 +243,7 @@ public class EPODxListViewerActivityFragment extends ViewerHelperFragment {
 
     public void J4() {
         this.Z4.setItemAnimator(new DefaultItemAnimator());
-        this.Z4.p(new CustomItemDecoration(r()));
+        this.Z4.setItemDecoration(new CustomItemDecoration(r()));
         this.Z4.setLayoutManager(new LinearLayoutManager(r(), 1, false));
     }
 

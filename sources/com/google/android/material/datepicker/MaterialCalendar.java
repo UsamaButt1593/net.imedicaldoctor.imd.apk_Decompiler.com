@@ -322,7 +322,7 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
             recyclerView.setHasFixedSize(true);
             this.m4.setLayoutManager(new GridLayoutManager((Context) contextThemeWrapper, integer, 1, false));
             this.m4.setAdapter(new YearGridAdapter(this));
-            this.m4.p(V2());
+            this.m4.setItemDecoration(V2());
         }
         if (inflate.findViewById(R.id.b3) != null) {
             U2(inflate, monthsPagerAdapter);

@@ -50,7 +50,7 @@ public class SelectDialog extends DialogFragment {
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(r(), 1, false));
-        recyclerView.p(new CustomItemDecoration(r()));
+        recyclerView.setItemDecoration(new CustomItemDecoration(r()));
         builder.setView(inflate);
         return builder.create();
     }

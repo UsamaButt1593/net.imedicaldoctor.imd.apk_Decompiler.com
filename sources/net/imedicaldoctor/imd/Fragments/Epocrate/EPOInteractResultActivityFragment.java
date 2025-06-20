@@ -34,7 +34,7 @@ public class EPOInteractResultActivityFragment extends ViewerHelperFragment {
 
     public void I4() {
         this.X4.setItemAnimator(new DefaultItemAnimator());
-        this.X4.p(new CustomItemDecoration(r()));
+        this.X4.setItemDecoration(new CustomItemDecoration(r()));
         this.X4.setLayoutManager(new LinearLayoutManager(r(), 1, false));
     }
 

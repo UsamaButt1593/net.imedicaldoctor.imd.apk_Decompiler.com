@@ -372,7 +372,7 @@ public class VDDiagnosisActivity extends ViewerHelperActivity {
 
         public void R4() {
             this.d5.setItemAnimator(new DefaultItemAnimator());
-            this.d5.p(new CustomItemDecoration(r()));
+            this.d5.setItemDecoration(new CustomItemDecoration(r()));
             this.d5.setLayoutManager(new LinearLayoutManager(r(), 1, false));
         }
 

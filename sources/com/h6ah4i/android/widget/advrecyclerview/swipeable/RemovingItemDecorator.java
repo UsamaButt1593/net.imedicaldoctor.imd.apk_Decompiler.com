@@ -186,7 +186,7 @@ class RemovingItemDecorator extends RecyclerView.ItemDecoration {
 
     public void u() {
         ViewCompat.g(((SwipeableItemViewHolder) this.f25509b).e()).d();
-        this.f25508a.p(this);
+        this.f25508a.setItemDecoration(this);
         this.f25514g = System.currentTimeMillis();
         this.f25513f = (int) (ViewCompat.C0(this.f25509b.f15587a) + 0.5f);
         this.f25518k = this.f25509b.f15587a.getBackground();

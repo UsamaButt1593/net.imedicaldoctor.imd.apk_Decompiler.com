@@ -305,12 +305,12 @@ public class VBHelper {
         }
     }
 
-    public String r() {
+    public String getActivationCode() {
         return this.f30456a.getSharedPreferences("default_preferences", 0).getString("ActivationCode", "");
     }
 
     public void s() {
-        String r = r();
+        String r = getActivationCode();
         if (r != f30453e) {
             String[] split = TextUtils.split(x(m()).replace("||", "::"), "::");
             String str = split[1];
@@ -338,12 +338,12 @@ public class VBHelper {
         return this.f30458c;
     }
 
-    public byte[] u(String str) {
-        String trim = str.trim();
-        int length = trim.length();
+    public byte[] u(String activationCode) {
+        String trimmedActivationCode = activationCode.trim();
+        int length = trimmedActivationCode.length();
         byte[] bArr = new byte[(length / 2)];
         for (int i2 = 0; i2 < length; i2 += 2) {
-            bArr[i2 / 2] = (byte) ((Character.digit(trim.charAt(i2), 16) << 4) + Character.digit(trim.charAt(i2 + 1), 16));
+            bArr[i2 / 2] = (byte) ((Character.digit(trimmedActivationCode.charAt(i2), 16) << 4) + Character.digit(trimmedActivationCode.charAt(i2 + 1), 16));
         }
         return bArr;
     }
@@ -362,7 +362,7 @@ public class VBHelper {
 
     public String x(String str) {
         String str2;
-        String r = r();
+        String r = getActivationCode();
         if (f30455g == r) {
             return f30454f;
         }

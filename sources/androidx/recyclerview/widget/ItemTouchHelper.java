@@ -18,8 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.GestureDetectorCompat;
 import androidx.core.view.ViewCompat;
-import androidx.recyclerview.R;
-import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -689,7 +688,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
 
     private void G() {
         this.q = ViewConfiguration.get(this.r.getContext()).getScaledTouchSlop();
-        this.r.p(this);
+        this.r.setItemDecoration(this);
         this.r.s(this.B);
         this.r.r(this);
         I();

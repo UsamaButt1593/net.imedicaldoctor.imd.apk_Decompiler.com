@@ -42,7 +42,7 @@ public class EPOPillResultActivityFragment extends ViewerHelperFragment {
 
     public void J4() {
         this.Y4.setItemAnimator(new DefaultItemAnimator());
-        this.Y4.p(new CustomItemDecoration(r()));
+        this.Y4.setItemDecoration(new CustomItemDecoration(r()));
         this.Y4.setLayoutManager(new LinearLayoutManager(r(), 1, false));
     }
 

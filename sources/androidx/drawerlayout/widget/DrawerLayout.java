@@ -809,7 +809,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
         }
     }
 
-    public void a(@NonNull DrawerListener drawerListener) {
+    public void setDrawerListener(@NonNull DrawerListener drawerListener) {
         if (drawerListener != null) {
             if (this.p3 == null) {
                 this.p3 = new ArrayList();
@@ -1704,7 +1704,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
             O(drawerListener2);
         }
         if (drawerListener != null) {
-            a(drawerListener);
+            setDrawerListener(drawerListener);
         }
         this.o3 = drawerListener;
     }

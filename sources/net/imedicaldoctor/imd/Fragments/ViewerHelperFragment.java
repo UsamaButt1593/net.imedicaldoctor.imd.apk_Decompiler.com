@@ -1777,7 +1777,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
         DrawerLayout drawerLayout = (DrawerLayout) this.C4.findViewById(R.id.f922drawer_layout);
         this.i4 = drawerLayout;
         if (drawerLayout != null) {
-            drawerLayout.a(new DrawerLayout.DrawerListener() {
+            drawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
                 public void a(View view) {
                     ViewerHelperFragment viewerHelperFragment = ViewerHelperFragment.this;
                     viewerHelperFragment.j4.setAdapter(new HistoryAdapter(viewerHelperFragment.r(), ViewerHelperFragment.this.i4));
@@ -1796,7 +1796,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
             this.j4 = recyclerView;
             if (recyclerView != null) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(r(), 1, false));
-                this.j4.p(new CustomItemDecoration(r()));
+                this.j4.setItemDecoration(new CustomItemDecoration(r()));
             }
         }
     }

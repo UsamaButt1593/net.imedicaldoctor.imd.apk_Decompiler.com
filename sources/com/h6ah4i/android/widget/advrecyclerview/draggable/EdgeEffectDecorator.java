@@ -124,13 +124,13 @@ public class EdgeEffectDecorator extends RecyclerView.ItemDecoration {
     public void s() {
         if (this.f25403d) {
             this.f25400a.A1(this);
-            this.f25400a.p(this);
+            this.f25400a.setItemDecoration(this);
         }
     }
 
     public void t() {
         if (!this.f25403d) {
-            this.f25400a.p(this);
+            this.f25400a.setItemDecoration(this);
             this.f25403d = true;
         }
     }

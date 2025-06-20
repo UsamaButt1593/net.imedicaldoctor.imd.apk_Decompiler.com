@@ -32,8 +32,6 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import net.imedicaldoctor.imd.Data.CompressHelper;
 import net.imedicaldoctor.imd.Fragments.CustomItemDecoration;
-import net.imedicaldoctor.imd.Fragments.Dictionary.CDicEEActivity;
-import net.imedicaldoctor.imd.Fragments.Dictionary.CDicEPActivity;
 import net.imedicaldoctor.imd.Fragments.Lexi.LXItems;
 import net.imedicaldoctor.imd.Fragments.Lexi.LXViewer;
 import net.imedicaldoctor.imd.Fragments.SearchDialogHelperFragment;
@@ -338,7 +336,7 @@ public class CDicSearchActivity extends iMDActivity {
 
         public void g3() {
             this.X4.setItemAnimator(new DefaultItemAnimator());
-            this.X4.p(new CustomItemDecoration(r()));
+            this.X4.setItemDecoration(new CustomItemDecoration(r()));
             this.X4.setLayoutManager(new LinearLayoutManagerWithSmoothScroller(r(), 1, false));
         }
 

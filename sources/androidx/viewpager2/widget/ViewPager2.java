@@ -700,7 +700,7 @@ public final class ViewPager2 extends ViewGroup {
     }
 
     public void a(@NonNull RecyclerView.ItemDecoration itemDecoration) {
-        this.f3.p(itemDecoration);
+        this.f3.setItemDecoration(itemDecoration);
     }
 
     public void b(@NonNull RecyclerView.ItemDecoration itemDecoration, int i2) {

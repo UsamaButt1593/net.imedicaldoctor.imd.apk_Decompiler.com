@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.ViewCompat;
-import androidx.recyclerview.widget.RecyclerView;
 
 @VisibleForTesting
 class FastScroller extends RecyclerView.ItemDecoration implements RecyclerView.OnItemTouchListener {
@@ -184,7 +183,7 @@ class FastScroller extends RecyclerView.ItemDecoration implements RecyclerView.O
     }
 
     private void H() {
-        this.s.p(this);
+        this.s.setItemDecoration(this);
         this.s.s(this);
         this.s.t(this.C);
     }

@@ -178,7 +178,7 @@ class DraggingItemDecorator extends BaseDraggableItemDecorator {
             this.f25395j = this.f25379d.getPaddingLeft();
             view.setVisibility(4);
             F(motionEvent);
-            this.f25379d.p(this);
+            this.f25379d.setItemDecoration(this);
             this.s = true;
         }
     }

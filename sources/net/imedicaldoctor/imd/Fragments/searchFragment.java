@@ -1331,7 +1331,7 @@ public class searchFragment extends SearchHelperFragment {
         this.M4 = linearLayoutManager;
         this.D4.setLayoutManager(linearLayoutManager);
         this.D4.setItemAnimator(new DefaultItemAnimator());
-        this.D4.p(new CustomItemDecoration(r()));
+        this.D4.setItemDecoration(new CustomItemDecoration(r()));
         o2(true);
         f3("Search Titles");
         return inflate;
@@ -1533,7 +1533,7 @@ public class searchFragment extends SearchHelperFragment {
 
     public void y3() {
         if (!this.B4) {
-            this.D4.p(this.L4);
+            this.D4.setItemDecoration(this.L4);
             this.B4 = true;
         }
     }

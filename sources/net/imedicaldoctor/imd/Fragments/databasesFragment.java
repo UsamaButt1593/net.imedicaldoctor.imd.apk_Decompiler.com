@@ -1743,7 +1743,7 @@ public class databasesFragment extends Fragment {
         }
         menu.findItem(R.id.f802action_navigation).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem menuItem) {
-                ((mainActivity) databasesFragment.this.r()).w1();
+                ((mainActivity) databasesFragment.this.r()).onToolbarNavigationClicked();
                 return true;
             }
         });
@@ -1908,7 +1908,7 @@ public class databasesFragment extends Fragment {
                     }
                 });
                 if (!databasesFragment.this.j4) {
-                    databasesFragment.this.g4.p(databasesFragment.this.t4);
+                    databasesFragment.this.g4.setItemDecoration(databasesFragment.this.t4);
                     databasesFragment.this.g4.setLayoutManager(new LinearLayoutManager(databasesFragment.this.r(), 1, false));
                     databasesFragment.this.g4.setItemAnimator(new DefaultItemAnimator());
                     databasesFragment databasesfragment4 = databasesFragment.this;
@@ -1941,7 +1941,7 @@ public class databasesFragment extends Fragment {
                         databasesFragment.this.o4.setVisible(false);
                         if (databasesFragment.this.j4) {
                             databasesFragment.this.g4.setLayoutManager(new LinearLayoutManager(databasesFragment.this.r()));
-                            databasesFragment.this.g4.p(databasesFragment.this.t4);
+                            databasesFragment.this.g4.setItemDecoration(databasesFragment.this.t4);
                             boolean unused = databasesFragment.this.j4 = false;
                             databasesFragment databasesfragment = databasesFragment.this;
                             DatabasesAdapter unused2 = databasesfragment.h4 = new DatabasesAdapter();
