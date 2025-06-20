@@ -44,7 +44,6 @@ import java.util.Date;
 import java.util.Iterator;
 import net.imedicaldoctor.imd.Data.CompressHelper;
 import net.imedicaldoctor.imd.Fragments.SearchHelperFragment;
-import net.imedicaldoctor.imd.Fragments.UWorld.BackupCodesDialog;
 import net.imedicaldoctor.imd.R;
 import net.imedicaldoctor.imd.Utils.MaterialRippleLayout;
 import net.imedicaldoctor.imd.ViewHolders.ContentSearchAdapter;
@@ -763,7 +762,7 @@ public class UWMainActivityFragment extends SearchHelperFragment {
 
     private boolean Q3() {
         try {
-            if (!V1().getSharedPreferences("default_preferences", 0).getBoolean("qbankbackup", true)) {
+            if (!getActivity().getSharedPreferences("default_preferences", 0).getBoolean("qbankbackup", true)) {
                 return false;
             }
             String F3 = F3();
@@ -979,7 +978,7 @@ public class UWMainActivityFragment extends SearchHelperFragment {
         return i2;
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.q4 = layoutInflater.inflate(R.layout.f1246fragment_new_list, viewGroup, false);
         this.g5 = "Let's Go";
         this.J4 = "";

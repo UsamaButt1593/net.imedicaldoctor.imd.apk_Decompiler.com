@@ -72,7 +72,7 @@ public class LXIVInteractResult extends iMDActivity {
         /* JADX WARNING: Removed duplicated region for block: B:16:0x00d8  */
         /* JADX WARNING: Removed duplicated region for block: B:17:0x00ff  */
         /* Code decompiled incorrectly, please refer to instructions dump. */
-        public android.view.View U0(android.view.LayoutInflater r9, android.view.ViewGroup r10, android.os.Bundle r11) {
+        public android.view.View onFragmentBind(android.view.LayoutInflater r9, android.view.ViewGroup r10, android.os.Bundle r11) {
             /*
                 r8 = this;
                 android.view.View r0 = r8.q4

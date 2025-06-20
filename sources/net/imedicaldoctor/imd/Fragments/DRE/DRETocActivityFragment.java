@@ -22,7 +22,7 @@ public class DRETocActivityFragment extends SearchHelperFragment {
     /* JADX WARNING: Removed duplicated region for block: B:57:0x02cf  */
     /* JADX WARNING: Removed duplicated region for block: B:59:0x02e5  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public android.view.View U0(android.view.LayoutInflater r17, android.view.ViewGroup r18, android.os.Bundle r19) {
+    public android.view.View onFragmentBind(android.view.LayoutInflater r17, android.view.ViewGroup r18, android.os.Bundle r19) {
         /*
             r16 = this;
             r6 = r16

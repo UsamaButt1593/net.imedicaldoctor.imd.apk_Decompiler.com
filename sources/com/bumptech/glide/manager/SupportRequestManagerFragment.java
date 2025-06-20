@@ -168,8 +168,8 @@ public class SupportRequestManagerFragment extends Fragment {
         this.i4 = requestManager;
     }
 
-    public void V0() {
-        super.V0();
+    public void onDestroy() {
+        super.onDestroy();
         this.e4.c();
         V2();
     }

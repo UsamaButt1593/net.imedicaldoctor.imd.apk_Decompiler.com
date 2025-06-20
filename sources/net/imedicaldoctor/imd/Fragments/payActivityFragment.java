@@ -70,7 +70,7 @@ public class payActivityFragment extends Fragment {
                     public void run() {
                         VBHelper vBHelper = new VBHelper(payActivityFragment.this.r());
                         iMDWebView L2 = payActivityFragment.this.f4;
-                        L2.g("" + vBHelper.j(vBHelper.j("2204F7542EDADE86DEC73251369885B8A241E7692D1BA9FC430D497DAD9FA92BCB875485C0C7C870F709A03B18FA69D195F6BB98332699C8497AD7FE77E43D8E9BC1E3BC9596D7130F58CC3FE3DCA77B89865653F7F54C54B9368A3DD07B5E478F9FFA72F3264AD6BEFA58190B571E3546E6C387AF72DA96CAB58446AAEF93931BC8195BD517535791DD314AC24F788D8B2CA46D641B0B9897231B8296D392B83DCC9F577080522A7E79BC7568B38A5558CDE2F315A7FBD1E2F06520F77AAF3E916655590623C0D447DB5E4E08992EC822DC267673EEEBAEE6B8ACD0A9BC2E7D3DB2A6A5B8834CF19AFA2E0172238EF9CFCEFADE51BC6687C0F6C8174D886C05EB08F3061A888EF9F89CC72A08CAF6C43C9324422B89F6DA736628BC8253698B096D1A38F0942F22C54CB0A39F3EEA02883A563F05EC778800CBA65EA4687F8AF45E927CB8893A27EE9D7BCDCD55E2E2466E7F833301219F5D24C0C369FE5E3ACD7067251C26AB51D7989DBD78DCE47291E136B032176B6FD77562218B98AF1E291AAFBB373826EBE57340BB07BBF1A8", "127"), "127"));
+                        L2.g("" + vBHelper.decryptHexEncodedStringForKey(vBHelper.decryptHexEncodedStringForKey("2204F7542EDADE86DEC73251369885B8A241E7692D1BA9FC430D497DAD9FA92BCB875485C0C7C870F709A03B18FA69D195F6BB98332699C8497AD7FE77E43D8E9BC1E3BC9596D7130F58CC3FE3DCA77B89865653F7F54C54B9368A3DD07B5E478F9FFA72F3264AD6BEFA58190B571E3546E6C387AF72DA96CAB58446AAEF93931BC8195BD517535791DD314AC24F788D8B2CA46D641B0B9897231B8296D392B83DCC9F577080522A7E79BC7568B38A5558CDE2F315A7FBD1E2F06520F77AAF3E916655590623C0D447DB5E4E08992EC822DC267673EEEBAEE6B8ACD0A9BC2E7D3DB2A6A5B8834CF19AFA2E0172238EF9CFCEFADE51BC6687C0F6C8174D886C05EB08F3061A888EF9F89CC72A08CAF6C43C9324422B89F6DA736628BC8253698B096D1A38F0942F22C54CB0A39F3EEA02883A563F05EC778800CBA65EA4687F8AF45E927CB8893A27EE9D7BCDCD55E2E2466E7F833301219F5D24C0C369FE5E3ACD7067251C26AB51D7989DBD78DCE47291E136B032176B6FD77562218B98AF1E291AAFBB373826EBE57340BB07BBF1A8")));
                         payActivityFragment.this.f4.postDelayed(new Runnable() {
                             public void run() {
                                 boolean unused = payActivityFragment.this.h4 = true;
@@ -91,7 +91,7 @@ public class payActivityFragment extends Fragment {
     }
 
     @Nullable
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.e4;
         if (view != null) {
             return view;
@@ -115,7 +115,7 @@ public class payActivityFragment extends Fragment {
                 String message = consoleMessage.message();
                 if (message.contains("a,,,")) {
                     boolean unused = payActivityFragment.this.h4 = true;
-                    String n2 = new VBHelper(payActivityFragment.this.r()).n(new VBHelper(payActivityFragment.this.r()).n(message.replace("a,,,", ""), "127"), "127");
+                    String n2 = new VBHelper(payActivityFragment.this.r()).encodeActivationCodeToHex(new VBHelper(payActivityFragment.this.r()).encodeActivationCodeToHex(message.replace("a,,,", "")));
                     CompressHelper compressHelper = new CompressHelper(payActivityFragment.this.r());
                     payActivityFragment payactivityfragment = payActivityFragment.this;
                     compressHelper.I0(payactivityfragment, compressHelper.o0("addBuy|||||" + new VBHelper(payActivityFragment.this.r()).m() + "|||||" + n2)).f6(new Consumer<String>() {
@@ -185,10 +185,10 @@ public class payActivityFragment extends Fragment {
             F0.A0("Buying Account");
             String string2 = y().getString("AccountCommand");
             iMDWebView imdwebview = this.f4;
-            imdwebview.postUrl(compressHelper.J() + "/buyaaip.php", ("command=" + vBHelper.n(string2, "127")).getBytes());
+            imdwebview.postUrl(compressHelper.getBaseUrl() + "/buyaaip.php", ("command=" + vBHelper.encodeActivationCodeToHex(string2)).getBytes());
         } else if (string.equals("credit")) {
             F0.A0("Buying " + y().getString("Price") + " Toman Credit");
-            this.f4.loadUrl(compressHelper.J() + "/buyaip.php?user=" + vBHelper.m() + "&price=" + y().getString("Price"));
+            this.f4.loadUrl(compressHelper.getBaseUrl() + "/buyaip.php?user=" + vBHelper.m() + "&price=" + y().getString("Price"));
         }
         this.f4.requestFocus(TsExtractor.L);
         P2();

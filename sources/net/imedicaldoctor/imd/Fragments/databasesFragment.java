@@ -1330,10 +1330,10 @@ public class databasesFragment extends Fragment {
                                                     StringBuilder sb = new StringBuilder();
                                                     sb.append("http://imedicaldoctor.net/buydb.php?user=");
                                                     databasesFragment databasesfragment = databasesFragment.this;
-                                                    sb.append(databasesfragment.k4.n(databasesfragment.y4.y1(), "127"));
+                                                    sb.append(databasesfragment.k4.encodeActivationCodeToHex(databasesfragment.y4.y1()));
                                                     sb.append("&db=");
                                                     AnonymousClass22 r5 = AnonymousClass22.this;
-                                                    sb.append(databasesFragment.this.k4.n(bundle.getString("Name"), "127"));
+                                                    sb.append(databasesFragment.this.k4.encodeActivationCodeToHex(bundle.getString("Name")));
                                                     databasesFragment.this.y4.P(sb.toString());
                                                 }
                                             }).p("Cancel", new DialogInterface.OnClickListener() {
@@ -1832,16 +1832,16 @@ public class databasesFragment extends Fragment {
         }
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, final Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, final Bundle bundle) {
         View view = this.f4;
         if (view != null) {
             return view;
         }
         this.x4 = Typeface.createFromAsset(r().getAssets(), "fonts/HelveticaNeue-Light.otf");
-        this.w4 = V1().getSharedPreferences("default_preferences", 0).getBoolean("ripple", true);
+        this.w4 = getActivity().getSharedPreferences("default_preferences", 0).getBoolean("ripple", true);
         this.y4 = new CompressHelper(r());
         this.z4 = new Bundle();
-        this.j4 = V1().getSharedPreferences("default_preferences", 0).getBoolean("GridView", true);
+        this.j4 = getActivity().getSharedPreferences("default_preferences", 0).getBoolean("GridView", true);
         this.k4 = new VBHelper(r());
         View inflate = layoutInflater.inflate(R.layout.f1221fragment_databases, viewGroup, false);
         this.f4 = inflate;
@@ -1947,7 +1947,7 @@ public class databasesFragment extends Fragment {
                             DatabasesAdapter unused2 = databasesfragment.h4 = new DatabasesAdapter();
                             databasesFragment.this.g4.setAdapter(databasesFragment.this.h4);
                             databasesFragment.this.v4.setImageDrawable(databasesFragment.this.r().getResources().getDrawable(R.drawable.f640gridview_icon));
-                            putBoolean = databasesFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("GridView", false);
+                            putBoolean = databasesFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("GridView", false);
                         } else {
                             databasesFragment.this.g4.setLayoutManager(databasesFragment.this.u4);
                             databasesFragment.this.g4.A1(databasesFragment.this.t4);
@@ -1956,13 +1956,13 @@ public class databasesFragment extends Fragment {
                             CollectionAdapter unused4 = databasesfragment2.q4 = new CollectionAdapter();
                             databasesFragment.this.g4.setAdapter(databasesFragment.this.q4);
                             databasesFragment.this.v4.setImageDrawable(databasesFragment.this.r().getResources().getDrawable(R.drawable.f682listview_icon));
-                            putBoolean = databasesFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("GridView", true);
+                            putBoolean = databasesFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("GridView", true);
                         }
                         putBoolean.commit();
                         databasesFragment.this.Q2();
                     }
                 });
-                if (databasesFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("swipedelete", true)) {
+                if (databasesFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("swipedelete", true)) {
                     databasesFragment.this.z3();
                 }
                 databasesFragment.this.w3();
@@ -1971,8 +1971,8 @@ public class databasesFragment extends Fragment {
         return inflate;
     }
 
-    public void V0() {
-        super.V0();
+    public void onDestroy() {
+        super.onDestroy();
         LocalBroadcastManager.b(r()).f(this.C4);
     }
 

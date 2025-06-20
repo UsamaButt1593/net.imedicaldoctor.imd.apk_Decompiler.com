@@ -31,7 +31,7 @@ public class MHSearchActivity extends iMDActivity {
             P2();
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             View inflate = layoutInflater.inflate(R.layout.f1243fragment_mhsearch_new, viewGroup, false);
             this.q4 = inflate;
             W2(bundle);

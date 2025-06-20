@@ -35,7 +35,7 @@ public class MMInteractResultActivityFragment extends ViewerHelperFragment {
         this.X4.setLayoutManager(new LinearLayoutManager(r(), 1, false));
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.C4;
         if (view != null) {
             return view;

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 public class rootFragment extends Fragment {
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return layoutInflater.inflate(R.layout.f1264fragment_root, viewGroup, false);
     }
 }

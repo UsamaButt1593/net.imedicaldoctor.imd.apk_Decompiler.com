@@ -77,7 +77,7 @@ public class UWTestsListActivityFragment extends SearchHelperFragment {
         this.l4.G();
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.q4 = layoutInflater.inflate(R.layout.f1246fragment_new_list, viewGroup, false);
         W2(bundle);
         S2();

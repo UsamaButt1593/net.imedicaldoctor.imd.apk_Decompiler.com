@@ -1100,7 +1100,7 @@ public class downloadFragment extends Fragment {
         if (arrayList == null || arrayList.size() == 0) {
             return true;
         }
-        return V1().getSharedPreferences("default_preferences", 0).getBoolean("loaddownload", false);
+        return getActivity().getSharedPreferences("default_preferences", 0).getBoolean("loaddownload", false);
     }
 
     /* JADX WARNING: Code restructure failed: missing block: B:120:0x0638, code lost:
@@ -2355,7 +2355,7 @@ public class downloadFragment extends Fragment {
         S4.put(str, runnable);
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.E4 = Typeface.createFromAsset(r().getAssets(), "fonts/HelveticaNeue-Light.otf");
         this.f4 = new Bundle();
         ((iMD) r().getApplicationContext()).c3 = this;
@@ -2439,8 +2439,8 @@ public class downloadFragment extends Fragment {
         P4.put(str, circleProgressView);
     }
 
-    public void V0() {
-        super.V0();
+    public void onDestroy() {
+        super.onDestroy();
         try {
             LocalBroadcastManager.b(z3()).f(this.M4);
         } catch (Exception e2) {
@@ -3406,7 +3406,7 @@ public class downloadFragment extends Fragment {
 
     public void v3() {
         iMDLogger.j("CheckDBsMD5", "Checking DBs MD5");
-        this.I4.T0(this.I4.J() + "/dbs.md5", this.I4.U1() + "/DBs.md5").h6(Schedulers.e()).s4(AndroidSchedulers.e()).f6(new Consumer<String>() {
+        this.I4.T0(this.I4.getBaseUrl() + "/dbs.md5", this.I4.U1() + "/DBs.md5").h6(Schedulers.e()).s4(AndroidSchedulers.e()).f6(new Consumer<String>() {
             /* renamed from: a */
             public void accept(String str) throws Throwable {
             }

@@ -286,7 +286,7 @@ public class UWProgressFragment extends ViewerHelperFragment {
     }
 
     @Nullable
-    public View U0(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
+    public View onFragmentBind(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         View inflate = layoutInflater.inflate(R.layout.f1263fragment_progress, viewGroup, false);
         this.C4 = inflate;
         Toolbar toolbar = (Toolbar) inflate.findViewById(R.id.f1139toolbar);

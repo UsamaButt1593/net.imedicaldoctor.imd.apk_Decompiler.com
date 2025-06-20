@@ -67,7 +67,7 @@ public class STViewerActivityFragment extends ViewerHelperFragment {
         return w3(this.Y4);
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.C4;
         if (view != null) {
             return view;

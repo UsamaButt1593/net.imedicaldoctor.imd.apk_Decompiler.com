@@ -26,7 +26,7 @@ public class NOSViewerActivityFragment extends ViewerHelperFragment {
         return "<div class=\"content\" DIR=\"" + str4 + "\" id=\"f" + str5 + "\" style=\"font-family:" + str2 + "; " + str3 + "\">" + str + "</div>";
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.C4;
         if (view != null) {
             return view;

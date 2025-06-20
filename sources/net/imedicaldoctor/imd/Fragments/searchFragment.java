@@ -1240,7 +1240,7 @@ public class searchFragment extends SearchHelperFragment {
                                 if (searchFragment.this.C4 == null || searchFragment.this.C4.size() == 0) {
                                     searchFragment.this.f3("Nothing Found");
                                 }
-                                if (searchFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("SearchCollapsed", false)) {
+                                if (searchFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("SearchCollapsed", false)) {
                                     searchFragment.this.z3();
                                 }
                             }
@@ -1290,7 +1290,7 @@ public class searchFragment extends SearchHelperFragment {
         r().setTitle("");
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.q4;
         if (view != null) {
             return view;

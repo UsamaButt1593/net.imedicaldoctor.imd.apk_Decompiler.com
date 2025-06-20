@@ -766,7 +766,7 @@ public class contentFragment extends SearchHelperFragment {
                                 if (contentFragment.this.A4 == null || contentFragment.this.A4.size() == 0) {
                                     contentFragment.this.f3("Nothing Found");
                                 }
-                                if (contentFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("ContentCollapsed", false)) {
+                                if (contentFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("ContentCollapsed", false)) {
                                     contentFragment.this.y3();
                                 }
                             }
@@ -816,7 +816,7 @@ public class contentFragment extends SearchHelperFragment {
         r().setTitle("");
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.q4;
         if (view != null) {
             return view;

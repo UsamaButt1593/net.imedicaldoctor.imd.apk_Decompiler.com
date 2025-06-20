@@ -22,7 +22,7 @@ public class MMListActivityFragment extends SearchHelperFragment {
     public SpellSearchAdapter A4;
     public String B4;
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         String str;
         CompressHelper compressHelper;
         Bundle bundle2;

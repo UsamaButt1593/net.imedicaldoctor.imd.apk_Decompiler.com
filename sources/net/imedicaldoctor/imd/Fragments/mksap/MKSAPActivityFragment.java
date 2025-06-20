@@ -27,7 +27,7 @@ public class MKSAPActivityFragment extends ViewerHelperFragment {
     /* JADX WARNING: Removed duplicated region for block: B:36:0x011d A[Catch:{ Exception -> 0x0057 }] */
     /* JADX WARNING: Removed duplicated region for block: B:39:0x017c A[Catch:{ Exception -> 0x0057 }] */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public android.view.View U0(android.view.LayoutInflater r17, android.view.ViewGroup r18, android.os.Bundle r19) {
+    public android.view.View onFragmentBind(android.view.LayoutInflater r17, android.view.ViewGroup r18, android.os.Bundle r19) {
         /*
             r16 = this;
             r1 = r16

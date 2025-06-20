@@ -14,7 +14,7 @@ import net.imedicaldoctor.imd.R;
 import net.imedicaldoctor.imd.Utils.iMDWebView;
 
 public class EPOHTMLViewerFragment extends ViewerHelperFragment {
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View inflate = layoutInflater.inflate(R.layout.f1285fragment_webview, viewGroup, false);
         this.C4 = inflate;
         this.G4 = (iMDWebView) inflate.findViewById(R.id.f1159webView);

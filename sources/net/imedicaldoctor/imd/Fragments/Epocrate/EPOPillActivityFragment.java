@@ -187,7 +187,7 @@ public class EPOPillActivityFragment extends SearchHelperFragment {
         }
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.q4 = layoutInflater.inflate(R.layout.f1261fragment_pill_identifier, viewGroup, false);
         W2(bundle);
         S2();

@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 public class VideoPlayer extends iMDActivity {
 
     public static class VideoPlayerFragment extends Fragment {
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             return layoutInflater.inflate(R.layout.f1284fragment_video_player, viewGroup, false);
         }
     }

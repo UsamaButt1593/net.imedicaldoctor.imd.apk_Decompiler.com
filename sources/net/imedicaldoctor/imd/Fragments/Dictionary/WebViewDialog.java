@@ -45,8 +45,8 @@ public class WebViewDialog extends DialogFragment {
         return builder.create();
     }
 
-    public void p1(View view, Bundle bundle) {
-        super.p1(view, bundle);
+    public void onFragmentCreated(View view, Bundle bundle) {
+        super.onFragmentCreated(view, bundle);
         ((WebView) this.G4.findViewById(R.id.f1159webView)).loadUrl(y().getString("url"));
     }
 }

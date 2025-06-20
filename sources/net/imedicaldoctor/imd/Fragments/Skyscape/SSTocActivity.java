@@ -212,7 +212,7 @@ public class SSTocActivity extends iMDActivity {
             P2();
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             View inflate = layoutInflater.inflate(R.layout.f1246fragment_new_list, viewGroup, false);
             this.q4 = inflate;
             W2(bundle);

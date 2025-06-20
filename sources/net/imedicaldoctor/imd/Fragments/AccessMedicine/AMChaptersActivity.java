@@ -85,7 +85,7 @@ public class AMChaptersActivity extends iMDActivity {
             O2();
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             String str;
             View inflate = layoutInflater.inflate(R.layout.f1246fragment_new_list, viewGroup, false);
             this.q4 = inflate;

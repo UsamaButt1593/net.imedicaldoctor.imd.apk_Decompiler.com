@@ -11,7 +11,7 @@ public class EPOGuidelineViewerActivityFragment extends ViewerHelperFragment {
     /* JADX WARNING: Removed duplicated region for block: B:33:0x00fa A[Catch:{ Exception -> 0x002c }] */
     /* JADX WARNING: Unknown top exception splitter block from list: {B:39:0x014b=Splitter:B:39:0x014b, B:28:0x00ad=Splitter:B:28:0x00ad} */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public android.view.View U0(android.view.LayoutInflater r9, android.view.ViewGroup r10, android.os.Bundle r11) {
+    public android.view.View onFragmentBind(android.view.LayoutInflater r9, android.view.ViewGroup r10, android.os.Bundle r11) {
         /*
             r8 = this;
             java.lang.String r0 = ">"

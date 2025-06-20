@@ -438,7 +438,7 @@ public class ImagePagerFragment extends Fragment {
         this.k4 = Typeface.createFromAsset(r().getAssets(), "fonts/HelveticaNeue-Light.otf");
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.e4 = y().getParcelableArrayList("Images");
         int i2 = 0;
         View inflate = layoutInflater.inflate(R.layout.f1210fr_image_pager, viewGroup, false);

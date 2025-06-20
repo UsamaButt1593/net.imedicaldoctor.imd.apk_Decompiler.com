@@ -23,7 +23,7 @@ public class UWTocActivityFragment extends SearchHelperFragment {
     /* JADX WARNING: Removed duplicated region for block: B:63:0x02e8  */
     /* JADX WARNING: Removed duplicated region for block: B:65:0x02fd  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public android.view.View U0(android.view.LayoutInflater r15, android.view.ViewGroup r16, android.os.Bundle r17) {
+    public android.view.View onFragmentBind(android.view.LayoutInflater r15, android.view.ViewGroup r16, android.os.Bundle r17) {
         /*
             r14 = this;
             r6 = r14

@@ -477,7 +477,7 @@ public class UWTestResultActivityFragment extends ViewerHelperFragment {
         return CompressHelper.C(this.D4);
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         ArrayList<String> arrayList;
         View view = this.C4;
         if (view != null) {

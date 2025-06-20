@@ -182,7 +182,7 @@ public class SSSearchActivity extends iMDActivity {
             O2();
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             CompressHelper compressHelper;
             Bundle bundle2;
             String str;

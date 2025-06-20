@@ -25,7 +25,7 @@ public class MMNeoListActivityFragment extends SearchHelperFragment {
     public String B4;
     public TabLayout C4;
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         String str;
         this.q4 = layoutInflater.inflate(R.layout.f1247fragment_new_list_tab, viewGroup, false);
         W2(bundle);

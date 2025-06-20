@@ -42,7 +42,7 @@ public class LXInteractList extends iMDActivity {
             }
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             ArrayList<String> arrayList;
             View view = this.q4;
             if (view != null) {

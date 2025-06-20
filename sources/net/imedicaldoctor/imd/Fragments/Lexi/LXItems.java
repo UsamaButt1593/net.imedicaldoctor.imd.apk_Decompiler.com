@@ -29,7 +29,7 @@ public class LXItems extends iMDActivity {
         /* JADX WARNING: Removed duplicated region for block: B:35:0x0134  */
         /* JADX WARNING: Removed duplicated region for block: B:37:0x0139  */
         /* Code decompiled incorrectly, please refer to instructions dump. */
-        public android.view.View U0(android.view.LayoutInflater r12, android.view.ViewGroup r13, android.os.Bundle r14) {
+        public android.view.View onFragmentBind(android.view.LayoutInflater r12, android.view.ViewGroup r13, android.os.Bundle r14) {
             /*
                 r11 = this;
                 r0 = 2131558538(0x7f0d008a, float:1.8742395E38)

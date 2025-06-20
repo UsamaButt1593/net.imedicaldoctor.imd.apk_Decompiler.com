@@ -33,7 +33,7 @@ public class UTDASearchActivityFragment extends SearchHelperFragment {
     public String C4;
     public TabLayout D4;
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.q4 = layoutInflater.inflate(R.layout.f1247fragment_new_list_tab, viewGroup, false);
         W2(bundle);
         S2();

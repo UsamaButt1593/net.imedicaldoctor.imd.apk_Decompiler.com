@@ -383,7 +383,7 @@ public class VDDiagnosisActivity extends ViewerHelperActivity {
         public void T0(Menu menu, MenuInflater menuInflater) {
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             View inflate = layoutInflater.inflate(R.layout.f1248fragment_new_list_viewer, viewGroup, false);
             this.Q4 = new CompressHelper(r());
             this.c5 = new Bundle();

@@ -151,7 +151,7 @@ public class NEJMViewerActivity extends ViewerHelperActivity {
             e3(menu);
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             View view = this.C4;
             if (view != null) {
                 return view;
@@ -527,7 +527,7 @@ public class NEJMViewerActivity extends ViewerHelperActivity {
                         }
                         String h1 = CompressHelper.h1(this.D4, string, "resources");
                         if (!new File(h1).exists()) {
-                            String str13 = this.Q4.J() + "/nejm/videos-E/" + string;
+                            String str13 = this.Q4.getBaseUrl() + "/nejm/videos-E/" + string;
                             Log.e(str12, "VideoURL  " + str13 + " Path " + h1);
                             Z2(str13, h1);
                             return true;
@@ -552,7 +552,7 @@ public class NEJMViewerActivity extends ViewerHelperActivity {
                         }
                         String h12 = CompressHelper.h1(this.D4, string2, "resources");
                         if (!new File(h12).exists()) {
-                            Z2(this.Q4.J() + "/nejm/audios-E/" + string2, h12);
+                            Z2(this.Q4.getBaseUrl() + "/nejm/audios-E/" + string2, h12);
                         }
                         byte[] x2 = this.Q4.x(CompressHelper.d2(new File(h12)), string2.toLowerCase(), "127");
                         String g12 = CompressHelper.g1(this.D4, "audio.mp3");

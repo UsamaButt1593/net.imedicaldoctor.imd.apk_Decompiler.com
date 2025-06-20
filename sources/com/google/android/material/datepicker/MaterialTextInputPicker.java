@@ -54,7 +54,7 @@ public final class MaterialTextInputPicker<S> extends PickerFragment<S> {
     }
 
     @NonNull
-    public View U0(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
+    public View onFragmentBind(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         return this.g4.r(layoutInflater.cloneInContext(new ContextThemeWrapper(B(), this.f4)), viewGroup, bundle, this.h4, new OnSelectionChangedListener<S>() {
             public void a() {
                 Iterator<OnSelectionChangedListener<S>> it2 = MaterialTextInputPicker.this.e4.iterator();

@@ -25,7 +25,7 @@ public class AMHTMLViewerFragment extends ViewerHelperFragment {
     /* JADX WARNING: Removed duplicated region for block: B:27:0x00d9  */
     /* JADX WARNING: Removed duplicated region for block: B:31:0x00e9  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public android.view.View U0(android.view.LayoutInflater r6, android.view.ViewGroup r7, android.os.Bundle r8) {
+    public android.view.View onFragmentBind(android.view.LayoutInflater r6, android.view.ViewGroup r7, android.os.Bundle r8) {
         /*
             r5 = this;
             java.lang.String r0 = ""

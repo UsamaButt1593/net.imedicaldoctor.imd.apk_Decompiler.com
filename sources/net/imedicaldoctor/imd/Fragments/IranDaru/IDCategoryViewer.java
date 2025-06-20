@@ -18,14 +18,14 @@ import net.imedicaldoctor.imd.iMDActivity;
 public class IDCategoryViewer extends iMDActivity {
 
     public static class IDCategoryViewerFragment extends SearchHelperFragment {
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             ArrayList<Bundle> arrayList;
             Bundle bundle2;
             StringBuilder sb;
             String str;
             View inflate = layoutInflater.inflate(R.layout.f1231fragment_general_list, viewGroup, false);
             this.q4 = inflate;
-            super.U0(layoutInflater, viewGroup, bundle);
+            super.onFragmentBind(layoutInflater, viewGroup, bundle);
             final CompressHelper compressHelper = new CompressHelper(r());
             String string = y().getString("ID");
             this.h4 = y().getBundle("DB");

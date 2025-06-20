@@ -181,7 +181,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
 
     private boolean k1() {
         VBHelper vBHelper = new VBHelper(this);
-        if (vBHelper.a(vBHelper.getActivationCode()) == null) {
+        if (vBHelper.decodeHexActivationCode(vBHelper.getActivationCode()) == null) {
             finish();
             startActivity(new Intent(this, activationActivity.class));
             return false;
@@ -598,7 +598,7 @@ public class mainActivity extends AppCompatActivity implements ActionBar.TabList
             if (new File(this.compressHelper.U1() + "/version.txt").exists()) {
                 new File(this.compressHelper.U1() + "/version.txt").delete();
             }
-            this.compressHelper.T0(this.compressHelper.J() + "/v.txt", this.compressHelper.U1() + "/version.txt").h6(Schedulers.e()).s4(AndroidSchedulers.e()).f6(new Consumer<String>() {
+            this.compressHelper.T0(this.compressHelper.getBaseUrl() + "/v.txt", this.compressHelper.U1() + "/version.txt").h6(Schedulers.e()).s4(AndroidSchedulers.e()).f6(new Consumer<String>() {
                 /* renamed from: a */
                 public void accept(String str) throws Throwable {
                 }

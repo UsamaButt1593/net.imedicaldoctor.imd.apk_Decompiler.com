@@ -38,7 +38,7 @@ public class MMInteractSelectActivityFragment extends SearchHelperFragment {
     public ArrayList<String> D4;
     public ArrayList<Bundle> E4;
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.q4 = layoutInflater.inflate(R.layout.f1227fragment_epointeract, viewGroup, false);
         this.B4 = new ArrayList<>();
         this.D4 = new ArrayList<>();

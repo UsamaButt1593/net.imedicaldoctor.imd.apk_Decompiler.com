@@ -22,7 +22,7 @@ public class GeneralDialogFragment extends DialogFragment {
     }
 
     @Nullable
-    public View U0(LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         this.F4 = layoutInflater.inflate(R.layout.f1219fragment_container_dialog, (ViewGroup) null);
         try {
             Q2().getWindow().requestFeature(1);

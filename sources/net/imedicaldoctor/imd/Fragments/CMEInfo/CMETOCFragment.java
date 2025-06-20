@@ -605,7 +605,7 @@ public class CMETOCFragment extends SearchHelperFragment {
         });
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         CompressHelper compressHelper;
         Bundle bundle2;
         StringBuilder sb;
@@ -841,13 +841,13 @@ public class CMETOCFragment extends SearchHelperFragment {
             if (bundle2.containsKey("dbname")) {
                 replace = bundle2.getString("dbname").replace(".db", "");
             }
-            String T1 = this.k4.T1("http://" + (V1().getSharedPreferences("default_preferences", 0).getString("DownloadServer", "dl").equals("idl") ? "ivideos" : "videos") + ".imedicaldoctor.net/cmeinfo/" + replace + "/" + bundle2.getString("name"));
+            String T1 = this.k4.T1("http://" + (getActivity().getSharedPreferences("default_preferences", 0).getString("DownloadServer", "dl").equals("idl") ? "ivideos" : "videos") + ".imedicaldoctor.net/cmeinfo/" + replace + "/" + bundle2.getString("name"));
             String h1 = CompressHelper.h1(this.h4, bundle2.getString("name"), "temp");
             if (bundle2.containsKey("dbname")) {
                 h1 = CompressHelper.h1(this.h4, bundle2.getString("dbname") + "-" + bundle2.getString("name"), "temp");
             }
             if (!this.h4.getString("Type").equals("cme")) {
-                T1 = this.k4.T1(this.k4.J() + "/dbs/usmle/" + this.h4.getString("Name").replace(".db", "") + "/videos/" + bundle2.getString("name") + ".mp4");
+                T1 = this.k4.T1(this.k4.getBaseUrl() + "/dbs/usmle/" + this.h4.getString("Name").replace(".db", "") + "/videos/" + bundle2.getString("name") + ".mp4");
                 h1 = CompressHelper.h1(this.h4, bundle2.getString("name"), "videos");
             }
             String str = T1;

@@ -387,7 +387,7 @@ public class registerActivity extends iMDActivity {
             super.Q0(bundle);
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             View view = this.h4;
             if (view != null) {
                 return view;
@@ -526,8 +526,8 @@ public class registerActivity extends iMDActivity {
             return inflate;
         }
 
-        public void V0() {
-            super.V0();
+        public void onDestroy() {
+            super.onDestroy();
         }
 
         public void a3() {
@@ -553,8 +553,8 @@ public class registerActivity extends iMDActivity {
             button.setText(str);
         }
 
-        public void p1(View view, Bundle bundle) {
-            super.p1(view, bundle);
+        public void onFragmentCreated(View view, Bundle bundle) {
+            super.onFragmentCreated(view, bundle);
         }
     }
 

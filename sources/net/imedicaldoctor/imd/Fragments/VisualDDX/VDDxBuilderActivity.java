@@ -122,7 +122,7 @@ public class VDDxBuilderActivity extends ViewerHelperActivity {
             X4();
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             View inflate = layoutInflater.inflate(R.layout.f1280fragment_vddx_builder, viewGroup, false);
             if (bundle != null && bundle.containsKey("Restoring")) {
                 this.e4 = true;

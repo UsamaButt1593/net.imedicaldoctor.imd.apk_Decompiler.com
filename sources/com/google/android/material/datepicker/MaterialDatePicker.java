@@ -574,7 +574,7 @@ public final class MaterialDatePicker<S> extends DialogFragment {
     }
 
     @NonNull
-    public final View U0(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
+    public final View onFragmentBind(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         View findViewById;
         LinearLayout.LayoutParams layoutParams;
         View inflate = layoutInflater.inflate(this.R4 ? R.layout.J0 : R.layout.I0, viewGroup);

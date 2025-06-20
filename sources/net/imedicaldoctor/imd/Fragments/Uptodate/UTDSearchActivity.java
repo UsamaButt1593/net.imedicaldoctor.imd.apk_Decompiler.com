@@ -61,7 +61,7 @@ public class UTDSearchActivity extends iMDActivity {
             R2();
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             ArrayList<Bundle> W;
             View inflate = layoutInflater.inflate(R.layout.f1277fragment_utdsearch, viewGroup, false);
             this.q4 = inflate;
@@ -249,7 +249,7 @@ public class UTDSearchActivity extends iMDActivity {
                     }
                     return this.k4.W(this.h4, "select Text as title, URL as _id from search where search match '" + replace + "'  ORDER BY rank(matchinfo(search)) DESC limit 20", "fsearch.db");
                 }
-                String f2 = new VBHelper(r()).f(W.get(0).getByteArray("hits"));
+                String f2 = new VBHelper(r()).encodeActivationCodeToHexInternal(W.get(0).getByteArray("hits"));
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
                 int i3 = 4;

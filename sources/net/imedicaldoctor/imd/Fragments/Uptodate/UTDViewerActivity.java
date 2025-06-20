@@ -406,7 +406,7 @@ public class UTDViewerActivity extends ViewerHelperActivity {
             throw new UnsupportedOperationException("Method not decompiled: net.imedicaldoctor.imd.Fragments.Uptodate.UTDViewerActivity.UTDViewerFragment.T4(java.lang.String):void");
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             View view = this.C4;
             if (view != null) {
                 return view;
@@ -439,7 +439,7 @@ public class UTDViewerActivity extends ViewerHelperActivity {
                         }
                         if (UTDViewerFragment.this.D4.getString("Name").equals("uptodateonline")) {
                             try {
-                                str = UTDViewerFragment.this.Q4.p1(UTDViewerFragment.this.Q4.J() + "/utdonline/topic/" + UTDViewerFragment.this.f5 + ".txt", "topic-" + UTDViewerFragment.this.f5 + UTDViewerFragment.this.D4.getString("Version"));
+                                str = UTDViewerFragment.this.Q4.p1(UTDViewerFragment.this.Q4.getBaseUrl() + "/utdonline/topic/" + UTDViewerFragment.this.f5 + ".txt", "topic-" + UTDViewerFragment.this.f5 + UTDViewerFragment.this.D4.getString("Version"));
                             } catch (Exception unused) {
                                 str = null;
                             }

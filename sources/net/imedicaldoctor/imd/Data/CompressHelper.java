@@ -2449,7 +2449,7 @@ public class CompressHelper {
         BufferedSink d2;
         String str2 = M1() + "/exp.txt";
         try {
-            String n2 = new VBHelper(this.f29548d).n(str, "127");
+            String n2 = new VBHelper(this.f29548d).encodeActivationCodeToHex(str);
             d2 = Okio.d(Okio.n(new File(str2)));
             d2.W0(n2);
             d2.close();
@@ -2629,7 +2629,7 @@ public class CompressHelper {
         return observable.h6(Schedulers.e()).s4(AndroidSchedulers.e());
     }
 
-    public String J() {
+    public String getBaseUrl() {
         String str = this.f29548d.getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran").equals("Iran") ? "si.imedicaldoctor.net" : "sg.imedicaldoctor.net";
         return "http://" + str;
     }
@@ -3898,7 +3898,7 @@ public class CompressHelper {
         Log.e("Speed", "RefereshDatabaes Started");
         ArrayList<Bundle> arrayList = new ArrayList<>();
         VBHelper vBHelper = this.f29550f;
-        if (vBHelper.a(vBHelper.getActivationCode()) == null) {
+        if (vBHelper.decodeHexActivationCode(vBHelper.getActivationCode()) == null) {
             ((iMD) this.f29548d.getApplicationContext()).s = null;
             return;
         }
@@ -3978,7 +3978,7 @@ public class CompressHelper {
                 }
                 try {
                     iMDLogger.f("DownloadDBs", "Downloading Zip File");
-                    CompressHelper.this.S0(CompressHelper.this.J() + "/dbs.z", str);
+                    CompressHelper.this.S0(CompressHelper.this.getBaseUrl() + "/dbs.z", str);
                     iMDLogger.f("DownloadDBs", "Downloading Zip File Completed");
                     Decompress decompress = new Decompress(str, CompressHelper.this.U1() + "/", CompressHelper.this.f29548d);
                     iMDLogger.f("CompressHelper", "Extract of dbs.z started");
@@ -4034,7 +4034,7 @@ public class CompressHelper {
             e2 = Okio.e(Okio.t(new File(M1() + "/exp.txt")));
             String a2 = e2.a2();
             e2.close();
-            return new VBHelper(this.f29548d).j(a2, "127");
+            return new VBHelper(this.f29548d).decryptHexEncodedStringForKey(a2);
         } catch (Exception unused) {
             return "";
         } catch (Throwable th) {
@@ -4117,7 +4117,7 @@ public class CompressHelper {
         BufferedSource e2;
         String str3 = null;
         try {
-            execute = this.f29551g.a(new Request.Builder().q(J() + "/imd.php").l(new FormBody.Builder().a(HTML.Tag.Y, this.f29550f.n(str, "127")).c()).b()).execute();
+            execute = this.f29551g.a(new Request.Builder().q(getBaseUrl() + "/imd.php").l(new FormBody.Builder().a(HTML.Tag.Y, this.f29550f.encodeActivationCodeToHex(str)).c()).b()).execute();
             if (!execute.r()) {
                 e2 = Okio.e(Okio.u(execute.b().b()));
                 iMDLogger.f("SendCommand", e2.a2());
@@ -4174,7 +4174,7 @@ public class CompressHelper {
                     observableEmitter.onError(new Throwable("Error Occured"));
                     return;
                 }
-                String j2 = CompressHelper.this.f29550f.j(n0, "127");
+                String j2 = CompressHelper.this.f29550f.decryptHexEncodedStringForKey(n0);
                 if (j2 == null) {
                     CompressHelper.this.W0();
                     observableEmitter.onComplete();
@@ -4344,7 +4344,7 @@ public class CompressHelper {
                 } catch (Exception e2) {
                     FirebaseCrashlytics.d().g(e2);
                 }
-                String j2 = CompressHelper.this.f29550f.j(CompressHelper.this.q0(str), "127");
+                String j2 = CompressHelper.this.f29550f.decryptHexEncodedStringForKey(CompressHelper.this.q0(str));
                 if (j2 == null) {
                     CompressHelper.this.W0();
                     observableEmitter.onComplete();

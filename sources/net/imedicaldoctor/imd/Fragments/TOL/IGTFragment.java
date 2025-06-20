@@ -347,7 +347,7 @@ public class IGTFragment extends Fragment {
     }
 
     @Nullable
-    public View U0(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
+    public View onFragmentBind(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         View inflate = layoutInflater.inflate(R.layout.f1292igt_fragment, viewGroup, false);
         r().getWindow().setFlags(1024, 1024);
         this.f4 = (TextView) inflate.findViewById(R.id.f1013money);

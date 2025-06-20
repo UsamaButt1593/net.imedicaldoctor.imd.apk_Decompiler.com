@@ -116,7 +116,7 @@ public class VDDxResults extends iMDActivity {
             return CompressHelper.h1(bundle, splitByWholeSeparator[0] + ".jpg", "Large-Encrypted");
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             String str;
             View view = this.C4;
             if (view != null) {

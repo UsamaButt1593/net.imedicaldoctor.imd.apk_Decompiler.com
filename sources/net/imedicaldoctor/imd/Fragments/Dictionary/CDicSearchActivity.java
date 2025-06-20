@@ -232,7 +232,7 @@ public class CDicSearchActivity extends iMDActivity {
             B3(searchView);
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             this.K4 = new CompressHelper(r());
             View inflate = layoutInflater.inflate(y().containsKey("Dialog") ? R.layout.f1217fragment_cdic_dialog : R.layout.f1246fragment_new_list, viewGroup, false);
             this.R4 = inflate;

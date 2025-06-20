@@ -41,7 +41,7 @@ public class EPOInteractViewerActivityFragment extends ViewerHelperFragment {
         return J4(str, "general");
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.C4;
         if (view != null) {
             return view;

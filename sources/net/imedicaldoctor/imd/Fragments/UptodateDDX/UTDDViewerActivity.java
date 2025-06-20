@@ -47,7 +47,7 @@ public class UTDDViewerActivity extends ViewerHelperActivity {
             q4(menu);
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             View inflate = layoutInflater.inflate(R.layout.f1272fragment_utdd_viewer, viewGroup, false);
             if (bundle != null && bundle.containsKey("Restoring")) {
                 this.e4 = true;
@@ -397,7 +397,7 @@ public class UTDDViewerActivity extends ViewerHelperActivity {
         }
 
         public void u4() {
-            if (V1().getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false)) {
+            if (getActivity().getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false)) {
                 float dimension = b0().getDimension(R.dimen.f522toolbar_padding);
                 Toolbar toolbar = this.L4;
                 if (toolbar != null) {

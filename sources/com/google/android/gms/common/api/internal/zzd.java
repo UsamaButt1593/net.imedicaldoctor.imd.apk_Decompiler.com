@@ -62,8 +62,8 @@ public final class zzd extends Fragment implements LifecycleFragment {
         }
     }
 
-    public final void V0() {
-        super.V0();
+    public final void onDestroy() {
+        super.onDestroy();
         this.f4 = 5;
         for (LifecycleCallback h2 : this.e4.values()) {
             h2.h();

@@ -235,7 +235,7 @@ public class AMViewerActivity extends ViewerHelperActivity {
             e3(menu);
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             View view = this.C4;
             if (view != null) {
                 return view;
@@ -619,7 +619,7 @@ public class AMViewerActivity extends ViewerHelperActivity {
         }
 
         public void z3() {
-            if (V1().getSharedPreferences("default_preferences", 0).getBoolean("lastred", false)) {
+            if (getActivity().getSharedPreferences("default_preferences", 0).getBoolean("lastred", false)) {
                 CompressHelper compressHelper = this.Q4;
                 Bundle s1 = compressHelper.s1(compressHelper.Y(I3(), "select save from highlight where dbName='" + this.D4.getString("Name").replace("'", "''") + "' AND dbAddress='" + this.Q4.a1(this.E4) + "' AND save like '%$highlightRed$%'"));
                 if (s1 != null) {

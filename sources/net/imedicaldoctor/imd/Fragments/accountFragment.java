@@ -322,7 +322,7 @@ public class accountFragment extends Fragment {
                                             StringBuilder sb = new StringBuilder();
                                             sb.append("http://imedicaldoctor.net/buycredit.php?user=");
                                             accountFragment accountfragment = accountFragment.this;
-                                            sb.append(accountfragment.q4.n(accountfragment.u4, "127"));
+                                            sb.append(accountfragment.q4.encodeActivationCodeToHex(accountfragment.u4));
                                             compressHelper.P(sb.toString());
                                         }
                                     };
@@ -383,7 +383,7 @@ public class accountFragment extends Fragment {
                                             StringBuilder sb = new StringBuilder();
                                             sb.append("http://imedicaldoctor.net/extendsubscription.php?user=");
                                             accountFragment accountfragment = accountFragment.this;
-                                            sb.append(accountfragment.q4.n(accountfragment.u4, "127"));
+                                            sb.append(accountfragment.q4.encodeActivationCodeToHex(accountfragment.u4));
                                             compressHelper.P(sb.toString());
                                         }
                                     };
@@ -413,7 +413,7 @@ public class accountFragment extends Fragment {
                                         StringBuilder sb = new StringBuilder();
                                         sb.append("http://imedicaldoctor.net/extendsubscription.php?user=");
                                         accountFragment accountfragment = accountFragment.this;
-                                        sb.append(accountfragment.q4.n(accountfragment.u4, "127"));
+                                        sb.append(accountfragment.q4.encodeActivationCodeToHex(accountfragment.u4));
                                         compressHelper.P(sb.toString());
                                     }
                                 };
@@ -444,7 +444,7 @@ public class accountFragment extends Fragment {
                                         StringBuilder sb = new StringBuilder();
                                         sb.append("http://imedicaldoctor.net/extendsubscription.php?user=");
                                         accountFragment accountfragment = accountFragment.this;
-                                        sb.append(accountfragment.q4.n(accountfragment.u4, "127"));
+                                        sb.append(accountfragment.q4.encodeActivationCodeToHex(accountfragment.u4));
                                         compressHelper.P(sb.toString());
                                     }
                                 };
@@ -562,7 +562,7 @@ public class accountFragment extends Fragment {
                                                 /* renamed from: a */
                                                 public void accept(String str) throws Throwable {
                                                     if (str.contains("1|||||")) {
-                                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().remove("DS").commit();
+                                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().remove("DS").commit();
                                                         accountFragment.this.p4.t2((String) null);
                                                         accountFragment.this.p4.w2("Logout Successful", new Runnable() {
                                                             public void run() {
@@ -662,7 +662,7 @@ public class accountFragment extends Fragment {
                                     for (int i2 = 0; i2 < 6; i2++) {
                                         arrayList.add(accountFragment.this.m3(strArr[i2]));
                                     }
-                                    String string = accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("Tab", "");
+                                    String string = accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("Tab", "");
                                     if (string.length() == 0) {
                                         string = strArr[1];
                                     }
@@ -682,7 +682,7 @@ public class accountFragment extends Fragment {
                             accountFragment.this.y4 = i7;
                             SettingDetailCellViewHolder settingDetailCellViewHolder = (SettingDetailCellViewHolder) viewHolder;
                             settingDetailCellViewHolder.I.setText("Main Server");
-                            settingDetailCellViewHolder.J.setText(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran"));
+                            settingDetailCellViewHolder.J.setText(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran"));
                             settingDetailCellViewHolder.K.setVisibility(8);
                             materialRippleLayout = settingDetailCellViewHolder.L;
                             onClickListener = new View.OnClickListener() {
@@ -692,7 +692,7 @@ public class accountFragment extends Fragment {
                                     for (int i2 = 0; i2 < 2; i2++) {
                                         arrayList.add(accountFragment.this.m3(strArr[i2]));
                                     }
-                                    String string = accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran");
+                                    String string = accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran");
                                     settingsList settingslist = new settingsList();
                                     Bundle bundle = new Bundle();
                                     bundle.putString("type", "MainDL");
@@ -709,7 +709,7 @@ public class accountFragment extends Fragment {
                             accountFragment.this.z4 = i7;
                             SettingDetailCellViewHolder settingDetailCellViewHolder2 = (SettingDetailCellViewHolder) viewHolder;
                             settingDetailCellViewHolder2.I.setText("Download Server");
-                            settingDetailCellViewHolder2.J.setText(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("DownloadServer", "dl").equals("dl") ? "Germany" : "Iran");
+                            settingDetailCellViewHolder2.J.setText(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("DownloadServer", "dl").equals("dl") ? "Germany" : "Iran");
                             settingDetailCellViewHolder2.K.setVisibility(8);
                             materialRippleLayout = settingDetailCellViewHolder2.L;
                             onClickListener = new View.OnClickListener() {
@@ -720,7 +720,7 @@ public class accountFragment extends Fragment {
                                     for (int i2 = 0; i2 < 2; i2++) {
                                         arrayList.add(accountFragment.this.m3(strArr[i2]));
                                     }
-                                    if (!accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("DownloadServer", "dl").equals("dl")) {
+                                    if (!accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("DownloadServer", "dl").equals("dl")) {
                                         str = "Iran";
                                     }
                                     settingsList settingslist = new settingsList();
@@ -905,85 +905,85 @@ public class accountFragment extends Fragment {
                             if (str3.equals(accountFragment.K4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder.I.setText("Fullscreen Mode");
-                                settingCellSwitchViewHolder.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("Fullscreen", true));
+                                settingCellSwitchViewHolder.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("Fullscreen", true));
                                 j0 = settingCellSwitchViewHolder.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("Fullscreen", settingCellSwitchViewHolder.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("Fullscreen", settingCellSwitchViewHolder.J.isChecked()).commit();
                                         CompressHelper.x2(accountFragment.this.r(), "You must restart your app for this change to take effect", 0);
                                     }
                                 };
                             } else if (str3.equals(accountFragment.L4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder2 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder2.I.setText("Hide List On Select");
-                                settingCellSwitchViewHolder2.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("HideList", true));
+                                settingCellSwitchViewHolder2.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("HideList", true));
                                 j0 = settingCellSwitchViewHolder2.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("HideList", settingCellSwitchViewHolder2.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("HideList", settingCellSwitchViewHolder2.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.M4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder3 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder3.I.setText("Hide Status Bar");
-                                settingCellSwitchViewHolder3.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false));
+                                settingCellSwitchViewHolder3.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false));
                                 j0 = settingCellSwitchViewHolder3.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("HideStatusBar", settingCellSwitchViewHolder3.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("HideStatusBar", settingCellSwitchViewHolder3.J.isChecked()).commit();
                                         CompressHelper.x2(accountFragment.this.r(), "You must restart your app for this change to take effect", 0);
                                     }
                                 };
                             } else if (str3.equals(accountFragment.N4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder4 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder4.I.setText("Dynamic Ripple Colors");
-                                settingCellSwitchViewHolder4.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("ripple", true));
+                                settingCellSwitchViewHolder4.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("ripple", true));
                                 j0 = settingCellSwitchViewHolder4.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("ripple", settingCellSwitchViewHolder4.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("ripple", settingCellSwitchViewHolder4.J.isChecked()).commit();
                                         CompressHelper.x2(accountFragment.this.r(), "You must restart your app for this change to take effect", 0);
                                     }
                                 };
                             } else if (str3.equals(accountFragment.O4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder5 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder5.I.setText("Collapse Search Results");
-                                settingCellSwitchViewHolder5.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("SearchCollapsed", false));
+                                settingCellSwitchViewHolder5.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("SearchCollapsed", false));
                                 j0 = settingCellSwitchViewHolder5.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("SearchCollapsed", settingCellSwitchViewHolder5.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("SearchCollapsed", settingCellSwitchViewHolder5.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.P4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder6 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder6.I.setText("Collapse Content Results");
-                                settingCellSwitchViewHolder6.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("ContentCollapsed", false));
+                                settingCellSwitchViewHolder6.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("ContentCollapsed", false));
                                 j0 = settingCellSwitchViewHolder6.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("ContentCollapsed", settingCellSwitchViewHolder6.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("ContentCollapsed", settingCellSwitchViewHolder6.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.Q4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder7 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder7.I.setText("Lock in Fullscreen");
-                                settingCellSwitchViewHolder7.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("lockfull", true));
+                                settingCellSwitchViewHolder7.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("lockfull", true));
                                 j0 = settingCellSwitchViewHolder7.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("lockfull", settingCellSwitchViewHolder7.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("lockfull", settingCellSwitchViewHolder7.J.isChecked()).commit();
                                         CompressHelper.x2(accountFragment.this.r(), "You must restart your app for this change to take effect", 0);
                                     }
                                 };
                             } else if (str3.equals(accountFragment.R4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder8 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder8.I.setText("Use less space for install");
-                                settingCellSwitchViewHolder8.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("lessspace", false));
+                                settingCellSwitchViewHolder8.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("lessspace", false));
                                 j0 = settingCellSwitchViewHolder8.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("lessspace", settingCellSwitchViewHolder8.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("lessspace", settingCellSwitchViewHolder8.J.isChecked()).commit();
                                         if (settingCellSwitchViewHolder8.J.isChecked()) {
                                             CompressHelper.x2(accountFragment.this.r(), "This may cause problems on install process", 0);
                                         }
@@ -992,21 +992,21 @@ public class accountFragment extends Fragment {
                             } else if (str3.equals(accountFragment.S4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder9 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder9.I.setText("Enable Swipe to Delete");
-                                settingCellSwitchViewHolder9.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("swipedelete", true));
+                                settingCellSwitchViewHolder9.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("swipedelete", true));
                                 j0 = settingCellSwitchViewHolder9.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("swipedelete", settingCellSwitchViewHolder9.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("swipedelete", settingCellSwitchViewHolder9.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.T4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder10 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder10.I.setText("Use Delta Update");
-                                settingCellSwitchViewHolder10.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("delta", false));
+                                settingCellSwitchViewHolder10.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("delta", false));
                                 j0 = settingCellSwitchViewHolder10.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("delta", settingCellSwitchViewHolder10.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("delta", settingCellSwitchViewHolder10.J.isChecked()).commit();
                                         if (settingCellSwitchViewHolder10.J.isChecked()) {
                                             CompressHelper.x2(accountFragment.this.r(), "On some devices delta update can corrupt the main database and you must download the whole database again", 1);
                                         } else {
@@ -1017,60 +1017,60 @@ public class accountFragment extends Fragment {
                             } else if (str3.equals(accountFragment.U4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder11 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder11.I.setText("Use Collapsing Toolbar");
-                                settingCellSwitchViewHolder11.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("NestedScroll", true));
+                                settingCellSwitchViewHolder11.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("NestedScroll", true));
                                 j0 = settingCellSwitchViewHolder11.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("NestedScroll", settingCellSwitchViewHolder11.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("NestedScroll", settingCellSwitchViewHolder11.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.g5)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder12 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder12.I.setText("Open Tables as Popup");
-                                settingCellSwitchViewHolder12.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("showpopup", true));
+                                settingCellSwitchViewHolder12.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("showpopup", true));
                                 j0 = settingCellSwitchViewHolder12.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("showpopup", settingCellSwitchViewHolder12.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("showpopup", settingCellSwitchViewHolder12.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.V4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder13 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder13.I.setText("New Document Loading");
-                                settingCellSwitchViewHolder13.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("newdocument", false));
+                                settingCellSwitchViewHolder13.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("newdocument", false));
                                 j0 = settingCellSwitchViewHolder13.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("newdocument", settingCellSwitchViewHolder13.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("newdocument", settingCellSwitchViewHolder13.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.W4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder14 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder14.I.setText("Use Last Red Highlight as Starting Point");
-                                settingCellSwitchViewHolder14.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("lastred", false));
+                                settingCellSwitchViewHolder14.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("lastred", false));
                                 j0 = settingCellSwitchViewHolder14.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("lastred", settingCellSwitchViewHolder14.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("lastred", settingCellSwitchViewHolder14.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.X4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder15 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder15.I.setText("Use Default System Font");
-                                settingCellSwitchViewHolder15.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("defaultfont", false));
+                                settingCellSwitchViewHolder15.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("defaultfont", false));
                                 j0 = settingCellSwitchViewHolder15.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("defaultfont", settingCellSwitchViewHolder15.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("defaultfont", settingCellSwitchViewHolder15.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.Y4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder16 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder16.I.setText("Load Download List Automatically");
-                                settingCellSwitchViewHolder16.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("loaddownload", false));
+                                settingCellSwitchViewHolder16.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("loaddownload", false));
                                 settingCellSwitchViewHolder16.J.setOnClickListener(new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("loaddownload", settingCellSwitchViewHolder16.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("loaddownload", settingCellSwitchViewHolder16.J.isChecked()).commit();
                                     }
                                 });
                                 i0 = settingCellSwitchViewHolder16.I;
@@ -1078,8 +1078,8 @@ public class accountFragment extends Fragment {
                                     public boolean onLongClick(View view) {
                                         FragmentActivity r;
                                         String str;
-                                        boolean z = !accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("showfreeversion", false);
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("showfreeversion", z).commit();
+                                        boolean z = !accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("showfreeversion", false);
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("showfreeversion", z).commit();
                                         if (!z) {
                                             r = accountFragment.this.r();
                                             str = "Showing Last Version : False";
@@ -1095,51 +1095,51 @@ public class accountFragment extends Fragment {
                             } else if (str3.equals(accountFragment.Z4)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder17 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder17.I.setText("Justify Texts");
-                                settingCellSwitchViewHolder17.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("justify", true));
+                                settingCellSwitchViewHolder17.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("justify", true));
                                 j0 = settingCellSwitchViewHolder17.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("justify", settingCellSwitchViewHolder17.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("justify", settingCellSwitchViewHolder17.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.a5)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder18 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder18.I.setText("Open Last Topic after crash");
-                                settingCellSwitchViewHolder18.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("openaftercrash", true));
+                                settingCellSwitchViewHolder18.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("openaftercrash", true));
                                 j0 = settingCellSwitchViewHolder18.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("openaftercrash", settingCellSwitchViewHolder18.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("openaftercrash", settingCellSwitchViewHolder18.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.b5)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder19 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder19.I.setText("Save Logs");
-                                settingCellSwitchViewHolder19.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("savelogs", false));
+                                settingCellSwitchViewHolder19.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("savelogs", false));
                                 j0 = settingCellSwitchViewHolder19.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("savelogs", settingCellSwitchViewHolder19.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("savelogs", settingCellSwitchViewHolder19.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.c5)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder20 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder20.I.setText("Enable Wake Lock");
-                                settingCellSwitchViewHolder20.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("wakelock", true));
+                                settingCellSwitchViewHolder20.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("wakelock", true));
                                 j0 = settingCellSwitchViewHolder20.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("wakelock", settingCellSwitchViewHolder20.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("wakelock", settingCellSwitchViewHolder20.J.isChecked()).commit();
                                     }
                                 };
                             } else if (str3.equals(accountFragment.d5)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder21 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder21.I.setText("Dark Theme (works sometimes)");
-                                settingCellSwitchViewHolder21.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("dark", false));
+                                settingCellSwitchViewHolder21.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("dark", false));
                                 j0 = settingCellSwitchViewHolder21.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("dark", settingCellSwitchViewHolder21.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("dark", settingCellSwitchViewHolder21.J.isChecked()).commit();
                                         accountFragment.this.r().getSharedPreferences("default_preferences", 0).getBoolean("dark", false);
                                         CompressHelper.x2(accountFragment.this.r(), "closing app for changes to take effect", 2);
                                         accountFragment.this.e4.postDelayed(new Runnable() {
@@ -1152,19 +1152,19 @@ public class accountFragment extends Fragment {
                             } else if (str3.equals(accountFragment.n5)) {
                                 final SettingDetailCellViewHolder settingDetailCellViewHolder3 = (SettingDetailCellViewHolder) viewHolder;
                                 settingDetailCellViewHolder3.I.setText("Document Color");
-                                settingDetailCellViewHolder3.J.setText(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("background_color", "#ffffff"));
+                                settingDetailCellViewHolder3.J.setText(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("background_color", "#ffffff"));
                                 settingDetailCellViewHolder3.K.setVisibility(0);
                                 settingDetailCellViewHolder3.K.setOnClickListener(new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().remove("background_color").commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().remove("background_color").commit();
                                         settingDetailCellViewHolder3.J.setText("#ffffff");
                                     }
                                 });
                                 settingDetailCellViewHolder3.L.setOnClickListener(new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        new AmbilWarnaDialog(accountFragment.this.r(), Color.parseColor(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("background_color", "#ffffff")), new AmbilWarnaDialog.OnAmbilWarnaListener() {
+                                        new AmbilWarnaDialog(accountFragment.this.r(), Color.parseColor(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("background_color", "#ffffff")), new AmbilWarnaDialog.OnAmbilWarnaListener() {
                                             public void a(AmbilWarnaDialog ambilWarnaDialog, int i2) {
-                                                accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putString("background_color", String.format("#%06X", new Object[]{Integer.valueOf(16777215 & i2)})).commit();
+                                                accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putString("background_color", String.format("#%06X", new Object[]{Integer.valueOf(16777215 & i2)})).commit();
                                                 accountFragment.this.f4.getAdapter().H(i7);
                                             }
 
@@ -1178,11 +1178,11 @@ public class accountFragment extends Fragment {
                                 accountFragment.this.A4 = i7;
                                 final SettingDetailCellViewHolder settingDetailCellViewHolder4 = (SettingDetailCellViewHolder) viewHolder;
                                 settingDetailCellViewHolder4.I.setText("Line Height");
-                                settingDetailCellViewHolder4.J.setText(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("line_height", "Default"));
+                                settingDetailCellViewHolder4.J.setText(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("line_height", "Default"));
                                 settingDetailCellViewHolder4.K.setVisibility(0);
                                 settingDetailCellViewHolder4.K.setOnClickListener(new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().remove("line_height").commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().remove("line_height").commit();
                                         settingDetailCellViewHolder4.J.setText("Default");
                                     }
                                 });
@@ -1194,7 +1194,7 @@ public class accountFragment extends Fragment {
                                         for (int i2 = 0; i2 < 8; i2++) {
                                             arrayList.add(accountFragment.this.m3(strArr[i2]));
                                         }
-                                        String string = accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("line_height", "Default");
+                                        String string = accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("line_height", "Default");
                                         settingsList settingslist = new settingsList();
                                         Bundle bundle = new Bundle();
                                         bundle.putString("type", "LineHeight");
@@ -1210,11 +1210,11 @@ public class accountFragment extends Fragment {
                             } else if (str3.equals(accountFragment.e5)) {
                                 final SettingCellSwitchViewHolder settingCellSwitchViewHolder22 = (SettingCellSwitchViewHolder) viewHolder;
                                 settingCellSwitchViewHolder22.I.setText("Automatic QBank Backups");
-                                settingCellSwitchViewHolder22.J.setChecked(accountFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("qbankbackup", true));
+                                settingCellSwitchViewHolder22.J.setChecked(accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("qbankbackup", true));
                                 j0 = settingCellSwitchViewHolder22.J;
                                 r3 = new View.OnClickListener() {
                                     public void onClick(View view) {
-                                        accountFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("qbankbackup", settingCellSwitchViewHolder22.J.isChecked()).commit();
+                                        accountFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("qbankbackup", settingCellSwitchViewHolder22.J.isChecked()).commit();
                                     }
                                 };
                             } else {
@@ -1448,7 +1448,7 @@ public class accountFragment extends Fragment {
                 P = F.g(Uri.parse("file:///android_asset/" + str));
             } else {
                 RequestManager F2 = Glide.F(accountFragment.this);
-                P = F2.t(accountFragment.this.p4.J() + "/Icons/" + str);
+                P = F2.t(accountFragment.this.p4.getBaseUrl() + "/Icons/" + str);
             }
             P.B2(imageView);
         }
@@ -1866,9 +1866,9 @@ public class accountFragment extends Fragment {
 
     public void Q0(Bundle bundle) {
         super.Q0(bundle);
-        LocalBroadcastManager.b(V1()).c(this.D4, new IntentFilter("referesh.account"));
-        LocalBroadcastManager.b(V1()).c(this.E4, new IntentFilter("referesh.account.visible"));
-        LocalBroadcastManager.b(V1()).c(this.F4, new IntentFilter("reloadaccountdownloads"));
+        LocalBroadcastManager.b(getActivity()).c(this.D4, new IntentFilter("referesh.account"));
+        LocalBroadcastManager.b(getActivity()).c(this.E4, new IntentFilter("referesh.account.visible"));
+        LocalBroadcastManager.b(getActivity()).c(this.F4, new IntentFilter("reloadaccountdownloads"));
     }
 
     public void T0(Menu menu, MenuInflater menuInflater) {
@@ -1882,7 +1882,7 @@ public class accountFragment extends Fragment {
         super.T0(menu, menuInflater);
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.e4;
         if (view != null) {
             return view;
@@ -1928,11 +1928,11 @@ public class accountFragment extends Fragment {
         return inflate;
     }
 
-    public void V0() {
-        LocalBroadcastManager.b(V1()).f(this.D4);
-        LocalBroadcastManager.b(V1()).f(this.E4);
-        LocalBroadcastManager.b(V1()).f(this.F4);
-        super.V0();
+    public void onDestroy() {
+        LocalBroadcastManager.b(getActivity()).f(this.D4);
+        LocalBroadcastManager.b(getActivity()).f(this.E4);
+        LocalBroadcastManager.b(getActivity()).f(this.F4);
+        super.onDestroy();
     }
 
     public Bundle m3(String str) {

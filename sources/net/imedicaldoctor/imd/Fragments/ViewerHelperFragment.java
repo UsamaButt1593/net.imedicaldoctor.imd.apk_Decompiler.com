@@ -287,7 +287,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
     }
 
     public boolean A4() {
-        return V1().getSharedPreferences("default_preferences", 0).getBoolean("showpopup", true);
+        return getActivity().getSharedPreferences("default_preferences", 0).getBoolean("showpopup", true);
     }
 
     public void B3() {
@@ -386,8 +386,8 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
             GeneralDialogFragment generalDialogFragment = new GeneralDialogFragment(aMHTMLViewerFragment);
             this.l4 = generalDialogFragment;
             generalDialogFragment.Z2(true);
-            this.l4.e3(V1().k0(), "AMSectionsViewer");
-            V1().k0().b("AMResult", this, new c());
+            this.l4.e3(getActivity().k0(), "AMSectionsViewer");
+            getActivity().k0().b("AMResult", this, new c());
             return;
         }
         CompressHelper compressHelper2 = this.Q4;
@@ -463,7 +463,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
     }
 
     public boolean J3(Context context) {
-        return V1().getSharedPreferences("default_preferences", 0).getBoolean("dark", false);
+        return getActivity().getSharedPreferences("default_preferences", 0).getBoolean("dark", false);
     }
 
     public Boolean K3(String str) {
@@ -524,7 +524,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
             String replace = str2.replace("file://", "");
             str2 = replace.substring(0, replace.length() - 1);
         }
-        if (V1().getSharedPreferences("default_preferences", 0).getBoolean("newdocument", false)) {
+        if (getActivity().getSharedPreferences("default_preferences", 0).getBoolean("newdocument", false)) {
             R3(str, str2);
         } else {
             P3(str, str2);
@@ -1141,7 +1141,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
                     StringBuilder sb = new StringBuilder();
                     sb.append("fileSizes|||||");
                     String str = str5;
-                    sb.append(str.replace(ViewerHelperFragment.this.Q4.J() + "/", ""));
+                    sb.append(str.replace(ViewerHelperFragment.this.Q4.getBaseUrl() + "/", ""));
                     compressHelper.o0(sb.toString()).h6(Schedulers.e()).s4(AndroidSchedulers.e()).f6(new Consumer<String>() {
                         /* renamed from: a */
                         public void accept(String str) throws Throwable {
@@ -1203,11 +1203,11 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
         SearchView searchView;
         if (this.k4) {
             this.k4 = false;
-            String string = V1().getSharedPreferences("default_preferences", 0).getString("background_color", "#ffffff");
+            String string = getActivity().getSharedPreferences("default_preferences", 0).getString("background_color", "#ffffff");
             if (!string.equals("#ffffff")) {
                 this.G4.g("(function() { document.body.style.backgroundColor = '" + string + "'; })()");
             }
-            String string2 = V1().getSharedPreferences("default_preferences", 0).getString("line_height", "Default");
+            String string2 = getActivity().getSharedPreferences("default_preferences", 0).getString("line_height", "Default");
             if (!string2.equals("Default")) {
                 this.G4.g("(function() { document.body.style.lineHeight = '" + string2 + "'; })()");
             }
@@ -1855,7 +1855,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
         }
         if (!file.exists()) {
             try {
-                InputStream open = V1().getAssets().open(str);
+                InputStream open = getActivity().getAssets().open(str);
                 d2 = Okio.d(Okio.n(file));
                 d2.y1(Okio.u(open));
                 d2.close();
@@ -2238,7 +2238,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
         imdwebview.getSettings().setAllowUniversalAccessFromFileURLs(true);
         imdwebview.setLayerType(2, (Paint) null);
         imdwebview.getSettings().setLoadWithOverviewMode(true);
-        SharedPreferences sharedPreferences = V1().getSharedPreferences("default_preferences", 0);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("default_preferences", 0);
         WebSettings settings = imdwebview.getSettings();
         settings.setTextZoom(sharedPreferences.getInt(this.D4.getString("type") + "zoom", 100));
         imdwebview.setScrollbarFadingEnabled(true);
@@ -2359,7 +2359,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
         imdwebview.getSettings().setAllowFileAccess(true);
         imdwebview.getSettings().setDomStorageEnabled(true);
         imdwebview.getSettings().setJavaScriptEnabled(true);
-        SharedPreferences sharedPreferences = V1().getSharedPreferences("default_preferences", 0);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("default_preferences", 0);
         WebSettings settings = imdwebview.getSettings();
         settings.setTextZoom(sharedPreferences.getInt(this.D4.getString("type") + "zoom", 100));
         imdwebview.getSettings().setSupportZoom(true);
@@ -2466,7 +2466,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
     }
 
     public void u4() {
-        if (V1().getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false)) {
+        if (getActivity().getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false)) {
             float dimension = b0().getDimension(R.dimen.f522toolbar_padding);
             Toolbar toolbar = this.L4;
             if (toolbar != null) {
@@ -2551,7 +2551,7 @@ public class ViewerHelperFragment extends Fragment implements ActionBar.TabListe
 
     public void z3() {
         try {
-            if (V1().getSharedPreferences("default_preferences", 0).getBoolean("lastred", false)) {
+            if (getActivity().getSharedPreferences("default_preferences", 0).getBoolean("lastred", false)) {
                 CompressHelper compressHelper = this.Q4;
                 Bundle s1 = compressHelper.s1(compressHelper.Y(I3(), "select save from highlight where dbName='" + this.D4.getString("Name").replace("'", "''") + "' AND dbAddress='" + this.Q4.a1(s3()) + "' AND save like '%$highlightRed$%'"));
                 if (s1 != null) {

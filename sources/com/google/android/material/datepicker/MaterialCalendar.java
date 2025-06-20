@@ -254,7 +254,7 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
     }
 
     @NonNull
-    public View U0(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
+    public View onFragmentBind(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         final int i2;
         int i3;
         DaysOfWeekAdapter daysOfWeekAdapter;

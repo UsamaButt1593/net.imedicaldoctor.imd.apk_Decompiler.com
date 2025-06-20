@@ -27,7 +27,7 @@ public class SANTocActivityFragment extends SearchHelperFragment {
     public JSONArray C4;
     public JSONObject D4;
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         String str;
         this.q4 = layoutInflater.inflate(R.layout.f1246fragment_new_list, viewGroup, false);
         W2(bundle);

@@ -119,20 +119,20 @@ public class EPOMainActivityFragment extends SearchHelperFragment {
                 SwitchPlaceHolder switchPlaceHolder = (SwitchPlaceHolder) viewHolder;
                 if (i2 - EPOMainActivityFragment.this.n4.size() == 0) {
                     switchPlaceHolder.I.setText("Show Disease Monograph as List");
-                    switchPlaceHolder.J.setChecked(EPOMainActivityFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("DiseaseList", false));
+                    switchPlaceHolder.J.setChecked(EPOMainActivityFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("DiseaseList", false));
                     j0 = switchPlaceHolder.J;
                     r6 = new CompoundButton.OnCheckedChangeListener() {
                         public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                            EPOMainActivityFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("DiseaseList", z).commit();
+                            EPOMainActivityFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("DiseaseList", z).commit();
                         }
                     };
                 } else {
                     switchPlaceHolder.I.setText("Show Lab Monograph as List");
-                    switchPlaceHolder.J.setChecked(EPOMainActivityFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("LabList", true));
+                    switchPlaceHolder.J.setChecked(EPOMainActivityFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("LabList", true));
                     j0 = switchPlaceHolder.J;
                     r6 = new CompoundButton.OnCheckedChangeListener() {
                         public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                            EPOMainActivityFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putBoolean("LabList", z).commit();
+                            EPOMainActivityFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putBoolean("LabList", z).commit();
                         }
                     };
                 }
@@ -176,7 +176,7 @@ public class EPOMainActivityFragment extends SearchHelperFragment {
         return bundle;
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.q4 = layoutInflater.inflate(R.layout.f1246fragment_new_list, viewGroup, false);
         W2(bundle);
         S2();

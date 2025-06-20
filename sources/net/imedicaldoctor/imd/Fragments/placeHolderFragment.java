@@ -10,7 +10,7 @@ import net.imedicaldoctor.imd.R;
 
 public class placeHolderFragment extends Fragment {
     @Nullable
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return layoutInflater.inflate(R.layout.f1262fragment_placeholder, viewGroup, false);
     }
 }

@@ -19,7 +19,7 @@ public class EPOIDListActivityFragment extends SearchHelperFragment {
     /* JADX WARNING: type inference failed for: r0v24, types: [net.imedicaldoctor.imd.Fragments.Epocrate.EPOIDListActivityFragment$2] */
     /* JADX WARNING: Multi-variable type inference failed */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public android.view.View U0(android.view.LayoutInflater r9, android.view.ViewGroup r10, android.os.Bundle r11) {
+    public android.view.View onFragmentBind(android.view.LayoutInflater r9, android.view.ViewGroup r10, android.os.Bundle r11) {
         /*
             r8 = this;
             r0 = 2131558538(0x7f0d008a, float:1.8742395E38)

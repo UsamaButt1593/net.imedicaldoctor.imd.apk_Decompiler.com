@@ -29,18 +29,29 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.internal.view.SupportMenu;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.extractor.metadata.icy.IcyHeaders;
+
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
 import net.imedicaldoctor.imd.Data.CompressHelper;
 import net.imedicaldoctor.imd.R;
 import net.imedicaldoctor.imd.Utils.Devices;
@@ -50,253 +61,129 @@ import net.imedicaldoctor.imd.iMDActivity;
 
 public class activationActivity extends iMDActivity {
     /* access modifiers changed from: private */
-    public static final ExecutorService y3 = Executors.newSingleThreadExecutor();
+    public static final ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
     /* access modifiers changed from: private */
-    public static final Handler z3 = new Handler(Looper.getMainLooper());
+    public static final Handler mainThreadHandler = new Handler(Looper.getMainLooper());
+
+
 
     public static class activationFragment extends Fragment {
-        public View e4;
-        public VBHelper f4;
+        public View rootView;
+        public VBHelper vbHelper;
         /* access modifiers changed from: private */
         public int g4 = 0;
         /* access modifiers changed from: private */
         public String h4;
         /* access modifiers changed from: private */
-        public TextView i4;
+        public TextView textViewStatus;
         /* access modifiers changed from: private */
-        public EditText j4;
+        public EditText editTextUsername;
         /* access modifiers changed from: private */
-        public EditText k4;
+        public EditText editTextPassword;
+
+
+        private static final String SERVER_ENDPOINT_PATH = "/imd.php";
+        private static final int DEFAULT_READ_TIMEOUT_MS = 10000;
+        private static final int DEFAULT_CONNECT_TIMEOUT_MS = 15000;
+        private static final String PARAM_COMMAND = "command";
 
         private static class ResultWrapper {
 
             /* renamed from: a  reason: collision with root package name */
-            String f30082a;
+            String result;
 
             private ResultWrapper() {
             }
         }
 
-        /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r4v4, resolved type: java.lang.String} */
-        /* JADX WARNING: type inference failed for: r4v1 */
-        /* JADX WARNING: type inference failed for: r4v2, types: [java.net.HttpURLConnection] */
-        /* JADX WARNING: type inference failed for: r4v5 */
-        /* JADX WARNING: type inference failed for: r4v6 */
-        /* JADX WARNING: type inference failed for: r4v8 */
-        /* JADX WARNING: type inference failed for: r4v9 */
-        /* JADX WARNING: type inference failed for: r4v10 */
-        /* JADX WARNING: Multi-variable type inference failed */
-        /* JADX WARNING: Removed duplicated region for block: B:32:0x0115  */
-        /* JADX WARNING: Removed duplicated region for block: B:34:0x011a A[SYNTHETIC, Splitter:B:34:0x011a] */
-        /* JADX WARNING: Removed duplicated region for block: B:39:0x0136  */
-        /* JADX WARNING: Removed duplicated region for block: B:42:0x013e  */
-        /* JADX WARNING: Removed duplicated region for block: B:44:0x0143 A[SYNTHETIC, Splitter:B:44:0x0143] */
-        /* Code decompiled incorrectly, please refer to instructions dump. */
-        private java.lang.String O2(java.lang.String r10) {
-            /*
-                r9 = this;
-                java.lang.String r0 = "Error closing stream "
-                java.lang.String r1 = "Sendcommand"
-                net.imedicaldoctor.imd.Data.CompressHelper r2 = new net.imedicaldoctor.imd.Data.CompressHelper
-                androidx.fragment.app.FragmentActivity r3 = r9.r()
-                r2.<init>(r3)
-                net.imedicaldoctor.imd.VBHelper r3 = r9.f4
-                java.lang.String r4 = "127"
-                java.lang.String r3 = r3.n(r10, r4)
-                r4 = 0
-                java.net.URL r5 = new java.net.URL     // Catch:{ IOException -> 0x00eb, all -> 0x00e8 }
-                java.lang.StringBuilder r6 = new java.lang.StringBuilder     // Catch:{ IOException -> 0x00eb, all -> 0x00e8 }
-                r6.<init>()     // Catch:{ IOException -> 0x00eb, all -> 0x00e8 }
-                java.lang.String r2 = r2.J()     // Catch:{ IOException -> 0x00eb, all -> 0x00e8 }
-                r6.append(r2)     // Catch:{ IOException -> 0x00eb, all -> 0x00e8 }
-                java.lang.String r2 = "/imd.php"
-                r6.append(r2)     // Catch:{ IOException -> 0x00eb, all -> 0x00e8 }
-                java.lang.String r2 = r6.toString()     // Catch:{ IOException -> 0x00eb, all -> 0x00e8 }
-                r5.<init>(r2)     // Catch:{ IOException -> 0x00eb, all -> 0x00e8 }
-                java.net.URLConnection r2 = r5.openConnection()     // Catch:{ IOException -> 0x00eb, all -> 0x00e8 }
-                java.net.HttpURLConnection r2 = (java.net.HttpURLConnection) r2     // Catch:{ IOException -> 0x00eb, all -> 0x00e8 }
-                java.lang.String r5 = "POST"
-                r2.setRequestMethod(r5)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r5 = 10000(0x2710, float:1.4013E-41)
-                r2.setReadTimeout(r5)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r5 = 15000(0x3a98, float:2.102E-41)
-                r2.setConnectTimeout(r5)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r5 = 1
-                r2.setDoInput(r5)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r2.setDoOutput(r5)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.io.OutputStream r5 = r2.getOutputStream()     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.io.BufferedWriter r6 = new java.io.BufferedWriter     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.io.OutputStreamWriter r7 = new java.io.OutputStreamWriter     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.nio.charset.Charset r8 = java.nio.charset.StandardCharsets.UTF_8     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r7.<init>(r5, r8)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r6.<init>(r7)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.lang.StringBuilder r7 = new java.lang.StringBuilder     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r7.<init>()     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.lang.String r8 = "command="
-                r7.append(r8)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r7.append(r3)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.lang.String r3 = r7.toString()     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r6.write(r3)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r6.flush()     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r6.close()     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r5.close()     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r2.connect()     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.io.InputStream r3 = r2.getInputStream()     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.lang.StringBuffer r5 = new java.lang.StringBuffer     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r5.<init>()     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.io.BufferedReader r6 = new java.io.BufferedReader     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                java.io.InputStreamReader r7 = new java.io.InputStreamReader     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r7.<init>(r3)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-                r6.<init>(r7)     // Catch:{ IOException -> 0x00e5, all -> 0x00e2 }
-            L_0x008f:
-                java.lang.String r3 = r6.readLine()     // Catch:{ IOException -> 0x00ae }
-                if (r3 == 0) goto L_0x00b0
-                java.lang.StringBuilder r7 = new java.lang.StringBuilder     // Catch:{ IOException -> 0x00ae }
-                r7.<init>()     // Catch:{ IOException -> 0x00ae }
-                r7.append(r3)     // Catch:{ IOException -> 0x00ae }
-                java.lang.String r3 = "\n"
-                r7.append(r3)     // Catch:{ IOException -> 0x00ae }
-                java.lang.String r3 = r7.toString()     // Catch:{ IOException -> 0x00ae }
-                r5.append(r3)     // Catch:{ IOException -> 0x00ae }
-                goto L_0x008f
-            L_0x00aa:
-                r3 = move-exception
-            L_0x00ab:
-                r4 = r2
-                goto L_0x013c
-            L_0x00ae:
-                r3 = move-exception
-                goto L_0x00ee
-            L_0x00b0:
-                r5.length()     // Catch:{ IOException -> 0x00ae }
-                java.lang.String r4 = r5.toString()     // Catch:{ IOException -> 0x00ae }
-                r2.disconnect()
-                r6.close()     // Catch:{ IOException -> 0x00bf }
-                goto L_0x0134
-            L_0x00bf:
-                r2 = move-exception
-                java.lang.StringBuilder r3 = new java.lang.StringBuilder
-                r3.<init>()
-                r3.append(r1)
-                r3.append(r10)
-                java.lang.String r10 = r3.toString()
-                java.lang.StringBuilder r1 = new java.lang.StringBuilder
-                r1.<init>()
-            L_0x00d4:
-                r1.append(r0)
-                r1.append(r2)
-                java.lang.String r0 = r1.toString()
-                net.imedicaldoctor.imd.iMDLogger.f(r10, r0)
-                goto L_0x0134
-            L_0x00e2:
-                r3 = move-exception
-                r6 = r4
-                goto L_0x00ab
-            L_0x00e5:
-                r3 = move-exception
-                r6 = r4
-                goto L_0x00ee
-            L_0x00e8:
-                r3 = move-exception
-                r6 = r4
-                goto L_0x013c
-            L_0x00eb:
-                r3 = move-exception
-                r2 = r4
-                r6 = r2
-            L_0x00ee:
-                java.lang.StringBuilder r5 = new java.lang.StringBuilder     // Catch:{ all -> 0x00aa }
-                r5.<init>()     // Catch:{ all -> 0x00aa }
-                java.lang.String r7 = "Sendcommand "
-                r5.append(r7)     // Catch:{ all -> 0x00aa }
-                r5.append(r10)     // Catch:{ all -> 0x00aa }
-                java.lang.String r5 = r5.toString()     // Catch:{ all -> 0x00aa }
-                java.lang.StringBuilder r7 = new java.lang.StringBuilder     // Catch:{ all -> 0x00aa }
-                r7.<init>()     // Catch:{ all -> 0x00aa }
-                java.lang.String r8 = "Error in "
-                r7.append(r8)     // Catch:{ all -> 0x00aa }
-                r7.append(r3)     // Catch:{ all -> 0x00aa }
-                java.lang.String r3 = r7.toString()     // Catch:{ all -> 0x00aa }
-                net.imedicaldoctor.imd.iMDLogger.f(r5, r3)     // Catch:{ all -> 0x00aa }
-                if (r2 == 0) goto L_0x0118
-                r2.disconnect()
-            L_0x0118:
-                if (r6 == 0) goto L_0x0134
-                r6.close()     // Catch:{ IOException -> 0x011e }
-                goto L_0x0134
-            L_0x011e:
-                r2 = move-exception
-                java.lang.StringBuilder r3 = new java.lang.StringBuilder
-                r3.<init>()
-                r3.append(r1)
-                r3.append(r10)
-                java.lang.String r10 = r3.toString()
-                java.lang.StringBuilder r1 = new java.lang.StringBuilder
-                r1.<init>()
-                goto L_0x00d4
-            L_0x0134:
-                if (r4 == 0) goto L_0x013b
-                java.lang.String r10 = "Sendcommand result"
-                net.imedicaldoctor.imd.iMDLogger.j(r10, r4)
-            L_0x013b:
-                return r4
-            L_0x013c:
-                if (r4 == 0) goto L_0x0141
-                r4.disconnect()
-            L_0x0141:
-                if (r6 == 0) goto L_0x0169
-                r6.close()     // Catch:{ IOException -> 0x0147 }
-                goto L_0x0169
-            L_0x0147:
-                r2 = move-exception
-                java.lang.StringBuilder r4 = new java.lang.StringBuilder
-                r4.<init>()
-                r4.append(r1)
-                r4.append(r10)
-                java.lang.String r10 = r4.toString()
-                java.lang.StringBuilder r1 = new java.lang.StringBuilder
-                r1.<init>()
-                r1.append(r0)
-                r1.append(r2)
-                java.lang.String r0 = r1.toString()
-                net.imedicaldoctor.imd.iMDLogger.f(r10, r0)
-            L_0x0169:
-                throw r3
-            */
-            throw new UnsupportedOperationException("Method not decompiled: net.imedicaldoctor.imd.Fragments.activationActivity.activationFragment.O2(java.lang.String):java.lang.String");
-        }
 
-        /* access modifiers changed from: private */
-        public void c3() {
-            if (r() != null) {
-                try {
-                    TextView textView = (TextView) r().findViewById(R.id.f1086status_label);
-                    textView.setVisibility(0);
-                    textView.setTextColor(SupportMenu.f5941c);
-                } catch (Exception e2) {
-                    FirebaseCrashlytics.d().g(e2);
+        /**
+         * Sends an encrypted command to the server and retrieves the response.
+         *
+         * @param command The raw command string to be encrypted and sent.
+         * @return The server's response as a String, or null if an error occurs.
+         */
+        private String sendEncryptedCommandToServer(String command) {
+            CompressHelper compressHelper = new CompressHelper(getActivity());
+
+            HttpURLConnection urlConnection = null;
+            try {
+                String baseUrl = compressHelper.getBaseUrl();
+                if (baseUrl == null || baseUrl.isEmpty()) {
+                    return null;
+                }
+
+                URL serverUrl = new URL(baseUrl + SERVER_ENDPOINT_PATH);
+                urlConnection = (HttpURLConnection) serverUrl.openConnection();
+                urlConnection.setRequestMethod("POST");
+                urlConnection.setReadTimeout(DEFAULT_READ_TIMEOUT_MS);
+                urlConnection.setConnectTimeout(DEFAULT_CONNECT_TIMEOUT_MS);
+                urlConnection.setDoInput(true);
+                urlConnection.setDoOutput(true);
+
+                String encryptedCommand = this.vbHelper.encodeActivationCodeToHex(command);
+                if (encryptedCommand == null) {
+                    return null;
+                }
+
+                String postData = PARAM_COMMAND + "=" + encryptedCommand;
+                try (OutputStreamWriter outputStreamWriter = new OutputStreamWriter(urlConnection.getOutputStream(), StandardCharsets.UTF_8);
+                     BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter)) {
+                    bufferedWriter.write(postData);
+                    bufferedWriter.flush();
+                }
+
+                int responseCode = urlConnection.getResponseCode();
+                if (responseCode != HttpURLConnection.HTTP_OK) {
+                    return null;
+                }
+
+                StringBuilder responseBuilder = new StringBuilder();
+                try (InputStreamReader inputStreamReader = new InputStreamReader(urlConnection.getInputStream(), StandardCharsets.UTF_8);
+                     BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        responseBuilder.append(line).append("\n");
+                    }
+                }
+
+                return responseBuilder.toString();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            } finally {
+                if (urlConnection != null) {
+                    urlConnection.disconnect();
                 }
             }
         }
 
-        private void e3() {
+        /* access modifiers changed from: private */
+        public void showStatus() {
             try {
-                ((ProgressBarCircularIndeterminate) r().findViewById(R.id.f1043progress_bar)).setVisibility(8);
+                TextView textView = (TextView) getActivity().findViewById(R.id.f1086status_label);
+                textView.setVisibility(0);
+                textView.setTextColor(SupportMenu.f5941c);
+            } catch (Exception e2) {
+                FirebaseCrashlytics.d().g(e2);
+            }
+        }
+
+        private void hideProgressBar() {
+            try {
+                ((ProgressBarCircularIndeterminate) getActivity().findViewById(R.id.f1043progress_bar)).setVisibility(8);
             } catch (Exception e2) {
                 FirebaseCrashlytics.d().g(e2);
             }
         }
 
         /* access modifiers changed from: private */
-        public void f3() {
-        }
-
-        /* access modifiers changed from: private */
-        public void g3() {
+        public void hideKeyboard() {
             try {
-                InputMethodManager inputMethodManager = (InputMethodManager) r().getSystemService("input_method");
-                if (r().getCurrentFocus() != null) {
-                    inputMethodManager.hideSoftInputFromWindow(r().getCurrentFocus().getWindowToken(), 0);
+                InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService("input_method");
+                if (getActivity().getCurrentFocus() != null) {
+                    inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
                 }
             } catch (Exception e2) {
                 FirebaseCrashlytics.d().g(e2);
@@ -320,7 +207,7 @@ public class activationActivity extends iMDActivity {
             });
         }
 
-        public static boolean i3(Context context) {
+        public static boolean checkAirplaneMode(Context context) {
             return Settings.Global.getInt(context.getContentResolver(), "airplane_mode_on", 0) != 0;
         }
 
@@ -344,40 +231,41 @@ public class activationActivity extends iMDActivity {
         /* access modifiers changed from: private */
         public /* synthetic */ void k3(Context context) {
             context.startActivity(new Intent(context, mainActivity.class));
-            V1().finish();
-            V1().overridePendingTransition(R.anim.f15from_fade_in, R.anim.f16from_fade_out);
+            getActivity().finish();
+            getActivity().overridePendingTransition(R.anim.f15from_fade_in, R.anim.f16from_fade_out);
         }
 
         /* access modifiers changed from: private */
-        public /* synthetic */ void l3(ResultWrapper resultWrapper, Context context) {
+        public /* synthetic */ void onCommandResult(ResultWrapper resultWrapper, Context context) {
             String str;
             try {
-                String str2 = resultWrapper.f30082a;
-                if (str2 == null) {
+                if (resultWrapper.result == null) {
                     w3("Error in contacting server. Please check your internet connection and tap here to try again");
-                    v3();
                     return;
                 }
+
                 try {
-                    String replace = str2.replace("|||||", ":::::");
-                    resultWrapper.f30082a = replace;
-                    String[] split = TextUtils.split(replace, ":::::");
-                    if (!split[0].equals(IcyHeaders.a3) || split[0].length() != 1) {
+                    resultWrapper.result = resultWrapper.result.replace("|||||", ":::::");
+                    String[] split = TextUtils.split(resultWrapper.result, ":::::");
+                    if (!split[0].equals("1")) {
                         if (split[0].equals("0")) {
-                            v3();
                             str = split[1];
                         } else {
-                            v3();
                             str = "Error in adding device";
                         }
+
                         w3(str);
                         return;
+                    } else {
+                        split[0].length();
                     }
+
                     f3();
                     this.h4 = null;
-                    this.i4.setText("Your Device Activated Successfully. Enjoy!");
+                    this.textViewStatus.setText("Your Device Activated Successfully. Enjoy!");
+
                     context.getSharedPreferences("default_preferences", 0).edit().putString("ActivationCode", split[1]).apply();
-                    activationActivity.z3.postDelayed(new e(this, context), ExoPlayer.a1);
+                    activationActivity.mainThreadHandler.postDelayed(new e(this, context), ExoPlayer.a1);
                 } catch (Exception unused) {
                     w3("Data error. Please try again.");
                 }
@@ -391,7 +279,7 @@ public class activationActivity extends iMDActivity {
         public /* synthetic */ void m3(String str) {
             ResultWrapper resultWrapper = new ResultWrapper();
             String b2 = Devices.b();
-            FragmentActivity V1 = V1();
+            FragmentActivity V1 = getActivity();
             int i2 = 0;
             try {
                 i2 = V1.getPackageManager().getPackageInfo(V1.getPackageName(), 0).versionCode;
@@ -399,18 +287,24 @@ public class activationActivity extends iMDActivity {
                 e2.printStackTrace();
             }
             try {
-                resultWrapper.f30082a = this.f4.j(O2("addDevice|||||" + str + "|||||" + this.f4.m() + "|||||" + Build.USER + "|||||" + b2 + "|||||android|||||" + d3() + "|||||android-" + i2), "127");
+                resultWrapper.result = this.vbHelper.decryptHexEncodedStringForKey(sendEncryptedCommandToServer("addDevice|||||" + str + "|||||" + this.vbHelper.m() + "|||||" + Build.USER + "|||||" + b2 + "|||||android|||||" + d3() + "|||||android-" + i2));
             } catch (Exception e3) {
-                resultWrapper.f30082a = null;
+                resultWrapper.result = null;
                 e3.printStackTrace();
             }
-            activationActivity.z3.post(new g(this, resultWrapper, V1));
+
+            activationActivity.mainThreadHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                     activationFragment.this.onCommandResult(resultWrapper, V1);
+                }
+            });
         }
 
         /* access modifiers changed from: private */
         public /* synthetic */ void n3(ResultWrapper resultWrapper) {
             try {
-                String str = resultWrapper.f30082a;
+                String str = resultWrapper.result;
                 if (str == null) {
                     w3("Error in contacting server. Please check your internet connection and tap here to try again");
                     v3();
@@ -418,21 +312,21 @@ public class activationActivity extends iMDActivity {
                 }
                 try {
                     String replace = str.replace("|||||", ":::::");
-                    resultWrapper.f30082a = replace;
+                    resultWrapper.result = replace;
                     String[] split = TextUtils.split(replace, ":::::");
                     if (split[0].equals(IcyHeaders.a3)) {
                         if (split[0].length() == 1) {
                             f3();
                             this.h4 = null;
-                            this.i4.setText("Login Successful");
-                            V1().getSharedPreferences("default_preferences", 0).edit().putString("Username", this.f4.n(this.j4.getText().toString(), "127")).putString("Password", this.f4.n(this.k4.getText().toString(), "127")).remove("DS").apply();
+                            this.textViewStatus.setText("Login Successful");
+                            getActivity().getSharedPreferences("default_preferences", 0).edit().putString("Username", this.vbHelper.encodeActivationCodeToHex(this.editTextUsername.getText().toString())).putString("Password", this.vbHelper.encodeActivationCodeToHex(this.editTextPassword.getText().toString(), "127")).remove("DS").apply();
                             r3(split[1]);
                             return;
                         }
                     }
                     v3();
                     w3("Wrong Username or Password");
-                    V1().getSharedPreferences("default_preferences", 0).edit().remove("Username").remove("Password").apply();
+                    getActivity().getSharedPreferences("default_preferences", 0).edit().remove("Username").remove("Password").apply();
                 } catch (Exception unused) {
                     w3("Data error. Please try again.");
                 }
@@ -443,20 +337,20 @@ public class activationActivity extends iMDActivity {
         }
 
         /* access modifiers changed from: private */
-        public /* synthetic */ void o3(String str) {
+        public /* synthetic */ void onCommandRun(String command) {
             ResultWrapper resultWrapper = new ResultWrapper();
             try {
-                resultWrapper.f30082a = this.f4.j(O2(str), "127");
+                resultWrapper.result = this.vbHelper.decryptHexEncodedStringForKey(sendEncryptedCommandToServer(command));
             } catch (Exception e2) {
-                resultWrapper.f30082a = null;
+                resultWrapper.result = null;
                 e2.printStackTrace();
             }
-            activationActivity.z3.post(new f(this, resultWrapper));
+            activationActivity.mainThreadHandler.post(new f(this, resultWrapper));
         }
 
         /* access modifiers changed from: private */
-        public void p3() {
-            TextView textView = (TextView) r().findViewById(R.id.f1086status_label);
+        public void changeStatusLabelColor() {
+            TextView textView = (TextView) getActivity().findViewById(R.id.f1086status_label);
             textView.setVisibility(0);
             textView.setTextColor(-16711936);
         }
@@ -467,55 +361,55 @@ public class activationActivity extends iMDActivity {
         }
 
         private void r3(String str) {
-            if (this.f4 == null || this.i4 == null) {
+            if (this.vbHelper == null || this.textViewStatus == null) {
                 w3("Application error. Please restart the app.");
             } else {
-                activationActivity.y3.execute(new h(this, str));
+                activationActivity.singleThreadExecutor.execute(new h(this, str));
             }
         }
 
         /* access modifiers changed from: private */
-        public void t3(String str) {
+        public void setAndShowStatusText(String str) {
             try {
-                e3();
+                hideProgressBar();
                 if (str != null) {
-                    this.i4.setText(str);
-                    this.i4.setVisibility(0);
+                    this.textViewStatus.setText(str);
+                    this.textViewStatus.setVisibility(0);
                     return;
                 }
-                this.i4.setText("");
-                this.i4.setVisibility(8);
-                this.h4 = str;
+                this.textViewStatus.setText("");
+                this.textViewStatus.setVisibility(8);
+                this.h4 = null;
             } catch (Exception e2) {
                 FirebaseCrashlytics.d().g(e2);
             }
         }
 
         /* access modifiers changed from: private */
-        public void u3() {
-            ProgressBarCircularIndeterminate progressBarCircularIndeterminate = (ProgressBarCircularIndeterminate) r().findViewById(R.id.f1043progress_bar);
+        public void showProgressBar() {
+            ProgressBarCircularIndeterminate progressBarCircularIndeterminate = (ProgressBarCircularIndeterminate) getActivity().findViewById(R.id.f1043progress_bar);
             progressBarCircularIndeterminate.setBackgroundColor(Color.parseColor("#1e88e5"));
             progressBarCircularIndeterminate.setVisibility(0);
-            this.i4.setVisibility(8);
+            this.textViewStatus.setVisibility(8);
         }
 
         private void v3() {
         }
 
         private void w3(String str) {
-            e3();
+            hideProgressBar();
             this.h4 = null;
-            this.i4.setText(str);
-            c3();
+            this.textViewStatus.setText(str);
+            showStatus();
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-            View view = this.e4;
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+            View view = this.rootView;
             if (view != null) {
                 return view;
             }
-            this.f4 = new VBHelper(r());
-            this.e4 = layoutInflater.inflate(R.layout.f1250fragment_new_login, viewGroup, false);
+            this.vbHelper = new VBHelper(r());
+            this.rootView = layoutInflater.inflate(R.layout.f1250fragment_new_login, viewGroup, false);
             new Timer().schedule(new TimerTask() {
                 public void run() {
                     if (activationFragment.this.h4 == null) {
@@ -528,9 +422,9 @@ public class activationActivity extends iMDActivity {
                     for (int i2 = 0; i2 < activationFragment.this.g4; i2++) {
                         str = str + ".";
                     }
-                    activationFragment.this.i4.post(new Runnable() {
+                    activationFragment.this.textViewStatus.post(new Runnable() {
                         public void run() {
-                            TextView textView = (TextView) activationFragment.this.e4.findViewById(R.id.f1086status_label);
+                            TextView textView = (TextView) activationFragment.this.rootView.findViewById(R.id.f1086status_label);
                             if (activationFragment.this.h4 != null) {
                                 textView.setText(activationFragment.this.h4 + str);
                             }
@@ -541,7 +435,7 @@ public class activationActivity extends iMDActivity {
                     }
                 }
             }, 500, 500);
-            ((TextView) this.e4.findViewById(R.id.f982imd_title)).setOnClickListener(new View.OnClickListener() {
+            ((TextView) this.rootView.findViewById(R.id.f982imd_title)).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     String l2 = new CompressHelper(activationFragment.this.r()).l2();
                     if (l2.length() <= 0) {
@@ -553,54 +447,60 @@ public class activationActivity extends iMDActivity {
                     }).I();
                 }
             });
-            this.i4 = (TextView) this.e4.findViewById(R.id.f1086status_label);
-            this.j4 = (EditText) this.e4.findViewById(R.id.f1156user_text);
-            this.k4 = (EditText) this.e4.findViewById(R.id.f1039password_text);
-            this.j4.setText(this.f4.j(V1().getSharedPreferences("default_preferences", 0).getString("Username", ""), "127"));
-            this.k4.setText(this.f4.j(V1().getSharedPreferences("default_preferences", 0).getString("Password", ""), "127"));
-            final CompressHelper compressHelper = new CompressHelper(r());
-            ((LinearLayout) this.e4.findViewById(R.id.f1152upper_layout)).setOnClickListener(new View.OnClickListener() {
+            this.textViewStatus = (TextView) this.rootView.findViewById(R.id.f1086status_label);
+            this.editTextUsername = (EditText) this.rootView.findViewById(R.id.f1156user_text);
+            this.editTextPassword = (EditText) this.rootView.findViewById(R.id.f1039password_text);
+
+            this.editTextUsername.setText(this.vbHelper.decryptHexEncodedStringForKey(getActivity().getSharedPreferences("default_preferences", 0).getString("Username", "")));
+            this.editTextPassword.setText(this.vbHelper.decryptHexEncodedStringForKey(getActivity().getSharedPreferences("default_preferences", 0).getString("Password", "")));
+
+            final CompressHelper compressHelper = new CompressHelper(getActivity());
+
+            ((LinearLayout) this.rootView.findViewById(R.id.f1152upper_layout)).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    activationFragment.this.g3();
+                    activationFragment.this.hideKeyboard();
                 }
             });
-            ((Button) this.e4.findViewById(R.id.f1003login_button)).setOnClickListener(new View.OnClickListener() {
+
+            ((Button) this.rootView.findViewById(R.id.f1003login_button)).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    if (activationFragment.this.j4.getText().toString().length() < 1) {
-                        activationFragment.this.c3();
-                        activationFragment.this.t3("Please enter your Username");
+                    if (activationFragment.this.editTextUsername.getText().toString().isEmpty()) {
+                        activationFragment.this.showStatus();
+                        activationFragment.this.setAndShowStatusText("Please enter your Username");
                         return;
                     }
-                    activationFragment.this.p3();
-                    if (activationFragment.this.k4.getText().toString().length() < 1) {
-                        activationFragment.this.c3();
-                        activationFragment.this.t3("Please enter your Password");
-                    } else if (activationFragment.i3(activationFragment.this.r())) {
-                        activationFragment.this.c3();
-                        activationFragment.this.t3("Please turn off Airplane Mode");
+
+                    activationFragment.this.changeStatusLabelColor();
+
+                    if (activationFragment.this.editTextPassword.getText().toString().isEmpty()) {
+                        activationFragment.this.showStatus();
+                        activationFragment.this.setAndShowStatusText("Please enter your Password");
+                    } else if (activationFragment.checkAirplaneMode(activationFragment.this.getActivity())) {
+                        activationFragment.this.showStatus();
+                        activationFragment.this.setAndShowStatusText("Please turn off Airplane Mode");
                     } else {
-                        activationFragment.this.g3();
-                        activationFragment.this.u3();
-                        activationFragment.this.f3();
-                        activationFragment.this.s3("checkUser|||||" + activationFragment.this.j4.getText().toString() + "|||||" + activationFragment.this.k4.getText().toString());
+                        activationFragment.this.hideKeyboard();
+                        activationFragment.this.showProgressBar();
+                        activationFragment.this.executeCommand("checkUser|||||" + activationFragment.this.editTextUsername.getText().toString() + "|||||" + activationFragment.this.editTextPassword.getText().toString());
                     }
                 }
             });
-            ((TextView) this.e4.findViewById(R.id.f1056register_button)).setOnClickListener(new View.OnClickListener() {
+
+            ((TextView) this.rootView.findViewById(R.id.f1056register_button)).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     compressHelper.P("http://imedicaldoctor.net/buyaccount.php");
                 }
             });
-            final TextView textView = (TextView) this.e4.findViewById(R.id.f871change_server_button);
-            textView.setText(V1().getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran") + " Server (Tap to change)");
+            final TextView textView = (TextView) this.rootView.findViewById(R.id.f871change_server_button);
+            textView.setText(getActivity().getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran") + " Server (Tap to change)");
             textView.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    activationFragment.this.V1().getSharedPreferences("default_preferences", 0).edit().putString("MainServer", activationFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran").equals("Iran") ? "Germany" : "Iran").commit();
+                    activationFragment.this.getActivity().getSharedPreferences("default_preferences", 0).edit().putString("MainServer", activationFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran").equals("Iran") ? "Germany" : "Iran").commit();
                     TextView textView = textView;
-                    textView.setText(activationFragment.this.V1().getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran") + " Server (Tap to change)");
+                    textView.setText(activationFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getString("MainServer", "Iran") + " Server (Tap to change)");
                 }
             });
-            TextView textView2 = (TextView) this.e4.findViewById(R.id.f945forgot_label);
+            TextView textView2 = (TextView) this.rootView.findViewById(R.id.f945forgot_label);
             textView2.setOnLongClickListener(new View.OnLongClickListener() {
                 public boolean onLongClick(View view) {
                     String l2 = compressHelper.l2();
@@ -619,27 +519,27 @@ public class activationActivity extends iMDActivity {
                     compressHelper.P("http://imedicaldoctor.net/forgot.php");
                 }
             });
-            ((ImageView) this.e4.findViewById(R.id.f1112telegram_button)).setOnClickListener(new View.OnClickListener() {
+            ((ImageView) this.rootView.findViewById(R.id.f1112telegram_button)).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     activationFragment.this.q3("http://imedicaldoctor.net/telegramandroid.php");
                 }
             });
-            ((ImageView) this.e4.findViewById(R.id.f987instagram_button)).setOnClickListener(new View.OnClickListener() {
+            ((ImageView) this.rootView.findViewById(R.id.f987instagram_button)).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     activationFragment.this.q3("http://instagram.com/imedicaldoctor");
                 }
             });
-            ((ImageView) this.e4.findViewById(R.id.f1004mail_button)).setOnClickListener(new View.OnClickListener() {
+            ((ImageView) this.rootView.findViewById(R.id.f1004mail_button)).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     activationFragment.this.q3("mailto:support@imedicaldoctor.net");
                 }
             });
-            return this.e4;
+            return this.rootView;
         }
 
-        public void V0() {
-            super.V0();
-            activationActivity.y3.shutdown();
+        public void onDestroy() {
+            super.onDestroy();
+            activationActivity.singleThreadExecutor.shutdown();
         }
 
         public String d3() {
@@ -648,16 +548,21 @@ public class activationActivity extends iMDActivity {
             return "Android SDK: " + i2 + " (" + str + ")";
         }
 
-        public void p1(View view, Bundle bundle) {
-            super.p1(view, bundle);
-            this.i4.setText("");
+        public void onFragmentCreated(View view, Bundle bundle) {
+            super.onFragmentCreated(view, bundle);
+            this.textViewStatus.setText("");
         }
 
-        public void s3(String str) {
-            if (this.f4 == null || this.j4 == null || this.k4 == null || this.i4 == null) {
+        public void executeCommand(String command) {
+            if (this.vbHelper == null || this.editTextUsername == null || this.editTextPassword == null || this.textViewStatus == null) {
                 w3("Application error. Please restart the app.");
             } else {
-                activationActivity.y3.execute(new d(this, str));
+                activationActivity.singleThreadExecutor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        activationFragment.this.onCommandRun(command);
+                    }
+                });
             }
         }
     }

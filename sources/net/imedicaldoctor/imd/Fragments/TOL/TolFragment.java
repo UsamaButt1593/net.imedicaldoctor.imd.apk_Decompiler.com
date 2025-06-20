@@ -162,7 +162,7 @@ public class TolFragment extends Fragment {
     }
 
     @Nullable
-    public View U0(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
+    public View onFragmentBind(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         View inflate = layoutInflater.inflate(R.layout.f1391main_tol, viewGroup, false);
         r().getWindow().setFlags(1024, 1024);
         this.e4 = (LinearLayout) inflate.findViewById(R.id.f1144topleft);

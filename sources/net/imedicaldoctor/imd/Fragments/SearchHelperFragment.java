@@ -634,7 +634,7 @@ public class SearchHelperFragment extends Fragment {
     }
 
     @Nullable
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.k4 = new CompressHelper(r());
         if (bundle != null && bundle.containsKey("Position")) {
             this.e4 = bundle.getInt("Position");
@@ -656,7 +656,7 @@ public class SearchHelperFragment extends Fragment {
                 }
             });
         }
-        return super.U0(layoutInflater, viewGroup, bundle);
+        return super.onFragmentBind(layoutInflater, viewGroup, bundle);
     }
 
     public int U2() {
@@ -737,7 +737,7 @@ public class SearchHelperFragment extends Fragment {
     }
 
     public void d3() {
-        if (V1().getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false)) {
+        if (getActivity().getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false)) {
             float dimension = b0().getDimension(R.dimen.f522toolbar_padding);
             Toolbar toolbar = this.r4;
             if (toolbar != null) {

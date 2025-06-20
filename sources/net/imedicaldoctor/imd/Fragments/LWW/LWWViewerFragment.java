@@ -203,7 +203,7 @@ public class LWWViewerFragment extends ViewerHelperFragment {
         e3(menu);
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.C4;
         if (view != null) {
             return view;

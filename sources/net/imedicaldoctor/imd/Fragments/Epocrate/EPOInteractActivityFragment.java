@@ -39,7 +39,7 @@ public class EPOInteractActivityFragment extends SearchHelperFragment {
     public ArrayList<String> E4;
     public ArrayList<Bundle> F4;
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.q4 = layoutInflater.inflate(R.layout.f1227fragment_epointeract, viewGroup, false);
         this.B4 = new ArrayList<>();
         this.E4 = new ArrayList<>();

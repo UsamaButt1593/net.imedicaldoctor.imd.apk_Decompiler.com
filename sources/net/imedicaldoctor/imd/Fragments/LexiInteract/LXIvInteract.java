@@ -19,7 +19,6 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.common.net.HttpHeaders;
 import java.util.ArrayList;
 import net.imedicaldoctor.imd.Data.CompressHelper;
-import net.imedicaldoctor.imd.Fragments.LexiInteract.LXIVInteractResult;
 import net.imedicaldoctor.imd.Fragments.SearchHelperFragment;
 import net.imedicaldoctor.imd.R;
 import net.imedicaldoctor.imd.Views.ButtonSmall;
@@ -53,11 +52,11 @@ public class LXIvInteract extends iMDActivity {
         public void T0(Menu menu, MenuInflater menuInflater) {
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             ArrayList<Bundle> arrayList;
             View inflate = layoutInflater.inflate(R.layout.f1242fragment_lxiv_interact, viewGroup, false);
             this.q4 = inflate;
-            super.U0(layoutInflater, viewGroup, bundle);
+            super.onFragmentBind(layoutInflater, viewGroup, bundle);
             this.r4 = (Toolbar) this.q4.findViewById(R.id.f1139toolbar);
             this.D4 = (ButtonSmall) this.q4.findViewById(R.id.f829back_button);
             this.r4.setNavigationOnClickListener(new View.OnClickListener() {
@@ -357,7 +356,7 @@ public class LXIvInteract extends iMDActivity {
         }
 
         public void d3() {
-            if (V1().getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false)) {
+            if (getActivity().getSharedPreferences("default_preferences", 0).getBoolean("HideStatusBar", false)) {
                 float dimension = b0().getDimension(R.dimen.f522toolbar_padding);
                 Toolbar toolbar = this.r4;
                 if (toolbar != null) {

@@ -246,7 +246,7 @@ public class ASMenuActivityFragment extends ViewerHelperFragment {
     /* JADX WARNING: Removed duplicated region for block: B:18:0x00a3  */
     /* JADX WARNING: Removed duplicated region for block: B:35:0x01df  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public android.view.View U0(android.view.LayoutInflater r7, android.view.ViewGroup r8, android.os.Bundle r9) {
+    public android.view.View onFragmentBind(android.view.LayoutInflater r7, android.view.ViewGroup r8, android.os.Bundle r9) {
         /*
             r6 = this;
             android.view.View r0 = r6.C4

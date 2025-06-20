@@ -940,7 +940,7 @@ public class UTDGraphicActivity extends ViewerHelperActivity {
             e3(menu);
         }
 
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             View view = this.C4;
             if (view != null) {
                 return view;
@@ -1148,7 +1148,7 @@ public class UTDGraphicActivity extends ViewerHelperActivity {
                 if (this.h5.equals("")) {
                     String[] split = StringUtils.split(this.i5, "/");
                     String str4 = split[split.length - 1];
-                    Z2(this.Q4.J() + "/videos-E/" + str4, this.D4.getString("Path") + "/videos-E/" + str4);
+                    Z2(this.Q4.getBaseUrl() + "/videos-E/" + str4, this.D4.getString("Path") + "/videos-E/" + str4);
                 } else {
                     iMDLogger.f("Video Path ", this.h5);
                     g5(this.h5);

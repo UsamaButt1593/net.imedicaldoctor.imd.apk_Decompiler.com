@@ -32,7 +32,6 @@ import com.google.android.material.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.shape.MaterialShapeDrawable;
-import com.google.android.material.timepicker.TimePickerView;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -387,7 +386,7 @@ public final class MaterialTimePicker extends DialogFragment implements TimePick
     }
 
     @NonNull
-    public final View U0(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
+    public final View onFragmentBind(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         ViewGroup viewGroup2 = (ViewGroup) layoutInflater.inflate(R.layout.l0, viewGroup);
         TimePickerView timePickerView = (TimePickerView) viewGroup2.findViewById(R.id.T2);
         this.J4 = timePickerView;
@@ -522,8 +521,8 @@ public final class MaterialTimePicker extends DialogFragment implements TimePick
         super.onDismiss(dialogInterface);
     }
 
-    public void p1(@NonNull View view, @Nullable Bundle bundle) {
-        super.p1(view, bundle);
+    public void onFragmentCreated(@NonNull View view, @Nullable Bundle bundle) {
+        super.onFragmentCreated(view, bundle);
         if (this.N4 instanceof TimePickerTextInputPresenter) {
             view.postDelayed(new c(this), 100);
         }

@@ -44,7 +44,7 @@ public class EPUBChaptersActivityFragment extends SearchHelperFragment {
     public BroadcastReceiver F4 = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             try {
-                if (EPUBChaptersActivityFragment.this.V1().getSharedPreferences("default_preferences", 0).getBoolean("shake", false)) {
+                if (EPUBChaptersActivityFragment.this.getActivity().getSharedPreferences("default_preferences", 0).getBoolean("shake", false)) {
                     LocalBroadcastManager.b(EPUBChaptersActivityFragment.this.r()).f(EPUBChaptersActivityFragment.this.F4);
                     EPUBChaptersActivityFragment.this.r3();
                     EPUBChaptersActivityFragment.this.q4.postDelayed(new Runnable() {
@@ -217,7 +217,7 @@ public class EPUBChaptersActivityFragment extends SearchHelperFragment {
     /* JADX WARNING: type inference failed for: r11v18, types: [androidx.recyclerview.widget.RecyclerView$Adapter] */
     /* JADX WARNING: Multi-variable type inference failed */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public android.view.View U0(android.view.LayoutInflater r10, android.view.ViewGroup r11, android.os.Bundle r12) {
+    public android.view.View onFragmentBind(android.view.LayoutInflater r10, android.view.ViewGroup r11, android.os.Bundle r12) {
         /*
             r9 = this;
             r0 = 2131558538(0x7f0d008a, float:1.8742395E38)
@@ -335,8 +335,8 @@ public class EPUBChaptersActivityFragment extends SearchHelperFragment {
         throw new UnsupportedOperationException("Method not decompiled: net.imedicaldoctor.imd.Fragments.EPUB.EPUBChaptersActivityFragment.U0(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle):android.view.View");
     }
 
-    public void V0() {
-        super.V0();
+    public void onDestroy() {
+        super.onDestroy();
         LocalBroadcastManager.b(r()).f(this.F4);
     }
 

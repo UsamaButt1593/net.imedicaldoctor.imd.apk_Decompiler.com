@@ -151,9 +151,9 @@ public class iMD extends Application {
     public boolean f(String str) {
         String string = getSharedPreferences("default_preferences", 0).getString("ActivationCode", "");
         VBHelper vBHelper = this.b3;
-        String[] split = TextUtils.split(vBHelper.b(string, vBHelper.m()).replace("||", "::"), "::");
+        String[] split = TextUtils.split(vBHelper.decryptString(string, vBHelper.m()).replace("||", "::"), "::");
         VBHelper vBHelper2 = this.b3;
-        String[] split2 = TextUtils.split(vBHelper2.b(str, vBHelper2.m()).replace("||", "::"), "::");
+        String[] split2 = TextUtils.split(vBHelper2.decryptString(str, vBHelper2.m()).replace("||", "::"), "::");
         int[] iArr = {0, 1, 2, 3, 4, 5, 6, 7, 9};
         for (int i2 = 0; i2 < 9; i2++) {
             int i3 = iArr[i2];

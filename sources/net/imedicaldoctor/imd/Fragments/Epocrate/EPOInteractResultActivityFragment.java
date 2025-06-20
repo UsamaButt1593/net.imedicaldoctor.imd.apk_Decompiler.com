@@ -38,7 +38,7 @@ public class EPOInteractResultActivityFragment extends ViewerHelperFragment {
         this.X4.setLayoutManager(new LinearLayoutManager(r(), 1, false));
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         String str;
         View view = this.C4;
         if (view != null) {

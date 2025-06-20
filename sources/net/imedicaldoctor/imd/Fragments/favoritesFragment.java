@@ -1080,7 +1080,7 @@ public class favoritesFragment extends SearchHelperFragment {
         r().setTitle("");
     }
 
-    public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.q4;
         if (view != null) {
             return view;
@@ -1155,8 +1155,8 @@ public class favoritesFragment extends SearchHelperFragment {
         return inflate;
     }
 
-    public void V0() {
-        super.V0();
+    public void onDestroy() {
+        super.onDestroy();
         LocalBroadcastManager.b(D3()).f(this.R4);
     }
 

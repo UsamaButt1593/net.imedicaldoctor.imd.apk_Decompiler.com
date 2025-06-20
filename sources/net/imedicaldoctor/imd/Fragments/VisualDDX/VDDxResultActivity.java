@@ -13,7 +13,7 @@ import net.imedicaldoctor.imd.iMDActivity;
 public class VDDxResultActivity extends iMDActivity {
 
     public static class PlaceholderFragment extends Fragment {
-        public View U0(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        public View onFragmentBind(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
             return layoutInflater.inflate(R.layout.f1283fragment_vddx_result, viewGroup, false);
         }
     }

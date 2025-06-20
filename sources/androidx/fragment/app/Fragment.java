@@ -692,7 +692,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
             public ActivityResultRegistry apply(Void voidR) {
                 Fragment fragment = Fragment.this;
                 FragmentHostCallback<?> fragmentHostCallback = fragment.n3;
-                return fragmentHostCallback instanceof ActivityResultRegistryOwner ? ((ActivityResultRegistryOwner) fragmentHostCallback).r() : fragment.V1().r();
+                return fragmentHostCallback instanceof ActivityResultRegistryOwner ? ((ActivityResultRegistryOwner) fragmentHostCallback).r() : fragment.getActivity().r();
             }
         }, activityResultCallback);
     }
@@ -998,7 +998,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
 
     /* access modifiers changed from: package-private */
     public void O1() {
-        p1(this.B3, this.X);
+        onFragmentCreated(this.B3, this.X);
         this.o3.c0();
     }
 
@@ -1091,7 +1091,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
 
     @MainThread
     @Nullable
-    public View U0(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
+    public View onFragmentBind(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         int i2 = this.Q3;
         if (i2 != 0) {
             return layoutInflater.inflate(i2, viewGroup, false);
@@ -1119,12 +1119,12 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
 
     @CallSuper
     @MainThread
-    public void V0() {
+    public void onDestroy() {
         this.z3 = true;
     }
 
     @NonNull
-    public final FragmentActivity V1() {
+    public final FragmentActivity getActivity() {
         FragmentActivity r = r();
         if (r != null) {
             return r;
@@ -1791,7 +1791,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
 
     @MainThread
     public void onCreateContextMenu(@NonNull ContextMenu contextMenu, @NonNull View view, @Nullable ContextMenu.ContextMenuInfo contextMenuInfo) {
-        V1().onCreateContextMenu(contextMenu, view, contextMenuInfo);
+        getActivity().onCreateContextMenu(contextMenu, view, contextMenuInfo);
     }
 
     @CallSuper
@@ -1812,7 +1812,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
     }
 
     @MainThread
-    public void p1(@NonNull View view, @Nullable Bundle bundle) {
+    public void onFragmentCreated(@NonNull View view, @Nullable Bundle bundle) {
     }
 
     public void p2(@Nullable SavedState savedState) {
@@ -2111,7 +2111,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         this.o3.n1();
         this.k3 = true;
         this.M3 = new FragmentViewLifecycleOwner(this, w());
-        View U0 = U0(layoutInflater, viewGroup, bundle);
+        View U0 = onFragmentBind(layoutInflater, viewGroup, bundle);
         this.B3 = U0;
         if (U0 != null) {
             this.M3.c();
@@ -2146,7 +2146,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         this.s = 0;
         this.z3 = false;
         this.I3 = false;
-        V0();
+        onDestroy();
         if (!this.z3) {
             throw new SuperNotCalledException("Fragment " + this + " did not call through to super.onDestroy()");
         }

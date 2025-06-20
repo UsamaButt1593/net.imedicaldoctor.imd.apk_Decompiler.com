@@ -1,7 +1,6 @@
 package net.imedicaldoctor.imd.Fragments;
 
 import android.content.Context;
-import net.imedicaldoctor.imd.Fragments.activationActivity;
 
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ activationActivity.activationFragment.ResultWrapper X;
@@ -15,6 +14,6 @@ public final /* synthetic */ class g implements Runnable {
     }
 
     public final void run() {
-        this.s.l3(this.X, this.Y);
+        this.s.onCommandResult(this.X, this.Y);
     }
 }

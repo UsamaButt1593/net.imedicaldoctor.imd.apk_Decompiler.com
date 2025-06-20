@@ -48,7 +48,7 @@ public class EPOTableViewerActivityFragment extends ViewerHelperFragment {
 
     /* JADX WARNING: Unknown top exception splitter block from list: {B:37:0x0188=Splitter:B:37:0x0188, B:25:0x00af=Splitter:B:25:0x00af} */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public android.view.View U0(android.view.LayoutInflater r12, android.view.ViewGroup r13, android.os.Bundle r14) {
+    public android.view.View onFragmentBind(android.view.LayoutInflater r12, android.view.ViewGroup r13, android.os.Bundle r14) {
         /*
             r11 = this;
             android.view.View r0 = r11.C4

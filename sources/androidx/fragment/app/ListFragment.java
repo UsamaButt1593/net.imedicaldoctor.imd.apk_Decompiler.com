@@ -194,7 +194,7 @@ public class ListFragment extends Fragment {
     }
 
     @Nullable
-    public View U0(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
+    public View onFragmentBind(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         Context X1 = X1();
         FrameLayout frameLayout = new FrameLayout(X1);
         LinearLayout linearLayout = new LinearLayout(X1);
@@ -239,8 +239,8 @@ public class ListFragment extends Fragment {
         super.X0();
     }
 
-    public void p1(@NonNull View view, @Nullable Bundle bundle) {
-        super.p1(view, bundle);
+    public void onFragmentCreated(@NonNull View view, @Nullable Bundle bundle) {
+        super.onFragmentCreated(view, bundle);
         J2();
     }
 }
