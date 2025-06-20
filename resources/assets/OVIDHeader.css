@@ -1,0 +1,556 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ovid.css"/>
+<title></title>
+
+<script type="text/javascript" src="bookheader.js" ></script>
+
+<script type="text/javascript" src="jquery-1.4.4.min.js" ></script>
+
+<script type="text/javascript">
+$().ready( function() {
+    if (   $("a[name = gohere]").length > 0
+    && $.browser.msie
+    && $.browser.version < 7 ) {
+        var anchor_location = $("a[name = gohere]");
+        var anchor_location_offset = anchor_location.offset();
+        window.scrollTo(anchor_location_offset.left, anchor_location_offset.top);
+    }
+    
+    
+    $( '.deletedevice' ).click( function( e ) {
+        
+        
+    }
+    
+    
+});
+
+
+
+
+</script>
+
+
+<script language="javascript">
+
+function get_content(e, bookId){
+    document.location.href = "chapter://" + bookId;
+}
+
+
+function getImageList() {
+    var srcList = "";
+    var images = document.images;
+
+    for (var i = 0; i < images.length; i++) {
+        if (i > 0) {
+            srcList += "|";
+        }
+
+        srcList += images[i].getAttribute('src');
+    }
+
+    return srcList;
+}
+
+
+function imageClickHandler(e){
+    window.location.href="image://" + e.target.src;
+}
+function ConvertAllImages() {
+    var images = document.images;
+    for (var i = 0; i < images.length; i++) {
+        if (images[i].parentElement.tagName=='A'){
+
+        } else {
+       	    images[i].onclick = imageClickHandler;
+       	}
+    }
+
+}
+
+function onBodyLoad() {
+    var objBody = document.getElementsByTagName('body')[0];
+    objBody.addEventListener("touchstart", touchStart, false);
+    objBody.addEventListener("touchend", touchEnd, false);
+    objBody.addEventListener("gestureend", gestureEnd, false);
+    objBody.addEventListener("gesturestart", gestureStart, false);
+    // try this for iOS 3.1.3 -- it doesn't like the CSS
+    document.documentElement.style.webkitTouchCallout = "none";
+}
+
+var disableZoom = false;
+
+function getUTDWebURLScheme() {
+    return "uptodatewebaction://";
+}
+
+function getUTDAppURLScheme() {
+    return "uptodateappaction://";
+}
+
+function touchStart(event) {
+    if (event.touches.length > 2) {
+        disableZoom = true;
+    }
+}
+
+function touchEnd(event) {
+    disableZoom = false;
+}
+
+
+
+function gestureStart(event) {
+    //    alert("mdown");
+    event.preventDefault();
+}
+
+function gestureEnd(event) {
+    if (!disableZoom) {
+        var uri = null;
+        
+        if (event.scale > 1.0) {
+            uri = getUTDWebURLScheme() + "zoomIn";
+        } else {
+            uri = getUTDWebURLScheme() + "zoomOut";
+        }
+        event.preventDefault();
+        document.location.href = uri;
+    }
+}
+
+function currentWebkitTextSizeAdjust() {
+    var objBody = document.getElementsByTagName('body')[0];
+    var size = objBody.style.webkitTextSizeAdjust;
+    // (unset size is null)
+    if (size == null) {
+        size = 100;
+    }
+    return size;
+}
+
+function setWebkitTextSizeAdjust(percentInt) {
+    var percentString = percentInt + "%";
+    var ojbBody = document.getElementsByTagName('body')[0];
+    ojbBody.style.webkitTextSizeAdjust = percentString;
+    
+    // send this request to hide the HUD (it says resizing text)
+    var uri = getUTDWebURLScheme() + "zoomFinished";
+    //alert(uri);
+    document.location.href = uri;
+    //    alert("hi" + body.style.webkitTextSizeAdjust);
+}
+
+
+// Use dim/undim with ontouchstart/ontouchend to make HTML elements (ie buttons) reponsive to touches.
+function dim(element) {
+    element.style.opacity = .5;
+}
+
+function undim(element) {
+    element.style.opacity = 1;
+}
+
+
+</script>
+
+
+<style type="text/css">
+
+
+
+
+.highlighted {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+.highlight {
+    background-color: yellow;
+}
+
+
+.highlightYellow {
+    background-color: yellow;
+}
+
+.highlightGreen {
+    background-color: #c1ed72;
+}
+
+.highlightBlue {
+    background-color: #acd8fd;
+}
+
+.highlightRed {
+    background-color: #ffb1cb;
+}
+
+.highlightBanafsh {
+    background-color: #d8b2ff;
+}
+
+.highlightNote {
+    border-bottom: 2px solid red;
+
+}
+
+.highlightedCurrent {
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#EDD000)) repeat-x 0px 0px; /* 0px is top offset */
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+
+</style>
+
+
+
+
+
+
+</head>
+<body style="-webkit-text-size-adjust:[size]%;word-wrap: break-word">
+<script src="log4javascript.js" ></script>
+<script src="core.js" ></script>
+<script src="dom.js" ></script>
+<script src="domrange.js" ></script>
+<script src="wrappedrange.js" ></script>
+<script src="wrappedselection.js" ></script>
+<script src="rangy-cssclassapplier.js" ></script>
+<script src="rangy-highlighter.js" ></script>
+<script src="hightlight.js" ></script>
+<script src="find.js" ></script>
+
+<div id="working"><p class="loading" >&nbsp;</p></div>
+<script>
+document.getElementById('working').innerHTML = '';
+</script>
+<script type="text/javascript">
+
+function showSection(myIDFinal){
+    a = document.getElementById(myIDFinal);
+    if (a){
+        a.scrollIntoView(true);
+    } else {
+        a = document.getElementsByName(myIDFinal)[0];
+        a.scrollIntoView(true);
+    }
+}
+
+function hide_scrollbar() {
+    var e = document.body;
+    e.style.scrollbarBaseColor = '#fff';
+    e.style.scrollbarArrowColor = '#fff';
+    e.style.scrollbarDarkShadowColor = '#fff';
+    e.style.scrollbarShadowColor = '#fff';
+}
+
+function toggle_CA(e) {
+    
+    var src;
+    
+    src = e.target;
+    if (src.nextSibling.style.display == 'block') {
+        src.nextSibling.style.display='none';
+        src.innerHTML='View Answer';
+    } else {
+        src.nextSibling.style.display='block';
+        src.innerHTML='Hide Answer';
+    }
+}
+function resolve_link(e,setid,locator,dbid,toan) {
+    e.href = "ovidweb.cgi?S=HIFFFPPMEDDDOFOFNCLKOBMCCCOEAA00;FTS+Link+Set+Ref="
+    + setid + "|" + locator + "|" + dbid + "|" + toan;
+    return true;
+}
+
+function fixAllTables() {
+    var images = document.getElementsByTagName("table");
+    for (var i = 0; i < images.length; i++) {
+        var table = images[i];
+        var div = document.createElement("div");
+        div.setAttribute("style","width:100%;overflow: scroll;");
+        table.parentElement.insertBefore(div,table);
+        div.appendChild(table);
+    }
+
+}
+
+function fixAllImages2() {
+       var images = document.getElementsByTagName("img");
+            for (var i = 0; i < images.length; i++) {
+                if (images[i].getAttribute("data-cfsrc")!=null){
+                    if (images[i].getAttribute("src")==null){
+                        images[i].src = images[i].getAttribute("data-cfsrc");
+                        images[i].style.display='';
+                        images[i].style.visibility='';
+                    }
+                }
+                var table = images[i];
+                var div = document.createElement("span");
+                div.setAttribute("style","width:100%;overflow: scroll;");
+                table.parentElement.insertBefore(div,table);
+                div.appendChild(table);
+            }
+
+}
+</script>
+
+
+
+
+
+
+
+<style>
+@font-face {
+    font-family: "Charis";
+    font-style: normal;
+    font-weight: normal;
+    src:url(CharisSILR.ttf);
+}
+
+@font-face {
+    font-family: "Charis";
+    font-style: normal;
+    font-weight: bold;
+    src:url(CharisSILB.ttf);
+}
+
+@font-face {
+    font-family: "Charis";
+    font-style: italic;
+    font-weight: normal;
+    src:url(CharisSILI.ttf);
+}
+
+@font-face {
+    font-family: "Charis";
+    font-style: italic;
+    font-weight: bold;
+    src:url(CharisSILBI.ttf);
+}
+body
+{
+    word-break:break-word;
+    margin-left: 0.6em;
+    margin-right:1.2em;
+    padding: 0;
+    font-family:"Charis",Arial,Helvetica,sans-serif;
+    line-height:1.4;
+    font-size: medium;
+    padding-left:0.8em;
+    background-color: rgba(0, 0, 0, 0);
+}
+.HNUM
+{
+    display: block;
+    font-size: 100%;
+    text-align: right;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    border-top: solid 2px #0000A0;
+    border-right: solid 8px #0000A0;
+    margin-bottom: .25em;
+    background-color: #a6abee;
+    color: #0000A0;
+}
+.FIGURE td , .FIGURE-COL2{
+    background-color: rgba(0,0,0,0)
+}
+.FIGURE td{
+    border: 0px solid black;
+}
+.TB .FIGURE
+{
+    font-size: 90%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.2em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    border-top: solid 1px red;
+    border-bottom: solid 1px red;
+    border-left: solid 1px red;
+    border-right: solid 1px red;
+    background-color: #ffda6b;
+}
+
+.TB .FIGURE .TI
+{
+    margin-top: 0em;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+    background-color: #67582b;
+    font-weight: bold;
+    color: white;
+    font-size: 150%;
+    margin-top: .25em;
+    margin-bottom: 0.9em;
+}
+td, th {
+    padding:0px;
+}
+
+.THD .HD, .FRTXT .FRTITLE{
+    font-size: x-large;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.3em;
+    color: #0096a0;
+
+}
+.TLV1 .HD, .TLV2 .HD, .TLV3 .HD, .TLV4 .HD, .TLV5 .HD, .TLV6 .HD, .TLV7 .HD, .TLV8 .HD, .EDS .HD, .ED .HD{
+    padding: 0px;
+}
+.TLV1 .HD, .EDS .HD, .ED .HD{
+    font-size: 120%;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    color: #005aaa;
+    border-bottom: solid 3px #7f9fd3;
+}
+
+.P {
+    text-align:justify;
+    margin:0 0 0.5em;
+}
+.FG .FIGNumber
+{
+    font-size: 110%;
+    font-weight: bold;
+    color: white;
+    padding-right: 10px;
+    background-color: #0000A0;
+}
+table {
+    word-break:normal;
+}
+.FIGURE {
+    border: 0px groove rgb(236,234,244);
+}
+.FIGURE td {
+    padding:0px;
+}
+.FIGURE-COL1 {
+    height: inherit;
+}
+.FIGURE-COL2 .P{
+    font-size: 95%;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    vertical-align: top;
+    border-top: solid 1px #0000A0;
+    line-height: 1.3em;
+}
+body, td, th, table caption{
+    font-family: "Charis";
+}
+.TLV2 .HD{
+    font-style: normal;
+}
+.FG td{
+    display:block;
+}
+.IMGLINK .P {
+    display: none;
+}
+.ftup{
+    display:none;
+}
+.pagenum{
+    display:none;
+}
+
+.table_no
+{
+    margin-top: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+    font-size: 100%;
+    color: #ffda6b;
+}
+
+.emph_BIT {
+    font-style: normal;
+}
+
+a {
+    text-decoration:none;
+    color:#0047b9;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+</style>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+    var images = document.getElementsByTagName("img");
+
+    for (var i = 0; i < images.length; i++) {
+        var image = images[i];
+        if (image.width>150){
+
+            image.removeAttribute("width");
+            image.removeAttribute("height");
+            image.setAttribute("style","width:95%;max-width:400px;display:block;margin:auto;margin-bottom:1em");
+        }
+
+    }
+
+
+
+    $('.FG .P .P').each(function() {
+        var word = $(this).html();
+
+        var index = word.indexOf(' ',word.indexOf(' ')+1);
+        if(index == -1) {
+            return;
+            index = word.length;
+        }
+        $(this).html('<span class="FIGNumber">' + word.substring(0, index) + '</span>' + word.substring(index, word.length));
+    });
+
+
+    $('.TB .FIGURE .TI').each(function() {
+
+        var word = $(this).html();
+        if (!word.startsWith('Table')) return ;
+        var index = word.indexOf(' ',word.indexOf(' ')+1);
+        if(index == -1) {
+            return;
+            index = word.length;
+        }
+        $(this).html('<span class="table_no">' + word.substring(0, index) + '</span>' + word.substring(index, word.length));
+    });
+
+
+});
+
+
+
+</script>

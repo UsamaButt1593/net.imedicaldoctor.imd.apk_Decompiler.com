@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.imedicaldoctor.imd.Utils.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/ripple_layout" android:background="@color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40sp" app:rippleColor2="@color/ColorPrimary" style="@style/RippleStyle">
+    <LinearLayout android:orientation="vertical" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="80dp" android:layout_height="80dp">
+            <ImageView android:id="@+id/image_view" android:layout_width="80dp" android:layout_height="80dp" android:src="#ffefeff4"/>
+            <ImageView android:id="@+id/warning" android:layout_width="20dp" android:layout_height="20dp" android:layout_margin="7dp" android:src="0x7f08029c" android:layout_alignRight="@+id/image_view" android:layout_alignBottom="@+id/image_view"/>
+        </RelativeLayout>
+        <net.imedicaldoctor.imd.AutoResizeTextView android:textColor="@color/black" android:gravity="center" android:layout_gravity="center" android:id="@+id/caption" android:layout_width="80dp" android:layout_height="30dp" android:text="psoriasis" android:maxLines="2" android:minLines="1"/>
+    </LinearLayout>
+</net.imedicaldoctor.imd.Utils.MaterialRippleLayout>

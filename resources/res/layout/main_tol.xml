@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/tol" android:background="@color/material_purple_400" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textSize="40sp" android:gravity="center" android:id="@+id/title_text" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="مسابقه برج لندن" android:fontFamily="@font/bakh_fat"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_margin="10dp" android:layout_weight="0.8">
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/topleft" android:background="@color/tolcolumn" android:padding="10sp" android:layout_width="@dimen/tolcolumnwidth" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="20sp" android:layout_marginEnd="20sp"/>
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/topmiddle" android:background="@color/tolcolumn" android:padding="10sp" android:layout_width="@dimen/tolcolumnwidth" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="20sp" android:layout_marginEnd="20sp"/>
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/topright" android:background="@color/tolcolumn" android:padding="10sp" android:layout_width="@dimen/tolcolumnwidth" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="20sp" android:layout_marginEnd="20sp"/>
+        </LinearLayout>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView android:padding="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/tolhand" android:layout_centerInParent="true"/>
+            <ImageView android:id="@+id/imagehand" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/tolblue" android:layout_centerHorizontal="true" android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_margin="10dp" android:layout_weight="0.8">
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/bottomleft" android:background="@color/tolcolumn" android:padding="10sp" android:clickable="true" android:layout_width="@dimen/tolcolumnwidth" android:layout_height="match_parent" android:layout_marginStart="20sp" android:layout_marginEnd="20sp"/>
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/bottomcenter" android:background="@color/tolcolumn" android:padding="10sp" android:clickable="true" android:layout_width="@dimen/tolcolumnwidth" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="20sp" android:layout_marginEnd="20sp"/>
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/bottomright" android:background="@color/tolcolumn" android:padding="10sp" android:clickable="true" android:layout_width="@dimen/tolcolumnwidth" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="20sp" android:layout_marginEnd="20sp"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="20sp">
+            <androidx.appcompat.widget.AppCompatButton android:textSize="40sp" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="شروع مسابقه" android:fontFamily="@font/bakh_fat"/>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/overlay_layout" android:background="@color/toloverlay" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <TextView android:textSize="60sp" android:textColor="@color/material_yellow_300" android:gravity="center" android:id="@+id/overlay_text_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10sp" android:text="مرحله به پایان رسید" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:fontFamily="@font/bakh_fat"/>
+            <TextView android:textSize="50sp" android:textColor="@color/white" android:gravity="center" android:id="@+id/overlay_text_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="برای ادامه کلیک کنید" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:fontFamily="@font/bakh_fat" android:layout_marginStart="100dp" android:layout_marginEnd="100dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

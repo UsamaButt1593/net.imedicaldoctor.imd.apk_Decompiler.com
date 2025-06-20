@@ -1,0 +1,24 @@
+  <body class="Normal">
+
+
+<script src="log4javascript.js" ></script>
+<script src="core.js" ></script>
+<script src="dom.js" ></script>
+<script src="domrange.js" ></script>
+<script src="wrappedrange.js" ></script>
+<script src="wrappedselection.js" ></script>
+<script src="rangy-cssclassapplier.js" ></script>
+<script src="rangy-highlighter.js" ></script>
+<script src="hightlight.js" ></script>
+<script src="find.js" ></script>
+<div id="question">[Question]</div><table border="0" cellpadding="2" cellspacing="0" class="AnswerChoiceTable"><tbody>[Answers]</tbody></table>
+
+<script>
+    if ([isMultipleAnswers] == true) {
+        document.write('<button id="submitAnswer" onclick="submitAnswers()">Submit</button>');
+    }
+</script>
+<div id="Qbank_Question_Explanation_Wrapper" style="display: block;"><div id="Qbank_Question_Answer_Result" class="blueBackgroundDiv" style="margin-top:10px;margin-right:10px"><div style="padding-right:5px;padding-left:5px; padding-top:0px; padding-bottom:0px;"><table width="100%%" style="width=100%%;" class="correctAnswerBlock"><tbody><tr><td width="50%%"><div><span id="result">[Correct]</span></div><div>[CorrectPercent]% answered correctly</div></td></tr></tbody></table></div></div><div id="explanation"><br><table border="0" cellspacing="0" cellpadding="0" width="100%"><tbody><tr><td width="50%"><b>Explanation:</b></td></tr></tbody></table>[Explanation]
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tbody style="text-align: center"><tr><td width="33%" class="copyright"><b>Time spent:</b>[Seconds]</td><td width="33%" class="copyright"><b>QID</b>:[QID]</td><td width="33%" class="copyright"><b>Last updated</b>:<br>[LastUpdated]</td></tr></tbody></table>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tbody style="text-align: center"><tr><td width="50%" class="copyright"><b>Subject:</b><br/>[Subject]</td><td width="50%" class="copyright"><b>System:</b><br/>[System]</td></tr></tbody></table></div></div></body></html>

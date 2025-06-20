@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@drawable/touch_selector" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <RelativeLayout android:layout_width="65dp" android:layout_height="65dp">
+        <ImageView android:id="@+id/image_view" android:layout_width="65dp" android:layout_height="65dp" android:src="@color/white"/>
+        <ImageView android:id="@+id/checkmark" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="5dp" android:layout_marginTop="8dp" android:src="0x7f080175"/>
+    </RelativeLayout>
+    <net.imedicaldoctor.imd.AutoResizeTextView android:textColor="@color/black" android:layout_gravity="center" android:id="@+id/caption" android:layout_width="65dp" android:layout_height="30dp" android:text="psoriasis" android:maxLines="2" android:minLines="1"/>
+</LinearLayout>

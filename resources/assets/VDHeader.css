@@ -1,0 +1,1388 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" style="-webkit-touch-callout: none; "><head>
+    
+    <meta name="format-detection" content="telephone=no">
+	
+    <style type="text/css">
+        /* ---------------------------------------------------------------------------
+ * utdContent.css - Common CSS for UpToDate topics, graphics, and abstracts. 
+ * ---------------------------------------------------------------------------
+ */
+
+#topicText .bulletIndent1, 
+#topicText .bulletIndent2, 
+#topicText .bulletIndent3 {
+	position:relative;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+#topicText .bulletIndent1 span.glyph, 
+#topicText .bulletIndent2 span.glyph, 
+#topicText .bulletIndent3 span.glyph {
+	position:absolute;
+	left:-17px;
+}
+#topicText .bulletIndent1 {
+	margin-left:32px;
+}
+#topicText .bulletIndent2 {
+	margin-left:64px;
+}
+#topicText .bulletIndent3 {
+	margin-left:96px;
+}
+
+
+
+
+/* ---------------------------------------------------------------------------
+ * end utdContent.css 
+ * ---------------------------------------------------------------------------
+ */
+
+
+
+
+
+/*****************************************************************************
+
+FILE: base.css
+
+/*****************************************************************************/
+
+
+/* -------- PUT TEMPORARY HACKS (AND EXPLANATION HERE -------- */
+
+/* don't display movie links (until they're working) */
+.movieLink {
+    display:none;
+}
+
+
+/* ------------------------- RESETS  ------------------------- */
+
+
+/* (CSS included in all webviews.) */
+
+body {
+    margin: 0;
+}
+
+* {
+    font-family: Helvetica Neue;
+    /* Disable popup dialog that appears when you tap and hold a link. */
+    -webkit-touch-callout: none;
+
+    /* Uncomment this if you want to disable selection/copy of UIWebView text */
+    /* -webkit-user-select: none; */
+}
+
+/**
+ Used by UIWebview's highlight method, which is used when highlighting references.
+*/
+.highlighted {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+.highlight {
+    background-color: yellow;
+}
+
+.highlightYellow {
+    background-color: yellow;
+}
+
+.highlightGreen {
+    background-color: #c1ed72;
+}
+
+.highlightBlue {
+    background-color: #acd8fd;
+}
+
+.highlightRed {
+    background-color: #ffb1cb;
+}
+
+.highlightBanafsh {
+    background-color: #d8b2ff;
+}
+
+.highlightNote {
+    border-bottom: 2px solid red;
+
+}
+
+.highlightedCurrent {
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#EDD000)) repeat-x 0px 0px; /* 0px is top offset */
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+
+a {
+    color: #00814F;
+
+/*    color: #2C4E3B; */
+
+
+/* the blue */
+/*    color: #0073B7; */
+/* the gold */
+/*    color: #FA8100; */
+/* a green */
+
+/* graphics-link green */
+/* color: #019e30 */
+/* UTD web-link green */
+/*    color: #363;*/
+    /* UTD logo-green  */
+/*    color: #009E60; */
+
+
+    text-decoration: none;
+}
+
+
+
+
+/* 
+Topic Title (inserted via TopicHeaderTemplate.html)
+*/
+
+#generatedTopicTitle {
+    font-weight: bold;
+    font-size: 18px;
+/*    color:#009E60; Yesi's*/
+    color: #000;
+    padding-left: 5px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+/* 
+Contributors / Last Updated (inserted via TopicHeaderTemplate.html)
+*/
+#contributorsLink a, #lastUpdatedLink a {
+    color: #009E60; 
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0px;
+    margin: 10px 15px 0px 5px;
+    float: left;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+
+@media screen {
+    #topicContributors {
+        display: none;
+    }
+}
+    
+@media print {
+    #topicContributors {
+        margin: 1em 0 1em 0;
+        padding: 0;
+        overflow: hidden; 
+        display: inherit;
+    }
+}
+
+#topicContributors a {
+    font-size: 12px;
+    padding: 0px;
+}
+
+#topicContributors .contributorType {
+    font-weight:bold;
+}
+
+#topicContributors div {
+	float: left; 
+	width: 33%;
+	margin: 0;
+	padding: 0;
+}
+
+#lastUpdatedLink br {
+    clear: both;
+}
+
+
+/* Quick styling for the UTD copyright. */
+#utdCopyright, #utdCopyrightClient  {
+    margin: 30px 10px;
+    font-size: 10px;
+    font-family: Verdana;
+    text-align: center;
+}
+
+/* Actually, don't show the server's copyright. The client will show the current year. */
+#utdCopyright {
+    display:none;
+}
+
+
+
+.visibleAlways {
+    display: inherit;
+}
+
+.visibleNever {
+    display: none;
+}
+
+@media screen {    
+    .visiblePrintOnly {
+        display: none;
+    }
+    
+    .visibleScreenOnly {
+        display: inherit;
+    }
+}
+
+@media print {
+    .visiblePrintOnly {
+        display: inherit;
+    }
+    
+    .visibleScreenOnly {
+        display: none;
+    }
+}
+
+
+/*****************************************************************************
+
+FILE: iphone.css (ie. topics, graphics, ipad, etc.)
+
+/*****************************************************************************/
+
+
+
+/* ------------------------- PUT TEMPORARY HACKS HERE ------------------------- */
+
+/* ------------------------- TOPIC BODY  ------------------------- */
+html body {
+    font-family: Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* ------------------------- SHARED STYLES (HINT: PROBABLY DONT WANT MANY)  ------------------------- */
+
+p, td, li {
+    font-family: Helvetica;
+    font-size: 13px;
+}
+
+#topicVersion {
+    font-size: 10px;
+}
+
+span.h3 {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+span.h4 {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Verdana;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+span.h5 {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Verdana;
+	font-weight: bold;
+	margin-left: 20px;
+	padding-right: 10px;
+	display: inline;
+}
+
+span.h5:after {
+    content: " —";
+}
+
+.drugH1Div, .drugH2Div {
+    /* This is a workaround until we get better markup. */
+	margin: 0px;
+	padding: 0px;
+}
+
+span.h1, .drugH1 {
+    /* This is a workaround until we get better markup. */
+    margin-left : -5px;
+    margin-right: -5px;
+	padding: 3px 0px 3px 5px;
+    display: block;
+    
+    font-size: 13px;
+    font-weight: bolder;
+    font-family: Helvetica Bold;
+}
+
+
+@media screen {
+	span.h1, .drugH1 {
+        /* White with subtle gray shadow. */
+        color: #fff;
+        text-shadow: 1px 1px 1px #676C6F;
+        
+        /* The first 1px top border. */
+        border-top: #717D85 1px solid;
+        /* 
+         The background gradient. It is offset from the top by 1px so the background color will show through and appear to be an innter top-border.
+         IMPORTANT: This line must come before setting `background-color` or the background color won't shine through.
+         */
+        background: -webkit-gradient(linear, left top, left bottom, from(#717D85), to(#8C9CA9)) repeat-x 0px 1px; /* 1px is top offset */
+        /* This doesn't appear to be the background, it's the 1px inner border mentioned above. */
+        background-color: #B9C3CB; 
+        /* The actual bottom border. */
+        border-bottom: #989EA4 1px solid;
+    }
+}
+
+span.h2, drugH2 {
+    /* This is a workaround until we get better markup. */
+    margin-left : -5px;
+    margin-right: -5px;
+	padding: 0px 0px 0px 5px;
+    display: block;
+    
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Verdana;
+}
+ 
+/**
+ Fancy screen graphics.
+*/
+@media screen {
+    span.h2, drugH2 {    
+        /* White with subtle gray shadow. */
+        color: #fff;
+        text-shadow: 1px 1px 1px #676C6F;
+        
+        /* The first 1px top border. */
+        border-top: #717D85 1px solid;
+        /* 
+         The background gradient. It is offset from the top by 1px so the background color will show through and appear to be an innter top-border.
+         IMPORTANT: This line must come before setting `background-color` or the background color won't shine through.
+         */
+        background: -webkit-gradient(linear, left top, left bottom, from(#8C9CA9), to(#A4B2BD)) repeat-x 0px 1px; /* 1px is top offset */
+        /* This doesn't appear to be the background, it's the 1px inner border mentioned above. */
+        background-color: #B9C3CB; 
+        /* The actual bottom border. */
+        border-bottom: #989EA4 1px solid;
+    }
+}
+
+
+#topicText ul li {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+div.ord-stmt li {
+    padding-bottom:5px;
+    text-indent:-13px;
+}
+
+div.ord-stmt span.attributes {
+    display:inline !important;
+    padding-right:5px;
+}
+
+div.ord-stmt span.link {
+    display:none;
+}
+
+div.ord-stmt span.content b {
+    margin-left:-5px;
+}
+
+/* basic outline/related topics styling */
+#referenceLinks {
+    border-bottom: 1px solid #E0E0E0;
+    font-size: 1.15em;
+    font-weight: bold;
+    left: 0px;
+    list-style: none;
+    margin-left: 0px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+#topicText p {
+    line-height: 140%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#topicText .subscript {
+  font-size: 75%;
+  position: relative;
+  bottom : -0.5em;
+}
+
+#topicText .superscript {
+  font-size: 75%;
+  position: relative;
+  top: -0.5em;
+}
+
+#topicText ul.bullet, #topicText ul.bulletCompact, #topicText ul.hyphen {
+	padding-right: 10px;
+    padding-left: 10px;
+}
+
+#topicText ul.bullet-block, #topicText ul.bulletCompact-block, #topicText ul.hyphen-block {
+	margin-top: 0px;
+	margin-bottom: 5px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#topicText ul.bullet li {
+	font-size: 13px;
+    font-family: Verdana;
+	list-style-type: disc;
+    list-style-position: inside;
+	padding: 8px 0px 0px 0;
+   	text-indent: 10px;
+}
+
+#topicText ul.bullet-block li {
+	font-size: 13px;
+    font-family: Verdana;
+	list-style-type: disc;
+	padding: 6px 0px 6px 0px;
+    margin-left: 20px;
+}
+
+#topicText ul.bulletCompact li {
+	font-size: 13px;
+    font-family: Verdana;
+	list-style-type: disc;
+    list-style-position: inside;
+	padding: 0px;
+   	text-indent: 10px;
+}
+
+#topicText ul.bulletCompact-block li {
+	font-size: 13px;
+    font-family: Verdana;
+	list-style-type: disc;
+	padding: 0px;
+    margin-left: 20px;
+}
+
+#topicText ul.hyphen li {
+	font-size: 13px;
+    font-family: Verdana;
+	list-style-type: none;
+    list-style-position: inside;
+	padding: 5px 0px 5px 0px;
+    text-indent: 16px;
+   	margin-left: 0px;
+}
+
+#topicText ul.hyphen-block li {
+	font-size: 13px;
+    font-family: Verdana;
+	list-style-type: none;
+	margin-left: 30px;
+	padding: 5px 0px 5px 0px;
+    text-indent: -14px;
+}
+
+#topicText ul.hyphen-block li:before {
+    content: "– ";
+}
+
+#topicText .statement_entity {
+	padding-right: 5px;
+}
+
+#topicText .drugBrandNames ul li {
+	font-size: 13px;
+    font-family: Verdana;
+	margin-left: 0px;
+    margin-right: 2px;
+	display: inline;
+}
+
+#topicText .drugBrandNames ul {
+	font-size: 13px;
+    font-family: Verdana;
+	margin-left: 0px;
+    padding-left: 2em;
+}
+
+#topicText a.grade {
+    font-weight: bold;
+}
+
+#drugCopy {
+	color: #666666;
+	margin: 1em 0 2em 0;
+    font-size: 13px;
+}
+
+.collapsible {
+	margin-top: 2em;
+}
+
+.collapsible-title {
+	font-weight: bold;
+    font-size: 13px;
+}
+
+.collapsible-date {
+	font-weight: bold;
+    font-size: 13px;
+}
+
+
+
+/*
+    BEGIN IOS GRAPHICS
+*/
+
+@media print {
+    .mediaPlayerControlOverlay {
+        display: none;
+    }
+}
+
+/*
+*/
+.graphicWrapper {
+    font-size: 16px;
+    display: inline;
+}
+
+
+/*
+    END IOS GRAPHICS
+*/
+
+
+
+/*
+    zcharter - 2012-07-19 - I think these hX styles are ours. They were in a weird place when I took out the UTD_gx_gen.css text.
+*/
+h1 {
+	color: #D7833D;
+	margin-top: 0px;
+	margin-bottom: 16px;
+	font-size: 18px;
+	line-height: 100%;
+	padding: 0px 0px 0px 0px;
+}
+
+h2 {
+	margin-top: 12px;
+	margin-bottom: 6px;
+	font-size: 14px;
+	line-height: 100%;
+}
+
+h3 {
+	margin-top: 12px;
+	margin-bottom: 6px;
+	margin-left: 40px;
+	font-size: 12px;
+	line-height: 100%;
+}
+
+
+
+/*****************************************************************************
+
+FILE: outline.css
+
+/*****************************************************************************/
+
+
+
+/*
+NOTES:
+
+#009E60 is the official UTD logo green color.
+
+
+*/
+
+/* ------------------------- PUT TEMPORARY HACKS HERE ------------------------- */
+#outlineTitle {
+    display:none;
+}
+
+#topicVersionFooter {
+    font-size: 10px;
+    color: #999999;
+    padding: 10px 10px 0px 10px;
+}
+
+/* summary and recommendations (temp styling) */
+/* NOTE: this selector has to have higher precendence over the default li background. */
+#innerOutline .summaryItem .plainItem {
+    margin: 20px;
+    padding: 6px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2d9267), to(#1a5238)) repeat-x 0px 0px; /* 0px is top offset */
+}
+
+
+
+/* summary and recommendations (temp styling) */
+/* NOTE: this selector has to have higher precendence over the default li background. */
+#innerOutline .summaryItem .plainItem a {
+    font-size: 11px;
+    color: #ffffff;
+    padding-right: 20px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAO6gAADuoBo4pjcQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTM5jWRgMAAAAVdEVYdENyZWF0aW9uIFRpbWUANS8xMC8xMRgrJYoAAAKUSURBVEiJ7dbPa9NgGAfwb950suigqIx58T7YxdcHhgjiZRQc6EX8B8YYnoSdenQMNnrw1AXBw6SHou3Ng6AeNtxGUVhj19BVlFYotl2Yw44lWbstPzy4irRL2znHDtsXAvnxvO/nfZOXJILrujiJsBNRz+BTAcN13aat03DOBV3XL3LOhVZ1RNRkHGnGjLEux3GCiUTiKRGdO1Tbo8AAzq+vr1+SJOnh3Nzci4WFhb52s/9fsM8wjB4A8Pv99wcHB99PTU1d6QQ/8uJyHOdPH93d3f1DQ0PJWCx2k4ha993p4iIisVwu3zEMI16r1T5Uq9WPuq4nTdP84TbEsiw9n8/fJSJxv22z0Q7mnAvZbLbfNM23jUC7lEqlR0TkOzRMRCyTydyyLGvrsGg9a2trj4moq2OYcy5Eo9GrlmXp/4oWi8Xc6OjobSKSGg2f17NnjJ0LBAKyKIo9bVfYAVlaWlLGx8fDAMoArMbrB8KccyEYDF7r7e29Vz9XqVSMdDqdT6fT3wqFwsbi4mIRgDg5ORkYHh6+Ua+r1Wq78Xj83czMTBTACoDvAPY6ghljXQMDAw/qx8lk8vPExMRLTdNyADYAbAHYBnDB7/dfr9dtbm7q09PTkfn5+TcAMgA0RVH2iKjJ8LrVkm3bfQAQiURey7IcA5AFoAEwAdQcx9ljjF2WJMkEAE3TNsbGxp6Uy+UEgC8AfiqKYnv07wn7bNsWV1dXl2VZngWQ2h/9zt9FRATGmKOq6qeRkZFnAJYB5B3H0VOpVMuvjRfs5HK5RCgUeg7gK4CSx+itcDg8q6qqD0ABQEFRlGorsB28EwqFXuH3aqy0uGXbqqqu7O/riqLsdoICgOB6vCKPO6fv1+cMPoOPLb8AuhdKLGRexp8AAAAASUVORK5CYII%3D');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+li.disclosureItem {
+     background-image: url('data:image/png;base64,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%3D%3D');
+     background-repeat: no-repeat;
+     background-position: right center;
+}
+
+/* ------------------------- RESET ------------------------- */
+body {
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+
+/*
+zcharter - 2012-07-02 - The padding here caused problems in the abstract list view (hid the list bullets), had to add #contentBody.
+It would be better to have more specific selectors, etc.
+*/
+#contentBody #topicOutline,  /* regular outline */
+#topicOutline *   /* Reference link in outline -- iPad only */ {
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    font-family: Verdana;
+    /* Disable popup dialog that appears when you tap and hold a link. */
+    -webkit-touch-callout: none;
+
+    /* Uncomment this if you want to disable selection/copy of UIWebView text */
+    /* -webkit-user-select: none; */
+}
+
+
+/* ------------------------- OUTLINE STYLES ------------------------- */
+
+/* ------------------------- OUTLINE LIST LAYOUT ------------------------- */
+/*
+Bullet order:
+- plain
+    • bullet
+        - dash
+            • bullet2
+                - dash2
+*/
+
+
+#topicOutline {
+    /* Put a border on the bottom to close the last li.plainItem, looks naked without it. */
+    
+}
+
+/* default list style -- let each bullet specify its padding-left*/
+#topicOutline li {
+    list-style-type: none;
+    margin:0;
+    padding: 3px 5px 3px 5px;
+    border-bottom: 1px solid #ccc;
+}
+/* Bullet Level 1 */
+#topicOutline li.plainItem {
+    border-top: 1px solid #000;
+
+}
+/* Bullet Level 2 */
+#topicOutline li.bulletItem {
+    padding-left: 25px;
+    text-indent: -15px;
+
+}
+/* Bullet Level 3 */
+#topicOutline li.dashItem {
+    padding-left: 40px;
+    text-indent: -18px;
+}
+/* Bullet Level 4 */
+#topicOutline li.bulletItem2 {
+    padding-left: 55px;
+    text-indent: -16px;
+}
+/* Bullet Level 5 */
+#topicOutline li.dashItem2 {
+    padding-left: 70px;
+    text-indent: -15px;
+}
+
+
+
+/* ------------------------- OUTLINE LINK DISPLAY ------------------------- */
+
+/* All outline items.  */
+#topicOutline li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Bullet Level 1 */
+#topicOutline .plainItem {
+}
+#topicOutline .plainItem a {
+    font-weight: bold;
+    font-size: 13px;
+    color: #00814F;
+    display: block;
+    
+/*    text-shadow: 1px 1px 1px #000; */
+}
+
+/* Bullet Level 2 */
+
+#topicOutline .bulletItem, #topicOutline .dashItem, #topicOutline .bulletItem2, #topicOutline .dashItem2 {
+
+}
+#topicOutline .bulletItem a {
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+}
+/* Bullet Level 3 */
+#topicOutline .dashItem a {
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+}
+/* Bullet Level 4 */
+#topicOutline .bulletItem2 a {
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+}
+/* Bullet Level 5 */
+#topicOutline .dashItem2 a {
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+}
+
+
+/* ------------------------- OUTLINE LIST BULLETS ------------------------- */
+/* 
+Hint: Here are some good unicode bullet characters (be sure to check in the iPhone simulator/device):  . .  . .. 
+*/
+/* Bullet Level 1 */
+#topicOutline .plainItem a:before {
+  content: "";
+}
+/* Bullet Level 2 */
+#topicOutline .bulletItem a:before {
+  content: "\25CF \0000a0";
+}
+/* Bullet Level 3 */
+#topicOutline .dashItem a:before {
+  content: "\2013 \0000a0";
+}
+/* Bullet Level 4 */
+#topicOutline .bulletItem2 a:before {
+  content: "\25CF \0000a0";
+}
+/* Bullet Level 5 */
+#topicOutline .dashItem2 a:before {
+  content: "\2013 \0000a0";
+}
+
+
+
+
+/*****************************************************************************
+
+FILE: abstract.css
+
+/*****************************************************************************/
+
+
+
+/*  -- from web topic.css
+--------------------------------------------------------------------------------
+ The abstracts page
+--------------------------------------------------------------------------------
+
+*/
+
+#abstracts {
+    font-size: 12px;
+    font-family: Verdana;
+    margin: 5px;
+}
+
+#abstracts #abstractsToolbar {
+    text-align: right;
+    margin-right: 2em;
+}
+
+#abstracts .textLink {
+    vertical-align: 50%;
+    margin-right: 0.75em;
+}
+
+#abstracts img {
+    width: 24px;
+    height: 20px; 
+}
+
+#abstracts h1 {
+    font-size: 140%;
+    text-align: center;
+    margin: 1em 0 0 0;
+}
+
+#abstracts h2 {
+    font-size: 110%;
+/*    text-align: center; */
+    margin: 0.2em 0 1.5em 0;
+}
+
+#abstracts .abstract {
+    border-top: 4px solid #000000;
+    padding: 0.4em 0 1em 0;
+}
+
+#abstracts .abstractRow {
+    clear: both;
+    padding-top: 0.4em;
+    padding-bottom: 5px;
+    overflow: hidden; 
+}
+
+#abstracts .abstractRow .label {
+    float: left;
+    width: 40px;
+    font-size: 12px;
+}
+
+#abstracts .abstractRow .value {
+    margin-left: 40px;
+    font-size: 12px;
+}
+
+#abstracts .citationNumber {
+    font-weight: bold;
+    padding-top: 0.4em;
+}
+
+#abstracts .abstractText {
+
+}
+
+#abstracts .noAbstract {
+    margin-top: 1em;
+}
+
+#abstracts #ovidLink{
+    text-decoration : underline; 
+    cursor: pointer; 
+}
+
+    </style>
+    
+    <script type="text/javascript" charset="utf-8">
+        function getUTDWebURLScheme() {
+    return "uptodatewebaction://";
+}
+
+function getUTDAppURLScheme() {
+    return "uptodateappaction://";
+}
+
+/**
+ Serializes the resource request into a URL that the Objective-C side can respond to.
+ */
+function getResource(requestType, arrayOrObject) {
+    // turn the array or object into a json string and put it (escaped) into the URL
+    var JSONString = (JSON.stringify(arrayOrObject));
+    var URLString = escape(JSONString);
+    var uri = getUTDWebURLScheme() + requestType + "#" + URLString;
+
+    document.location.href = uri;
+}
+
+/**
+ Serializes the resource request into a URL that the Objective-C side can respond to.
+ */
+function appAction(objJson) {
+    var jsonString = (JSON.stringify(objJson));
+    var URLString = escape(jsonString);
+    var uri = getUTDAppURLScheme() + "#" + URLString;
+    
+    document.location.href = uri;
+}
+
+function getMetaWithNameAndContentPrefix(metaName, contentPrefix) {
+    var output = null;
+    
+    metaName = metaName.toLowerCase();
+    contentPrefix = contentPrefix.toLowerCase();
+    
+    var objMetaList = document.getElementsByTagName("meta");
+    for (var ii=0; ii<objMetaList.length; ii++) {
+        if (objMetaList[ii].name.toLowerCase() == metaName && objMetaList[ii].content.toLowerCase().indexOf(contentPrefix) == 0) {
+            output = objMetaList[ii];
+            break;
+        }
+    }
+    return output;
+}
+
+function setViewportWidth(width) {
+    var metaElement = getMetaWithNameAndContentPrefix("viewport", "width=");
+    if (metaElement == null) {
+        metaElement = document.createElement('meta');
+        // set properties
+        metaElement.setAttribute("name", "viewport");
+        var objHead = document.getElementsByTagName('head')[0];
+        objHead.appendChild(metaElement);
+    }
+    metaElement.setAttribute("content", "width=" + width + ";");
+}
+
+/**
+ * Gets the x,y coord of an object, given the object
+ */
+function getObjectCoord(obj) {
+	var xCoord = 0;
+	var yCoord = 0;
+	
+	if (obj) {
+		xCoord = obj.offsetLeft;
+		yCoord = obj.offsetTop;
+		
+		var tempEl = obj.offsetParent;
+		while (tempEl != null) {
+			xCoord += tempEl.offsetLeft;
+			yCoord += tempEl.offsetTop;
+			tempEl = tempEl.offsetParent;
+		}
+	}
+	return {"x":xCoord, "y":yCoord};
+}
+
+function getObjectXCoord(objectId) {
+    var xCoord = 0; 
+    var obj = document.getElementById(objectId); 
+    if (obj) {
+        xCoord = getObjectCoord(obj).x;
+    } 
+    return xCoord;
+}
+
+function getObjectYCoord(objectId) {
+    var yCoord = 0; 
+    var obj = document.getElementById(objectId);
+    if (obj) {
+        yCoord = getObjectCoord(obj).y;
+    } 
+    return yCoord;
+}
+
+function findObjectOfType(parent, tagName) {
+	tagName = tagName.toLowerCase();
+	var output = null;
+	if (parent) {
+        if (parent.nodeType == 1) {
+            if (parent.tagName.toLowerCase() == tagName) {
+                output = parent;
+            } else {
+                for (var i = parent.childNodes.length - 1; i >= 0; i--) {
+					output = findObjectOfType(parent.childNodes[i], tagName);
+					if (output != null) {
+						break;
+					}
+                }
+            }
+        }
+    }
+	return output;
+}
+
+function getElementsByTagNames(list,obj) {
+	if (!obj) var obj = document;
+	var tagNames = list.split(',');
+	var resultArray = new Array();
+	for (var i=0;i<tagNames.length;i++) {
+		var tags = obj.getElementsByTagName(tagNames[i]);
+		for (var j=0;j<tags.length;j++) {
+			resultArray.push(tags[j]);
+		}
+	}
+	var testNode = resultArray[0];
+	if (!testNode) return [];
+	if (testNode.sourceIndex) {
+		resultArray.sort(function (a,b) {
+                         return a.sourceIndex - b.sourceIndex;
+                         });
+	}
+	else if (testNode.compareDocumentPosition) {
+		resultArray.sort(function (a,b) {
+                         return 3 - (a.compareDocumentPosition(b) & 6);
+                         });
+	}
+	return resultArray;
+}
+
+function getClosestParagraphIdToTopOfPage(customMarkerId) {
+    var closestParagraphId = null;
+    
+    var currentScrollHeight = window.pageYOffset;
+    if (currentScrollHeight > 0) {
+        var existingObj = document.getElementById(customMarkerId);
+        if (existingObj != null) {
+            existingObj.removeAttribute("id");
+        }
+        var allParagraphs = getElementsByTagNames('p,div,li');
+        var closestDistance = null;
+        var closestParagraph = null;
+        var percDiff = null;
+        
+        for(var ii=0; ii<allParagraphs.length; ii++) {
+            var curP = allParagraphs[ii];
+            var objCoord = getObjectCoord(curP);
+            var distance = currentScrollHeight - objCoord.y;
+            var absDistance = Math.abs(distance);
+            
+            if (closestParagraph == null) {
+                closestParagraph = curP;
+                closestDistance = distance;
+            } else {
+                if (distance < -30) { //30 pixel offset
+                    break;   
+                }
+                
+                if (absDistance < closestDistance) {
+                    closestParagraph = curP;
+                    closestDistance = absDistance;
+                }
+            }
+        }
+        
+        if (closestParagraph != null) {
+            if (closestParagraph.id) {
+                closestParagraphId = closestParagraph.id;
+            } else {
+                closestParagraph.setAttribute("id", customMarkerId);
+                closestParagraphId = customMarkerId;
+            }
+        }
+    }
+    return closestParagraphId;
+}
+
+
+
+
+function onBodyLoad() {
+    var objBody = document.getElementsByTagName('body')[0];
+    objBody.addEventListener("touchstart", touchStart, false);
+    objBody.addEventListener("touchend", touchEnd, false);
+    objBody.addEventListener("gestureend", gestureEnd, false);
+    objBody.addEventListener("gesturestart", gestureStart, false);
+    // try this for iOS 3.1.3 -- it doesn't like the CSS
+    document.documentElement.style.webkitTouchCallout = "none";
+}
+
+var disableZoom = false;
+
+
+function touchStart(event) {
+    if (event.touches.length > 2) {
+        disableZoom = true;
+    }
+}
+
+function touchEnd(event) {
+    disableZoom = false;
+}
+
+function gestureStart(event) {
+    //    alert("mdown");
+    event.preventDefault();
+}
+
+function gestureEnd(event) {
+    if (!disableZoom) {
+        var uri = null;
+        
+        if (event.scale > 1.0) {
+            uri = getUTDWebURLScheme() + "zoomIn";
+        } else {
+            uri = getUTDWebURLScheme() + "zoomOut";
+        }
+        event.preventDefault();
+        document.location.href = uri;
+    }
+}
+
+function currentWebkitTextSizeAdjust() {
+    var objBody = document.getElementsByTagName('body')[0];
+    var size = objBody.style.webkitTextSizeAdjust;
+    // (unset size is null)
+    if (size == null) {
+        size = 100;
+    }
+    return size;
+}
+
+function setWebkitTextSizeAdjust(percentInt) {
+    var percentString = percentInt + "%";
+    var ojbBody = document.getElementsByTagName('body')[0];
+    ojbBody.style.webkitTextSizeAdjust = percentString;
+    
+    // send this request to hide the HUD (it says resizing text)
+    var uri = getUTDWebURLScheme() + "zoomFinished";
+    //alert(uri);
+    document.location.href = uri;
+    //    alert("hi" + body.style.webkitTextSizeAdjust);
+}
+
+
+// Use dim/undim with ontouchstart/ontouchend to make HTML elements (ie buttons) reponsive to touches.
+function dim(element) {
+    element.style.opacity = .5;    
+}
+
+function undim(element) {
+    element.style.opacity = 1;
+}
+
+/* Thanks, Javascript. You make everything so easy! */
+function removeCSSClass(it, classNameToRemove){
+    var classNames = it.className;
+    var re = new RegExp('(^| )' + classNameToRemove + '( |$)');
+    classNames = classNames.replace(re, '$1');
+    classNames = classNames.replace(/ $/, '');
+    it.className = classNames;
+}
+
+function setHighlighted(elementId, highlighted) {
+    var highlightedCSSClass = "highlighted";
+    var it = document.getElementById(elementId);
+    if (highlighted) {
+        it.className += highlightedCSSClass;
+    } else {
+        removeCSSClass(it, highlightedCSSClass);
+    }
+}
+
+
+
+
+
+// the main entry point to start the search
+function highlightAllOccurencesOfString(keywordsArray, resultIdPrefix) {
+    //first item is the search term, so leave as is, others are synonyms, so search with break
+    var keywords = escapeRegexChars(keywordsArray[0]);
+    for(var ii=1; ii<keywordsArray.length; ii++) {
+        keywords = keywords + "|\\b" + escapeRegexChars(keywordsArray[ii]) + "\\b";
+    }
+    var keywordPattern = new RegExp(keywords, "i"); //case insensitive
+    removeAllHighlights();
+    var tmpArray = new Array();
+    
+    var objTopLevelElement = document.getElementById("contentBody");
+    if (objTopLevelElement == null) {
+        objTopLevelElement = document.body;
+    }
+    highlightAllOccurencesOfStringForElement(objTopLevelElement, keywordPattern, tmpArray, resultIdPrefix);
+    var objInstances = new Array();
+    //reverse the array
+    var allSpans = document.getElementsByTagName("span");
+    for (var ii=0; ii<allSpans.length; ii++) {
+        var id = allSpans[ii].getAttribute("id");
+        if (id != null && id.indexOf(resultIdPrefix) == 0) {
+            objInstances[objInstances.length] = id;
+        }
+    }
+    
+    var jsonStringForArray = (JSON.stringify(objInstances));
+    
+    return jsonStringForArray;
+}
+
+// helper function, recursively searches in elements and their child nodes
+function highlightAllOccurencesOfStringForElement(element, keywordPattern, instances, resultIdPrefix) {
+    if (element) {
+        if (element.nodeType == 3) {        // Text node
+            while (true) {
+                var value = element.nodeValue;  // Search for keyword in text node
+                //var idx = value.toLowerCase().indexOf(keyword);
+                
+                var match = keywordPattern.exec(value);
+                
+                if (match == null) {
+                    break;             // not found, abort
+                }
+                var idx = match.index;
+                var span = document.createElement("span");
+                var text = document.createTextNode(value.substr(idx, match[0].length));
+                var curId = resultIdPrefix + instances.length;
+                span.appendChild(text);
+                span.setAttribute("class", "highlighted");
+                span.setAttribute("id", curId);
+                text = document.createTextNode(value.substr(idx + match[0].length));
+                instances[instances.length] = curId;
+                element.deleteData(idx, value.length - idx);
+                var next = element.nextSibling;
+                element.parentNode.insertBefore(span, next);
+                element.parentNode.insertBefore(text, next);
+                element = text;
+            }
+        } else if (element.nodeType == 1) { // Element node
+            if (element.style.display != "none" && 
+                element.nodeName.toLowerCase() != 'select' && 
+                element.nodeName.toLowerCase() != 'script' &&
+                element.className.toLowerCase() != 'visibleprintonly' &&
+                element.className.toLowerCase() != 'visiblenever') {
+                for (var i=element.childNodes.length-1; i>=0; i--) {
+                    highlightAllOccurencesOfStringForElement(element.childNodes[i], keywordPattern, instances, resultIdPrefix);
+                }
+            }
+        }
+    }
+}
+
+// helper function, recursively removes the highlights in elements and their childs
+function removeAllHighlightsForElement(element, resultIdPrefix) {
+    if (element) {
+        if (element.nodeType == 1) {
+            var id = element.getAttribute("id");
+            if (id != null && id.indexOf(resultIdPrefix) == 0) {
+                var text = element.removeChild(element.firstChild);
+                element.parentNode.insertBefore(text,element);
+                element.parentNode.removeChild(element);
+                return true;
+            } else {
+                var normalize = false;
+                for (var i = element.childNodes.length - 1; i >= 0; i--) {
+                    if (removeAllHighlightsForElement(element.childNodes[i], resultIdPrefix)) {
+                        normalize = true;
+                    }
+                }
+                if (normalize) {
+                    element.normalize();
+                }
+            }
+        }
+    }
+    return false;
+}
+
+// the main entry point to remove the highlights
+function removeAllHighlights(resultIdPrefix) {
+    var objTopLevelElement = document.getElementById("contentBody");
+    if (objTopLevelElement == null) {
+        objTopLevelElement = document.body;
+    }
+    removeAllHighlightsForElement(objTopLevelElement, resultIdPrefix);
+}
+
+function escapeRegexChars(input) {
+    var output = input.replace("\\", "\\\\")
+    .replace("?", "\\?")
+    .replace(".", "\\.")
+    .replace("^", "\\^")
+    .replace("$", "\\$")
+    .replace("*", "\\*")
+    .replace("+", "\\+")
+    .replace("{", "\\{")
+    .replace("[", "\\[")
+    .replace("]", "\\]")
+    .replace("|", "\\|")
+    .replace("(", "\\(")
+    .replace(")", "\\)");
+    return output;
+}
+
+function goToSelectedItem(itemId) {
+    var obj = document.getElementById(itemId);
+    obj.className = 'highlightedCurrent';
+    obj.scrollIntoView(true);
+ //   document.body.scrollTop = window.pageYOffset - 50;
+}
+    </script>
+    
+    
+</head>
+
+<body onload="onBodyLoad();" style="-webkit-text-size-adjust:[size]%;word-wrap: break-word" class="ios app tablet">
+<script src="log4javascript.js" ></script>
+<script src="core.js" ></script>
+<script src="dom.js" ></script>
+<script src="domrange.js" ></script>
+<script src="wrappedrange.js" ></script>
+<script src="wrappedselection.js" ></script>
+<script src="rangy-cssclassapplier.js" ></script>
+<script src="rangy-highlighter.js" ></script>
+<script src="hightlight.js" ></script>
+<script src="find.js" ></script>
+
+
+<style>
+/** Topic Title: sometimes we hide it, like on iPad, but never hide it when we're printing (ie. not a screen.) */
+@media screen {
+    #contributorsLink {
+        display:inline;
+    }
+}
+
+/** Always hide the contributor link on the printed version. */
+@media print {
+    #contributorsLink {
+        display:none;
+    }
+}
+</style>
+
+    
+<div id="contentBody">

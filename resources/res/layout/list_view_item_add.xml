@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.imedicaldoctor.imd.Utils.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/ripple_layout" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40sp" app:rippleColor2="@color/ColorPrimary" style="@style/RippleStyle">
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:background="@drawable/touch_selector" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40sp" android:backgroundTint="@color/white">
+        <ImageView android:layout_gravity="center" android:id="@+id/image" android:background="@color/clear" android:layout_width="35sp" android:layout_height="25dp" android:layout_marginRight="5dp" android:src="0x7f0800f3"/>
+        <TextView android:textSize="16dp" android:textColor="@color/black" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/text" android:padding="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Add Drug"/>
+    </LinearLayout>
+</net.imedicaldoctor.imd.Utils.MaterialRippleLayout>

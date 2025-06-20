@@ -1,0 +1,79 @@
+.highlighted {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+.highlight {
+    background-color: yellow;
+}
+.highlightYellow {
+    background-color: yellow;
+}
+
+.highlightGreen {
+    background-color: #c1ed72;
+}
+
+.highlightBlue {
+    background-color: #acd8fd;
+}
+
+.highlightRed {
+    background-color: #ffb1cb;
+}
+
+.highlightBanafsh {
+    background-color: #d8b2ff;
+}
+
+.highlightNote {
+    border-bottom: 2px solid red;
+
+}
+
+.highlightedCurrent {
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#EDD000)) repeat-x 0px 0px; /* 0px is top offset */
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+
+.gutter {
+
+    z-index:999;
+
+}
+body {
+    word-wrap:break-word;
+    padding: 10px;
+}
+
+.headerBoxOuter{
+    height:auto;
+    padding:10px;
+}
+
+table {
+    width: 100%; /* or any custom size */
+    overflow: scroll;
+}
+
+.portrait .article-content {
+    width : 100%;
+    margin-left:0px;
+
+}
+
+.belowHeader {
+
+    margin-right:0px;
+}

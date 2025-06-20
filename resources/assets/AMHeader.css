@@ -1,0 +1,568 @@
+<html id="doc" lang="en" class="js">
+
+    <head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=Edge" /><title>
+	AccessMedicine | Content
+</title>
+<meta name="description" />
+<link rel="stylesheet" type="text/css" href="css1.css"/>
+<link rel="stylesheet" type="text/css" href="css2.css"/>
+   
+
+
+
+<style type="text/css">
+
+.tabs{
+    display :none!important;
+}
+.rsbtn_left{
+display:none!important;
+}
+.nav-list{
+display:none!important;
+}
+#content-navbar{
+display:none!important;
+}
+.accordion{
+display:none!important;
+}
+
+p {
+    margin:10px!important;
+}
+
+.fancybox-opened {
+    z-index: 8030;
+    transform: translateZ(100px); /* added */
+}
+
+
+.highlighted {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+.highlight {
+    background-color: yellow;
+}
+.highlightYellow {
+    background-color: yellow;
+}
+
+.highlightGreen {
+    background-color: #c1ed72;
+}
+
+.highlightBlue {
+    background-color: #acd8fd;
+}
+
+.highlightRed {
+    background-color: #ffb1cb;
+}
+
+.highlightBanafsh {
+    background-color: #d8b2ff;
+}
+.highlightedCurrent {
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#EDD000)) repeat-x 0px 0px; /* 0px is top offset */
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+
+.highlightNote {
+    border-bottom: 2px solid red;
+    
+}
+</style>
+
+
+<script language="javascript">
+function onBodyLoad() {
+    var objBody = document.getElementsByTagName('body')[0];
+    objBody.addEventListener("touchstart", touchStart, false);
+    objBody.addEventListener("touchend", touchEnd, false);
+    objBody.addEventListener("gestureend", gestureEnd, false);
+    objBody.addEventListener("gesturestart", gestureStart, false);
+    // try this for iOS 3.1.3 -- it doesn't like the CSS
+    document.documentElement.style.webkitTouchCallout = "none";
+}
+
+var disableZoom = false;
+
+function getUTDWebURLScheme() {
+    return "uptodatewebaction://";
+}
+
+function getUTDAppURLScheme() {
+    return "uptodateappaction://";
+}
+
+function touchStart(event) {
+    if (event.touches.length > 2) {
+        disableZoom = true;
+    }
+}
+
+function touchEnd(event) {
+    disableZoom = false;
+}
+
+function gestureStart(event) {
+    //    alert("mdown");
+    event.preventDefault();
+}
+
+function gestureEnd(event) {
+    if (!disableZoom) {
+        var uri = null;
+        
+        if (event.scale > 1.0) {
+            uri = getUTDWebURLScheme() + "zoomIn";
+        } else {
+            uri = getUTDWebURLScheme() + "zoomOut";
+        }
+        event.preventDefault();
+        document.location.href = uri;
+    }
+}
+
+function currentWebkitTextSizeAdjust() {
+    var objBody = document.getElementsByTagName('body')[0];
+    var size = objBody.style.webkitTextSizeAdjust;
+    // (unset size is null)
+    if (size == null) {
+        size = 100;
+    }
+    return size;
+}
+
+function setWebkitTextSizeAdjust(percentInt) {
+    var percentString = percentInt + "%";
+    var ojbBody = document.getElementsByTagName('body')[0];
+    ojbBody.style.webkitTextSizeAdjust = percentString;
+    
+    // send this request to hide the HUD (it says resizing text)
+    var uri = getUTDWebURLScheme() + "zoomFinished";
+    //alert(uri);
+    document.location.href = uri;
+    //    alert("hi" + body.style.webkitTextSizeAdjust);
+}
+
+
+// Use dim/undim with ontouchstart/ontouchend to make HTML elements (ie buttons) reponsive to touches.
+function dim(element) {
+    element.style.opacity = .5;    
+}
+
+function undim(element) {
+    element.style.opacity = 1;
+}
+
+
+
+function showAMThumbs(){
+
+$("img[data-original]").each(function(){$(this).attr("src",$(this).attr("data-original"));$(this).css("width","50%");$(this).show();});
+}
+
+function adjustTableLinks(){
+    
+    var reflinks = document.getElementsByClassName("popUpTable");
+    for (var i=0; i<reflinks.length; i++){
+        reflinks[i].onclick=function(e){
+            e.preventDefault();
+            var $tableDialog = $(e.currentTarget).siblings('.tableDialog'); // find the dialog
+            
+            var $name = $tableDialog.parent().parent().parent().children('a').attr("name");
+            $tableDialog.attr("id",'tableDialog'+$name);
+            
+            window.location.href="tableDialog://"+'tableDialog'+$name;
+            e.stopPropagation();
+            
+            
+        }
+    }
+    
+}
+
+</script>
+
+<style>
+@font-face {
+    font-family: "Charis";
+    font-style: normal;
+    font-weight: normal;
+    src:url(CharisSILR.ttf);
+}
+
+@font-face {
+    font-family: "Charis";
+    font-style: normal;
+    font-weight: bold;
+    src:url(CharisSILB.ttf);
+}
+
+@font-face {
+    font-family: "Charis";
+    font-style: italic;
+    font-weight: normal;
+    src:url(CharisSILI.ttf);
+}
+
+@font-face {
+    font-family: "Charis";
+    font-style: italic;
+    font-weight: bold;
+    src:url(CharisSILBI.ttf);
+}
+.drugLink:link{
+    color:inherit;
+}
+body
+{
+    word-break:break-word;
+    padding: 0;
+    font-family:"Charis",Arial,Helvetica,sans-serif;
+    line-height:1.4;
+    font-size: medium;
+    background-color: rgba(0, 0, 0, 0);
+}
+.HNUM
+{
+    display: block;
+    font-size: 100%;
+    text-align: right;
+    padding-bottom: 10px;
+    font-weight: bold;
+    border-top: solid 2px #0000A0;
+    border-right: solid 8px #0000A0;
+    margin-bottom: .25em;
+    background-color: #a6abee;
+    color: #0000A0;
+}
+.FIGURE td , .FIGURE-COL2{
+    background-color: rgba(0,0,0,0)
+}
+.FIGURE td{
+    border: 0px solid black;
+}
+.TB .FIGURE
+{
+    font-size: 90%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.2em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    border-top: solid 1px red;
+    border-bottom: solid 1px red;
+    border-left: solid 1px red;
+    border-right: solid 1px red;
+    background-color: #ffda6b;
+}
+
+.TB .FIGURE .TI
+{
+    margin-top: 0em;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+    background-color: #67582b;
+    font-weight: bold;
+    color: white;
+    font-size: 150%;
+    margin-top: .25em;
+    margin-bottom: 0.9em;
+}
+td, th {
+    padding:0px;
+}
+
+.THD .HD, .FRTXT .FRTITLE{
+    font-size: x-large;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.3em;
+    color: #0096a0;
+
+}
+.TLV1 .HD, .TLV2 .HD, .TLV3 .HD, .TLV4 .HD, .TLV5 .HD, .TLV6 .HD, .TLV7 .HD, .TLV8 .HD, .EDS .HD, .ED .HD{
+    padding: 0px;
+}
+h4{
+    font-size: 115%;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    color: #005aaa;
+    border-bottom: solid 3px #7f9fd3;
+}
+
+h5{
+    font-size: 105%;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+    color: #aa0000;
+
+}
+
+p {
+    text-align:justify;
+    margin:0px auto;
+}
+
+.figureLinks {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.figureLabel
+{
+    display: inline;
+    overflow: visible;
+    font-weight: bold;
+    color: white;
+    padding-right: 5px;
+    padding-left: 4px;
+    background-color: #0000A0;
+}
+
+.FIGURE {
+    border: 0px groove rgb(236,234,244);
+}
+.figureCaption {
+    display: inline-block;
+}
+.figureCaption p{
+    overflow: visible;
+
+    margin-top: 0em;
+    margin-bottom: 0em;
+    vertical-align: middle;
+    border-top: solid 1px #0000A0;
+    padding-left: 5px;
+    line-height: 1.3em;
+    margin:0 0 0em;
+    display: inline-block;
+}
+.figureCaption{
+
+    overflow: visible;
+}
+body, td, th, table caption{
+    font-family: "Charis";
+}
+.TLV2 .HD{
+    font-style: normal;
+}
+.FG td{
+    display:block;
+}
+.IMGLINK .P {
+    display: none;
+}
+.ftup{
+    display:none;
+}
+.pagenum{
+    display:none;
+}
+
+.table_no
+{
+    margin-top: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+    font-size: 100%;
+    color: #ffda6b;
+}
+
+.emph_BIT {
+    font-style: normal;
+}
+
+a {
+    text-decoration:none;
+    color:#0047b9;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+</style>
+ </head>
+
+ <body id="mainMasterBody" data-spy="scroll" data-target="#accordion1" class="acm isbook content" style="-webkit-text-size-adjust:[size]%;word-wrap: break-word" >
+
+
+	
+        <script src="jquery.mi.js"></script>
+
+		<script src="mgh6.content.js"></script>
+<script src="mgh.Popup.Dialog.js"></script>
+        <script src="jquery.min.js"></script>
+        <script src="jquery-ui.js"></script>
+
+
+         <script src="log4javascript.js" ></script>
+         <script src="core.js" ></script>
+         <script src="dom.js" ></script>
+         <script src="domrange.js" ></script>
+         <script src="wrappedrange.js" ></script>
+         <script src="wrappedselection.js" ></script>
+         <script src="rangy-cssclassapplier.js" ></script>
+         <script src="rangy-highlighter.js" ></script>
+         <script src="hightlight.js" ></script>
+         <script src="find.js" ></script>
+
+
+
+		<script src="scm6.figuresTables.js"></script>
+		     <script src="jquery.fancybox.js" type="text/javascript"></script>
+    <script src="jquery.fancybox-buttons.js" type="text/javascript"></script>
+    <script src="jquery.fancybox-media.js" type="text/javascript"></script>
+    <script src="jquery.fancybox-thumbs.js" type="text/javascript"></script>
+<script src="script.js" type="text/javascript"></script>
+
+<script src="jquery.lazyload.min.js" type="text/javascript"></script>
+
+	    <script type="text/javascript">
+        $(document).ready(function() {
+            $('img.contentFigures').lazyload({
+                effect : 'fadeIn'
+            });
+             $(window).trigger('scroll');
+        });
+        $(document).ready(function() {
+            // hide right widget column for front matter
+            if (0 == 1) {
+                $('#toolbox-widgets').hide();
+            }
+            // expand main content column for guideline book
+            if (0 == 1) {
+                if (String("harr").valueOf() == "guid") {                       
+                    $('article').removeClass("span6").addClass("span12").show();
+                    $('#content-navbar').removeClass("span6").addClass("span12").show();
+                } else {
+                    // others, just expand to the right column but leave the section nav to the left
+                    $('article').removeClass("span6").addClass("span9").show();
+                    $('#content-navbar').removeClass("span6").addClass("span9").show();
+                }
+            }
+            $('article').show();
+            $('#content-navbar').show();
+            scrollToHash();
+        });
+    </script>
+
+<script type="text/javascript">
+    function test(o) { }
+    function downloadFile(filename) {
+        var url = filename;
+        window.location.href = url;
+    }
+</script>
+
+<script type="text/javascript">
+
+
+function showSection(myIDFinal){
+    var anchorRef = $('a[name="' + myIDFinal + '"]')
+    if (anchorRef.length > 0) {
+        if (!$(anchorRef).parents('.contentSectionTab').hasClass('collapsed')) {
+            var anchorRefPosition = $(anchorRef).offset().top;
+            $('html, body').animate({ scrollTop: anchorRefPosition - 43 });
+            $(this).parents("div.ui-dialog-content").dialog("close"); // This is added to close a popup if there is a reflink inside that popup
+        }
+        else {
+            $(anchorRef).parents('.contentSectionTab').find('.expand').trigger('click');
+            var anchorRefPosition = $(anchorRef).offset().top;
+            $('html, body').animate({ scrollTop: anchorRefPosition - 43 });
+        }
+    }
+}
+
+function justShowSection(myIDFinal){
+    var anchorRef = $('a[name="' + myIDFinal + '"]')
+    if (anchorRef.length > 0) {
+        if (!$(anchorRef).parents('.contentSectionTab').hasClass('collapsed')) {
+        }
+        else {
+            $(anchorRef).parents('.contentSectionTab').find('.expand').trigger('click');
+        }
+    }
+}
+
+function hideSection(myIDFinal){
+    var anchorRef = $('a[name="' + myIDFinal + '"]')
+    if (anchorRef.length > 0) {
+
+        if (!$(anchorRef).parents('.contentSectionTab').hasClass('collapsed')) {
+            $(anchorRef).parents('.contentSectionTab').find('.expand').trigger('click');
+        }
+        else {
+
+        }
+    }
+}
+</script>
+
+
+<div class="container">
+                
+    <div class="content">
+    <div class="container offcanvas-wrapper">
+        <div class="row">
+
+
+            
+            <article class="span6 left" role="main">
+                
+                    <input type="hidden" name="ctl00$pageContent$HidFigure" id="pageContent_HidFigure" value="True" />
+                    <input type="hidden" name="ctl00$pageContent$HidTable" id="pageContent_HidTable" value="True" />
+                    <input type="hidden" name="ctl00$pageContent$HidVideo" id="pageContent_HidVideo" value="False" />
+
+                
+
+                
+
+
+
+ <form method="post" action="" id="Form1" class="webform">
+ </form>
+ 
+    <input type="hidden" name="ctl00$pageContent$ucArticleToolbox$hfAlerts" id="hfAlerts" value="1" />
+    <input type="hidden" name="ctl00$pageContent$ucArticleToolbox$hfGetCitation" id="hfGetCitation" value="1" />
+    <input type="hidden" name="ctl00$pageContent$ucArticleToolbox$hfEmail" id="hfEmail" value="1" />
+    <input type="hidden" name="ctl00$pageContent$ucArticleToolbox$hfShareThis" id="hfShareThis" value="1" />
+    <input type="hidden" name="ctl00$pageContent$ucArticleToolbox$hfPrintableView" id="hfPrintableView" value="1" />
+    <input type="hidden" name="ctl00$pageContent$ucArticleToolbox$hfSlideset" id="hfSlideset" />
+    <input type="hidden" name="ctl00$pageContent$ucArticleToolbox$hfDataSupplement" id="hfDataSupplement" />
+    <input type="hidden" name="ctl00$pageContent$ucArticleToolbox$hfSubmitComment" id="hfSubmitComment" />
+    <input type="hidden" name="ctl00$pageContent$ucArticleToolbox$hfSubmitLetter" id="hfSubmitLetter" value="CanAccess" />
+    <input type="hidden" name="ctl00$pageContent$ucArticleToolbox$hfPDFDownload" id="hfPDFDownload" />
+
+
+                <header class="page-header content">
+				
+				
+				
+				
+				
+				

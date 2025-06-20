@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/* CSS Document */
+html {
+	background:#eaeaea;
+}
+div {
+	line-height:inherit;
+	margin-bottom:0;
+}
+#drugtags {
+}
+.firstrow {
+	padding-top:0;
+}
+.drugrow {
+	padding-top:20px;
+	clear:both;
+}
+.drugbox {
+	-webkit-box-shadow: 0px 1px 1px rgba(147, 139, 130, 1);
+-moz-box-shadow:    0px 1px 1px rgba(147, 139, 130, 1);
+box-shadow:         0px 1px 1px rgba(147, 139, 130, 1);
+-moz-box-shadow:inset 0px -1px 1px 0px rgba(0, 0, 0, 0.25);
+-webkit-box-shadow:inset 0px -1px 1px 0px rgba(0, 0, 0, 0.25);
+box-shadow:inset 0px -1px 1px 0px rgba(0, 0, 0, 0.25);
+width:48.5%; height:40px; background:white; 
+}
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+.drugbox div.name {
+	float:left;
+}
+.drugbox div.name p {
+	font-size:15px;
+	margin:12px 0 0 0;
+}
+.drugbox div.linkinteractions {
+	float:right;
+	float:right; padding-top:6px; padding-right:12px;
+}
+.drugbox div.linkinteractions a {
+	font-size:12px;
+}
+.drugbox a.druglink {
+}
+#iafound {
+	clear:both;
+	padding-top:20px;
+	background:url(../images/horizontaldivider.png) ;
+	background-position:bottom;
+	background-repeat:repeat-x;
+	background-color:#eaeaea;
+}
+.header {
+	background:#D02126;
+	height:35px;
+	 -moz-border-radius: 6px;
+border-radius: 6px;
+}
+
+.header_green {
+	background:#61b146;
+}
+.header_red {
+	background:#D02126;
+}
+.header_yellow {
+	background:#CEA624;
+}
+.header_orange {
+	background:#E56620;
+}
+.arrow {
+	border-style: solid;
+border-width: 12px 12.5px 0 12.5px;
+border-color: #d02126 transparent transparent transparent;
+	margin-left:20px;
+	width:12px;
+	margin-bottom:6px;
+}
+.arrow_red {
+	border-style: solid;
+border-width: 12px 12.5px 0 12.5px;
+border-color: #D02126 transparent transparent transparent;
+	margin-left:20px;
+	width:12px;
+	margin-bottom:6px;
+}
+.arrow_green {
+	border-style: solid;
+border-width: 12px 12.5px 0 12.5px;
+border-color: #CEA624 transparent transparent transparent;
+	margin-left:20px;
+	width:12px;
+	margin-bottom:6px;
+}
+.arrow_yellow {
+	border-style: solid;
+border-width: 12px 12.5px 0 12.5px;
+border-color: #CEA624 transparent transparent transparent;
+	margin-left:20px;
+	width:12px;
+	margin-bottom:6px;
+}
+.arrow_orange {
+	border-style: solid;
+border-width: 12px 12.5px 0 12.5px;
+border-color: #E56620 transparent transparent transparent;
+	margin-left:20px;
+	width:12px;
+	margin-bottom:6px;
+}
+
+.header p {
+	color:#ffffff;
+	font-size:16px;
+	padding:8px 0 0 20px;
+}
+#collapsed {
+	background:url(../images/horizontaldivider.png);
+	background-repeat:repeat-x;
+}
+#collapsed a {
+	padding:22px 10px 20px 10px;
+	width:100%; 
+	height:75px; 
+	text-decoration:none; 
+	display:block; 
+}
+.number {
+	float:left;
+	height:29px;
+	width:29px;
+	 -moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+	-moz-box-shadow:    0px 1px 0px rgba(255, 255, 255, 1);
+	box-shadow:         0px 1px 0px rgba(255, 255, 255, 1);
+
+}
+.red {
+	background:#D02126;
+}
+.yellow {
+	background:#CEA624;
+}
+.orange {
+	background:#E56620;
+}
+.green {
+	background:#CEA624;
+}
+.number p {
+	color:#ffffff;
+	text-align:center;
+	padding-top:.25em;
+	font-size:1em;
+	font-family:'GothamNarrow', Sans-Serif;
+	font-weight:bold;
+	text-rendering: optimizeLegibility;
+}
+.fullname {
+	padding-left:21px; float:left; color:#605850;
+}
+.fullname h2 {
+	font-size:18px;
+	font-family:'GothamNarrow', Sans-Serif;
+	text-rendering: optimizeLegibility;
+}
+.fullname p {
+	font-size: 1em;
+	line-height:.3em;
+	text-rendering: optimizeLegibility;
+}
+.plus {
+	float:right;
+	padding-top:10px;
+}
+
+.accordion-inner {
+	border:none;	
+}
+
+.accordion-inner div.title {
+	border-top: 2px solid rgb(147, 139, 130); 
+	border-bottom: 2px solid rgb(147, 139, 130); 
+	margin: 0 45px; 
+	padding:15px 0 0 0;
+}
+.accordion-inner div.title h2 {
+	font-size:1.2em;
+	font-family:'GothamNarrow', Sans-Serif;
+	font-weight:bold;
+	text-rendering: optimizeLegibility;
+}
+.accordion-inner div.info {
+	margin: 0 45px; 
+	padding:25px 0 0 0;
+}
+.accordion-inner div.info h3 {
+	text-transform:uppercase;
+	font-size:1.125em;
+	font-family:'GothamNarrow', Sans-Serif;
+	font-weight:bold;
+	margin-bottom:0;
+}
+.accordion-inner div.info h4 {
+	font-size:1em;
+	font-family:'GothamNarrow', Sans-Serif;
+	font-weight:bold;
+	padding-top:25px;
+	text-rendering: optimizeLegibility;
+}
+.accordion-inner div.info p {
+	font-weight:normal;
+	font-size:1em;
+	text-rendering: optimizeLegibility;
+	margin-bottom: .75em;
+}
+span.parabold {
+	font-weight:bold;
+}
+ul {
+	font-weight:normal;
+	font-size:1em;
+	margin-bottom:.625em;
+	text-rendering: optimizeLegibility;
+}
+
+.accordion-body {
+}
+h2 {
+	font-size: 1em;
+	border-bottom: 0;
+	margin: 0 0 0.6em 0;
+}

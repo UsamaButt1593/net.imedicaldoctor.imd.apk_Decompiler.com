@@ -1,0 +1,2714 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+    <title></title>
+    
+    <meta name="format-detection" content="telephone=yes">
+	
+    <style type="text/css">
+        /* Reworked style for UpToDate basic graphics - Additions/Edits/Deletions/Organizations */
+
+/* General definitions - Body class was removed */
+
+/* ---------- */
+
+/* Define page sections */
+/* Changed margin from 1.2em, added webkit to fix iPhone font size issues in the Legend/Footnotes/Reference sections */
+.figure {
+font-size: 100%;
+text-align: left;
+font-family: "Charis", Geneva, sans-serif;
+background-color: White;
+margin: 1em;
+padding: 0em;
+-webkit-text-size-adjust: 100%;
+}
+
+/* ---------- */
+
+.ttl {
+word-wrap: break-word;
+line-height: 1.4em;
+text-align: left;
+font-size: 1em;
+font-weight: bold;
+padding: 0em .2em .4em .2em;
+}
+
+.ttl sup {
+font-size: .825em;
+line-height: 0.65em;
+vertical-align: baseline;
+position: relative;
+top: -0.475em;
+padding-left: .15em;
+}
+
+.ttl sub {
+font-size: .825em;
+line-height: 0.5em;
+vertical-align: baseline;
+position: relative;
+bottom: -0.325em;
+padding-right: .15em;
+padding-left: .15em;
+}
+
+.cntnt {
+border-top: 5px solid #009966;
+border-bottom: 2px solid #009966;
+text-align: center;
+margin: 0em;
+padding: 0em .625em;
+}
+
+.cntnt table {
+width: 100%;
+}
+
+*html .cntnt table {
+width: 95%;
+}
+
+.figure table {
+text-align: left;
+border-right: 1px solid Black;
+font-size: .75em;
+margin: 0em;
+padding: 0em;
+}
+
+/* Changed vertical-align from top and added line-height, changed border-bottom color from DDD, changed padding bottom from .6em */
+.figure td {
+vertical-align: text-top;
+line-height: 1.5em;
+border-left: 1px solid Black;
+border-bottom: 1px solid #CCCCCC;
+padding: .3em .6em .3em .6em;
+}
+/* ---------- */
+/* ---------- */
+
+/* Container style */
+.figure table.container {
+border: none;
+}
+
+.figure table.container table {
+text-align: left;
+font-size: 1em;
+margin: 0em;
+padding: 0em;
+border-bottom: 1px solid Black;
+}
+
+.figure td.container {
+border: none;
+padding: 0em .25em;
+}
+/* ---------- */
+
+/* New Legend/Reference/Footnote sections to go with new HTML code - Added line-height to .lgnd, changed font-size, added padding, added border-bottom */
+.graphic_lgnd {
+word-wrap: break-word;
+line-height: 1.5em;
+font-family: "Charis", Geneva, sans-serif;
+font-size: .8em;
+text-align: left;
+padding-top: .4em;
+padding-bottom: .4em;
+border-top: 1px solid #CCCCCC;
+}
+
+.graphic_footnotes {
+word-wrap: break-word;
+line-height: 1.5em;
+font-family: "Charis", Geneva, sans-serif;
+font-size: .75em;
+text-align: left;
+padding-top: .4em;
+padding-bottom: .4em;
+border-top: 1px solid #CCCCCC;
+}
+
+.graphic_reference {
+word-wrap: break-word;
+line-height: 1.5em;
+font-family: "Charis", Geneva, sans-serif;
+font-size: .75em;
+font-style: italic;
+text-align: left;
+padding-top: .4em;
+border-top: 1px solid #CCCCCC;
+}
+/* ---------- */
+
+/* Footnotes span classes - Added font-size for lozenges and removed margin-left -0.2em/-0.4em */
+.graphic .bullet, .graphic2 .bullet {
+padding-left: .1em;
+}
+
+.graphic .lozenge, .graphic2 .lozenge {
+font-size: .85em;
+}
+
+.graphic .double_bullet, .graphic2 .double_bullet {
+padding-left: .2em;
+}
+
+.graphic .double_lozenge, .graphic2 .double_lozenge {
+font-size: .85em;
+}
+/* ---------- */
+
+/* Text modifiers - Added style to sup and sub */
+.figure strong {
+font-weight: bold;
+}
+
+.figure em {
+font-style: italic;
+}
+
+.figure td sup {
+font-size: 0.9em;
+line-height: 0.65em;
+vertical-align: baseline;
+position: relative;
+top: -0.475em;
+padding-left: .15em;
+}
+
+.figure td sub {
+font-size: 0.9em;
+line-height: 0.5em;
+vertical-align: baseline;
+position: relative;
+bottom: -0.325em;
+padding-right: .15em;
+padding-left: .15em;
+}
+
+.graphic_lgnd sup {
+font-size: 0.8em;
+line-height: 0.65em;
+vertical-align: baseline;
+position: relative;
+top: -0.475em;
+padding-left: .15em;
+}
+
+.graphic_lgnd sub {
+font-size: 0.8em;
+line-height: 0.5em;
+vertical-align: baseline;
+position: relative;
+bottom: -0.325em;
+padding-right: .15em;
+padding-left: .15em;
+}
+
+.graphic_footnotes sup {
+font-size: 0.85em;
+line-height: 0.65em;
+vertical-align: baseline;
+position: relative;
+top: -0.5em;
+padding-left: .15em;
+}
+
+.graphic_footnotes sub {
+font-size: 0.85em;
+line-height: 0.5em;
+vertical-align: baseline;
+position: relative;
+bottom: -0.4em;
+padding-right: .15em;
+padding-left: .15em;
+}
+
+.graphic_reference sup {
+font-size: 0.85em;
+line-height: 0.65em;
+vertical-align: baseline;
+position: relative;
+top: -0.5em;
+padding-left: .15em;
+}
+
+.graphic_reference sub {
+font-size: 0.85em;
+line-height: 0.5em;
+vertical-align: baseline;
+position: relative;
+bottom: -0.4em;
+padding-right: .15em;
+padding-left: .15em;
+}
+
+.graphic .small, .graphic2 .small {
+font-size: .85em;
+}
+
+.graphic .red, .graphic2 .red {
+color: #FF0000;
+}
+
+.graphic .green, .graphic .green {
+color:#019e30;
+}
+
+.graphic .blue, .graphic2 .blue {
+ color: #0000FF;
+}
+/* ---------- */
+
+/* Link colors */
+.figure a:link {
+color: #0000FF;
+}
+
+.figure a:visited {
+color: #660099;
+}
+/* ---------- */
+
+/* Image styling */
+.cntnt img {
+display: block;
+margin: 0 auto;
+padding: 0;
+}
+
+.graphic_lgnd img, .cntnt table img {
+margin: 0;
+padding: 0;
+display: inline;
+}
+/* ---------- */
+
+/* LWW contract link - These styles were added by the Web team */
+.figure .contractual a {
+color: #336633;
+background-color: #FFFFFF;
+text-decoration: none;
+}
+
+.figure .contractual a:link {
+color: #336633;
+background-color: #FFFFFF;
+text-decoration: none;
+}
+
+.figure .contractual a:visited {
+color: #336633;
+background-color: #FFFFFF;
+text-decoration: none;
+}
+
+.figure .contractual a:hover {
+text-decoration: underline;
+}
+/* ---------- */
+
+/* Heading styles - Added subtitle_single4,5 and subtitle_left4,5 - Changed border-bottom color sequence from 999/CCC - Changed padding-left */
+td.subtitle1 {
+vertical-align: middle;
+text-align: center;
+font-size: 1.2em;
+font-weight: bold;
+padding-top: .5em;
+padding-bottom: .3em;
+border-bottom: 3px solid Black;
+background-color: #EEEEEE;
+}
+
+td.subtitle2 {
+vertical-align: middle;
+text-align: center;
+font-size: 1em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+border-bottom: 3px solid #555555;
+}
+
+td.subtitle3 {
+vertical-align: middle;
+text-align: center;
+font-size: .9em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+border-bottom: 3px solid #777777;
+}
+
+td.subtitle4 {
+vertical-align: middle;
+text-align: center;
+font-size: .9em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+border-bottom: 3px solid #999999;
+}
+
+td.subtitle5 {
+vertical-align: middle;
+text-align: center;
+font-size: .9em;
+font-weight: normal;
+padding-top: .4em;
+padding-bottom: .3em;
+border-bottom: 3px solid #BBBBBB;
+}
+
+td.subtitle1_single {
+vertical-align: middle;
+font-size: 1.2em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+padding-left: .42em;
+border-bottom: 1px solid #000000;
+background-color: #EEEEEE;
+}
+
+td.subtitle2_single {
+vertical-align: middle;
+font-size: 1em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+padding-left: 1.5em;
+border-bottom: 1px solid #555555;
+}
+
+td.subtitle3_single {
+vertical-align: middle;
+font-size: .9em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+padding-left: 3.0em;
+border-bottom: 1px solid #777777;
+}
+
+td.subtitle4_single {
+vertical-align: middle;
+font-size: .9em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+padding-left: 4.5em;
+border-bottom: 1px solid #999999;
+}
+
+td.subtitle5_single {
+vertical-align: middle;
+font-size: .9em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+padding-left: 6em;
+border-bottom: 1px solid #BBBBBB;
+}
+
+td.subtitle1_left {
+font-size: 1.2em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+padding-left: .42em;
+border-bottom: 1px solid Black;
+background-color: #EEEEEE;
+}
+
+td.subtitle2_left {
+font-size: 1em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+border-bottom: 1px solid #555555;
+}
+
+td.subtitle3_left {
+font-size: .9em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+padding-left: 2em;
+border-bottom: 1px solid #777777;
+}
+
+td.subtitle4_left {
+font-size: .9em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+padding-left: 3.5em;
+border-bottom: 1px solid #999999;
+}
+
+td.subtitle5_left {
+font-size: .9em;
+font-weight: bold;
+padding-top: .4em;
+padding-bottom: .3em;
+padding-left: 5em;
+border-bottom: 1px solid #BBBBBB;
+}
+/* ---------- */
+
+/* Sublist styles - Made indentation (padding) consistent with all sublist styles */
+td.sublist1_start {
+padding-bottom: .3em;
+}
+
+td.sublist2_start {
+padding-left: 2em;
+padding-bottom: .3em;
+}
+
+td.sublist3_start {
+padding-left: 3.5em;
+padding-bottom: .3em;
+}
+
+td.sublist4_start {
+padding-left: 5em;
+padding-bottom: .3em;
+}
+
+td.sublist5_start {
+padding-left: 6.5em;
+padding-bottom: .3em;
+}
+
+td.sublist1 {
+font-size: .9em;
+padding-left: 2.25em;
+padding-bottom: .3em;
+}
+
+td.sublist2 {
+font-size: .9em;
+padding-left: 3.95em;
+padding-bottom: .3em;
+}
+
+td.sublist3 {
+font-size: .9em;
+padding-left: 5.6em;
+padding-bottom: .3em;
+}
+
+td.sublist4 {
+font-size: .9em;
+padding-left: 7.3em;
+padding-bottom: .3em;
+}
+
+td.sublist5 {
+font-size: .9em;
+padding-left: 8.9em;
+padding-bottom: .3em;
+}
+
+td.sublist6 {
+font-size: .9em;
+padding-left: 10.6em;
+padding-bottom: .3em;
+}
+
+td.sublist_other_start {
+padding-bottom: .3em;
+}
+
+td.sublist_other {
+font-size: .9em;
+padding-left: .67em;
+padding-bottom: .3em;
+}
+/* ---------- */
+
+/* Centering text - Removed the TD so they can be used in TR tags */
+.graphic .centered, .graphic2 .centered {
+text-align: center;
+}
+
+.graphic .sublist_other_start_centered, .graphic2 .sublist_other_start_centered {
+padding-bottom: .3em;
+text-align: center;
+}
+
+.graphic .sublist_other_centered, .graphic2 .sublist_other_centered {
+font-size: .9em;
+padding: .3em .67em .3em .67em;
+text-align: center;
+}
+/* ---------- */
+
+/* Indent styles - Changed indents - Added indent4 and indent5 */
+td.indent1 {
+padding-left: 2em;
+}
+
+td.indent2 {
+padding-left: 3.5em;
+}
+
+td.indent3 {
+padding-left: 5em;
+}
+
+td.indent4 {
+padding-left: 6.5em;
+}
+
+td.indent5 {
+padding-left: 8em;
+}
+/* ---------- */
+
+/* Divider class - New class that can be applied to td tag */
+.divider_bottom td {
+border-bottom: 1px solid Black;
+}
+
+.divider_top td {
+border-top: 1px solid Black;
+}
+
+td.divider_bottom {
+border-bottom: 1px solid Black;
+}
+
+td.divider_top {
+border-top: 1px solid Black;
+}
+/* ---------- */
+
+/* ul style attributes (figure) - New levels/symbols/spacing (no heading or heading without number or alpha indicator) */	
+.figure td ul {
+list-style-type: square;
+list-style-position: outside;
+margin: 0em;
+padding-left: 1.5em;
+}
+	
+.figure td ul ul {
+list-style-type: disc;
+padding-left: 1.7em;
+}
+	
+.figure td ul ul ul {
+list-style-type: circle;
+}
+	
+.figure td ul ul ul ul {
+list-style-type: square;
+}
+	
+.figure td ul ul ul ul ul {
+list-style-type: disc;
+}
+/* ---------- */
+
+/* ul style attributes (figure) - New class (heading with number or alpha indicator) */
+.figure td ul.decimal_heading {
+margin-left: 1.3em;
+}
+/* ---------- */
+
+/* ol style attributes (figure) - (numbers underneath heading) */
+.figure td ol {
+list-style-type: decimal;
+list-style-position: outside;
+margin: 0em;
+padding-left: 2.85em;
+}
+/* ---------- */
+
+/* ol style attributes (figure) - New class (numbers 1-99 with no heading) */
+.figure td ol.numbers_no_heading {
+padding-left: 2.35em;
+}
+/* ---------- */
+
+/* ol style attributes (figure) - New class (numbers 1-9 only with no heading) */
+.figure td ol.numbers_to_nine {
+padding-left: 1.85em;
+}
+/* ---------- */
+
+/* li style attributes (figure) */
+.figure td li {
+list-style-position: outside;
+margin-top: .2em;
+margin-bottom: .2em;
+padding: 0em;
+}
+/* ---------- */
+
+/* ul style attributes (legend) - New levels/symbols/spacing (no heading or heading without number or alpha indicator) */
+.graphic_lgnd ul {
+list-style-type: square;
+list-style-position: outside;
+line-height: 1.5em;
+margin: 0em;
+padding-left: 1.5em;
+display: block;
+zoom: 1;
+}
+
+.graphic_lgnd ul ul {
+list-style-type: disc;
+padding-left: 1.7em;
+}
+
+.graphic_lgnd ul ul ul {
+list-style-type: circle;
+}
+
+.graphic_lgnd ul ul ul ul {
+list-style-type: square;
+}
+
+.graphic_lgnd ul ul ul ul ul {
+list-style-type: disc;
+}
+/* ---------- */
+
+/* ul style attributes (legend) - New class - Levels/symbols/spacing (heading with number or alpha indicator) */
+.graphic_lgnd ul.decimal_heading {
+margin-left: 1.5em;
+}
+/* ---------- */
+
+/* li style attributes (legend) */
+.graphic_lgnd ul li {
+list-style-position: outside;
+}
+/* ---------- */
+
+/* ol style attributes (legend) (numbers 1-99 with or without heading) */
+.graphic_lgnd ol {
+list-style-position: outside;
+line-height: 1.5em;
+margin: 0em;
+padding-left: 3.4em;
+display: block;
+zoom: 1;
+}
+/* ---------- */
+
+/* ol style attributes (legend) - New class (no heading and 1-9 only) */
+.graphic_lgnd ol.numbers_to_nine {
+padding-left: 1.9em;
+}
+/* ---------- */
+
+/* li style attributes (legend) */
+.graphic_lgnd ol li {
+list-style-type: decimal;
+list-style-position: outside;
+display: list-item;
+}
+/* ---------- */
+
+/* ul style attributes (footnotes) - New levels/symbols/spacing */
+.graphic_footnotes ul {
+list-style-type: square;
+list-style-position: outside;
+line-height: 1.5em;
+margin-top: 0em;
+margin-bottom: 0em;
+margin-left: 1.3em;
+padding-left: 1.5em;
+display: block;
+zoom: 1;
+}
+
+.graphic_footnotes ul ul {
+list-style-type: disc;
+margin: 0em;
+padding-left: 1.7em;
+}
+
+.graphic_footnotes ul ul ul {
+list-style-type: circle;
+}
+
+.graphic_footnotes ul ul ul ul {
+list-style-type: square;
+}
+
+.graphic_footnotes ul ul ul ul ul {
+list-style-type: disc;
+}
+/* ---------- */
+
+/* ul style attributes (footnotes) - New class for double footnote symbols */
+.graphic_footnotes ul.double_footnote_list {
+margin-left: 2em;
+}
+/* ---------- */
+
+/* li style attributes (footnotes) */
+.graphic_footnotes ul li {
+list-style-position: outside;
+}
+/* ---------- */
+
+/* ol style attributes (footnotes) */
+.graphic_footnotes ol {
+list-style-position: outside;
+display: block;
+line-height: 1.5em;
+margin: 0em;
+padding-left: 3.7em;
+zoom: 1;
+}
+/* ---------- */
+
+/* ol style attributes (footnotes) - New class for double footnote symbols */
+.graphic_footnotes ol.double_footnote_list {
+padding-left: 4.4em;
+}
+/* ---------- */
+
+/* li style attributes (footnotes) */
+.graphic_footnotes ol li {
+list-style-type: decimal;
+list-style-position: outside;
+display: list-item;
+}
+/* ---------- */
+
+/* ul style attributes (references) - New levels/symbols/spacing */
+.graphic_reference ul {
+list-style-type: square;
+list-style-position: outside;
+line-height: 1.5em;
+margin-top: 0em;
+margin-bottom: 0em;
+margin-left: 1.5em;
+padding-left: 1.5em;
+display: block;
+zoom: 1;
+}
+
+.graphic_reference ul ul {
+list-style-type: disc;
+margin: 0em;
+padding-left: 1.7em;
+}
+
+.graphic_reference ul ul ul {
+list-style-type: circle;
+}
+
+.graphic_reference ul ul ul ul {
+list-style-type: square;
+}
+
+.graphic_reference ul ul ul ul ul {
+list-style-type: disc;
+}
+/* ---------- */
+
+/* ol style attributes (references) - Increased padding/added line height */
+.graphic_reference ol {
+list-style-position: outside;
+line-height: 1.5em;
+margin: 0em;
+padding-left: 3.5em;
+display: block;
+zoom: 1;
+}
+/* ---------- */
+
+/* li style attributes (references) */
+.graphic_reference ol li {
+list-style-type: decimal;
+list-style-position: outside;
+display: list-item;
+}
+
+.graphic_reference ul li {
+list-style-position: outside;
+}
+/* ---------- */
+
+/* HR style attribute - Changed color from #666 - Changed height from .1em - Added margin-top/margin-bottom */
+.figure td hr {
+height: 1px;
+border-width: 0em;
+color: #BBBBBB;
+background-color: #BBBBBB;
+margin-top: .2em;
+margin-bottom: .2em;
+}
+/* ---------- */
+
+/* P style attributes - Changed padding-bottom from .6em for parent - Added indent/sublist/center classes */
+.figure td p {
+margin: 0em;
+padding-bottom: .45em;
+}
+
+.figure td p.indent1 {
+padding-left: 1.15em;
+}
+
+.figure td p.indent2 {
+padding-left: 2.55em;
+}
+
+.figure td p.indent3 {
+padding-left: 3.95em;
+}
+
+.figure td p.indent4 {
+padding-left: 5.35em;
+}
+
+.figure td p.indent5 {
+padding-left: 6.75em;
+}
+
+.figure td p.centered {
+text-align: center;
+}
+
+.figure td p.sublist_other_start_centered {
+padding-bottom: .3em;
+text-align: center;
+}
+
+.figure td p.sublist_other_centered {
+font-size: .9em;
+padding: .3em .67em .3em .67em;
+text-align: center;
+}
+
+.figure td p.sublist1_start {
+padding-bottom: .3em;
+}
+
+.figure td p.sublist2_start {
+padding-left: 1.15em;
+padding-bottom: .3em;
+}
+
+.figure td p.sublist3_start {
+padding-left: 2.55em;
+padding-bottom: .3em;
+}
+
+.figure td p.sublist4_start {
+padding-left: 3.95em;
+padding-bottom: .3em;
+}
+
+.figure td p.sublist5_start {
+padding-left: 5.35em;
+padding-bottom: .3em;
+}
+
+.figure td p.sublist1 {
+font-size: .9em;
+padding-left: 1.25em;
+padding-bottom: .3em;
+}
+
+.figure td p.sublist2 {
+font-size: .9em;
+padding-left: 2.85em;
+padding-bottom: .3em;
+}
+
+.figure td p.sublist3 {
+font-size: .9em;
+padding-left: 4.35em;
+padding-bottom: .3em;
+}
+
+.figure td p.sublist4 {
+font-size: .9em;
+padding-left: 5.95em;
+padding-bottom: .3em;
+}
+
+.figure td p.sublist5 {
+font-size: .9em;
+padding-left: 7.5em;
+padding-bottom: .3em;
+}
+
+.figure td p.sublist6 {
+font-size: .9em;
+padding-left: 9em;
+padding-bottom: .3em;
+}
+
+.figure td p.sublist_other_start {
+padding-bottom: .3em;
+}
+
+.figure td p.sublist_other {
+font-size: .9em;
+padding-bottom: .3em;
+}
+/* ---------- */
+
+/* Space style */
+td.space {
+padding: 0em;
+}
+/* ---------- */
+
+/* New classes - Row color (highlight) */
+.graphic .highlight_yellow_text, .graphic2 .highlight_yellow_text {
+background-color: #FFFF99;
+}
+
+.graphic .highlight_gray_text, .graphic2 .highlight_gray_text {
+background-color: #EEEEEE;
+}
+
+.graphic .highlight_green_text, .graphic2 .highlight_green_text {
+background-color: #E7FFE2;
+}
+
+.graphic .highlight_blue_text, .graphic2 .highlight_blue_text {
+background-color: #DEE7FF;
+}
+
+.graphic .highlight_red_text, .graphic2 .highlight_red_text {
+background-color: #FEC8C7;
+}
+/* ---------- */
+
+/* New classes - Checkboxes - box3 and box4 are for sublists */
+.graphic .primarybox_right, .graphic2 .primarybox_right {
+font-size: .75em;
+font-family: "Charis", Geneva, sans-serif;
+line-height: 1em;
+margin-top: .25em;
+margin-left: .5em;
+padding-left: .8em;
+border-top: 1px solid Black;
+border-right: 2px solid Black;
+border-bottom: 2px solid Black;
+border-left: 1px solid Black;
+background-color: White;
+overflow: hidden;
+float: right;
+clear: both;
+}
+
+.graphic .primarybox_left, .graphic2 .primarybox_left {
+font-size: .75em;
+font-family: "Charis", Geneva, sans-serif;
+line-height: 1em;
+margin-top: .25em;
+margin-right: .5em;
+padding-right: .8em;
+border-top: 1px solid Black;
+border-right: 2px solid Black;
+border-bottom: 2px solid Black;
+border-left: 1px solid Black;
+background-color: White;
+overflow: hidden;
+float: left;
+clear: both;
+}
+
+.graphic .secondarybox_right, .graphic2 .secondarybox_right {
+font-size: .75em;
+font-family: "Charis", Geneva, sans-serif;
+line-height: 1em;
+margin-top: .25em;
+margin-right: .2em;
+margin-left: .5em;
+padding-left: .8em;
+border-top: 1px solid Black;
+border-right: 2px solid Black;
+border-bottom: 2px solid Black;
+border-left: 1px solid Black;
+background-color: White;
+overflow: hidden;
+float: right;
+clear: both;
+}
+
+.graphic .secondarybox_left, .graphic2 .secondarybox_left {
+font-size: .75em;
+font-family: "Charis", Geneva, sans-serif;
+line-height: 1em;
+margin-top: .25em;
+margin-right: .5em;
+margin-left: .2em;
+padding-right: .8em;
+border-top: 1px solid Black;
+border-right: 2px solid Black;
+border-bottom: 2px solid Black;
+border-left: 1px solid Black;
+background-color: White;
+overflow: hidden;
+float: left;
+clear: both;
+}
+/* ---------- */
+
+/* Backwards compatible code */
+/* Old Legend/Reference/Footnote sections that works with preexisting HTML code */
+.lgnd {
+word-wrap: break-word;
+font-size: .85em;
+text-align: left;
+padding: .5em .2em 1em .2em;
+}
+
+.reference {
+word-wrap: break-word;
+font-size: .85em;
+font-style: italic;
+}
+
+.footnotes {
+word-wrap: break-word;
+font-size: .85em;
+}
+/* ---------- */
+
+/* Old Legend/Reference/Footnote ul/ol that works with preexisting HTML code */
+.lgnd ul {
+margin: 0 0 0 0;
+padding: 0 0 0 1.8em;
+list-style-position: outside;
+display: inline-block;
+zoom: 1;
+*display: inline;
+}
+	
+.lgnd ol {
+margin: 0 0 0 0;
+padding: 0 0 0 2.5em;
+list-style-position: outside;
+display: inline-block;
+zoom: 1;
+*display: inline;
+}
+	
+.lgnd ol li {
+list-style-type: decimal;
+display: list-item;
+}
+	
+.lgnd ul li {
+list-style-type: disc;
+display: list-item;
+}
+	
+.footnotes ul {
+margin: 0 0 0 0;
+padding: 0 0 0 2.1em;
+list-style-position: outside;
+display: inline-block;
+zoom: 1;
+*display: inline;
+}
+	
+.footnotes ol {
+margin: 0 0 0 0;
+padding: 0 0 0 2.8em;
+list-style-position: outside;
+display: inline-block;
+zoom: 1;
+*display: inline;
+}
+	
+.footnotes ol li {
+list-style-type: decimal;
+display: list-item;
+}
+	
+.footnotes ul li {
+list-style-type: disc;
+display: list-item;
+}
+	
+.reference ul {
+margin: 0 0 0 0;
+padding: 0 0 0 2.1em;
+list-style-position: outside;
+display: inline-block;
+zoom: 1;
+*display: inline;
+}
+	
+.reference ol {
+margin: 0 0 0 0;
+padding: 0 0 0 2.8em;
+list-style-position: outside;
+display: inline-block;
+zoom: 1;
+*display: inline;
+}
+	
+.reference ol li {
+list-style-type: decimal;
+display: list-item;
+}
+	
+.reference ul li {
+list-style-type: disc;
+display: list-item;
+}
+/* ---------- */
+
+/* Img code that works with preexisting HTML code */
+.lgnd img, .cntnt table img {
+margin: 0;
+padding: 0;
+display: inline;
+}
+/* ---------- */
+/* ---------- */
+
+
+
+
+/* ---------------------------------------------------------------------------
+ * utdContent.css - Common CSS for UpToDate topics, graphics, and abstracts. 
+ * ---------------------------------------------------------------------------
+ */
+
+#topicText .bulletIndent1, 
+#topicText .bulletIndent2, 
+#topicText .bulletIndent3 {
+	position:relative;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+#topicText .bulletIndent1 span.glyph, 
+#topicText .bulletIndent2 span.glyph, 
+#topicText .bulletIndent3 span.glyph {
+	position:absolute;
+	left:-17px;
+}
+#topicText .bulletIndent1 {
+	margin-left:32px;
+}
+#topicText .bulletIndent2 {
+	margin-left:64px;
+}
+#topicText .bulletIndent3 {
+	margin-left:96px;
+}
+
+
+
+
+/* ---------------------------------------------------------------------------
+ * end utdContent.css 
+ * ---------------------------------------------------------------------------
+ */
+
+
+
+
+
+/*****************************************************************************
+
+FILE: base.css
+
+/*****************************************************************************/
+
+
+/* -------- PUT TEMPORARY HACKS (AND EXPLANATION HERE -------- */
+
+/* don't display movie links (until they're working) */
+.movieLink {
+    display:none;
+}
+
+
+/* ------------------------- RESETS  ------------------------- */
+
+
+/* (CSS included in all webviews.) */
+
+body {
+    margin: 0;
+}
+
+* {
+    font-family: "Charis";
+    /* Disable popup dialog that appears when you tap and hold a link. */
+    -webkit-touch-callout: none;
+
+    /* Uncomment this if you want to disable selection/copy of UIWebView text */
+    /* -webkit-user-select: none; */
+}
+
+/**
+ Used by UIWebview's highlight method, which is used when highlighting references.
+*/
+.highlighted {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+
+.highlightedCurrent {
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#EDD000)) repeat-x 0px 0px; /* 0px is top offset */
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+
+
+.highlightYellow {
+    background-color: yellow;
+}
+
+.highlightGreen {
+    background-color: #c1ed72;
+}
+
+.highlightBlue {
+    background-color: #acd8fd;
+}
+
+.highlightRed {
+    background-color: #ffb1cb;
+}
+
+.highlightBanafsh {
+    background-color: #d8b2ff;
+}
+
+.highlightNote {
+    border-bottom: 2px solid red;
+
+}
+
+a {
+    color: #00814F;
+
+/*    color: #2C4E3B; */
+
+
+/* the blue */
+/*    color: #0073B7; */
+/* the gold */
+/*    color: #FA8100; */
+/* a green */
+
+/* graphics-link green */
+/* color: #019e30 */
+/* UTD web-link green */
+/*    color: #363;*/
+    /* UTD logo-green  */
+/*    color: #009E60; */
+
+
+    text-decoration: none;
+}
+
+
+
+
+/* 
+Topic Title (inserted via TopicHeaderTemplate.html)
+*/
+
+#generatedTopicTitle {
+    font-weight: bold;
+    font-size: 18px;
+/*    color:#009E60; Yesi's*/
+    color: #000;
+    padding-left: 5px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+/* 
+Contributors / Last Updated (inserted via TopicHeaderTemplate.html)
+*/
+#contributorsLink a, #lastUpdatedLink a {
+    color: #009E60; 
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0px;
+    margin: 10px 15px 0px 5px;
+    float: left;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+
+@media screen {
+    #topicContributors {
+        display: none;
+    }
+}
+    
+@media print {
+    #topicContributors {
+        margin: 1em 0 1em 0;
+        padding: 0;
+        overflow: hidden; 
+        display: inherit;
+    }
+}
+
+#topicContributors a {
+    font-size: 12px;
+    padding: 0px;
+}
+
+#topicContributors .contributorType {
+    font-weight:bold;
+}
+
+#topicContributors div {
+	float: left; 
+	width: 33%;
+	margin: 0;
+	padding: 0;
+}
+
+#lastUpdatedLink br {
+    clear: both;
+}
+
+
+/* Quick styling for the UTD copyright. */
+#utdCopyright, #utdCopyrightClient  {
+    margin: 30px 10px;
+    font-size: 10px;
+    font-family: "Charis";
+    text-align: center;
+}
+
+/* Actually, don't show the server's copyright. The client will show the current year. */
+#utdCopyright {
+    display:none;
+}
+
+
+
+/* Disclaimer Box -- also duplicated for medcalc disclaimer (see medcalc_override.css)*/
+
+#disclaimer {
+    border: 1px solid #000;
+    padding: 6px;
+    background-color: #ccc;
+    margin: 10px 10px;
+}
+
+#printHeader {
+    background-image: url('data:image/gif;base64,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');
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 12px;
+    margin: 5px 5px 5px 5px;
+}
+
+#lexicompLogo {
+    background-image: url('data:image/gif;base64,R0lGODlhkAAbAOZ/AGG643LC5+r2+83a5Ozx9QOT01K14HWZthqc1+Tr8QlKfIPJ6UOu3q3C06HW7py2yyNdi7Le8ZPQ7EV1nN7x+WKMrLjL2QuW1PH5/cTm9YnM6ub0+gJEeZ3U7qra8P3+/lOAo1y54y6l2k58oeHy+muRsNzl7BpWhnzG6I2qwvj8/rrh8zOn2xCY1fv9/miQrzao3PT3+b/j9BSa1nCVtCSh2Sii2fD09/f8/juq3E2z4BZTg8XU4Mro9e74/MHR3tju+Pn7/Emw3/T6/ZWwxjVqlNXg6aG6zaa90FmFqJGuxODo7/X4+s/q947O6ylhjnuduR5Yh2zA5XjF51i34tLs99Xt+DBnkjhslR6e167c8cjW4Wi+5bbg8n+gvDtvmJjT7ZvU7V2IqQ9OgOju8h2h29jj6sjn9b7P3S1kkD5wmYOkvfv8/RKd2gBCd5+4zTuu4KTY77HF1drk63/H6JizyBme2Jmyx5/W7wZHe97r836+3uPz+gCR0gBDeP///yH5BAEAAH8ALAAAAACQABsAAAf/gH+Cg4NMN4MbEQsehI2Oj5CRkpOUlZaXmIMmRwNMPmEGWX2jQhGZp6ipqquUMQcHCX8SZaO1tQxArLq7vL1/P1d3fxRwtsajBRmSBGZmS76NR1cjsdDWlRYKDX9Adsd9Fyw6AAEouZEvHBxq139ofvBQ7e0fAhgufyqCWxxEfz41jjGQQAHTF3gV2tGA50fePGs4NCxY4KDDnxsQ0ggKYKwGo0xsIMBT0g6NAj8QzDy8lsHABQamvPiR84dPC1tCBKAisAPetnZLtsSIpAKfpKKV9D1SevRDIx9WtDTBQEaBglhxbIkYkmrJST8/HsWQk6TIFRANhgp6kCIFEkJL/x48UPKMxxEkYRtl4FKjBQIDEXA0orCAhV8DXQip0CDhzwYUfRmsGERiSpYZkgdVQaGMBB0bLbIA6AEJiZ8oQ53YmpyKBzwORhxZeMKQYZotgg4wRCMogUg/Ew6BgJeEUBUGo1gwEDFKRBVBLhYU6IMARsA+Brj+EdAnR4QLfWDYGIXnT5wCBcSP+qihjwfVfUTkQDBqyqMRp5n8aT+qBtNTR8CzAwGNPMABPHlAcAJDO8QSw29F/MHEBPAUod8fFDY0iAw3TUHCIE0Y0EcWG/xBRXwe6PNBBONR4RQFBWRRQAgFyRJfGH1IUeIfqtmAD0dC9BHCc3/gEMYMfTTWSP8UfoxBYFaj6LCKbn5g0cgPB/pxgBFsxNDAgn4k9EcDDBFRATwQVBMEbX68IQgQLbSgjCNcMCDAFNhph0hApqwwCgqNINeHE4EWUCIAo2jhSA8XXKATIWP4wQEPNd0Un1GoJAGPGIQEUYSkJBHyQx5+PBHEHx8MJyk8ClDa20kc4PaBDn0kFgkQBeSgJyF4YGcjC04RIkUfQjiCaInIaQAJF0k20pMfIAgy7CgyqJLhAYRswSoN3HZLw0lXCTJHpAy9NYhrTZLxhxV9ADAJs9U+IkABLPzBLKGNnMgaIQYU4MMHCCCAaSMRCNnIp37kQakP43UnGCpXwJMCIVDUZjH/QxxU80cJDNHQCJl+XOGUBH2YIokIWQTriA/h/KFDATUSAgPMjsAwgwsU9MFFJD30QUUjMqE5x7q09KEDBqfcAKa5guDnxw4QRC211Fgc8scAYAJ36iB1wDOCICH0QVokGFyQQyQkFMDAHyxk4QgOM9igsiAYtGDDHxn0YREkWSlLyAC1PREbEMX0wUK8lxiR5QCEOB2qJEv8xtADhKyBkCAnIv4IyzBEQjKh1TkyrwGOsFusFn2AEcmJVjTiQoYCHiEIHkXn4ADSjgwsCMg7bC0Ix8A5opYgTCD8RYYnECiIploK0p7fkYhwgQ+PDJHF9PNKOVgfATgiQx/2gWE0/yRn5PoID6TWNgFvQWihQxsFtMGCAQFoEIYDcXzYCBHwjFHB/2JQAuAQYoIbEOAHX4jCGqrBvBOQwQhf8ZggEFaHNxVgBkRqxAKyg6fuue5EqvueBwnxPegNwgN9iMMfOFKAMziCAjUowNgcUTGLuSEKBxhAAvTQgw7sgQ4aiEMP+KA7QQTNYsVRlR8UsANySQo3QctDXoCngNjc4Fmu+gOeECADTAFBRFvBgCgCsCMVNCEH3BNEB/TmCPE5wBEkq5YQChCnCChlCFpA0hsjIYaLwcMNeRjDCaIAAeVJoo8XwxYBnGYxLOCGf5KSnSAI8JuvLYEhGvvAtLJgAAM0TPEK2umBKHIlBPoUAHp06MOcCIGoVQ4ibE34QxZq0ISA/EUHSELARyLxgTP5kSEKcBMl6vCCYhrzBRYYBBKSgIUnfCEJD8CHK4pJOUIECB4WIEAJXnAA3wmiC1QAzQxgwIUZCmIDAbBZC8gZyxMC4FGEkAAAqNcIDcyTD2r7RzpbgBkUwHMSDZBcIxnni7lRQg3wiILVJIGD/zwCBw/jRd5GWCSHVuIGSmASQ8agBG+uBBIDyBK2PnqKgplwFTHgwQEmQINnkJQSVIzNSy+xxr3N9KZ/SAC51OBRnD6CI7by6Ux/QISiLlSoj1iBBOiJiUAAADs%3D');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 27px;
+}
+
+.visibleAlways {
+    display: inherit;
+}
+
+.visibleNever {
+    display: none;
+}
+
+@media screen {    
+    .visiblePrintOnly {
+        display: none;
+    }
+    
+    .visibleScreenOnly {
+        display: inherit;
+    }
+}
+
+@media print {
+    .visiblePrintOnly {
+        display: inherit;
+    }
+    
+    .visibleScreenOnly {
+        display: none;
+    }
+}
+
+
+/*****************************************************************************
+
+FILE: iphone.css (ie. topics, graphics, ipad, etc.)
+
+/*****************************************************************************/
+
+
+
+/* ------------------------- PUT TEMPORARY HACKS HERE ------------------------- */
+
+/* ------------------------- TOPIC BODY  ------------------------- */
+html body {
+    font-family: "Charis", Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* ------------------------- SHARED STYLES (HINT: PROBABLY DONT WANT MANY)  ------------------------- */
+
+p, td, li {
+    font-family: "Charis";
+    font-size: 13px;
+}
+
+#topicVersion {
+    font-size: 10px;
+}
+
+span.h3 {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "Charis";
+}
+
+span.h4 {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "Charis";
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+span.h5 {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "Charis";
+	font-weight: bold;
+	margin-left: 20px;
+	padding-right: 10px;
+	display: inline;
+}
+
+span.h5:after {
+    content: " Ñ";
+}
+
+.drugH1Div, .drugH2Div {
+    /* This is a workaround until we get better markup. */
+	margin: 0px;
+	padding: 0px;
+}
+
+span.h1, .drugH1 {
+    /* This is a workaround until we get better markup. */
+    margin-left : -5px;
+    margin-right: -5px;
+	padding: 3px 0px 3px 5px;
+    display: block;
+    
+    font-size: 13px;
+    font-weight: bolder;
+    font-family: "Charis";
+}
+
+
+@media screen {
+	span.h1, .drugH1 {
+        /* White with subtle gray shadow. */
+        color: #fff;
+        text-shadow: 1px 1px 1px #676C6F;
+        
+        /* The first 1px top border. */
+        border-top: #717D85 1px solid;
+        /* 
+         The background gradient. It is offset from the top by 1px so the background color will show through and appear to be an innter top-border.
+         IMPORTANT: This line must come before setting `background-color` or the background color won't shine through.
+         */
+        background: -webkit-gradient(linear, left top, left bottom, from(#717D85), to(#8C9CA9)) repeat-x 0px 1px; /* 1px is top offset */
+        /* This doesn't appear to be the background, it's the 1px inner border mentioned above. */
+        background-color: #B9C3CB; 
+        /* The actual bottom border. */
+        border-bottom: #989EA4 1px solid;
+    }
+}
+
+span.h2, drugH2 {
+    /* This is a workaround until we get better markup. */
+    margin-left : -5px;
+    margin-right: -5px;
+	padding: 0px 0px 0px 5px;
+    display: block;
+    
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "Charis";
+}
+ 
+/**
+ Fancy screen graphics.
+*/
+@media screen {
+    span.h2, drugH2 {    
+        /* White with subtle gray shadow. */
+        color: #fff;
+        text-shadow: 1px 1px 1px #676C6F;
+        
+        /* The first 1px top border. */
+        border-top: #717D85 1px solid;
+        /* 
+         The background gradient. It is offset from the top by 1px so the background color will show through and appear to be an innter top-border.
+         IMPORTANT: This line must come before setting `background-color` or the background color won't shine through.
+         */
+        background: -webkit-gradient(linear, left top, left bottom, from(#8C9CA9), to(#A4B2BD)) repeat-x 0px 1px; /* 1px is top offset */
+        /* This doesn't appear to be the background, it's the 1px inner border mentioned above. */
+        background-color: #B9C3CB; 
+        /* The actual bottom border. */
+        border-bottom: #989EA4 1px solid;
+    }
+}
+
+
+#topicText ul li {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+div.ord-stmt li {
+    padding-bottom:5px;
+    text-indent:-13px;
+}
+
+div.ord-stmt span.attributes {
+    display:inline !important;
+    padding-right:5px;
+}
+
+div.ord-stmt span.link {
+    display:none;
+}
+
+div.ord-stmt span.content b {
+    margin-left:-5px;
+}
+
+/* basic outline/related topics styling */
+#referenceLinks {
+    border-bottom: 1px solid #E0E0E0;
+    font-size: 1.15em;
+    font-weight: bold;
+    left: 0px;
+    list-style: none;
+    margin-left: 0px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+#topicText p {
+    line-height: 140%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#topicText .subscript {
+  font-size: 75%;
+  position: relative;
+  bottom : -0.5em;
+}
+
+#topicText .superscript {
+  font-size: 75%;
+  position: relative;
+  top: -0.5em;
+}
+
+#topicText ul.bullet, #topicText ul.bulletCompact, #topicText ul.hyphen {
+	padding-right: 10px;
+    padding-left: 10px;
+}
+
+#topicText ul.bullet-block, #topicText ul.bulletCompact-block, #topicText ul.hyphen-block {
+	margin-top: 0px;
+	margin-bottom: 5px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#topicText ul.bullet li {
+	font-size: 13px;
+    font-family: "Charis";
+	list-style-type: disc;
+    list-style-position: inside;
+	padding: 8px 0px 0px 0;
+   	text-indent: 10px;
+}
+
+#topicText ul.bullet-block li {
+	font-size: 13px;
+    font-family: "Charis";
+	list-style-type: disc;
+	padding: 6px 0px 6px 0px;
+    margin-left: 20px;
+}
+
+#topicText ul.bulletCompact li {
+	font-size: 13px;
+    font-family: "Charis";
+	list-style-type: disc;
+    list-style-position: inside;
+	padding: 0px;
+   	text-indent: 10px;
+}
+
+#topicText ul.bulletCompact-block li {
+	font-size: 13px;
+    font-family: "Charis";
+	list-style-type: disc;
+	padding: 0px;
+    margin-left: 20px;
+}
+
+#topicText ul.hyphen li {
+	font-size: 13px;
+    font-family: "Charis";
+	list-style-type: none;
+    list-style-position: inside;
+	padding: 5px 0px 5px 0px;
+    text-indent: 16px;
+   	margin-left: 0px;
+}
+
+#topicText ul.hyphen-block li {
+	font-size: 13px;
+    font-family: "Charis";
+	list-style-type: none;
+	margin-left: 30px;
+	padding: 5px 0px 5px 0px;
+    text-indent: -14px;
+}
+
+#topicText ul.hyphen-block li:before {
+    content: "Ð ";
+}
+
+#topicText .statement_entity {
+	padding-right: 5px;
+}
+
+#topicText .drugBrandNames ul li {
+	font-size: 13px;
+    font-family: "Charis";
+	margin-left: 0px;
+    margin-right: 2px;
+	display: inline;
+}
+
+#topicText .drugBrandNames ul {
+	font-size: 13px;
+    font-family: "Charis";
+	margin-left: 0px;
+    padding-left: 2em;
+}
+
+#topicText a.grade {
+    font-weight: bold;
+}
+
+#drugCopy {
+	color: #666666;
+	margin: 1em 0 2em 0;
+    font-size: 13px;
+}
+
+.collapsible {
+	margin-top: 2em;
+}
+
+.collapsible-title {
+	font-weight: bold;
+    font-size: 13px;
+}
+
+.collapsible-date {
+	font-weight: bold;
+    font-size: 13px;
+}
+
+
+
+/*
+    BEGIN IOS GRAPHICS
+*/
+.mediaPlayerControlOverlay {
+    opacity: 0.75; 
+    position: absolute;
+    background-image: url('data:image/png;base64,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');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@media print {
+    .mediaPlayerControlOverlay {
+        display: none;
+    }
+}
+
+/*
+*/
+.graphicWrapper {
+    font-size: 16px;
+    display: inline;
+}
+
+
+/*
+    END IOS GRAPHICS
+*/
+
+
+
+/*
+    zcharter - 2012-07-19 - I think these hX styles are ours. They were in a weird place when I took out the UTD_gx_gen.css text.
+*/
+h1 {
+	color: #D7833D;
+	margin-top: 0px;
+	margin-bottom: 16px;
+	font-size: 18px;
+	line-height: 100%;
+	padding: 0px 0px 0px 0px;
+}
+
+h2 {
+	margin-top: 12px;
+	margin-bottom: 6px;
+	font-size: 14px;
+	line-height: 100%;
+}
+
+h3 {
+	margin-top: 12px;
+	margin-bottom: 6px;
+	margin-left: 40px;
+	font-size: 12px;
+	line-height: 100%;
+}
+
+
+
+/*****************************************************************************
+
+FILE: outline.css
+
+/*****************************************************************************/
+
+
+
+/*
+NOTES:
+
+#009E60 is the official UTD logo green color.
+
+
+*/
+
+/* ------------------------- PUT TEMPORARY HACKS HERE ------------------------- */
+#outlineTitle {
+    display:none;
+}
+
+#topicVersionFooter {
+    font-size: 10px;
+    color: #999999;
+    padding: 10px 10px 0px 10px;
+}
+
+/* summary and recommendations (temp styling) */
+/* NOTE: this selector has to have higher precendence over the default li background. */
+#innerOutline .summaryItem .plainItem {
+    margin: 20px;
+    padding: 6px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2d9267), to(#1a5238)) repeat-x 0px 0px; /* 0px is top offset */
+}
+
+
+
+/* summary and recommendations (temp styling) */
+/* NOTE: this selector has to have higher precendence over the default li background. */
+#innerOutline .summaryItem .plainItem a {
+    font-size: 11px;
+    color: #ffffff;
+    padding-right: 20px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAO6gAADuoBo4pjcQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTM5jWRgMAAAAVdEVYdENyZWF0aW9uIFRpbWUANS8xMC8xMRgrJYoAAAKUSURBVEiJ7dbPa9NgGAfwb950suigqIx58T7YxdcHhgjiZRQc6EX8B8YYnoSdenQMNnrw1AXBw6SHou3Ng6AeNtxGUVhj19BVlFYotl2Yw44lWbstPzy4irRL2znHDtsXAvnxvO/nfZOXJILrujiJsBNRz+BTAcN13aat03DOBV3XL3LOhVZ1RNRkHGnGjLEux3GCiUTiKRGdO1Tbo8AAzq+vr1+SJOnh3Nzci4WFhb52s/9fsM8wjB4A8Pv99wcHB99PTU1d6QQ/8uJyHOdPH93d3f1DQ0PJWCx2k4ha993p4iIisVwu3zEMI16r1T5Uq9WPuq4nTdP84TbEsiw9n8/fJSJxv22z0Q7mnAvZbLbfNM23jUC7lEqlR0TkOzRMRCyTydyyLGvrsGg9a2trj4moq2OYcy5Eo9GrlmXp/4oWi8Xc6OjobSKSGg2f17NnjJ0LBAKyKIo9bVfYAVlaWlLGx8fDAMoArMbrB8KccyEYDF7r7e29Vz9XqVSMdDqdT6fT3wqFwsbi4mIRgDg5ORkYHh6+Ua+r1Wq78Xj83czMTBTACoDvAPY6ghljXQMDAw/qx8lk8vPExMRLTdNyADYAbAHYBnDB7/dfr9dtbm7q09PTkfn5+TcAMgA0RVH2iKjJ8LrVkm3bfQAQiURey7IcA5AFoAEwAdQcx9ljjF2WJMkEAE3TNsbGxp6Uy+UEgC8AfiqKYnv07wn7bNsWV1dXl2VZngWQ2h/9zt9FRATGmKOq6qeRkZFnAJYB5B3H0VOpVMuvjRfs5HK5RCgUeg7gK4CSx+itcDg8q6qqD0ABQEFRlGorsB28EwqFXuH3aqy0uGXbqqqu7O/riqLsdoICgOB6vCKPO6fv1+cMPoOPLb8AuhdKLGRexp8AAAAASUVORK5CYII%3D');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+li.disclosureItem {
+     background-image: url('data:image/png;base64,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%3D%3D');
+     background-repeat: no-repeat;
+     background-position: right center;
+}
+
+/* ------------------------- RESET ------------------------- */
+body {
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+
+/*
+zcharter - 2012-07-02 - The padding here caused problems in the abstract list view (hid the list bullets), had to add #contentBody.
+It would be better to have more specific selectors, etc.
+*/
+#contentBody #topicOutline,  /* regular outline */
+#topicOutline *   /* Reference link in outline -- iPad only */ {
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    font-family: "Charis";
+    /* Disable popup dialog that appears when you tap and hold a link. */
+    -webkit-touch-callout: none;
+
+    /* Uncomment this if you want to disable selection/copy of UIWebView text */
+    /* -webkit-user-select: none; */
+}
+
+
+/* ------------------------- OUTLINE STYLES ------------------------- */
+
+/* ------------------------- OUTLINE LIST LAYOUT ------------------------- */
+/*
+Bullet order:
+- plain
+    ¥ bullet
+        - dash
+            ¥ bullet2
+                - dash2
+*/
+
+
+#topicOutline {
+    /* Put a border on the bottom to close the last li.plainItem, looks naked without it. */
+    
+}
+
+/* default list style -- let each bullet specify its padding-left*/
+#topicOutline li {
+    list-style-type: none;
+    margin:0;
+    padding: 3px 5px 3px 5px;
+    border-bottom: 1px solid #ccc;
+}
+/* Bullet Level 1 */
+#topicOutline li.plainItem {
+    border-top: 1px solid #000;
+
+}
+/* Bullet Level 2 */
+#topicOutline li.bulletItem {
+    padding-left: 25px;
+    text-indent: -15px;
+
+}
+/* Bullet Level 3 */
+#topicOutline li.dashItem {
+    padding-left: 40px;
+    text-indent: -18px;
+}
+/* Bullet Level 4 */
+#topicOutline li.bulletItem2 {
+    padding-left: 55px;
+    text-indent: -16px;
+}
+/* Bullet Level 5 */
+#topicOutline li.dashItem2 {
+    padding-left: 70px;
+    text-indent: -15px;
+}
+
+
+
+/* ------------------------- OUTLINE LINK DISPLAY ------------------------- */
+
+/* All outline items.  */
+#topicOutline li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Bullet Level 1 */
+#topicOutline .plainItem {
+}
+#topicOutline .plainItem a {
+    font-weight: bold;
+    font-size: 13px;
+    color: #00814F;
+    display: block;
+    
+/*    text-shadow: 1px 1px 1px #000; */
+}
+
+/* Bullet Level 2 */
+
+#topicOutline .bulletItem, #topicOutline .dashItem, #topicOutline .bulletItem2, #topicOutline .dashItem2 {
+
+}
+#topicOutline .bulletItem a {
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+}
+/* Bullet Level 3 */
+#topicOutline .dashItem a {
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+}
+/* Bullet Level 4 */
+#topicOutline .bulletItem2 a {
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+}
+/* Bullet Level 5 */
+#topicOutline .dashItem2 a {
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+}
+
+
+/* ------------------------- OUTLINE LIST BULLETS ------------------------- */
+/* 
+Hint: Here are some good unicode bullet characters (be sure to check in the iPhone simulator/device):  . .  . .. 
+*/
+/* Bullet Level 1 */
+#topicOutline .plainItem a:before {
+  content: "";
+}
+/* Bullet Level 2 */
+#topicOutline .bulletItem a:before {
+  content: "\25CF \0000a0";
+}
+/* Bullet Level 3 */
+#topicOutline .dashItem a:before {
+  content: "\2013 \0000a0";
+}
+/* Bullet Level 4 */
+#topicOutline .bulletItem2 a:before {
+  content: "\25CF \0000a0";
+}
+/* Bullet Level 5 */
+#topicOutline .dashItem2 a:before {
+  content: "\2013 \0000a0";
+}
+
+
+
+
+/*****************************************************************************
+
+FILE: abstract.css
+
+/*****************************************************************************/
+
+
+
+/*  -- from web topic.css
+--------------------------------------------------------------------------------
+ The abstracts page
+--------------------------------------------------------------------------------
+
+*/
+
+#abstracts {
+    font-size: 12px;
+    font-family: "Charis";
+    margin: 5px;
+}
+
+#abstracts #abstractsToolbar {
+    text-align: right;
+    margin-right: 2em;
+}
+
+#abstracts .textLink {
+    vertical-align: 50%;
+    margin-right: 0.75em;
+}
+
+#abstracts img {
+    width: 24px;
+    height: 20px; 
+}
+
+#abstracts h1 {
+    font-size: 140%;
+    text-align: center;
+    margin: 1em 0 0 0;
+}
+
+#abstracts h2 {
+    font-size: 110%;
+/*    text-align: center; */
+    margin: 0.2em 0 1.5em 0;
+}
+
+#abstracts .abstract {
+    border-top: 4px solid #000000;
+    padding: 0.4em 0 1em 0;
+}
+
+#abstracts .abstractRow {
+    clear: both;
+    padding-top: 0.4em;
+    padding-bottom: 5px;
+    overflow: hidden; 
+}
+
+#abstracts .abstractRow .label {
+    float: left;
+    width: 40px;
+    font-size: 12px;
+}
+
+#abstracts .abstractRow .value {
+    margin-left: 40px;
+    font-size: 12px;
+}
+
+#abstracts .citationNumber {
+    font-weight: bold;
+    padding-top: 0.4em;
+}
+
+#abstracts .abstractText {
+
+}
+
+#abstracts .noAbstract {
+    margin-top: 1em;
+}
+
+#abstracts #ovidLink{
+    text-decoration : underline; 
+    cursor: pointer; 
+}
+
+    </style>
+    
+    <script type="text/javascript" charset="utf-8">
+        function getUTDWebURLScheme() {
+    return "uptodatewebaction://";
+}
+
+function getUTDAppURLScheme() {
+    return "uptodateappaction://";
+}
+
+/**
+ Serializes the resource request into a URL that the Objective-C side can respond to.
+ */
+function getResource(requestType, arrayOrObject) {
+    // turn the array or object into a json string and put it (escaped) into the URL
+    var JSONString = (JSON.stringify(arrayOrObject));
+    var URLString = escape(JSONString);
+    var uri = getUTDWebURLScheme() + requestType + "#" + URLString;
+
+    document.location.href = uri;
+}
+
+/**
+ Serializes the resource request into a URL that the Objective-C side can respond to.
+ */
+function appAction(objJson) {
+    var jsonString = (JSON.stringify(objJson));
+    var URLString = escape(jsonString);
+    var uri = getUTDAppURLScheme() + "#" + URLString;
+    
+    document.location.href = uri;
+}
+
+function getMetaWithNameAndContentPrefix(metaName, contentPrefix) {
+    var output = null;
+    
+    metaName = metaName.toLowerCase();
+    contentPrefix = contentPrefix.toLowerCase();
+    
+    var objMetaList = document.getElementsByTagName("meta");
+    for (var ii=0; ii<objMetaList.length; ii++) {
+        if (objMetaList[ii].name.toLowerCase() == metaName && objMetaList[ii].content.toLowerCase().indexOf(contentPrefix) == 0) {
+            output = objMetaList[ii];
+            break;
+        }
+    }
+    return output;
+}
+
+function setViewportWidth(width) {
+    var metaElement = getMetaWithNameAndContentPrefix("viewport", "width=");
+    if (metaElement == null) {
+        metaElement = document.createElement('meta');
+        // set properties
+        metaElement.setAttribute("name", "viewport");
+        var objHead = document.getElementsByTagName('head')[0];
+        objHead.appendChild(metaElement);
+    }
+    metaElement.setAttribute("content", "width=" + width + ";");
+}
+
+/**
+ * Gets the x,y coord of an object, given the object
+ */
+function getObjectCoord(obj) {
+	var xCoord = 0;
+	var yCoord = 0;
+	
+	if (obj) {
+		xCoord = obj.offsetLeft;
+		yCoord = obj.offsetTop;
+		
+		var tempEl = obj.offsetParent;
+		while (tempEl != null) {
+			xCoord += tempEl.offsetLeft;
+			yCoord += tempEl.offsetTop;
+			tempEl = tempEl.offsetParent;
+		}
+	}
+	return {"x":xCoord, "y":yCoord};
+}
+
+function getObjectXCoord(objectId) {
+    var xCoord = 0; 
+    var obj = document.getElementById(objectId); 
+    if (obj) {
+        xCoord = getObjectCoord(obj).x;
+    } 
+    return xCoord;
+}
+
+function getObjectYCoord(objectId) {
+    var yCoord = 0; 
+    var obj = document.getElementById(objectId);
+    if (obj) {
+        yCoord = getObjectCoord(obj).y;
+    } 
+    return yCoord;
+}
+
+function findObjectOfType(parent, tagName) {
+	tagName = tagName.toLowerCase();
+	var output = null;
+	if (parent) {
+        if (parent.nodeType == 1) {
+            if (parent.tagName.toLowerCase() == tagName) {
+                output = parent;
+            } else {
+                for (var i = parent.childNodes.length - 1; i >= 0; i--) {
+					output = findObjectOfType(parent.childNodes[i], tagName);
+					if (output != null) {
+						break;
+					}
+                }
+            }
+        }
+    }
+	return output;
+}
+
+function getElementsByTagNames(list,obj) {
+	if (!obj) var obj = document;
+	var tagNames = list.split(',');
+	var resultArray = new Array();
+	for (var i=0;i<tagNames.length;i++) {
+		var tags = obj.getElementsByTagName(tagNames[i]);
+		for (var j=0;j<tags.length;j++) {
+			resultArray.push(tags[j]);
+		}
+	}
+	var testNode = resultArray[0];
+	if (!testNode) return [];
+	if (testNode.sourceIndex) {
+		resultArray.sort(function (a,b) {
+                         return a.sourceIndex - b.sourceIndex;
+                         });
+	}
+	else if (testNode.compareDocumentPosition) {
+		resultArray.sort(function (a,b) {
+                         return 3 - (a.compareDocumentPosition(b) & 6);
+                         });
+	}
+	return resultArray;
+}
+
+function getClosestParagraphIdToTopOfPage(customMarkerId) {
+    var closestParagraphId = null;
+    
+    var currentScrollHeight = window.pageYOffset;
+    if (currentScrollHeight > 0) {
+        var existingObj = document.getElementById(customMarkerId);
+        if (existingObj != null) {
+            existingObj.removeAttribute("id");
+        }
+        var allParagraphs = getElementsByTagNames('p,div,li');
+        var closestDistance = null;
+        var closestParagraph = null;
+        var percDiff = null;
+        
+        for(var ii=0; ii<allParagraphs.length; ii++) {
+            var curP = allParagraphs[ii];
+            var objCoord = getObjectCoord(curP);
+            var distance = currentScrollHeight - objCoord.y;
+            var absDistance = Math.abs(distance);
+            
+            if (closestParagraph == null) {
+                closestParagraph = curP;
+                closestDistance = distance;
+            } else {
+                if (distance < -30) { //30 pixel offset
+                    break;   
+                }
+                
+                if (absDistance < closestDistance) {
+                    closestParagraph = curP;
+                    closestDistance = absDistance;
+                }
+            }
+        }
+        
+        if (closestParagraph != null) {
+            if (closestParagraph.id) {
+                closestParagraphId = closestParagraph.id;
+            } else {
+                closestParagraph.setAttribute("id", customMarkerId);
+                closestParagraphId = customMarkerId;
+            }
+        }
+    }
+    return closestParagraphId;
+}
+
+
+
+
+function resizeToFit(wrapperId) {
+    document.getElementsByTagName('body')[0].style.visibility = "hidden";
+    var objWrapper = document.getElementById(wrapperId); 
+    var bodyWidth = objWrapper.clientWidth;
+    var bodyHeight = objWrapper.clientHeight;
+    var kMaxWidth = 1280; // this is max we can go without scrolling
+    var kWidthToHeightRatioForScreen = window.innerWidth / window.innerHeight;
+    
+    var adjustedWidth = bodyHeight * kWidthToHeightRatioForScreen;
+    if (adjustedWidth < bodyWidth) {
+        adjustedWidth = bodyWidth;
+    }
+    
+    if (adjustedWidth > kMaxWidth) {
+        adjustedWidth = kMaxWidth;
+    }
+    
+    var meta = getMetaWithNameAndContentPrefix("viewport", "width=");
+    if (meta == null) {
+        meta = document.createElement('meta');
+        // set properties
+        meta.name = "viewport";
+        document.getElementsByTagName('head').item(0).appendChild(meta);
+    }
+    meta.content = "width=" + adjustedWidth + ";";
+    
+    var curWrapperWidth = objWrapper.clientWidth;
+    
+    setScale(curWrapperWidth, adjustedWidth);
+    
+    setTimeout("document.getElementsByTagName('body')[0].style.visibility = 'visible';", 1); //this forces the browser to re-render the graphic
+}
+
+function setScale(targetWidth, expandedWidth) {
+    var scaleMeta = getMetaWithNameAndContentPrefix("viewport", "initial-scale=");
+    if (scaleMeta == null) {
+        scaleMeta = document.createElement('meta');
+        scaleMeta.name = "viewport";
+        document.getElementsByTagName('head').item(0).appendChild(scaleMeta);
+    }
+    var initialScale = 0;
+    var iterationCountWithNoChange = 0;
+    var lastWindowInnerWidth = 0;
+    while (window.innerWidth > targetWidth + 10) {
+        initialScale += 0.05;
+        scaleMeta.content = "initial-scale=" + initialScale.toFixed(3) + ";";
+        if (lastWindowInnerWidth == window.innerWidth) {
+            //prevent infinite loop
+            iterationCountWithNoChange++;
+            if (iterationCountWithNoChange >= 10) {
+                break;   
+            }
+        } else {
+            iterationCountWithNoChange = 0;
+        }
+        lastWindowInnerWidth = window.innerWidth;
+    }
+    
+    //scroll horizontal to the location
+    var xScroll = (expandedWidth - window.innerWidth) / 2;
+    window.scrollTo(Math.round(xScroll), 0);
+}
+
+function centerMoviePlayers(wrapperIds) {
+    for(var ii=0; ii<wrapperIds.length; ii++) {
+        var overlayId = wrapperIds[ii] + "_player_overlay";
+        var objOverlay = document.getElementById(overlayId);
+        if (objOverlay && objOverlay.style.display != "none") {
+            var objWrapper = document.getElementById(wrapperIds[ii]);
+            var objImg = findObjectOfType(objWrapper, "img");
+            if (objImg != null) {
+                objWrapper = objImg;
+            }
+            
+            var objCoord = getObjectCoord(objWrapper);  
+            
+            objOverlay.style.width = objWrapper.offsetWidth + "px";
+            objOverlay.style.height = objWrapper.offsetHeight + "px";
+            objOverlay.style.left = objCoord.x + "px";
+            objOverlay.style.top = objCoord.y + "px";
+        }
+    }
+}
+
+
+
+var graphicWrapperId = "graphicTable";
+
+function bodyOnload(isMovie) {
+	window.setTimeout("resizeToFit();", 100);
+	if (isMovie) {
+		window.setTimeout("positionMoviePlayer();", 500);
+	}
+}
+
+function positionMoviePlayer() {
+	var oOverlay = document.getElementById("moviePlayerOverlay");
+	if (oOverlay){
+		var oWrapper = document.getElementById(graphicWrapperId);
+		var oImage = findObjectOfType(oWrapper, "img");
+		if (oImage != null){
+			var imgWdt = oImage.offsetWidth + "px";
+			var imgHgt = oImage.offsetHeight + "px";
+
+			var oContainer = oImage.parentNode;
+
+			  // Move oOverlay into oContainer
+			oContainer.style.position = "relative";
+			oContainer.style.padding = "0px";
+			oContainer.appendChild(oOverlay);
+			oOverlay.style.top = "0";
+			oOverlay.style.width = imgWdt;
+			oOverlay.style.height = imgHgt;
+		}
+	}
+}
+
+function resizeToFit() {
+    var objWrapper = document.getElementById(graphicWrapperId);
+
+    var bodyWidth = objWrapper.clientWidth;
+
+    var meta = getMetaWithNameAndContentPrefix("viewport", "");
+    if (meta == null) {
+        meta = document.createElement('meta');
+        // set properties
+        meta.name = "viewport";
+        document.getElementsByTagName('head').item(0).appendChild(meta);
+    }
+
+    var initialScale = (window.outerWidth / (bodyWidth + 20));
+
+    meta.content = "target-densitydpi=device-dpi, width=" + bodyWidth + ", initial-scale=" + initialScale.toFixed(1) + ";";
+}
+
+
+
+
+
+// the main entry point to start the search
+function highlightAllOccurencesOfString(keywordsArray, resultIdPrefix) {
+    //first item is the search term, so leave as is, others are synonyms, so search with break
+    var keywords = escapeRegexChars(keywordsArray[0]);
+    for(var ii=1; ii<keywordsArray.length; ii++) {
+        keywords = keywords + "|\\b" + escapeRegexChars(keywordsArray[ii]) + "\\b";
+    }
+    var keywordPattern = new RegExp(keywords, "i"); //case insensitive
+    removeAllHighlights();
+    var tmpArray = new Array();
+    
+    var objTopLevelElement = document.getElementById("contentBody");
+    if (objTopLevelElement == null) {
+        objTopLevelElement = document.body;
+    }
+    highlightAllOccurencesOfStringForElement(objTopLevelElement, keywordPattern, tmpArray, resultIdPrefix);
+    var objInstances = new Array();
+    //reverse the array
+    var allSpans = document.getElementsByTagName("span");
+    for (var ii=0; ii<allSpans.length; ii++) {
+        var id = allSpans[ii].getAttribute("id");
+        if (id != null && id.indexOf(resultIdPrefix) == 0) {
+            objInstances[objInstances.length] = id;
+        }
+    }
+    
+    var jsonStringForArray = (JSON.stringify(objInstances));
+    
+    return jsonStringForArray;
+}
+
+// helper function, recursively searches in elements and their child nodes
+function highlightAllOccurencesOfStringForElement(element, keywordPattern, instances, resultIdPrefix) {
+    if (element) {
+        if (element.nodeType == 3) {        // Text node
+            while (true) {
+                var value = element.nodeValue;  // Search for keyword in text node
+                //var idx = value.toLowerCase().indexOf(keyword);
+                
+                var match = keywordPattern.exec(value);
+                
+                if (match == null) {
+                    break;             // not found, abort
+                }
+                var idx = match.index;
+                var span = document.createElement("span");
+                var text = document.createTextNode(value.substr(idx, match[0].length));
+                var curId = resultIdPrefix + instances.length;
+                span.appendChild(text);
+                span.setAttribute("class", "highlighted");
+                span.setAttribute("id", curId);
+                text = document.createTextNode(value.substr(idx + match[0].length));
+                instances[instances.length] = curId;
+                element.deleteData(idx, value.length - idx);
+                var next = element.nextSibling;
+                element.parentNode.insertBefore(span, next);
+                element.parentNode.insertBefore(text, next);
+                element = text;
+            }
+        } else if (element.nodeType == 1) { // Element node
+            if (element.style.display != "none" && 
+                element.nodeName.toLowerCase() != 'select' && 
+                element.nodeName.toLowerCase() != 'script' &&
+                element.className.toLowerCase() != 'visibleprintonly' &&
+                element.className.toLowerCase() != 'visiblenever') {
+                for (var i=element.childNodes.length-1; i>=0; i--) {
+                    highlightAllOccurencesOfStringForElement(element.childNodes[i], keywordPattern, instances, resultIdPrefix);
+                }
+            }
+        }
+    }
+}
+
+// helper function, recursively removes the highlights in elements and their childs
+function removeAllHighlightsForElement(element, resultIdPrefix) {
+    if (element) {
+        if (element.nodeType == 1) {
+            var id = element.getAttribute("id");
+            if (id != null && id.indexOf(resultIdPrefix) == 0) {
+                var text = element.removeChild(element.firstChild);
+                element.parentNode.insertBefore(text,element);
+                element.parentNode.removeChild(element);
+                return true;
+            } else {
+                var normalize = false;
+                for (var i = element.childNodes.length - 1; i >= 0; i--) {
+                    if (removeAllHighlightsForElement(element.childNodes[i], resultIdPrefix)) {
+                        normalize = true;
+                    }
+                }
+                if (normalize) {
+                    element.normalize();
+                }
+            }
+        }
+    }
+    return false;
+}
+
+// the main entry point to remove the highlights
+function removeAllHighlights(resultIdPrefix) {
+    var objTopLevelElement = document.getElementById("contentBody");
+    if (objTopLevelElement == null) {
+        objTopLevelElement = document.body;
+    }
+    removeAllHighlightsForElement(objTopLevelElement, resultIdPrefix);
+}
+
+function escapeRegexChars(input) {
+    var output = input.replace("\\", "\\\\")
+    .replace("?", "\\?")
+    .replace(".", "\\.")
+    .replace("^", "\\^")
+    .replace("$", "\\$")
+    .replace("*", "\\*")
+    .replace("+", "\\+")
+    .replace("{", "\\{")
+    .replace("[", "\\[")
+    .replace("]", "\\]")
+    .replace("|", "\\|")
+    .replace("(", "\\(")
+    .replace(")", "\\)");
+    return output;
+}
+
+function goToSelectedItem(itemId) {
+    var obj = document.getElementById(itemId);9
+    obj.className = 'highlightedCurrent';
+    obj.scrollIntoView(true);
+   // document.body.scrollTop = window.pageYOffset - 50;
+}
+    </script>
+
+
+
+
+<style>
+@font-face {
+    font-family: "Charis";
+    font-style: normal;
+    font-weight: normal;
+    src:url(CharisSILR.ttf);
+}
+
+@font-face {
+    font-family: "Charis";
+    font-style: normal;
+    font-weight: bold;
+    src:url(CharisSILB.ttf);
+}
+
+@font-face {
+    font-family: "Charis";
+    font-style: italic;
+    font-weight: normal;
+    src:url(CharisSILI.ttf);
+}
+
+@font-face {
+    font-family: "Charis";
+    font-style: italic;
+    font-weight: bold;
+    src:url(CharisSILBI.ttf);
+}
+body {
+    word-break:break-word;
+    margin-left: 0.3em;
+    margin-right:0.8em;
+    padding: 0;
+    font-family:"Charis",Arial,Helvetica,sans-serif;
+    line-height:1.4;
+    font-size: medium;
+    padding-left:0.8em;
+    background-color: rgba(0, 0, 0, 0);
+}
+.disclosureLink, .view {
+    display: none;
+}
+table {
+    word-break:normal;
+}
+td, th {
+    padding:0px;
+}
+
+#topicTitle{
+    font-size: x-large;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.3em;
+    color: #0096a0;
+
+}
+
+
+.ttl {
+    display:block;
+    font-size: 120%;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 0.4em;
+    color: #009e60;
+}
+
+p, td, li {
+    text-align:justify;
+    font-family: "Charis";
+}
+body, td, th, table caption{
+    font-family: "Charis";
+}
+
+a {
+    text-decoration:none;
+    color:#009e60;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+</style>
+
+</head>
+
+<body>
+
+<script src="log4javascript.js" ></script>
+<script src="core.js" ></script>
+<script src="dom.js" ></script>
+<script src="domrange.js" ></script>
+<script src="wrappedrange.js" ></script>
+<script src="wrappedselection.js" ></script>
+<script src="rangy-cssclassapplier.js" ></script>
+<script src="rangy-highlighter.js" ></script>
+<script src="hightlight.js" ></script>
+<script src="find.js" ></script>
+
+
+<div id="printHeader" class="visiblePrintOnly">
+Official reprint from UpToDate<sup>¨</sup> <a href="#">www.uptodate.com</a>
+		<br> ©2013 UpToDate<sup>¨
+</sup></div>
+
+<div id="contentBody">

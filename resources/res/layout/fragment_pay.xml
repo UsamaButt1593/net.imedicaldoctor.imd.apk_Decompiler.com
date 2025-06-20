@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textSize="30dp" android:gravity="center" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Please Wait"/>
+        <net.imedicaldoctor.imd.Utils.iMDWebView android:id="@+id/webView" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="10" style="?android:attr/webViewStyle"/>
+        <net.imedicaldoctor.imd.Views.ProgressBarCircularIndeterminate android:id="@+id/progress_bar" android:background="#ff000000" android:visibility="gone" android:layout_width="32dp" android:layout_height="32dp" android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</LinearLayout>

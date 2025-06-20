@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" style="@style/CardViewStyle">
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:background="@color/white" android:padding="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40sp">
+        <ImageView android:layout_gravity="center" android:id="@+id/database_image" android:background="@color/clear" android:layout_width="40sp" android:layout_height="40dp" android:src="0x7f0801ac" android:layout_weight="0"/>
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+            <TextView android:textSize="14dp" android:textColor="@color/black" android:gravity="center_vertical" android:id="@+id/database_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:text="Harrison " android:layout_weight="1"/>
+            <TextView android:textSize="12dp" android:textColor="@color/darkGrey" android:gravity="center_vertical" android:id="@+id/database_subtitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)Downloading 0.5 of 123 MB ( 54%)" android:layout_weight="0"/>
+        </LinearLayout>
+        <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:layout_gravity="center" android:id="@+id/ripple_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:minHeight="35dp" app:rippleColor2="@color/ColorPrimary" style="@style/RippleStyle">
+            <Button android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/button" android:background="@drawable/rounded_button" android:layout_width="130dp" android:layout_height="40dp" android:text="Download" android:layout_weight="0"/>
+        </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

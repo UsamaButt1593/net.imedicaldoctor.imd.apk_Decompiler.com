@@ -1,0 +1,129 @@
+<html><head><link href="font.css" rel="stylesheet">
+<title>Heart failure: Selecting the site of care from the emergency department</title>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link href="bundle.css?_stamp=20170920.083933" rel="stylesheet" type="text/css">
+<link href="utd_custom_css.css?_stamp=20190606.114957" rel="stylesheet" type="text/css">
+
+
+<script type="text/javascript" src="bundle.js?_stamp=20170920.083933"></script>
+<script type="text/javascript" src="utd_ui_handler.js?_stamp=20190606.114957"></script>
+<script type="text/javascript">
+
+function handleCheckBoxClick(e){
+    console.log('reload,,,,,' + getCheckedRadios(e.Name));
+}
+function getCheckedRadios(name){
+    checkedItems = $('input[type=radio]:checked');
+    var items=[];
+    for (var i=0;i<checkedItems.length;i++){
+        var checkedItem = checkedItems[i];
+
+        items.push(checkedItem.name + "=" + checkedItem.value);
+
+    }
+    return items.join('&');
+
+}
+
+</script>
+
+
+
+
+
+
+    <style type="text/css">
+        .highlight {
+            background-color: yellow;
+        }
+
+
+.highlightYellow {
+    background-color: yellow;
+}
+
+.highlightGreen {
+    background-color: #c1ed72;
+}
+
+.highlightBlue {
+    background-color: #acd8fd;
+}
+
+.highlightRed {
+    background-color: #ffb1cb;
+}
+
+.highlightBanafsh {
+    background-color: #d8b2ff;
+}
+
+.highlightNote {
+    border-bottom: 2px solid red;
+
+}
+        .note {
+            background-color: limegreen;
+            color : white;
+        }
+
+        #summary {
+            border: dotted orange 1px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+</head><body  class="main main1">
+
+<script src="log4javascript.js" ></script>
+<script src="core.js" ></script>
+<script src="dom.js" ></script>
+<script src="domrange.js" ></script>
+<script src="wrappedrange.js" ></script>
+<script src="wrappedselection.js" ></script>
+<script src="rangy-cssclassapplier.js" ></script>
+<script src="rangy-highlighter.js" ></script>
+<script src="hightlight.js" ></script>
+<script src="find.js" ></script>
+
+
+<!--div id="section0">
+ <div id="logo"><img src="images/S_logo.png" class="iknl_logo_grey"></div>
+</div>
+<div id="logicnets_logo"><img src="images/logicnets_logo_sfw.png"></div-->
+
+
+
+<!--variables-->
+<div id="section1" class="section panelClosed side-by-side">
+
+</div>
+
+
+<!--variables-->
+<div id="section2" class="section panelClosed side-by-side">
+
+</div>
+
+
+<div id="section12" class="section panelClosed side-by-side">
+
+</div>
+
+
+
+<!--Text View-->
+<div id="section13" class="section side-by-side" style="top: 67px; display: block;">
+
+

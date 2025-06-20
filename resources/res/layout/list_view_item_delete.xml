@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.imedicaldoctor.imd.Utils.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/ripple_layout" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40sp" app:rippleColor2="@color/ColorPrimary" style="@style/RippleStyle">
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:background="@drawable/touch_selector" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="50sp" android:backgroundTint="@color/white">
+        <TextView android:textSize="18dp" android:textColor="@color/black" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/text" android:padding="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Add Drug" android:layout_weight="1"/>
+        <TextView android:textSize="16dp" android:textColor="#ff0000" android:id="@+id/delete_button" android:padding="5dp" android:clickable="true" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginRight="20dp" android:text="Delete"/>
+    </LinearLayout>
+</net.imedicaldoctor.imd.Utils.MaterialRippleLayout>

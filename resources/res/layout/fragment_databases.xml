@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/container" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:background="#ffefeff4" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recycler_view" android:background="#ffefeff4" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" style="@style/myRecyclerViewStyle"/>
+        <TextView android:textSize="30dp" android:gravity="center" android:layout_gravity="center" android:id="@+id/loading_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Loading Databases"/>
+        <ImageView android:id="@+id/search_close_btn" android:layout_width="0sp" android:layout_height="0sp"/>
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_gravity="bottom|right|center_vertical|center_horizontal|center|end" android:id="@+id/fab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/fab_margin" app:tint="@color/white"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

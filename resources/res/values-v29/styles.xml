@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme">
+        <item name="android:textColorPrimary">#ffffff</item>
+        <item name="android:textColorPrimaryInverse">#000000</item>
+        <item name="android:editTextStyle">@style/App_EditTextStyle</item>
+        <item name="android:progressBarStyle">@style/ProgressBarDefaultStyle</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="?0x101058c">true</item>
+        <item name="actionBarTabStyle">@style/actionBarTabStyle</item>
+        <item name="actionBarTheme">@style/AppActionBarTheme</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="actionModeBackground">@color/color_action_mode_bg</item>
+        <item name="alertDialogStyle">@style/AlertDialog.AppCompat.Light</item>
+        <item name="alertDialogTheme">@style/alertDialogTheme</item>
+        <item name="colorPrimary">#ff196cb2</item>
+        <item name="colorPrimaryDark">#ff196cb2</item>
+        <item name="colorSecondary">#ff196cb2</item>
+        <item name="editTextStyle">@style/App_EditTextStyle</item>
+        <item name="progressBarStyle">@style/ProgressBarDefaultStyle</item>
+    </style>
+    <style name="App_EditTextStyle">
+        <item name="?0x1010558">8</item>
+    </style>
+    <style name="DialogButtonStyle">
+        <item name="android:textColor">@color/ColorPrimary</item>
+    </style>
+    <style name="alertDialogTheme">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColor">@color/ColorPrimary</item>
+        <item name="buttonBarButtonStyle">@style/DialogButtonStyle</item>
+        <item name="colorAccent">@color/ColorPrimary</item>
+    </style>
+</resources>

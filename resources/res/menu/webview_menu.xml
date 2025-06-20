@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:icon="@drawable/copy" android:id="@+id/copy_action" android:title="Copy" android:showAsAction="always" app:showAsAction="always"/>
+    <item android:icon="@drawable/lookup" android:id="@+id/define_action" android:title="Define" android:showAsAction="always" app:showAsAction="always"/>
+    <item android:icon="0x7f0800f9" android:id="@+id/dehighlight_action" android:title="Clean" android:showAsAction="always" app:showAsAction="always"/>
+    <item android:icon="0x7f08029e" android:id="@+id/highlight_action_yellow" android:title="Yellow" android:showAsAction="always" app:showAsAction="always"/>
+    <item android:icon="@drawable/green" android:id="@+id/highlight_action_green" android:title="Green" android:showAsAction="always" app:showAsAction="always"/>
+    <item android:icon="@drawable/blue" android:id="@+id/highlight_action_blue" android:title="Blue" android:showAsAction="always" app:showAsAction="always"/>
+    <item android:icon="@drawable/red" android:id="@+id/highlight_action_red" android:title="Red" android:showAsAction="always" app:showAsAction="always"/>
+    <item android:icon="@drawable/note" android:id="@+id/highlight_action_note" android:title="Note" android:showAsAction="always" app:showAsAction="always"/>
+</menu>

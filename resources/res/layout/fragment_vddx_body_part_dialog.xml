@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="#ffefeff4" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:gravity="center" android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="0">
+            <info.hoang8f.android.segmented.SegmentedGroup android:orientation="horizontal" android:id="@+id/segment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" app:border_width="1dp" app:corner_radius="5dp">
+                <RadioButton android:id="@+id/button1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Location" style="@style/RadioButton"/>
+                <RadioButton android:id="@+id/button2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Distribution" style="@style/RadioButton"/>
+            </info.hoang8f.android.segmented.SegmentedGroup>
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+            <RelativeLayout android:id="@+id/body_parts" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"/>
+            <ListView android:id="@+id/list_view" android:background="#ffefeff4" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"/>
+        </LinearLayout>
+        <RelativeLayout android:gravity="center" android:layout_gravity="center" android:id="@+id/gender_layout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="0">
+            <info.hoang8f.android.segmented.SegmentedGroup android:orientation="horizontal" android:id="@+id/segmentgender" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" app:border_width="1dp" app:corner_radius="5dp" layout_weight="0">
+                <RadioButton android:id="@+id/buttongender1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Male" style="@style/RadioButton"/>
+                <RadioButton android:id="@+id/buttongender2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Female" style="@style/RadioButton"/>
+            </info.hoang8f.android.segmented.SegmentedGroup>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

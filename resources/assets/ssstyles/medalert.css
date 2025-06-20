@@ -1,0 +1,277 @@
+/* 1. RESET
+----------------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+/* 2. ROOT
+----------------------------------------------------------------------------------------*/
+html {
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	line-height: 1.5em;
+}
+/* /ht Ethan Marcotte - http://front.ie/l8rJaA */
+img, embed, object, video {
+	max-width: 100%;
+}
+.ie6 img.full, .ie6 object.full, .ie6 embed, .ie6 video {
+	width: 100%;
+}
+/* Change Box Model http://coding.smashingmagazine.com/2012/06/14/coding-qa-with-chris-coyier-box-sizing-and-css-sprites/ */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* 3. CORE TYPOGRAPHY
+----------------------------------------------------------------------------------------*/
+/* Embed Gotham Narrow and Sabon Fonts*/
+@font-face { /* Gotham Narrow Book*/
+	font-family: 'GothamNarrow';
+	src: url('../fonts/GothamNarrow-Book.eot');
+	src: local('☺'), url('../fonts/GothamNarrow-Book.woff') format('woff'), url('../fonts/GothamNarrow-Book.ttf') format('truetype'), url('../fonts/GothamNarrow-Book.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face { /* Gotham Narrow Book Italic*/
+	font-family: 'GothamNarrow';
+	src: url('../fonts/GothamNarrow-BookItalic.eot');
+	src: local('☺'), url('../fonts/GothamNarrow-BookItalic.woff') format('woff'), url('../fonts/GothamNarrow-BookItalic.ttf') format('truetype'), url('../fonts/GothamNarrow-BookItalic.svg') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face { /* Gotham Narrow Medium*/
+	font-family: 'GothamNarrow';
+	src: url('../fonts/GothamNarrow-Medium.eot');
+	src: local('☺'), url('../fonts/GothamNarrow-Medium.woff') format('woff'), url('../fonts/GothamNarrow-Medium.ttf') format('truetype'), url('../fonts/GothamNarrow-Medium.svg') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face { /* Gotham Narrow Medium Italic*/
+	font-family: 'GothamNarrow';
+	src: url('../fonts/GothamNarrow-MediumItalic.eot');
+	src: local('☺'), url('../fonts/GothamNarrow-MediumItalic.woff') format('woff'), url('../fonts/GothamNarrow-MediumItalic.ttf') format('truetype'), url('../fonts/GothamNarrow-MediumItalic.svg') format('svg');
+	font-weight: bold;
+	font-style: italic;
+}
+@font-face { /* Sabon Roman*/
+	font-family: 'Sabon';
+	src: url('../fonts/SabonLTStd-Roman.eot');
+	src: local('☺'), url('../fonts/SabonLTStd-Roman.woff') format('woff'), url('../fonts/SabonLTStd-Roman.ttf') format('truetype'), url('../fonts/SabonLTStd-Roman.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face { /* Sabon Italic*/
+	font-family: 'Sabon';
+	src: url('../fonts/SabonLTStd-Italic.eot');
+	src: local('☺'), url('../fonts/SabonLTStd-Italic.woff') format('woff'), url('../fonts/SabonLTStd-Italic.ttf') format('truetype'), url('../fonts/SabonLTStd-Italic.svg') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face { /* Sabon Bold*/
+	font-family: 'Sabon';
+	src: url('../fonts/SabonLTStd-Bold.eot');
+	src: local('☺'), url('../fonts/SabonLTStd-Bold.woff') format('woff'), url('../fonts/SabonLTStd-Bold.ttf') format('truetype'), url('../fonts/SabonLTStd-Bold.svg') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face { /* Sabon Bold Italic*/
+	font-family: 'Sabon';
+	src: url('../fonts/SabonLTStd-BoldItalic.eot');
+	src: local('☺'), url('../fonts/SabonLTStd-BoldItalic.woff') format('woff'), url('../fonts/SabonLTStd-BoldItalic.ttf') format('truetype'), url('../fonts/SabonLTStd-BoldItalic.svg') format('svg');
+	font-weight: bold;
+	font-style: italic;
+}
+body {
+	font-size: 1em;
+	line-height: 1.5;
+	font-family: 'Sabon', Serif;
+	color: #5f5950;
+	padding-bottom: 32px;
+}
+h1, h2, h3 {
+	font-family: 'GothamNarrow', Sans-Serif;
+	font-weight: bold;
+	line-height: 1.25em;
+	text-rendering: optimizeLegibility;
+}
+h1 {
+	font-size: 1.75em;
+	margin: 1.1em 0 .9em 0;
+}
+h2 {
+	font-size: 1.25em;
+	margin: 1.125em 0 .5em 0;
+}
+h3 {
+	font-size: 1.125em;
+	margin: 1em 0 .75em 0;
+	padding-bottom: 0;
+}
+p, ul, ol, dl, blockquote {
+	font-size: 1em;
+	line-height: 1.5625em;
+	margin-bottom: .75em;
+	text-rendering: optimizeLegibility;
+	word-wrap: break-word;
+}
+p {
+	font-family: 'Sabon', Serif;
+	font-size: 1em;
+	line-height: 1.375em;
+}
+ul ul, ul ol, ol ul {
+	font-size: 1em;
+	margin-bottom: 0;
+	margin-top: .625em;
+}
+ul {
+	list-style-type: disc;
+	margin-left: 1.75em;
+}
+li, ol {
+	font-family: 'Sabon', Serif;
+	font-size: 1em;
+	line-height: 1.375em;
+	margin-top: .8em;
+}
+li:first-child, ol:first-child {
+	margin-top: 0;
+}
+li strong {
+	font-family: 'Sabon', Serif;
+}
+ol {
+	list-style-type: decimal;
+	margin-left: 1.618em;
+}
+i, em {
+	font-style: italic;
+}
+b, srtrong {
+	font-weight: bold;
+}
+/* Do not sup registered trademarks for any text using Gotham fonts (mostly headlines) */
+/* Do not sup any trademarks */
+sub, sup {
+	font-size: 65%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+.footnote {
+	font-size: 0.813em;
+	margin: .938em 0 .938em 0;
+}
+
+/* 4. LINKS
+----------------------------------------------------------------------------------------*/
+a {
+	outline: none;
+	color: #35abc7;
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(183,177,169,.5);
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: underline;
+}
+a:active, a:focus {
+	outline: none;
+}
+
+a.sectionheader:link, a.sectionheader:visited, a.sectionheader:active, a.sectionheader:hover, a.sectionheader:focus { 
+	display:block;
+	font-size:1.25em;
+	outline: none;
+	color:#605850;
+	text-decoration:none;
+	padding-top:.5em;
+}
+/* 6. MISC
+----------------------------------------------------------------------------------------*/
+#boxBody {
+	padding: 20px 40px 20px 40px;
+}
+#staticsafetylinkbar {
+	padding: .45em 33px;
+	background-color: #F7F7F7;
+	border-bottom: 1px solid #dce1da;
+	font-size: .875em;
+	font-family: 'GothamNarrow', Sans-Serif;
+	position:fixed;
+	top: 0px;
+	width: 100%;
+	overflow:hidden;
+	z-index:1000;
+	display:block;
+	height:2.2725em;
+}
+.blackbox {
+	border: 1px solid #5f5950;
+	padding: 1em;
+}
+.sponsorinfo {
+	border: solid #b7b1a9;
+	border-width: 1px 0 1px 0;
+	padding: 1em 0 0 0;
+	margin: 1.5em 0 1.5em 0;
+}
+.blackbox {
+	border: 1px solid #5F5747;
+	padding: .5em;
+}
+
+.splitcontent, .splitisi {
+	position:fixed;
+	left:0;
+	overflow:scroll;
+	-webkit-overflow-scrolling: touch;
+	width:100%;
+	padding:0 33px 0 33px;
+} 
+.splitcontent {
+	top:10px;
+	height:66.66%;
+	padding-bottom:40px;
+	}
+.splitisi {
+	bottom:0;
+	background:#F7F7F7;
+	height:33.33%;
+	border-top: 1px solid #dfdddb;
+	}
+.safetytitlebar {
+	font-family: 'GothamNarrow', Sans-Serif;
+	position: fixed;
+	height: 10%;
+	left: 0;
+	top: 60%;
+	background: #cfcfcf;
+	width: 100%;
+	color: #4d4d4d;
+	padding: 4px 33px 2px 33px;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: bold;
+	-webkit-box-shadow: 0px -3px 3px 0px rgba(0, 0, 0, .5);
+	box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, .3);
+}

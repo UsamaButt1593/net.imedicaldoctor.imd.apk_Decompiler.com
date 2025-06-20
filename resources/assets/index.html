@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iMD File Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        #file-manager {
+            width: 80%;
+            margin: auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        #file-manager h1 {
+            text-align: center;
+            color: #4a90e2;
+        }
+        #file-manager button {
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        #file-manager button:hover {
+            background-color: #357ABD;
+        }
+        #file-list {
+            margin-top: 20px;
+        }
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        .file-item span {
+            flex-grow: 1;
+            align-items: center;
+        }
+        .file-item span i {
+            margin-right: 10px;
+        }
+        .file-item .file-size {
+            width: 100px;
+            text-align: right;
+            margin-right:20px;
+        }
+        .file-item button {
+            background-color: transparent;
+            color: #e74c3c;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .file-item button:hover {
+            color: #c0392b;
+        }
+        .file-item button i {
+            font-size: 20px;
+        }
+        .upload-container {
+            margin-top: 20px;
+        }
+        .progress-bar-container {
+            display: none;
+            margin-top: 10px;
+            width: 100%;
+            background-color: #f4f4f9;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+        }
+        .progress-bar {
+            height: 20px;
+            width: 0;
+            background-color: #4a90e2;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="file-manager">
+        <h1>iMD File Manager</h1>
+        <button onclick="refreshFiles()">Refresh</button>
+        <div id="file-list"></div>
+        <div class="upload-container">
+            <input type="file" id="file-input">
+            <button onclick="uploadSelectedFile()">Upload</button>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar">0%</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentPath = '';
+
+        function refreshFiles(path = '') {
+            currentPath = path;
+            fetch(`/files/${path}`)
+                .then(response => response.json())
+                .then(files => {
+                    const fileList = document.getElementById('file-list');
+                    fileList.innerHTML = '';
+                    if (path) {
+                        fileList.innerHTML += `<div class="file-item"><span><i class="fas fa-folder-open"></i><button onclick="refreshFiles('${path.split('/').slice(0, -1).join('/')}')">..</button></span><span class="file-size"></span></div>`;
+                    }
+                    const sortedFiles = files.sort((a, b) => (b.isDirectory - a.isDirectory) || a.name.localeCompare(b.name));
+                    sortedFiles.forEach(file => {
+                        const fileItem = document.createElement('div');
+                        fileItem.className = 'file-item';
+                        const size = file.isDirectory ? '' : formatFileSize(file.size);
+                        if (file.isDirectory) {
+                            fileItem.innerHTML = `
+                                <span><i class="fas fa-folder"></i><button onclick="refreshFiles('${file.path}')">${file.name}</button></span>
+                                <span class="file-size">${size}</span>
+                                <button onclick="deleteFile('${file.path}')"><i class="fas fa-trash-alt"></i></button>
+                            `;
+                        } else {
+                            const fileIcon = getFileIcon(file.name);
+                            fileItem.innerHTML = `
+                                <span><i class="${fileIcon}"></i><a href="/files/${file.path}" download>${file.name}</a></span>
+                                <span class="file-size">${size}</span>
+                                <button onclick="deleteFile('${file.path}')"><i class="fas fa-trash-alt"></i></button>
+                            `;
+                        }
+                        fileList.appendChild(fileItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading files:', error);
+                });
+        }
+
+        function uploadSelectedFile() {
+            const fileInput = document.getElementById('file-input');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please select a file to upload.');
+                return;
+            }
+            const formData = new FormData();
+            formData.append('file', file);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', `/files/${currentPath}`, true);
+
+            xhr.upload.onprogress = function (e) {
+                if (e.lengthComputable) {
+                    const percentComplete = (e.loaded / e.total) * 100;
+                    const progressBar = document.getElementById('progress-bar');
+                    progressBar.style.width = percentComplete + '%';
+                    progressBar.textContent = Math.round(percentComplete) + '%';
+                }
+            };
+
+            xhr.onloadstart = function () {
+                document.querySelector('.progress-bar-container').style.display = 'block';
+            };
+
+            xhr.onloadend = function () {
+                if (xhr.status === 200) {
+                    refreshFiles(currentPath);
+                } else {
+                    alert('File upload failed');
+                }
+                document.querySelector('.progress-bar-container').style.display = 'none';
+                document.getElementById('progress-bar').style.width = '0%';
+                document.getElementById('progress-bar').textContent = '0%';
+            };
+
+            xhr.onerror = function () {
+                alert('File upload failed');
+                document.querySelector('.progress-bar-container').style.display = 'none';
+                document.getElementById('progress-bar').style.width = '0%';
+                document.getElementById('progress-bar').textContent = '0%';
+            };
+
+            xhr.send(formData);
+        }
+
+        function deleteFile(filePath) {
+            fetch(`/files/${filePath}`, {
+                method: 'DELETE'
+            }).then(response => {
+                if (response.ok) {
+                    refreshFiles(currentPath);
+                } else {
+                    alert('File deletion failed');
+                }
+            }).catch(error => {
+                console.error('Error deleting file:', error);
+            });
+        }
+
+        function getFileIcon(fileName) {
+            const fileExtension = fileName.split('.').pop().toLowerCase();
+            switch (fileExtension) {
+                case 'pdf': return 'fas fa-file-pdf';
+                case 'doc': case 'docx': return 'fas fa-file-word';
+                case 'xls': case 'xlsx': return 'fas fa-file-excel';
+                case 'ppt': case 'pptx': return 'fas fa-file-powerpoint';
+                case 'jpg': case 'jpeg': case 'png': case 'gif': return 'fas fa-file-image';
+                case 'txt': return 'fas fa-file-alt';
+                case 'zip': case 'rar': return 'fas fa-file-archive';
+                default: return 'fas fa-file';
+            }
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        document.addEventListener('DOMContentLoaded', () => refreshFiles(''));
+    </script>
+</body>
+</html>

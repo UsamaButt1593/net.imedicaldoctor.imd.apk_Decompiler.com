@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <net.imedicaldoctor.imd.Utils.iMDWebView android:id="@+id/webView" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="10"/>
+    <TabHost android:id="@+id/findtabhost" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TabWidget android:id="@android:id/tabs" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        </LinearLayout>
+    </TabHost>
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@+id/find_layout" android:paddingLeft="8dp" android:paddingRight="8dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="40dp">
+        <ImageButton android:id="@+id/previous_button" android:background="@color/clear" android:layout_width="40dp" android:layout_height="40dp" android:src="0x7f080184"/>
+        <TextView android:gravity="center" android:id="@+id/find_status_label" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="Searching" android:layout_weight="1"/>
+        <ImageButton android:id="@+id/next_button" android:background="@color/clear" android:layout_width="40dp" android:layout_height="40dp" android:src="0x7f080181"/>
+    </LinearLayout>
+</LinearLayout>

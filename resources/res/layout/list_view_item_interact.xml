@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center_horizontal" android:orientation="horizontal" android:background="@drawable/touch_selector" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="?android:attr/listPreferredItemHeight">
+    <FrameLayout android:layout_gravity="center" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="match_parent">
+        <ImageView android:layout_gravity="center" android:id="@+id/image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="0x7f08029d"/>
+    </FrameLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:padding="8dp" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/drug_one_text" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Acetaminophen"/>
+        <TextView android:textSize="16sp" android:textColor="@color/darkGrey" android:id="@+id/drug_two_text" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tramadol"/>
+    </LinearLayout>
+</LinearLayout>

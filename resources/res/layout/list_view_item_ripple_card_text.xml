@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center_vertical" android:padding="0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="30dp">
+    <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:id="@+id/ripple_layout" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" app:rippleColor2="@color/ColorPrimary" style="@style/RippleStyle">
+        <FrameLayout android:background="@drawable/ripple_background" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="16sp" android:textColor="@color/black" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/text_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="12dp" android:text="salam"/>
+        </FrameLayout>
+    </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.imedicaldoctor.imd.iMDSlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="horizontal" android:id="@+id/sliding_layout" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="horizontal" android:layout_width="350dp" android:layout_height="match_parent">
+        <FrameLayout android:id="@+id/rootcontainer" android:background="@color/white" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+            <FrameLayout android:id="@+id/fragmentroot" android:layout_width="match_parent" android:layout_height="match_parent">
+                <androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawer_layout" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/main_content" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent">
+                        <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" android:id="@+id/appbar" android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+                            <com.google.android.material.tabs.TabLayout android:id="@+id/tabs" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="50sp" app:tabGravity="0" app:tabIndicator="@drawable/tab_indicator" app:tabIndicatorColor="@color/white" app:tabIndicatorHeight="4dp" app:tabMode="1" app:tabPaddingEnd="0dp" app:tabPaddingStart="0dp" app:tabSelectedTextColor="@color/white" app:tabTextColor="@color/white"/>
+                        </com.google.android.material.appbar.AppBarLayout>
+                        <androidx.viewpager.widget.ViewPager android:id="@+id/pager" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                        <TextView android:textSize="30dp" android:gravity="center" android:layout_gravity="center" android:id="@+id/loading_first" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Loading"/>
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                    <androidx.recyclerview.widget.RecyclerView android:layout_gravity="start" android:id="@+id/drawer_view" android:background="#ffefeff4" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                </androidx.drawerlayout.widget.DrawerLayout>
+            </FrameLayout>
+        </FrameLayout>
+    </LinearLayout>
+    <FrameLayout android:id="@+id/detail_container" android:background="#efeff4" android:fitsSystemWindows="true" android:clickable="true" android:layout_width="500dp" android:layout_height="match_parent" android:layout_weight="1">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/main_content2" android:background="@color/white" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent">
+            <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" android:id="@+id/appbar2" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <androidx.appcompat.widget.Toolbar android:id="@+id/detail_toolbar" android:background="?attr/colorPrimary" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:titleEnabled="true">
+                    <ImageButton android:id="@+id/menu_button_2" android:background="@color/transparent" android:paddingLeft="10dp" android:paddingTop="10dp" android:paddingRight="10dp" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/menu"/>
+                    <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@+id/first_title" android:layout_width="match_parent" android:layout_height="match_parent" android:text="iMD - Medical Resources"/>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>&gt; 
+        <ImageView android:layout_gravity="center" android:id="@+id/stethoscope" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="150dp" android:layout_marginBottom="150dp" android:src="0x7f080275" android:scaleType="fitCenter" android:contentDescription=""/>
+    </FrameLayout>
+</net.imedicaldoctor.imd.iMDSlidingPaneLayout>

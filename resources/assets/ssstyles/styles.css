@@ -1,0 +1,281 @@
+/* ============================== Reset ============================== */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+.highlighted {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+
+
+
+.highlightedCurrent {
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFF00), to(#EDD000)) repeat-x 0px 0px; /* 0px is top offset */
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+}
+@font-face { /* Gotham Narrow Book*/
+	font-family: 'GothamNarrow';
+	src: url('../fonts/GothamNarrow-Book.eot');
+	src: local('☺'), url('../fonts/GothamNarrow-Book.woff') format('woff'), url('../fonts/GothamNarrow-Book.ttf') format('truetype'), url('../fonts/GothamNarrow-Book.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face { /* Gotham Narrow Book Italic*/
+	font-family: 'GothamNarrow';
+	src: url('../fonts/GothamNarrow-BookItalic.eot');
+	src: local('☺'), url('../fonts/GothamNarrow-BookItalic.woff') format('woff'), url('../fonts/GothamNarrow-BookItalic.ttf') format('truetype'), url('../fonts/GothamNarrow-BookItalic.svg') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face { /* Gotham Narrow Medium*/
+	font-family: 'GothamNarrow';
+	src: url('../fonts/GothamNarrow-Medium.eot');
+	src: local('☺'), url('../fonts/GothamNarrow-Medium.woff') format('woff'), url('../fonts/GothamNarrow-Medium.ttf') format('truetype'), url('../fonts/GothamNarrow-Medium.svg') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face { /* Gotham Narrow Medium Italic*/
+	font-family: 'GothamNarrow';
+	src: url('../fonts/GothamNarrow-MediumItalic.eot');
+	src: local('☺'), url('../fonts/GothamNarrow-MediumItalic.woff') format('woff'), url('../fonts/GothamNarrow-MediumItalic.ttf') format('truetype'), url('../fonts/GothamNarrow-MediumItalic.svg') format('svg');
+	font-weight: bold;
+	font-style: italic;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	font-family:'GothamNarrow', Sans-Serif;
+	background-color:#ffffff;
+	line-height: 1;
+    width:668px;
+    margin:50px;    
+}
+
+.ui-page { 
+	background: #ffffff;
+	border : none;
+	margin : 0px;
+	padding : 0px;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ============================== End Reset ============================== */
+ 
+ .flashColor {
+ 	background-color: #BED74A;
+ } 
+  
+  
+ .header {
+ 	background-color:#ffffff;
+	font-size:14px;
+	
+	font-family:'GothamNarrow', Sans-Serif;
+	font-weight:bold;
+	color:#fa7521;
+	text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.5);
+	padding:5px 0 15px 20px;
+	margin-left:0;
+ }
+ 
+ .option {
+ 	outline: none;
+ 	text-decoration: none;
+ 	display:block;
+ 	border-bottom:2px solid #ffffff;
+ 	padding: 14px 5px;
+ }
+ 
+ .optionFirst {
+ 	outline: none;
+ 	text-decoration: none;
+ 	display:block;
+ 	padding: 14px 5px;
+ 	border-bottom:2px solid #ffffff;
+ 	background-image: url("images/dogEar_off.gif");
+ 	background-repeat: no-repeat;
+ 	background-position: right top;
+ 	background-size : 15px 15px;
+ }
+ 
+ .singleOption {
+ 	outline: none;
+ 	text-decoration: none;
+ 	display:block;
+ 	padding: 14px 5px;
+ }
+ 
+ .singleOptionCollapsed {
+ 	outline: none;
+ 	text-decoration: none;
+ 	display:block;
+ 	padding: 14px 5px;
+ 	background-image: url("images/dogEar_on.gif");
+ 	background-repeat: no-repeat;
+ 	background-position: right top;
+ 	background-size : 15px 15px;
+ }
+ 
+ .optionCollapsed {
+ 	outline: none;
+ 	text-decoration: none;
+ 	display:block;
+ 	padding: 14px 5px 30px;
+ 	background-image: url("images/dogEar_on.gif");
+ 	background-repeat: no-repeat;
+ 	background-position: right top;
+ 	background-size : 15px 15px;
+ }
+ 
+ .asterisk {
+ 	vertical-align: center;
+ }
+ 
+ .optionLast {
+ 	outline: none;
+ 	text-decoration: none;
+ 	display:block;
+ 	padding: 14px 5px;
+ }
+ 
+ .content {
+ 	color:#605850;
+	font-size:14px;
+	line-height:20px;
+	font-family:'GothamNarrow', Sans-Serif;
+ 	margin: 0px 20px 0px 35px;
+ }
+ 
+ .content2 {
+ 	color:#605850;
+	font-size:14px;
+	line-height:20px;
+	font-family:'GothamNarrow', Sans-Serif;
+	padding: 0px 0px 0px 15px;
+ }
+ 
+ .radio {
+ 	float : left;
+	vertical-align:middle;
+	width:15px;
+	padding: 2px 5px 2px 5px;
+ }
+ 
+ .wrapper {
+ 	background-color:#F5F4F2;
+ 	margin:15px 0px 0px 0px;
+	overflow:hidden;
+	-webkit-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, .25);
+	box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, .25);
+    width : 98%;
+ }
+ 
+ .wrapperCollapsed {
+ 	background-color:#F5F4F2;
+ 	margin:15px 0px 0px 0px;
+	background-image: url("images/threePgLayer.gif");
+ 	background-repeat: repeat-x;
+ 	background-position: right bottom;
+    width : 98%;
+ }
+ 
+ .wrapperCollapsedTwoLayer {
+ 	background-color:#F5F4F2;
+ 	margin:15px 0px 0px 0px;
+	background-image: url("images/twoPgLayer.gif");
+ 	background-repeat: repeat-x;
+ 	background-position: right bottom;
+    width : 98%;
+ }
+ 
+ .rule {
+	height:10px; 
+	border-bottom: 2px solid #C1C1BF; 
+	margin:32px 0 32px 0;
+}
+ 
+ .ruleimg {
+	float:right;
+	padding-top:7px;
+	width:8px;
+	height:8px;
+}
+ .title {
+ 	display:block;
+ 	margin-top:5px;
+ 	padding : 5px;
+ }
+ 
+ p {
+ 	text-indent: 0px;
+ 	padding: 0px;
+ 	margin : 0px; 
+ }
+ 
+ h1 {
+ 	color:#174A7C;
+ 	font-size:16px;
+ 	font-weight:bold;
+ 	padding-left:2px;
+ }
+ 
+ #popupContainer {
+ 
+ }
+ 
+ #popupContent {
+ 	margin : 30px;
+ }
+ 
+ .flowContainer { 
+     background-color:#ffffff;
+     margin-right : 15px; 
+ }
+     
+ #contentDiv {
+    width : 100%;
+    height : 100%;
+    background-color:#ffffff;
+ }
+ 
+ .recursiveInfo {
+ 	color: gray;
+ }
+ a {
+	color: #35ABC7; 
+ }
+sup a {
+display: inline-block;
+width: 15px;
+height: 15px;
+text-indent: -9999px;
+background: url(../images/asterisk_icon.png) top left no-repeat;
+background-size: 15px 15px;
+}
+ 

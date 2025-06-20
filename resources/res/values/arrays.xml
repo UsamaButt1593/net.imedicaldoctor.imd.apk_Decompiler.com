@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="ScreenOrientation">
+        <item>Sensor(Auto)</item>
+        <item>Landscape</item>
+        <item>Portrait</item>
+    </array>
+    <array name="ScreenOrientation2">
+        <item>Auto(Sensor)</item>
+        <item>Landscape</item>
+        <item>Portrait</item>
+        <item>Reverse Landscape</item>
+        <item>Reverse Portrait</item>
+        <item>Landscape(Sensor)</item>
+        <item>Portrait(Sensor)</item>
+    </array>
+    <array name="all_files_bookmark">
+        <item>Clear bookmarks of this book</item>
+        <item>Clear all bookmarks of all books</item>
+    </array>
+    <array name="auto_scroll_mode">
+        <item>Rolling blind by pixel</item>
+        <item>Rolling blind by line</item>
+        <item>Scroll by pixel</item>
+        <item>Scroll by line</item>
+        <item>Scroll by page</item>
+    </array>
+    <array name="catalog_popup_menu">
+        <item>Open</item>
+        <item>Edit</item>
+        <item>Delete</item>
+    </array>
+    <array name="charsets">
+        <item>AUTO</item>
+        <item>UTF-8</item>
+        <item>UTF-16</item>
+        <item>UTF-16BE</item>
+        <item>UTF-16LE</item>
+        <item>US-ASCII</item>
+        <item>Big5</item>
+        <item>CP864</item>
+        <item>CP874</item>
+        <item>EUC-CN</item>
+        <item>EUC-JP</item>
+        <item>EUC-KR</item>
+        <item>GBK</item>
+        <item>GB2312</item>
+        <item>KOI8-R</item>
+        <item>SHIFT-JIS</item>
+        <item>Macintosh</item>
+        <item>ISO-8859-1</item>
+        <item>ISO-8859-2</item>
+        <item>ISO-8859-3</item>
+        <item>ISO-8859-4</item>
+        <item>ISO-8859-5</item>
+        <item>ISO-8859-6</item>
+        <item>ISO-8859-7</item>
+        <item>ISO-8859-8</item>
+        <item>ISO-8859-8-I</item>
+        <item>ISO-8859-9</item>
+        <item>ISO-8859-10</item>
+        <item>ISO-8859-11</item>
+        <item>ISO-8859-13</item>
+        <item>ISO-8859-14</item>
+        <item>ISO-8859-15</item>
+        <item>ISO-8859-16</item>
+        <item>ISO-2022-JP</item>
+        <item>Windows-950</item>
+        <item>Windows-1250</item>
+        <item>Windows-1251</item>
+        <item>Windows-1252</item>
+        <item>Windows-1253</item>
+        <item>Windows-1254</item>
+        <item>Windows-1255</item>
+        <item>Windows-1256</item>
+        <item>Windows-1257</item>
+        <item>Windows-1258</item>
+        <item>AUTO</item>
+    </array>
+    <array name="controls">
+        <item>Page Up</item>
+        <item>Page Down</item>
+        <item>Prior File</item>
+        <item>Next File</item>
+        <item>Search</item>
+        <item>Bookmark</item>
+        <item>Book Information</item>
+        <item>Change Theme</item>
+        <item>Options Menu</item>
+        <item>Navigate Menu</item>
+        <item>Font Size Bar</item>
+        <item>Show Chapters</item>
+        <item>Prior Chapter</item>
+        <item>Next Chapter</item>
+        <item>Back To Book Shelf</item>
+        <item>None</item>
+        <item>Close Moon+ Reader</item>
+        <item>Text Selection</item>
+        <item>Auto Scroll</item>
+    </array>
+    <array name="dict_list">
+        <item>ColorDict/BlueDict/GoldenDict</item>
+        <item>Fora Dictionary</item>
+        <item>Leo Dictionary</item>
+        <item>Free Dictionary org</item>
+        <item>ABBYY Lingvo Dictionaries</item>
+        <item>Dictionary.com online dictionary</item>
+        <item>Customized online dictionary...</item>
+    </array>
+    <array name="dict_list_url">
+        <item>ColorDict3</item>
+        <item>Fora</item>
+        <item>Leo</item>
+        <item>FreeDictionary</item>
+        <item>Lingvo</item>
+        <item>Google</item>
+        <item>Customized</item>
+    </array>
+    <array name="dictionary_list">
+        <item>Dictionary</item>
+        <item>Translate</item>
+        <item>Wikipedia</item>
+        <item>Google</item>
+        <item>History...</item>
+        <item>Customize...</item>
+    </array>
+    <array name="disable_css_styles">
+        <item>Disable Font styles (bold/italic/underline)</item>
+        <item>Disable Font sizes (small/large/em)</item>
+        <item>Disable Colors (text,background color)</item>
+        <item>Disable Alignment (left/center/right)</item>
+        <item>Disable Alignment (global justify)</item>
+        <item>Disable Indent (px/pt/em/in)</item>
+        <item>Disable Paragraph margin spacing(&lt;p&gt;)</item>
+    </array>
+    <array name="edge_list">
+        <item>Left Edge</item>
+        <item>Right Edge</item>
+        <item>Top Edge</item>
+        <item>Bottom Edge</item>
+    </array>
+    <array name="exit_menu">
+        <item>Back to book stack</item>
+        <item>Back to home screen</item>
+        <item>Close Moon+ Reader</item>
+    </array>
+    <array name="exo_controls_playback_speeds">
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>Normal</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </array>
+    <array name="file_related">
+        <item>Add to My Favorites</item>
+        <item>Read file</item>
+        <item>Open file with...</item>
+        <item>Copy file</item>
+        <item>Move file</item>
+        <item>Rename file</item>
+        <item>Delete file</item>
+        <item>New Folder</item>
+        <item>Multiple select</item>
+        <item>Sort by</item>
+    </array>
+    <array name="flip_animation_list">
+        <item>None</item>
+        <item>Real Page Turning Effect</item>
+        <item>Flip Horizontally</item>
+        <item>Flip Vertically</item>
+        <item>Fade In</item>
+        <item>Real Page 2(Click Only)</item>
+    </array>
+    <array name="font_faces">
+        <item>sans-serif</item>
+        <item>serif</item>
+        <item>monospace</item>
+    </array>
+    <array name="hyphenation_code">
+        <item>en</item>
+        <item>cs</item>
+        <item>nl</item>
+        <item>de</item>
+        <item>el</item>
+        <item>eo</item>
+        <item>es</item>
+        <item>fi</item>
+        <item>fr</item>
+        <item>hu</item>
+        <item>id</item>
+        <item>it</item>
+        <item>no</item>
+        <item>pl</item>
+        <item>pt</item>
+        <item>ru</item>
+        <item>sv</item>
+        <item>tr</item>
+        <item>uk</item>
+    </array>
+    <array name="hyphenation_list">
+        <item>*English</item>
+        <item>Czech</item>
+        <item>Dutch</item>
+        <item>German</item>
+        <item>Greek</item>
+        <item>Esperanto</item>
+        <item>Spanish</item>
+        <item>Finnish</item>
+        <item>French</item>
+        <item>Hungarian</item>
+        <item>Indonesian</item>
+        <item>Italian</item>
+        <item>Norwegian</item>
+        <item>Polish</item>
+        <item>Portuguese</item>
+        <item>Russian</item>
+        <item>Swedish</item>
+        <item>Turkish</item>
+        <item>Ukrainian</item>
+    </array>
+    <array name="languages">
+        <item>(default)</item>
+        <item>English (english)</item>
+        <item>Amharic (አማርኛ)</item>
+        <item>Arabic (العربية)</item>
+        <item>Armenian (հայերեն)</item>
+        <item>Belarusian (беларускі)</item>
+        <item>Bulgarian (Български)</item>
+        <item>Catalan (català)</item>
+        <item>Croatian (hrvatski)</item>
+        <item>Czech (český)</item>
+        <item>Danish (dansk)</item>
+        <item>Dutch (Nederlands)</item>
+        <item>Estonian (eesti)</item>
+        <item>Finnish (suomi)</item>
+        <item>French (français)</item>
+        <item>Galician (galego)</item>
+        <item>Georgian (ქართული)</item>
+        <item>German (Deutsch)</item>
+        <item>Greek (ελληνικά)</item>
+        <item>Hebrew (עברית)</item>
+        <item>Hungarian (magyar)</item>
+        <item>Indonesian (Indonesia)</item>
+        <item>Italian (italiano)</item>
+        <item>Japanese (日本の)</item>
+        <item>Korean (한국어)</item>
+        <item>Macedonian (македонски)</item>
+        <item>Persian (فارسی)</item>
+        <item>Polish (polski)</item>
+        <item>Portuguese (português)</item>
+        <item>Portuguese Brazil (português brasil)</item>
+        <item>Romanian (român)</item>
+        <item>Russian (русский)</item>
+        <item>Serbian (српски)</item>
+        <item>Simplified Chinese (简体中文)</item>
+        <item>Sinhala (සිංහල)</item>
+        <item>Slovak (slovenských)</item>
+        <item>Slovenian (slovenskega)</item>
+        <item>Spanish (español)</item>
+        <item>Swedish (Svenskt)</item>
+        <item>Traditional Chinese (繁體中文)</item>
+        <item>Tatar (Татар)</item>
+        <item>Thai (ภาษาไทย)</item>
+        <item>Turkish (Türk)</item>
+        <item>Ukrainian (Українська)</item>
+        <item>Vietnamese (Việt)</item>
+    </array>
+    <array name="more_options_menu">
+        <item>Text Selection</item>
+        <item>Search</item>
+        <item>Book information</item>
+        <item>Chapters in book</item>
+        <item>Prior chapter</item>
+        <item>Next chapter</item>
+        <item>Prior file</item>
+        <item>Next file</item>
+        <item>Bookmark</item>
+        <item>Controls bar</item>
+        <item>Font size adjustment</item>
+    </array>
+    <array name="note_list">
+        <item>Show</item>
+        <item>Edit</item>
+        <item>Delete</item>
+        <item>All notes</item>
+    </array>
+    <array name="notes_import_export">
+        <item>Share notes &amp; highlights...</item>
+        <item>Export list to file</item>
+        <item>Import list from file</item>
+    </array>
+    <array name="one_file_bookmark">
+        <item>Open</item>
+        <item>Delete</item>
+        <item>Clear all</item>
+    </array>
+    <array name="operations">
+        <item>Rename</item>
+        <item>Delete</item>
+    </array>
+    <array name="options_menu">
+        <item>Visual Options</item>
+        <item>Control Options</item>
+        <item>Miscellaneous</item>
+        <item>Themes</item>
+        <item>More Operations...</item>
+        <item>About Moon+ Reader</item>
+        <item>Exit Reader...</item>
+    </array>
+    <array name="pdf_render_quality_items">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </array>
+    <array name="pdf_view_mode_items">
+        <item>Automatic</item>
+        <item>Single Page</item>
+        <item>Continuous</item>
+    </array>
+    <array name="shelf_filter_options">
+        <item>All</item>
+        <item>-</item>
+        <item>Unread</item>
+        <item>Reading</item>
+        <item>Finished</item>
+    </array>
+    <array name="shelf_popup">
+        <item>Add to My Favorites</item>
+        <item>Edit Book Information</item>
+        <item>Remove from My Shelf</item>
+        <item>Delete Book File</item>
+    </array>
+    <array name="shelf_read_history">
+        <item>Remove from Recent List</item>
+        <item>Clear Recent List</item>
+        <item>Add to My Favorites</item>
+        <item>Delete Book File</item>
+    </array>
+    <array name="shelf_sort_by">
+        <item>Book Title</item>
+        <item>Author</item>
+        <item>Import Time</item>
+        <item>Storage Folder</item>
+    </array>
+    <array name="sort_by">
+        <item>by Name (Ascending)</item>
+        <item>by Size (Ascending)</item>
+        <item>by Time (Ascending)</item>
+        <item>by Name (Descending)</item>
+        <item>by Size (Descending)</item>
+        <item>by Time (Descending)</item>
+    </array>
+    <array name="translations">
+        <item>Afrikaans</item>
+        <item>Albanian</item>
+        <item>Arabic</item>
+        <item>Belarusian</item>
+        <item>Bulgarian</item>
+        <item>Catalan</item>
+        <item>Chinese (Simplified)</item>
+        <item>Chinese (Traditional)</item>
+        <item>Croatian</item>
+        <item>Czech</item>
+        <item>Danish</item>
+        <item>Dutch</item>
+        <item>English</item>
+        <item>Estonian</item>
+        <item>Filipino</item>
+        <item>Finnish</item>
+        <item>French</item>
+        <item>Galician</item>
+        <item>German</item>
+        <item>Greek</item>
+        <item>Haitian Creole</item>
+        <item>Hebrew</item>
+        <item>Hindi</item>
+        <item>Hungarian</item>
+        <item>Icelandic</item>
+        <item>Indonesian</item>
+        <item>Irish</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Korean</item>
+        <item>Latvian</item>
+        <item>Lithuanian</item>
+        <item>Macedonian</item>
+        <item>Malay</item>
+        <item>Maltese</item>
+        <item>Norwegian</item>
+        <item>Persian</item>
+        <item>Polish</item>
+        <item>Portuguese</item>
+        <item>Romanian</item>
+        <item>Russian</item>
+        <item>Serbian</item>
+        <item>Slovak</item>
+        <item>Slovenian</item>
+        <item>Spanish</item>
+        <item>Swahili</item>
+        <item>Swedish</item>
+        <item>Thai</item>
+        <item>Turkish</item>
+        <item>Ukrainian</item>
+        <item>Vietnamese</item>
+        <item>Welsh</item>
+        <item>Yiddish</item>
+    </array>
+    <array name="translations_abbr">
+        <item>af</item>
+        <item>sq</item>
+        <item>ar</item>
+        <item>be</item>
+        <item>bg</item>
+        <item>ca</item>
+        <item>zh-CN</item>
+        <item>zh-TW</item>
+        <item>hr</item>
+        <item>cs</item>
+        <item>da</item>
+        <item>nl</item>
+        <item>en</item>
+        <item>et</item>
+        <item>tl</item>
+        <item>fi</item>
+        <item>fr</item>
+        <item>gl</item>
+        <item>de</item>
+        <item>el</item>
+        <item>ht</item>
+        <item>iw</item>
+        <item>hi</item>
+        <item>hu</item>
+        <item>is</item>
+        <item>id</item>
+        <item>ga</item>
+        <item>it</item>
+        <item>ja</item>
+        <item>ko</item>
+        <item>lv</item>
+        <item>lt</item>
+        <item>mk</item>
+        <item>ms</item>
+        <item>mt</item>
+        <item>no</item>
+        <item>fa</item>
+        <item>pl</item>
+        <item>pt</item>
+        <item>ro</item>
+        <item>ru</item>
+        <item>sr</item>
+        <item>sk</item>
+        <item>sl</item>
+        <item>es</item>
+        <item>sw</item>
+        <item>sv</item>
+        <item>th</item>
+        <item>tr</item>
+        <item>uk</item>
+        <item>vi</item>
+        <item>cy</item>
+        <item>yi</item>
+    </array>
+    <array name="tts_divides">
+        <item>comma(,)</item>
+        <item>full stop(.)</item>
+        <item>paragraph</item>
+        <item>page</item>
+    </array>
+</resources>

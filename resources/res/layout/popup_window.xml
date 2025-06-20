@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="#888888" android:layout_width="match_parent" android:layout_height="80dp">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50dp" android:layout_weight="1">
+        <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+            <net.imedicaldoctor.imd.Views.WhiteHighlightButton android:id="@+id/highlight_clear" android:layout_width="30dp" android:layout_height="30dp" android:layout_margin="2px"/>
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+            <net.imedicaldoctor.imd.Views.BlueHighlightButton android:id="@+id/highlight_blue" android:layout_width="30dp" android:layout_height="30dp" android:layout_margin="2px"/>
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+            <net.imedicaldoctor.imd.Views.YellowHighlightButton android:id="@+id/highlight_yellow" android:layout_width="30dp" android:layout_height="30dp" android:layout_margin="2px"/>
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+            <net.imedicaldoctor.imd.Views.GreenHighlightButton android:id="@+id/highligh_green" android:layout_width="30dp" android:layout_height="30dp" android:layout_margin="2px"/>
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+            <net.imedicaldoctor.imd.Views.RedHighlightButton android:id="@+id/highlight_red" android:layout_width="30dp" android:layout_height="30dp" android:layout_margin="2px"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:paddingBottom="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_weight="1">
+        <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" app:rippleAlpha="0.5" app:rippleColor2="#ffffff" style="@style/RippleStyle">
+            <Button android:textSize="18sp" android:textColor="@color/white" android:background="@color/transparent" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Define" style="?android:attr/borderlessButtonStyle"/>
+        </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+        <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" app:rippleAlpha="0.5" app:rippleColor2="#ffffff" style="@style/RippleStyle">
+            <Button android:textSize="18sp" android:textColor="@color/white" android:background="@color/transparent" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Note" style="?android:attr/borderlessButtonStyle"/>
+        </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+    </LinearLayout>
+</LinearLayout>

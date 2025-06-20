@@ -1,0 +1,23 @@
+
+body { margin: 0; padding: 0; }
+
+.helpCellTitleFont {
+	font-size:14px;
+	font-family:GothamNarrow-Medium;
+	color:#928a81;
+	margin: 0px;
+}
+
+.helpCellTitleFontSelected {
+	font-size:14px;
+	font-family:GothamNarrow-Bold;
+	color:#fa7521;
+	margin-top:0px;
+}
+
+.helpCellBodyFont {
+	font-size:12px;
+	font-family:GothamNarrow-Book;
+	color:#928a81;
+	margin:0px;
+}

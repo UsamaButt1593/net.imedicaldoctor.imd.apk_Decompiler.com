@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/root_layout" android:background="#2e81c7" android:layout_width="match_parent" android:layout_height="match_parent" android:animateLayoutChanges="true">
+    <ScrollView android:orientation="vertical" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/root_linear_layout" android:paddingLeft="40dp" android:paddingRight="40dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_alignParentBottom="true">
+            <ImageView android:id="@+id/image_view" android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingRight="20dp" android:paddingBottom="30dp" android:layout_width="150dp" android:layout_height="150dp" android:layout_marginBottom="20dp" android:src="0x7f080277" android:layout_weight="0"/>
+            <LinearLayout android:orientation="vertical" android:id="@+id/linear_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="300dp">
+                <LinearLayout android:orientation="horizontal" android:id="@+id/user_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/user"/>
+                    <EditText android:textSize="16dp" android:textColor="#ffffff" android:textColorHint="#99ffffff" android:id="@+id/user_text" android:background="#00ffffff" android:layout_width="match_parent" android:layout_height="50dp" android:hint="Username" android:inputType="textNoSuggestions"/>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@+id/password_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/lock"/>
+                    <EditText android:textSize="16dp" android:textColor="#ffffff" android:textColorHint="#99ffffff" android:id="@+id/password_text" android:background="#00ffffff" android:layout_width="match_parent" android:layout_height="50dp" android:hint="Password" android:inputType="textWebPassword"/>
+                </LinearLayout>
+                <Button android:textColor="#2e81c7" android:id="@+id/login_button" android:background="#ffffff" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginTop="10dp" android:text="Login" style="?android:attr/borderlessButtonStyle"/>
+                <Button android:textColor="#2e81c7" android:id="@+id/register_button" android:background="#ffffff" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginTop="10dp" android:text="New ! Register Here" style="?android:attr/borderlessButtonStyle"/>
+                <TextView android:textSize="16dp" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@+id/status_label" android:padding="10dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contacting Server"/>
+                <Button android:textColor="#ffffff" android:id="@+id/forgot_button" android:background="#00ffffff" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginTop="10dp" android:text="Forgot your password ?" style="?android:attr/borderlessButtonStyle"/>
+                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50dp">
+                    <ImageButton android:id="@+id/telegram_button" android:background="#00ffffff" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/telegram" android:scaleType="fitCenter" android:layout_weight="1"/>
+                    <ImageButton android:id="@+id/instagram_button" android:background="#00ffffff" android:layout_width="30dp" android:layout_height="40dp" android:src="@drawable/instagram" android:scaleType="fitCenter" android:layout_weight="1"/>
+                    <ImageButton android:id="@+id/mail_button" android:background="#00ffffff" android:layout_width="30dp" android:layout_height="28dp" android:src="@drawable/mailnew" android:scaleType="fitCenter" android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:textSize="12dp" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@+id/buy_label" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="For More Information goto imedicaldoctor.net" android:layout_alignParentBottom="true"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

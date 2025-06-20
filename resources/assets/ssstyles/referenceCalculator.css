@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+body {
+	padding: 0 0 0 0;
+}
+
+/* CSS Document */
+#stickyHeader {
+		position:fixed;
+		z-index:400;	
+	width:100%;
+	background-color:#990000;
+	background:#ffffff;
+	margin:0;
+	overflow:hidden;
+}
+#stickyHeader h2 {
+		margin:0;	
+}
+.entryarea {
+	background:#ffffff;
+	margin:0;
+	overflow:hidden;
+}
+.entryarea h2 {
+	margin:0;
+}
+.entryarea ul {
+	padding:0;
+	margin:18px;
+	list-style:none;
+	border:1px solid #dfdcd9;
+}
+.entryarea li {
+	font-family: 'GothamNarrow', Sans-Serif;
+	background-color:#ffffff;
+	margin-top:0;
+	padding:18px;
+	font-size:1em;
+	cursor:pointer;
+	display:block;
+	border-top:1px solid #dfdcd9;
+}
+.entryarea li:first-child {
+	border-top:0;
+}
+.entryarea li:hover {
+	color:#b7b1a9;
+	background-color:#eef8fa;
+}
+
+.active {
+	background-color:#F9F8F8;
+	-webkit-box-shadow: inset 0px -1px 3px  rgba(91, 51, 24, .24);
+	box-shadow: inset 0px -1px 3px  rgba(91, 51, 24, .24);
+}
+.active h2 {
+	background-color:#F47522;
+	color:#ffffff;
+	border-bottom: 1px solid #B7581A;
+	-webkit-box-shadow:  0px 1px 3px  rgba(91, 51, 24, .36);
+	box-shadow:  0px 1px 3px  rgba(91, 51, 24, .36);
+}
+.active li {
+		font-weight: bold;
+}
+.selected {
+	font-weight: bold;
+	color:#F47522;
+	background:url(../images/checkmark.png) 96% center no-repeat;
+}
+.active .selected {
+	color:#F47522;
+}
+.active .selected:hover {
+	color:#F47522;
+}
+#resultBox {
+	font-family: 'GothamNarrow', Sans-Serif;
+	overflow:hidden;
+	padding-bottom:18px;
+	margin-bottom:40px;
+}
+.resultText {
+	display:block;
+	margin:0 40px;
+	padding:16px 0;
+	border-bottom: 1px solid #cdd0c8;
+}
+#resultBox h3 {
+	display:inline-block;
+	border:0;
+	padding:0;
+	margin:0;
+	width:50%;
+}
+.complete {
+	background-color:#f4f3f2;
+	-webkit-box-shadow: inset 0px -1px 3px  rgba(91, 51, 24, .24);
+	box-shadow: inset 0px -1px 3px  rgba(91, 51, 24, .24);
+}
+.resultText .formOutput {
+	font-weight:normal;
+	font-size:1em;
+	display:inline-block;
+	margin:0;
+	padding-left:30px;
+	width:50%;
+}
+.notComplete {
+	text-transform:uppercase;
+	color:#CB4148;
+	border:1px solid #CB4148;
+	font-size:.75em;
+	font-weight: bold;
+	padding:20px;
+	text-align:center;
+	margin:18px;
+}
+.formResult {
+	margin:20px;
+	padding:10px 18px 0 18px;
+	font-size:.875em;
+	line-height:1.5em;
+}
+.formInput {
+	font-size:1.3125em;
+	height:30px;
+	width:150px;
+	margin-right:10px;
+}
+.entryarea form {
+	margin:18px 18px 0;
+}
+.entryarea form ul {
+	margin:0 0 18px;
+}
+.clearField {
+	width:100%;
+}
+input[type="number"] {
+	font-weight:bold;
+}
+
+.commentBox {
+	padding:20px 18px 800px 18px;
+}

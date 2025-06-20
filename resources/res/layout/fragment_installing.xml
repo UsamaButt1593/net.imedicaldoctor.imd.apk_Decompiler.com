@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="#efeff4" android:layout_width="match_parent" android:layout_height="match_parent" android:keepScreenOn="true">
+    <LinearLayout android:orientation="vertical" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/stethoscope" android:padding="10dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="30dp" android:src="0x7f080275" android:layout_weight="1"/>
+        <TextView android:textSize="30dp" android:textColor="@color/black" android:layout_gravity="center" android:id="@+id/installing_label" android:paddingTop="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Installing" android:layout_weight="0"/>
+        <TextView android:textSize="40dp" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center" android:id="@+id/progress_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="." android:layout_weight="0"/>
+        <TextView android:textSize="20dp" android:textColor="@color/dark_blue" android:gravity="center" android:layout_gravity="center" android:id="@+id/database_name" android:padding="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading"/>
+        <ProgressBar android:id="@+id/progress_bar" android:padding="10dp" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="30dp" style="?android:attr/progressBarStyleHorizontal"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50dp">
+            <Button android:textColor="@color/black" android:id="@+id/cancel_button" android:background="#00ffffff" android:layout_width="match_parent" android:layout_height="50dp" android:text="Cancel" android:layout_weight="1"/>
+            <Button android:textColor="@color/black" android:id="@+id/close_button" android:background="#00ffffff" android:layout_width="match_parent" android:layout_height="50dp" android:text="Hide" android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

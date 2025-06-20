@@ -1,0 +1,17 @@
+<table id="[id]_wrapper" style="padding:0px 10px 0px 10px;" cellspacing="0" cellpadding="0" align="center">
+<tbody><tr>
+    <td style="vertical-align:top;">
+        <div class="graphicWrapper">
+            [content]
+        </div>
+    </td>
+    <td style="vertical-align:top;">
+        <div class="graphicWrapper">
+        
+        </div>
+    </td>
+</tr>
+</tbody></table>
+
+<div id="[id]_wrapper_player_overlay" class="mediaPlayerControlOverlay" onclick="javascript:getResource('playMovie', {&quot;graphic_id&quot;:&quot;[id]&quot;});" style="display:none;"></div>
+</div>

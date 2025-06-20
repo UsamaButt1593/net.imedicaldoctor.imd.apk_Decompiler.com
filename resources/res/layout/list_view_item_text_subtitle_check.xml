@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_gravity="center" android:orientation="horizontal" android:background="@drawable/touch_selector" android:padding="7dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40sp" android:backgroundTint="@color/white">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+        <TextView android:textSize="14sp" android:textColor="@color/black" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/text" android:paddingBottom="2dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="something"/>
+        <TextView android:textSize="12sp" android:textColor="@color/darkGrey" android:id="@+id/subtext" android:paddingTop="2dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="128.2 MB"/>
+    </LinearLayout>
+    <ImageView android:layout_gravity="center_vertical" android:id="@+id/check_icon" android:layout_width="20dp" android:layout_height="15dp" android:layout_marginRight="5dp" android:src="0x7f0800ef" android:scaleType="fitEnd" android:layout_weight="0" app:tint="@color/blue_dark"/>
+</LinearLayout>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.imedicaldoctor.imd.Utils.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_gravity="center" android:id="@+id/ripple_layout" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40sp" app:rippleColor2="@color/ColorPrimary" style="@style/RippleStyle">
+    <ImageView android:layout_gravity="center" android:id="@+id/image_view" android:layout_width="80dp" android:layout_height="80dp" android:layout_marginBottom="5dp" android:src="@color/red"/>
+</net.imedicaldoctor.imd.Utils.MaterialRippleLayout>

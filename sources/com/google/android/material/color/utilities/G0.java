@@ -1,0 +1,9 @@
+package com.google.android.material.color.utilities;
+
+import java.util.function.Function;
+
+public final /* synthetic */ class G0 implements Function {
+    public final Object apply(Object obj) {
+        return Double.valueOf(((DynamicScheme) obj).f21197g.h().e());
+    }
+}

@@ -1,0 +1,167 @@
+
+function onBodyLoad() {
+    var objBody = document.getElementsByTagName('body')[0];
+    objBody.addEventListener("touchstart", touchStart, false);
+    objBody.addEventListener("touchend", touchEnd, false);
+    objBody.addEventListener("gestureend", gestureEnd, false);
+    objBody.addEventListener("gesturestart", gestureStart, false);
+    // try this for iOS 3.1.3 -- it doesn't like the CSS
+    document.documentElement.style.webkitTouchCallout = "none";
+}
+
+var disableZoom = false;
+
+function getImageList() {
+    var srcList = "";
+    var images = document.images;
+    
+    for (var i = 0; i < images.length; i++) {
+        if (i > 0) {
+            srcList += "|";
+        }
+        
+        srcList += images[i].getAttribute('src');
+    }
+    
+    return srcList;
+}
+
+function getUTDWebURLScheme() {
+    return "zoomwebaction://";
+}
+
+function getUTDAppURLScheme() {
+    return "zoomwebaction://";
+}
+
+function touchStart(event) {
+    if (event.touches.length > 2) {
+        disableZoom = true;
+    }
+}
+
+
+function touchEnd(event) {
+    disableZoom = false;
+}
+
+function gestureStart(event) {
+
+    event.preventDefault();
+}
+
+function gestureEnd(event) {
+    if (!disableZoom) {
+        var uri = null;
+        
+        if (event.scale > 1.0) {
+            uri = getUTDWebURLScheme() + "zoomIn";
+        } else {
+            uri = getUTDWebURLScheme() + "zoomOut";
+        }
+        event.preventDefault();
+        document.location.href = uri;
+    }
+}
+
+
+function getImageList() {
+    var srcList = "";
+    var images = document.images;
+    
+    for (var i = 0; i < images.length; i++) {
+        if (i > 0) {
+            srcList += "|";
+        }
+        
+        srcList += images[i].getAttribute('src');
+    }
+    
+    return srcList;
+}
+
+
+function imageClickHandler(e){
+    window.location.href="image://" + e.target.src;
+}
+function ConvertAllImages() {
+    var images = document.images;
+    for (var i = 0; i < images.length; i++) {
+       	images[i].onclick = imageClickHandler;
+    }
+    
+}
+
+
+
+
+function fixAllImages() {
+    var images = document.images;
+    for (var i = 0; i < images.length; i++) {
+        var image = images[i];
+        if (image.parentElement.tagName=="P"){
+            image.parentElement.setAttribute ("style","width:95%;overflow: scroll;");
+        }
+        if (image.parentElement.tagName=="DIV"){
+            image.parentElement.setAttribute ("style","width:95%;overflow: scroll;");
+        }
+        
+    }
+    
+}
+
+function fixAllTables() {
+    var images = document.getElementsByTagName("table");
+    for (var i = 0; i < images.length; i++) {
+        var table = images[i];
+        var div = document.createElement("div");
+        div.setAttribute("style","width:100%;overflow: scroll;");
+        table.parentElement.insertBefore(div,table);
+        div.appendChild(table);
+    }
+    
+}
+
+function fixAllImages2() {
+    var images = document.getElementsByTagName("img");
+    for (var i = 0; i < images.length; i++) {
+        var table = images[i];
+        var div = document.createElement("div");
+        div.setAttribute("style","width:100%;overflow: scroll;");
+        table.parentElement.insertBefore(div,table);
+        div.appendChild(table);
+    }
+    
+}
+
+function currentWebkitTextSizeAdjust() {
+    var objBody = document.getElementsByTagName('body')[0];
+    var size = objBody.style.webkitTextSizeAdjust;
+    // (unset size is null)
+    if (size == null) {
+        size = 100;
+    }
+    return size;
+}
+
+function setWebkitTextSizeAdjust(percentInt) {
+    var percentString = percentInt + "%";
+    var ojbBody = document.getElementsByTagName('body')[0];
+    ojbBody.style.webkitTextSizeAdjust = percentString;
+    
+    // send this request to hide the HUD (it says resizing text)
+    var uri = getUTDWebURLScheme() + "zoomFinished";
+    //alert(uri);
+    document.location.href = uri;
+    //    alert("hi" + body.style.webkitTextSizeAdjust);
+}
+
+
+// Use dim/undim with ontouchstart/ontouchend to make HTML elements (ie buttons) reponsive to touches.
+function dim(element) {
+    element.style.opacity = .5;
+}
+
+function undim(element) {
+    element.style.opacity = 1;
+}

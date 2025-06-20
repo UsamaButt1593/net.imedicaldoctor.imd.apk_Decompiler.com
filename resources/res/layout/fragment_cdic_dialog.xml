@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center" android:orientation="vertical" android:id="@+id/dialog_fragment" android:tag="mainFragment" android:background="#ffefeff4" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="30dp">
+    <FrameLayout android:id="@+id/dic" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <androidx.appcompat.widget.SearchView android:gravity="top" android:layout_gravity="top" android:id="@+id/search_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="0"/>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/recycler_view" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            <ImageView android:id="@+id/search_close_btn" android:layout_width="0sp" android:layout_height="0sp"/>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

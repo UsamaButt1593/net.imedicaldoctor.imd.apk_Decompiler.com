@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="180" android:versionName="5.2.3" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" android:requiredSplitTypes="base__abi,base__density" android:splitTypes="" package="net.imedicaldoctor.imd" platformBuildVersionCode="34" platformBuildVersionName="14">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <permission android:name="net.imedicaldoctor.imd.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="net.imedicaldoctor.imd.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="net.imedicaldoctor.imd.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="net.imedicaldoctor.imd.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <application android:theme="@style/AppTheme" android:label="@string/app_name" android:icon="@mipmap/imdicon" android:name="net.imedicaldoctor.imd.iMD" android:allowBackup="true" android:hardwareAccelerated="true" android:largeHeap="true" android:supportsRtl="false" android:extractNativeLibs="false" android:fullBackupContent="true" android:usesCleartextTraffic="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true">
+        <activity android:theme="@style/Theme.AppCompat.Dialog" android:label="@string/title_activity_notification" android:name="net.imedicaldoctor.imd.NotificationActivity" android:exported="false"/>
+        <activity android:name="net.imedicaldoctor.imd.Fragments.TOL.TOLActivity" android:exported="false"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_nejmviewer" android:name="net.imedicaldoctor.imd.Fragments.NEJM.NEJMViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_nejmtoc" android:name="net.imedicaldoctor.imd.Fragments.NEJM.NEJMTOCActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_player" android:name="net.imedicaldoctor.imd.Fragments.CMEInfo.Player" android:configChanges="orientation|screenSize|layoutDirection"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_utdaviewer" android:name="net.imedicaldoctor.imd.Fragments.UTDAdvanced.UTDAViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_utdasearch" android:name="net.imedicaldoctor.imd.Fragments.UTDAdvanced.UTDASearchActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/app_name" android:name="net.imedicaldoctor.imd.Fragments.mainActivity" android:exported="true" android:launchMode="singleTop" android:configChanges="keyboard|orientation|screenSize" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateHidden|stateAlwaysHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="avicenna"/>
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value="net.imedicaldoctor.imd.Fragments.mainActivity"/>
+        </activity>
+        <provider android:name="net.imedicaldoctor.imd.Data.SpellProvider" android:authorities="net.imedicaldoctor.spell"/>
+        <provider android:name="net.imedicaldoctor.imd.Data.iMDProvider" android:authorities="net.imedicaldoctor.imd"/>
+        <provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="net.imedicaldoctor.imd.provider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:name="net.imedicaldoctor.imd.Fragments.activity2" android:exported="true" android:launchMode="singleTop" android:configChanges="keyboard|orientation|screenSize">
+            <meta-data android:name="android.app.searchable" android:resource="@xml/mainsearchable"/>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value="net.imedicaldoctor.imd.Fragments.mainActivity"/>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="Activation" android:name="net.imedicaldoctor.imd.Fragments.activationActivity" android:configChanges="keyboard|orientation|screenSize" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateHidden|stateAlwaysHidden|adjustResize"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="Activation" android:name="net.imedicaldoctor.imd.Fragments.VisualDXLookup.registerActivity" android:configChanges="keyboard|orientation|screenSize" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateHidden|stateAlwaysHidden|adjustResize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_gallery" android:name="net.imedicaldoctor.imd.Gallery.GalleryActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_elschapters" android:name="net.imedicaldoctor.imd.Fragments.Elsevier.ELSChaptersActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_elsviewer" android:name="net.imedicaldoctor.imd.Fragments.Elsevier.ELSViewerActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_utdsearch" android:name="net.imedicaldoctor.imd.Fragments.Uptodate.UTDSearchActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_utdviewer" android:name="net.imedicaldoctor.imd.Fragments.Uptodate.UTDViewerActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_utdgraphic" android:name="net.imedicaldoctor.imd.Fragments.Uptodate.UTDGraphicActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_amchapters" android:name="net.imedicaldoctor.imd.Fragments.AccessMedicine.AMChaptersActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_amviewer" android:name="net.imedicaldoctor.imd.Fragments.AccessMedicine.AMViewerActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:label="@string/title_activity_video_player" android:name="net.imedicaldoctor.imd.VideoPlayer" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_lxitems" android:name="net.imedicaldoctor.imd.Fragments.Lexi.LXItems" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_lxviewer" android:name="net.imedicaldoctor.imd.Fragments.Lexi.LXViewer" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_lxinteract_list" android:name="net.imedicaldoctor.imd.Fragments.LexiInteract.LXInteractList" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_lxinteract_result" android:name="net.imedicaldoctor.imd.Fragments.LexiInteract.LXInteractResult" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_lxiv_interact" android:name="net.imedicaldoctor.imd.Fragments.LexiInteract.LXIvInteract" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_lxivinteract_result" android:name="net.imedicaldoctor.imd.Fragments.LexiInteract.LXIVInteractResult" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_sssearch" android:name="net.imedicaldoctor.imd.Fragments.Skyscape.SSSearchActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_sstoc" android:name="net.imedicaldoctor.imd.Fragments.Skyscape.SSTocActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_ssviewer" android:name="net.imedicaldoctor.imd.Fragments.Skyscape.SSViewerActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_ovid_chapters" android:name="net.imedicaldoctor.imd.Fragments.OVID.OvidChaptersActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_ovid_viewer" android:name="net.imedicaldoctor.imd.Fragments.OVID.OvidViewerActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_idsearch" android:name="net.imedicaldoctor.imd.Fragments.IranDaru.IDSearchActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_idviewer" android:name="net.imedicaldoctor.imd.Fragments.IranDaru.IDViewerActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_idcategory_viewer" android:name="net.imedicaldoctor.imd.Fragments.IranDaru.IDCategoryViewer" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_utddsearch" android:name="net.imedicaldoctor.imd.Fragments.UptodateDDX.UTDDSearchActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_utddviewer" android:name="net.imedicaldoctor.imd.Fragments.UptodateDDX.UTDDViewerActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_vdsearch" android:name="net.imedicaldoctor.imd.Fragments.VisualDXLookup.VDSearchActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_vddiagnosis" android:name="net.imedicaldoctor.imd.Fragments.VisualDXLookup.VDDiagnosisActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_vdviewer" android:name="net.imedicaldoctor.imd.Fragments.VisualDXLookup.VDViewerActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_vddx_scenario" android:name="net.imedicaldoctor.imd.Fragments.VisualDDX.VDDxScenarioActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_vddx_builder" android:name="net.imedicaldoctor.imd.Fragments.VisualDDX.VDDxBuilderActivity" android:configChanges="keyboard|orientation|screenSize" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateHidden|stateAlwaysHidden|adjustResize"/>
+        <activity android:label="@string/title_activity_vddx_result" android:name="net.imedicaldoctor.imd.Fragments.VisualDDX.VDDxResultActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_vddx_results" android:name="net.imedicaldoctor.imd.Fragments.VisualDXLookup.VDDxResults" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_cdic_ep" android:name="net.imedicaldoctor.imd.Fragments.Dictionary.CDicEPActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_cdic_ee" android:name="net.imedicaldoctor.imd.Fragments.Dictionary.CDicEEActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_cdic_search" android:name="net.imedicaldoctor.imd.Fragments.Dictionary.CDicSearchActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:label="@string/title_activity_cdic_simple_web_viewer" android:name="net.imedicaldoctor.imd.Fragments.Dictionary.CDicSimpleWebViewer" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_mhsearch" android:name="net.imedicaldoctor.imd.Fragments.Medhand.MHSearchActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_mhviewer" android:name="net.imedicaldoctor.imd.Fragments.Medhand.MHViewerActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_epubchapters" android:name="net.imedicaldoctor.imd.Fragments.EPUB.EPUBChaptersActivity" android:configChanges="keyboard|orientation|screenSize"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_epubviewer" android:name="net.imedicaldoctor.imd.Fragments.EPUB.EPUBViewerActivity" android:configChanges="keyboard|orientation|screenSize" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/AppTheme" android:label="@string/title_activity_pay" android:name="net.imedicaldoctor.imd.Fragments.payActivity"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_epomain" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOMainActivity"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_fab" android:name="net.imedicaldoctor.imd.Fragments.fabActivity"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_epodx_list" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPODxListActivity"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_epodx_viewer" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPODxViewerActivity"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_epodx_list_viewer" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPODxListViewerActivity"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_eporx_viewer" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPORxViewerActivity"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_epolab_list" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOLabListActivity"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_epohtmlviewer" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOHTMLViewer"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_epo_dxweb_viewer" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EpoDXWebViewerActivity"/>
+        <activity android:theme="@style/App.NoActionBar" android:label="@string/title_activity_eporx_list" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPORxListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epointeract_single" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOInteractSingleActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epointeract_viewer" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOInteractViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epointeract" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOInteractActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epointeract_result" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOInteractResultActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epoidlist" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOIDListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epoidviewer" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOIDViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epoguideline_list" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOGuidelineListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epoguideline_viewer" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOGuidelineViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epotable_list" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOTableListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epotable_viewer" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOTableViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epopill" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOPillActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_epopill_result" android:name="net.imedicaldoctor.imd.Fragments.Epocrate.EPOPillResultActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_aslist" android:name="net.imedicaldoctor.imd.Fragments.Amirsys.ASListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_asmenu" android:name="net.imedicaldoctor.imd.Fragments.Amirsys.ASMenuActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_asdoc" android:name="net.imedicaldoctor.imd.Fragments.Amirsys.ASDocActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mdlist" android:name="net.imedicaldoctor.imd.Fragments.Martindale.MDListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mdviewer" android:name="net.imedicaldoctor.imd.Fragments.Martindale.MDViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_ftlist" android:name="net.imedicaldoctor.imd.Fragments.Facts.FTListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_ftviewer" android:name="net.imedicaldoctor.imd.Fragments.Facts.FTViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mmlist" android:name="net.imedicaldoctor.imd.Fragments.Micromedex.MMListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mmviewer" android:name="net.imedicaldoctor.imd.Fragments.Micromedex.MMViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mmneo_list" android:name="net.imedicaldoctor.imd.Fragments.Micromedex.MMNeoListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mmneo_viewer" android:name="net.imedicaldoctor.imd.Fragments.Micromedex.MMNeoViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mminteract_select" android:name="net.imedicaldoctor.imd.Fragments.Micromedex.MMInteractSelectActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mminteract_result" android:name="net.imedicaldoctor.imd.Fragments.Micromedex.MMInteractResultActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mminteract_viewer" android:name="net.imedicaldoctor.imd.Fragments.Micromedex.MMInteractViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mmivselect" android:name="net.imedicaldoctor.imd.Fragments.Micromedex.MMIVSelectActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mmivresult" android:name="net.imedicaldoctor.imd.Fragments.Micromedex.MMIVResultActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mmivviewer" android:name="net.imedicaldoctor.imd.Fragments.Micromedex.MMIVViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_santoc" android:name="net.imedicaldoctor.imd.Fragments.Sanford.SANTocActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_sanviewer" android:name="net.imedicaldoctor.imd.Fragments.Sanford.SANViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_uwmain" android:name="net.imedicaldoctor.imd.Fragments.UWorld.UWMainActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_uwtoc" android:name="net.imedicaldoctor.imd.Fragments.UWorld.UWTocActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_uwtest_viewer" android:name="net.imedicaldoctor.imd.Fragments.UWorld.UWTestViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_uwtests_list" android:name="net.imedicaldoctor.imd.Fragments.UWorld.UWTestsListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_uwtest_result" android:name="net.imedicaldoctor.imd.Fragments.UWorld.UWTestResultActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_uwmain" android:name="net.imedicaldoctor.imd.Fragments.DRE.DREMainActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_uwtoc" android:name="net.imedicaldoctor.imd.Fragments.DRE.DRETocActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_uwtest_viewer" android:name="net.imedicaldoctor.imd.Fragments.DRE.DRETestViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_uwtests_list" android:name="net.imedicaldoctor.imd.Fragments.DRE.DRETestsListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_uwtest_result" android:name="net.imedicaldoctor.imd.Fragments.DRE.DRETestResultActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_sdlist" android:name="net.imedicaldoctor.imd.Fragments.Statdx.SDListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_sdmenu" android:name="net.imedicaldoctor.imd.Fragments.Statdx.SDMenuActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_sddoc" android:name="net.imedicaldoctor.imd.Fragments.Statdx.SDDocActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_sdcase" android:name="net.imedicaldoctor.imd.Fragments.Statdx.SDCaseActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_amhtmlviewer" android:name="net.imedicaldoctor.imd.Fragments.AccessMedicine.AMHTMLViewer"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_noslist" android:name="net.imedicaldoctor.imd.Fragments.Noskheha.NOSListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_nosviewer" android:name="net.imedicaldoctor.imd.Fragments.Noskheha.NOSViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_iran_generic_drugs_list" android:name="net.imedicaldoctor.imd.Fragments.IranGenericDrugs.IranGenericDrugsList"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_mksap" android:name="net.imedicaldoctor.imd.Fragments.mksap.MKSAPActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_stlist" android:name="net.imedicaldoctor.imd.Fragments.Stockley.STListActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_stviewer" android:name="net.imedicaldoctor.imd.Fragments.Stockley.STViewerActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_lwwchapters" android:name="net.imedicaldoctor.imd.Fragments.LWW.LWWChapters"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_lwwviewer" android:name="net.imedicaldoctor.imd.Fragments.LWW.LWWViewer"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="CME" android:name="net.imedicaldoctor.imd.Fragments.CMEInfo.CMETOC"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_help" android:name="net.imedicaldoctor.imd.HelpActivity"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="Progress Activity" android:name="net.imedicaldoctor.imd.Fragments.UWorld.UWProgressActivity"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="0x7f0801af"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/ColorPrimary"/>
+        <service android:name="net.imedicaldoctor.imd.MyFirebaseMessagingService" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+            <meta-data android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED" android:value="true"/>
+        </receiver>
+        <service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="false" android:directBootAware="true">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:name="com.prolificinteractive.materialcalendarview.MaterialCalendarViewInitProvider" android:enabled="true" android:exported="false" android:authorities="net.imedicaldoctor.imd.materialcalendarviewinitprovider"/>
+        <service android:name="com.google.firebase.sessions.SessionLifecycleService" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery" android:exported="false">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <receiver android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" android:exported="false"/>
+        <provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="net.imedicaldoctor.imd.firebaseinitprovider" android:initOrder="100" android:directBootAware="true"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+        <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="net.imedicaldoctor.imd.androidx-startup">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+        </provider>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP" android:enabled="true" android:exported="true" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.android.vending.splits.required" android:value="true"/>
+        <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_DISTRIBUTION_APK"/>
+        <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="3"/>
+    </application>
+</manifest>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/root_layout" android:background="#2e81c7" android:layout_width="match_parent" android:layout_height="match_parent" android:animateLayoutChanges="true">
+    <ScrollView android:orientation="vertical" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/new_login_background_color" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_alignParentBottom="true">
+            <LinearLayout android:layout_gravity="start" android:orientation="vertical" android:id="@+id/upper_layout" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="4">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="2"/>
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="0">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="4"/>
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1">
+                        <ImageView android:padding="20dp" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/login_logo_alpha30" android:layout_centerHorizontal="true" android:layout_centerVertical="true"/>
+                        <TextView android:textSize="30sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@+id/imd_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="IMEDICALDOCTOR" android:layout_centerVertical="true"/>
+                        <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="#c3c4cb" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Medical Resources" android:layout_below="@+id/imd_title"/>
+                    </RelativeLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="4"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="2"/>
+            </LinearLayout>
+            <View android:background="@color/new_login_green" android:layout_width="match_parent" android:layout_height="4dp" android:layout_weight="0"/>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="0">
+                <LinearLayout android:layout_gravity="center_vertical" android:background="@drawable/new_login_text_field_background" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:layout_marginBottom="10dp">
+                    <EditText android:textColor="@color/white" android:textColorHint="@color/new_login_text_field_hint_color" android:id="@+id/user_text" android:background="#00000000" android:paddingLeft="20dp" android:layout_width="match_parent" android:layout_height="match_parent" android:hint="Username" android:layout_weight="1" android:inputType="textPersonName"/>
+                    <ImageView android:padding="15dp" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginRight="10dp" android:src="@drawable/login_usericon" android:layout_weight="0"/>
+                </LinearLayout>
+                <LinearLayout android:layout_gravity="center_vertical" android:background="@drawable/new_login_text_field_background" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:layout_marginBottom="10dp">
+                    <EditText android:textColor="@color/white" android:textColorHint="@color/new_login_text_field_hint_color" android:id="@+id/password_text" android:background="#00000000" android:paddingLeft="20dp" android:layout_width="match_parent" android:layout_height="match_parent" android:hint="Password" android:password="true" android:layout_weight="1" android:inputType="textNoSuggestions"/>
+                    <ImageView android:padding="15dp" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginRight="10dp" android:src="@drawable/login_lockicon" android:layout_weight="0"/>
+                </LinearLayout>
+                <LinearLayout android:layout_gravity="center_vertical" android:background="@drawable/new_login_text_field_background" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:layout_marginBottom="10dp">
+                    <EditText android:textColor="@color/white" android:textColorHint="@color/new_login_text_field_hint_color" android:id="@+id/mail_text" android:background="#00000000" android:paddingLeft="20dp" android:layout_width="match_parent" android:layout_height="match_parent" android:hint="Email Address" android:layout_weight="1" android:inputType="textEmailAddress"/>
+                    <ImageView android:padding="15dp" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginRight="10dp" android:src="@drawable/mail_field" android:layout_weight="0"/>
+                </LinearLayout>
+                <LinearLayout android:layout_gravity="center_vertical" android:background="@drawable/new_login_text_field_background" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:layout_marginBottom="10dp">
+                    <EditText android:textColor="@color/white" android:textColorHint="@color/new_login_text_field_hint_color" android:id="@+id/mobile_text" android:background="#00000000" android:paddingLeft="20dp" android:layout_width="match_parent" android:layout_height="match_parent" android:hint="Mobile Number" android:layout_weight="1" android:inputType="phone"/>
+                    <ImageView android:padding="15dp" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginRight="10dp" android:src="@drawable/mobile_field" android:layout_weight="0"/>
+                </LinearLayout>
+                <RadioGroup android:id="@+id/radio_group" android:layout_width="match_parent" android:layout_height="90dp" android:layout_weight="1">
+                    <RadioButton android:id="@+id/radio_1" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:checked="true" android:text="   1 Device" style="@style/RadioButtonStyle"/>
+                    <RadioButton android:id="@+id/radio_2" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:text="   2 Device" style="@style/RadioButtonStyle"/>
+                    <RadioButton android:id="@+id/radio_3" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:text="   Special for 1 Device for 1 Year" style="@style/RadioButtonStyle"/>
+                </RadioGroup>
+                <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="3dp">
+                    <TextView android:textStyle="bold" android:textColor="@color/red" android:gravity="center" android:id="@+id/status_label" android:paddingRight="20dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="0dp" android:text="Wrong Username Password"/>
+                    <net.imedicaldoctor.imd.Views.ProgressBarCircularIndeterminate android:id="@+id/progress_bar" android:background="#001e88e5" android:visibility="gone" android:layout_width="32dp" android:layout_height="32dp" android:layout_centerInParent="true"/>
+                </RelativeLayout>
+                <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginLeft="20dp" android:layout_marginTop="5dp" android:layout_marginRight="20dp" android:layout_marginBottom="15dp" app:rippleAlpha="0.5" style="@style/RippleStyle">
+                    <Button android:textSize="20dp" android:textColor="@color/white" android:id="@+id/register_button" android:background="@drawable/login_button_background" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Register" style="?android:attr/borderlessButtonStyle"/>
+                </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

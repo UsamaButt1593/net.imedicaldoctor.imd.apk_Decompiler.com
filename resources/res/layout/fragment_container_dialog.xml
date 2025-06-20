@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center" android:orientation="vertical" android:id="@+id/dialog_fragment" android:tag="mainFragment" android:background="#ffefeff4" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <FrameLayout android:id="@+id/fragment_container" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"/>
+        <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginLeft="20dp" android:layout_marginTop="5dp" android:layout_marginRight="20dp" android:layout_marginBottom="10dp" android:layout_weight="0" app:rippleAlpha="0.5" style="@style/RippleStyle">
+            <Button android:textSize="20dp" android:textColor="@color/white" android:id="@+id/open_button" android:background="@drawable/login_button_background" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Open in main window" style="?android:attr/borderlessButtonStyle"/>
+        </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+        <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginLeft="20dp" android:layout_marginTop="0dp" android:layout_marginRight="20dp" android:layout_marginBottom="15dp" android:layout_weight="0" app:rippleAlpha="0.5" style="@style/RippleStyle">
+            <Button android:textSize="20dp" android:textColor="@color/white" android:id="@+id/close_button" android:background="@drawable/close_button_background" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Dismiss" style="?android:attr/borderlessButtonStyle"/>
+        </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+    </LinearLayout>
+</FrameLayout>

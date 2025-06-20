@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/coordinator_layout" android:background="@color/white" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" android:id="@+id/appbar" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="150dp">
+        <net.imedicaldoctor.imd.CollapsingToolbar.CollapsingToolbarLayout android:id="@+id/collapsing_toolbar" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent" app:contentScrim="?attr/colorPrimary" app:expandedTitleGravity="51" app:expandedTitleMargin="10dp" app:layout_scrollFlags="3">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" app:layout_collapseMode="2">
+                <ImageView android:id="@+id/toolbar_image_view" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop"/>
+                <FrameLayout android:background="#aa000000" android:layout_width="match_parent" android:layout_height="match_parent"/>
+            </RelativeLayout>
+            <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:layout_collapseMode="1" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" style="@style/AppActionBarSearchView">
+                <ImageButton android:id="@+id/menu_button" android:background="@color/transparent" android:paddingLeft="10dp" android:paddingTop="10dp" android:paddingRight="10dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/menu"/>
+            </androidx.appcompat.widget.Toolbar>
+        </net.imedicaldoctor.imd.CollapsingToolbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView android:id="@+id/webview_scrollview" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <net.imedicaldoctor.imd.Utils.iMDWebView android:id="@+id/webView" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:isScrollContainer="true"/>
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout android:layout_gravity="bottom|center_vertical|center_horizontal|center" android:orientation="horizontal" android:id="@+id/find_layout" android:background="@color/find_layout_background" android:paddingLeft="8dp" android:paddingRight="8dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="40dp">
+        <ImageButton android:id="@+id/previous_button" android:background="@color/clear" android:layout_width="40dp" android:layout_height="40dp" android:src="0x7f080184"/>
+        <TextView android:gravity="center" android:id="@+id/find_status_label" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="Searching" android:layout_weight="1"/>
+        <ImageButton android:id="@+id/next_button" android:background="@color/clear" android:layout_width="40dp" android:layout_height="40dp" android:src="0x7f080181"/>
+    </LinearLayout>
+    <RelativeLayout android:layout_gravity="bottom" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@+id/highlight_bar" android:background="#bb333333" android:padding="5dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="80dp">
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50dp" android:layout_weight="1">
+                <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+                    <net.imedicaldoctor.imd.Views.WhiteHighlightButton android:id="@+id/highlight_clear" android:layout_width="30dp" android:layout_height="30dp" android:layout_margin="2px"/>
+                </RelativeLayout>
+                <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+                    <net.imedicaldoctor.imd.Views.BlueHighlightButton android:id="@+id/highlight_blue" android:layout_width="30dp" android:layout_height="30dp" android:layout_margin="2px"/>
+                </RelativeLayout>
+                <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+                    <net.imedicaldoctor.imd.Views.YellowHighlightButton android:id="@+id/highlight_yellow" android:layout_width="30dp" android:layout_height="30dp" android:layout_margin="2px"/>
+                </RelativeLayout>
+                <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+                    <net.imedicaldoctor.imd.Views.GreenHighlightButton android:id="@+id/highligh_green" android:layout_width="30dp" android:layout_height="30dp" android:layout_margin="2px"/>
+                </RelativeLayout>
+                <RelativeLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+                    <net.imedicaldoctor.imd.Views.RedHighlightButton android:id="@+id/highlight_red" android:layout_width="30dp" android:layout_height="30dp" android:layout_margin="2px"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:paddingBottom="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_weight="1">
+                <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" app:rippleAlpha="0.5" app:rippleColor2="#ffffff" style="@style/RippleStyle">
+                    <Button android:textSize="18sp" android:textColor="@color/white" android:background="@color/transparent" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Define" style="?android:attr/borderlessButtonStyle"/>
+                </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+                <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" app:rippleAlpha="0.5" app:rippleColor2="#ffffff" style="@style/RippleStyle">
+                    <Button android:textSize="18sp" android:textColor="@color/white" android:background="@color/transparent" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Note" style="?android:attr/borderlessButtonStyle"/>
+                </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

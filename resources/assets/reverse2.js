@@ -1,0 +1,192 @@
+(function($) {
+  if ($.fn.style) {
+    return;
+  }
+
+  // Escape regex chars with \
+  var escape = function(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+  };
+
+  // For those who need them (< IE 9), add support for CSS functions
+  var isStyleFuncSupported = !!CSSStyleDeclaration.prototype.getPropertyValue;
+  if (!isStyleFuncSupported) {
+    CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
+      return this.getAttribute(a);
+    };
+    CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
+      this.setAttribute(styleName, value);
+      var priority = typeof priority != 'undefined' ? priority : '';
+      if (priority != '') {
+        // Add priority manually
+        var rule = new RegExp(escape(styleName) + '\\s*:\\s*' + escape(value) + '(\\s*;)?', 'gmi');
+        this.cssText = this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
+      }
+    };
+    CSSStyleDeclaration.prototype.removeProperty = function(a) {
+      return this.removeAttribute(a);
+    };
+    CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
+      var rule = new RegExp(escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?', 'gmi');
+      return rule.test(this.cssText) ? 'important' : '';
+    }
+  }
+
+  // The style function
+  $.fn.style = function(styleName, value, priority) {
+    // DOM node
+    var node = this.get(0);
+    // Ensure we have a DOM node
+    if (typeof node == 'undefined') {
+      return this;
+    }
+    // CSSStyleDeclaration
+    var style = this.get(0).style;
+    // Getter/Setter
+    if (typeof styleName != 'undefined') {
+      if (typeof value != 'undefined') {
+        // Set style property
+        priority = typeof priority != 'undefined' ? priority : '';
+        style.setProperty(styleName, value, priority);
+        return this;
+      } else {
+        // Get style property
+        return style.getPropertyValue(styleName);
+      }
+    } else {
+      // Get CSSStyleDeclaration
+      return style;
+    }
+  };
+})(jQuery);
+
+(function ($) {
+    var excludedClasses = ['highlightYellow', 'highlightGreen','highlightBlue','highlightRed','highlightBanafsh','highlightNote','highlight']; // Add the classes you want to exclude
+
+    function invertElement() {
+        var colorProperties = ['color', 'background-color', 'border-color'];
+        var color = null;
+        for (var prop in colorProperties) {
+            prop = colorProperties[prop];
+
+            if (!$(this).css(prop)) {
+                continue;
+            }
+
+            if ($(this).data(prop) != $(this).css(prop)) continue;
+
+            if (($(this).css(prop) === 'rgba(0, 0, 0, 0)') || ($(this).css(prop) === 'transparent')) {
+                if ($(this).is('body')) {
+                    $(this).style(prop, 'black', 'important');
+                    continue;
+                } else {
+                    continue;
+                }
+            }
+
+            // Exclude elements with specified classes
+            for (var i = 0; i < excludedClasses.length; i++) {
+                if ($(this).hasClass(excludedClasses[i])) {
+                    return;
+                }
+            }
+
+            color = new RGBColor($(this).css(prop));
+            if (color.ok) {
+                if ($(this).attr('class') == 'expand' && $(this).attr('data-expandsectionid').length > 0) {
+                    if (prop == 'color') {
+                        console.log($(this).style('filter'));
+                        if ($(this).style('filter') == 'invert(100%)') {
+                            $(this).style('filter', '');
+                        } else {
+                            $(this).style('filter', 'invert(100%)');
+                        }
+
+                    }
+                } else {
+                    $(this).style(prop, 'rgb(' + (255 - color.r) + ',' + (255 - color.g) + ',' + (255 - color.b) + ')', 'important');
+
+                }
+
+            } else {
+
+            }
+            color = null;
+        }
+    }
+
+    function invertElementBackground() {
+        var colorProperties = ['background-color','border-color'];
+        var color = null;
+        for (var prop in colorProperties) {
+            prop = colorProperties[prop];
+            if (!$(this).css(prop)) continue;
+            if ($(this).data(prop) != $(this).css(prop)) continue;
+
+            if (($(this).css(prop) === 'rgba(0, 0, 0, 0)') || ($(this).css(prop) === 'transparent')) {
+                if ($(this).is('body')) {
+                    $(this).style(prop, 'black', 'important');
+                    continue;
+                } else {
+                    continue;
+                }
+            }
+
+            // Exclude elements with specified classes
+            for (var i = 0; i < excludedClasses.length; i++) {
+                if ($(this).hasClass(excludedClasses[i])) {
+                    return;
+                }
+            }
+
+            color = new RGBColor($(this).css(prop));
+            if (color.ok) {
+              /*  if (this.tagName == "HL") {
+                    if (this.innerText.length == 0) {
+                        console.log('ignored : ' + this.tagName + " : " + $(this).attr('class') + ' : ' + $(this).css(prop) + ' : ' + this.innerText);
+                        return;
+                    }
+                }
+               */
+
+                console.log(this.tagName + " : " + $(this).attr('class') + ' : ' + $(this).css(prop) + ' : ' + this.innerText);
+                $(this).style(prop, 'rgb(' + (255 - color.r) + ',' + (255 - color.g) + ',' + (255 - color.b) + ')', 'important');
+            }
+            color = null;
+        }
+    }
+
+    function setColorData() {
+        var colorProperties = ['color', 'background-color','border-color'];
+        for (var prop in colorProperties) {
+            prop = colorProperties[prop];
+            $(this).data(prop, $(this).css(prop));
+        }
+    }
+    function setColorDataBackground() {
+        var colorProperties = ['background-color','border-color'];
+        for (var prop in colorProperties) {
+            prop = colorProperties[prop];
+            $(this).data(prop, $(this).css(prop));
+        }
+    }
+
+    function invertColors() {
+        if ($('body').style('color') == '') {
+            $('body').style('color', 'black');
+        }
+        $(document).live('DOMNodeInserted', function (e) {
+            var $toInvert = $(e.target).find('*').andSelf();
+            $toInvert.each(setColorDataBackground);
+            $toInvert.each(invertElementBackground);
+        });
+        $('*').each(setColorData);
+        $('*').each(invertElement);
+        $('iframe').each(function () {
+            $(this).contents().find('*').each(setColorData);
+            $(this).contents().find('*').each(invertElement);
+        });
+    }
+    invertColors();
+
+})(jQuery);

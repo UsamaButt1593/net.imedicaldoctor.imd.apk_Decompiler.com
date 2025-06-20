@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" style="@style/CardViewStyle">
+    <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:id="@+id/ripple_layout" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40sp" app:rippleColor2="@color/ColorPrimary" style="@style/RippleStyle">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:background="@drawable/ripple_background" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_vertical" android:id="@+id/image_view" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginRight="5dp" android:scaleType="fitEnd" android:layout_weight="0"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+                <TextView android:textSize="16sp" android:textColor="@color/black" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/text_view" android:padding="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Title" android:layout_weight="2"/>
+                <TextView android:textSize="14sp" android:textColor="@color/material_grey_700" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/sub_text_view" android:paddingLeft="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Subtitle" android:layout_weight="2"/>
+            </LinearLayout>
+            <ImageView android:layout_gravity="center_vertical" android:id="@+id/arrow" android:layout_width="40dp" android:layout_height="15dp" android:layout_marginRight="5dp" android:src="@drawable/arrow" android:scaleType="fitEnd" android:layout_weight="0"/>
+        </LinearLayout>
+    </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+</androidx.cardview.widget.CardView>

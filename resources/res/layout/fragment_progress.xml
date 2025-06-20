@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="#ffefeff4" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:navigationIcon="?attr/homeAsUpIndicator" app:title="Progress" app:titleTextColor="@android:color/white"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView android:padding="16dp" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="8dp" app:cardElevation="4dp">
+                <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18sp" android:textStyle="bold" android:id="@+id/overall_progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="Overall Progress"/>
+                    <ProgressBar android:id="@+id/overall_progress_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" style="?android:attr/progressBarStyleHorizontal"/>
+                    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                            <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/total_questions_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4dp" android:text="Total Questions"/>
+                            <TextView android:textSize="16sp" android:id="@+id/total_questions_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                        </LinearLayout>
+                        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                            <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/used_questions_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4dp" android:text="Used Questions"/>
+                            <TextView android:textSize="16sp" android:id="@+id/used_questions_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                        </LinearLayout>
+                        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                            <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/correct_questions_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4dp" android:text="Correct"/>
+                            <TextView android:textSize="16sp" android:id="@+id/correct_questions_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                        </LinearLayout>
+                        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                            <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/incorrect_questions_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4dp" android:text="Incorrect"/>
+                            <TextView android:textSize="16sp" android:id="@+id/incorrect_questions_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <com.github.mikephil.charting.charts.PieChart android:id="@+id/question_distribution_pie_chart" android:layout_width="match_parent" android:layout_height="300dp" android:layout_marginTop="16dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="8dp" app:cardElevation="4dp">
+                <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18sp" android:textStyle="bold" android:id="@+id/subjects_breakdown_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="Subjects Progress"/>
+                    <com.github.mikephil.charting.charts.BarChart android:id="@+id/subjects_bar_chart" android:layout_width="match_parent" android:layout_height="300dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="8dp" app:cardElevation="4dp">
+                <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18sp" android:textStyle="bold" android:id="@+id/subjects_correct_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="Subjects Correct Percentage"/>
+                    <com.github.mikephil.charting.charts.BarChart android:id="@+id/subjects_correct_chart" android:layout_width="match_parent" android:layout_height="300dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="8dp" app:cardElevation="4dp">
+                <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18sp" android:textStyle="bold" android:id="@+id/systems_breakdown_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="Systems Progress"/>
+                    <com.github.mikephil.charting.charts.BarChart android:id="@+id/systems_bar_chart" android:layout_width="match_parent" android:layout_height="300dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="8dp" app:cardElevation="4dp">
+                <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18sp" android:textStyle="bold" android:id="@+id/systems_correct_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="Systems Correct Percentage"/>
+                    <com.github.mikephil.charting.charts.BarChart android:id="@+id/systems_correct_chart" android:layout_width="match_parent" android:layout_height="300dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

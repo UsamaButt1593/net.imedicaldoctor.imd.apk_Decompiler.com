@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/tol" android:background="@color/material_orange_400" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textSize="40sp" android:gravity="center" android:id="@+id/title_text" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="یکی از دسته ها را انتخاب کنید" android:fontFamily="@font/bakh_fat"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="0.8">
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/stack4" android:background="@color/igtcolumn" android:padding="10sp" android:layout_width="@dimen/igtcolumnwidth" android:layout_height="match_parent" android:layout_margin="20sp" android:layout_weight="1">
+                <TextView android:textSize="30sp" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="دسته ۴" android:fontFamily="@font/bakh_fat"/>
+                <ImageView android:id="@+id/image4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/card"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/stack3" android:background="@color/igtcolumn" android:padding="10sp" android:layout_width="@dimen/igtcolumnwidth" android:layout_height="match_parent" android:layout_margin="20sp" android:layout_weight="1">
+                <TextView android:textSize="30sp" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="دسته ۳" android:fontFamily="@font/bakh_fat"/>
+                <ImageView android:id="@+id/image3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/card"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/stack2" android:background="@color/igtcolumn" android:padding="10sp" android:layout_width="@dimen/igtcolumnwidth" android:layout_height="match_parent" android:layout_margin="20sp" android:layout_weight="1">
+                <TextView android:textSize="30sp" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="دسته ۲" android:fontFamily="@font/bakh_fat"/>
+                <ImageView android:id="@+id/image2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/card"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/stack1" android:background="@color/igtcolumn" android:padding="10sp" android:layout_width="@dimen/igtcolumnwidth" android:layout_height="match_parent" android:layout_margin="20sp" android:layout_weight="1">
+                <TextView android:textSize="30sp" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="دسته ۱" android:fontFamily="@font/bakh_fat"/>
+                <ImageView android:id="@+id/image1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/card"/>
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="50sp" android:textColor="@color/red" android:gravity="center" android:id="@+id/zarar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" ۵۰ دلار ضرر کردید" android:fontFamily="@font/bakh_fat" android:layout_marginEnd="30sp"/>
+                    <TextView android:textSize="50sp" android:textColor="@color/bg_swipe_item_right" android:gravity="center" android:id="@+id/benefit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" ۵۰ دلار سود کردید" android:fontFamily="@font/bakh_fat" android:layout_marginStart="30sp"/>
+                </LinearLayout>
+                <TextView android:textSize="50sp" android:gravity="center" android:layout_gravity="center" android:id="@+id/money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="موجودی :‌" android:fontFamily="@font/bakh_fat"/>
+                <TextView android:textSize="40sp" android:textColor="@color/blue_dark" android:gravity="center" android:layout_gravity="center" android:id="@+id/trials" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="انتخاب های مانده :‌" android:fontFamily="@font/bakh_fat"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/overlay_layout" android:background="@color/toloverlay" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="30sp" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <TextView android:textSize="60sp" android:textColor="@color/material_yellow_300" android:gravity="center" android:id="@+id/overlay_text_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10sp" android:text="مرحله به پایان رسید" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:fontFamily="@font/bakh_fat"/>
+            <TextView android:textSize="40sp" android:textColor="@color/white" android:gravity="center" android:id="@+id/overlay_text_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10sp" android:text="برای ادامه کلیک کنید" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:fontFamily="@font/bakh_fat"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" style="@style/CardViewStyle">
+    <net.imedicaldoctor.imd.Utils.MaterialRippleLayout android:id="@+id/ripple_layout" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40sp" app:rippleColor2="@color/ColorPrimary" style="@style/RippleStyle">
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/ripple_background" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="3">
+            <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:background="@drawable/ripple_background" android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="3">
+                <RelativeLayout android:gravity="center_horizontal" android:layout_gravity="center" android:id="@+id/circle1" android:padding="10dp" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@+id/image1" android:layout_width="100dp" android:layout_height="100dp" android:src="@drawable/circle_green"/>
+                    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="100dp" android:layout_height="100dp">
+                        <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@+id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Score"/>
+                        <TextView android:textSize="20sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@+id/score1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="67%"/>
+                    </LinearLayout>
+                </RelativeLayout>
+                <RelativeLayout android:gravity="center_horizontal" android:layout_gravity="center" android:id="@+id/circle2" android:padding="10dp" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@+id/image2" android:layout_width="100dp" android:layout_height="100dp" android:src="@drawable/circle_blue"/>
+                    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="100dp" android:layout_height="100dp">
+                        <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@+id/text2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Average"/>
+                        <TextView android:textSize="20sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@+id/score2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="67%"/>
+                    </LinearLayout>
+                </RelativeLayout>
+                <RelativeLayout android:gravity="center_horizontal" android:layout_gravity="center" android:id="@+id/circle3" android:padding="10dp" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@+id/image3" android:layout_width="100dp" android:layout_height="100dp" android:src="@drawable/circle_yellow"/>
+                    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="100dp" android:layout_height="100dp">
+                        <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@+id/text3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="USMLE \10 Score"/>
+                        <TextView android:textSize="20sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@+id/score3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="67%"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="start" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Button android:textStyle="bold" android:textColor="@color/green" android:id="@+id/button_all" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Copy All" android:layout_weight="1"/>
+                <Button android:textStyle="bold" android:textColor="@color/red" android:id="@+id/button_incorrect" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Incorrect" android:layout_weight="1"/>
+                <Button android:textStyle="bold" android:textColor="@color/green_real" android:id="@+id/button_correct" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Correct" android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </net.imedicaldoctor.imd.Utils.MaterialRippleLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,10 @@
+<script type="text/javascript">
+(function() {
+    var allimgs = document.images;
+    for (var i = 0; i < allimgs.length; i++) {
+        allimgs[i].onerror = function() {
+            this.style.display = "none"; // Other elements aren't affected.
+        }
+    }
+})();
+</script>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:id="@+id/progress_menu" android:visible="false" android:orderInCategory="0" android:title="" app:actionViewClass="android.widget.ProgressBar" app:showAsAction="always"/>
+    <item android:icon="0x7f080183" android:id="@+id/action_previous" android:orderInCategory="1" android:title="Search" app:showAsAction="always"/>
+    <item android:icon="0x7f080180" android:id="@+id/action_next" android:orderInCategory="2" android:title="Search" app:showAsAction="always"/>
+    <item android:icon="@drawable/ic_action_stop" android:id="@+id/action_stop" android:visible="false" android:orderInCategory="3" android:title="Search" app:showAsAction="always"/>
+    <item android:icon="0x7f080187" android:id="@+id/action_find" android:orderInCategory="4" android:title="Search" app:actionViewClass="androidx.appcompat.widget.SearchView" app:showAsAction="always"/>
+    <item android:icon="0x7f08017e" android:id="@+id/action_favorites" android:orderInCategory="5" android:title="Favorite" app:showAsAction="always"/>
+    <item android:icon="0x7f08017b" android:id="@+id/action_close" android:visible="false" android:orderInCategory="6" android:title="Close Find" app:showAsAction="always"/>
+    <item android:icon="@drawable/gallery" android:id="@+id/action_gallery" android:orderInCategory="7" android:title="View Image Gallery" app:showAsAction="ifRoom"/>
+    <item android:icon="@drawable/pdf" android:id="@+id/action_pdf" android:orderInCategory="8" android:title="Export as pdf" app:showAsAction="ifRoom"/>
+    <item android:id="@+id/zoom_in" android:orderInCategory="9" android:title="Zoom In" app:showAsAction="ifRoom"/>
+    <item android:id="@+id/zoom_out" android:orderInCategory="10" android:title="Zoom Out" app:showAsAction="ifRoom"/>
+    <item android:id="@+id/fix_highlight" android:orderInCategory="11" android:title="Fix Highlights Placement" app:showAsAction="ifRoom"/>
+    <item android:id="@+id/remove_highlight" android:orderInCategory="12" android:title="Remove All Highlights" app:showAsAction="ifRoom"/>
+</menu>

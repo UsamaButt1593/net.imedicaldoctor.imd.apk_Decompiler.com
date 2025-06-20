@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.imedicaldoctor.imd.Utils.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/ripple_layout" android:background="@color/white" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40sp" app:rippleColor2="@color/ColorPrimary" style="@style/RippleStyle">
+    <LinearLayout android:id="@+id/container_view" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:layout_gravity="center" android:id="@+id/remove_icon" android:layout_width="30dp" android:layout_height="40dp" android:layout_marginRight="5dp" android:src="0x7f08025a"/>
+        <TextView android:textColor="@color/black" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/database_title" android:padding="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1"/>
+        <ImageView android:layout_gravity="center" android:id="@+id/drag_indicator" android:padding="5dp" android:layout_width="60dp" android:layout_height="35dp" android:src="0x7f0801c6" android:layout_weight="0"/>
+    </LinearLayout>
+</net.imedicaldoctor.imd.Utils.MaterialRippleLayout>

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* CSS Document */
+.drugtags h1 {
+	font-size:1.125em;
+	padding:0;
+	margin:0;
+}
+.drugBar {
+	display:block;
+	height:35px;
+	margin:16px -20px 16px 0;
+	font-family: 'GothamNarrow', Sans-Serif;
+	color:#ffffff;
+	white-space:nowrap;
+	overflow:hidden;
+	font-size:1.125em;
+}
+.number {
+	display:inline-block;
+	float:left;
+	font-weight: bold;
+	text-align:center;
+	font-size:1.125em;
+	width:35px;
+	border-right:2px solid #ffffff;
+	padding:7px 10px 10px 10px;
+}
+.drugBar h2 {
+	display:inline-block;
+	font-weight: bold;
+	font-size:.875em;
+	letter-spacing:.03em;
+	text-transform:uppercase;
+	margin:9px 0 10px 16px;	
+	border:0;
+	padding:0;
+	background-color:transparent;
+}
+.drugtags a {
+	display:block;
+	font-family: 'GothamNarrow', Sans-Serif;
+}
+.drugtags ol {
+	margin-left: 3.236em;
+}
+.red {
+	background-color:#CB4148;
+}
+.orange {
+	background-color:#FB7D24;
+}
+.yellow {
+	background-color:#F5B54B;
+}
+.grey {
+	background-color:#B7B1A9;
+}
+.toggle-box {
+	padding:0;
+}
